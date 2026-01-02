@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function OurServicesSection() {
+export default function OurBlogs() {
   return (
     <section className="ui-section bg-white">
       <div className="ui-container">
@@ -45,7 +45,7 @@ export default function OurServicesSection() {
               {/* Content */}
               <div className="relative px-8 py-10">
                 {/* Icon */}
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center border border-sky-400 text-sky-400 transition-all duration-300 group-hover:bg-sky-400 group-hover:text-white">
+                {/* <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center border border-sky-400 text-sky-400 transition-all duration-300 group-hover:bg-sky-400 group-hover:text-white">
                   <svg
                     width="26"
                     height="26"
@@ -58,7 +58,8 @@ export default function OurServicesSection() {
                     <path d="M3 10h18" />
                     <path d="M8 21h8" />
                   </svg>
-                </div>
+                </div> */}
+                <div className="ui-desc text-gray-500">26 Febuary 2023</div>
 
                 {/* Title */}
                 <h3 className="mb-3 text-lg font-semibold text-gray-900 transition-colors duration-300 group-hover:text-sky-400">
