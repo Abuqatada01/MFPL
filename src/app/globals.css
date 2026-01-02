@@ -98,7 +98,7 @@
    LAYOUT
 ----------------------------------------------------- */
 .ui-section {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   /* 10% left + 10% right automatically */
   padding: clamp(2rem, 5vw, 4rem) 0;
