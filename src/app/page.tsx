@@ -4,7 +4,7 @@ import OrderSteps from "@/components/OrderSteps";
 import OurProducts from "@/components/OurProducts";
 // import OurBlogs from "@/components/OurBlogs";
 import WhyChooseWater from "@/components/Process";
-import ConsultationSection from "@/components/Request";
+import ConsultationSection from "@/components/Form";
 import OurServicesSection from "@/components/Services";
 import StatsTestimonialSection from "@/components/Stats";
 import AboutUs from "@/components/About-Us";
