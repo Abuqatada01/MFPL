@@ -1,130 +1,148 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-
+import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
 const slides = [
   {
-    img: "https://themazine.com/html/snappy/images/home/slide-3.jpg",
-    tag: "Investment Management",
-    title: "Providing ",
-    highlight: "Financial Service",
-    subtitle: "Snappy is best Financial company",
+    title: "Premium Label",
+    subtitle: "Water Bottle Supplier",
+    location: "In Hyderabad",
+    image:
+      "https://woyawater.com/wp-content/uploads/2024/01/ISI-700-%C3%97-700-px.png",
+    circleColor: "rgba(83, 148, 91, 0.12)", // Primary Green
   },
   {
-    img: "https://themazine.com/html/snappy/images/home/slide-4.jpg",
-    tag: "Business Consulting",
-    title: "Smart ",
-    highlight: "Business Solutions",
-    subtitle: "We help you grow faster",
+    title: "Trusted Manufacturer",
+    subtitle: "Custom Water Bottles",
+    location: "Across India",
+    image:
+      "https://woyawater.com/wp-content/uploads/2023/09/ISI-700-%C3%97-700-px-1.png",
+    circleColor: "rgba(131, 163, 60, 0.15)", // Leaf Accent Green
   },
   {
-    img: "https://themazine.com/html/snappy/images/home/slide-1.jpg",
-    tag: "Wealth Planning",
-    title: "Secure Your ",
-    highlight: "Future Today",
-    subtitle: "Trusted financial advisors",
+    title: "Bulk Supply",
+    subtitle: "Corporate & Events",
+    location: "Pan India",
+    image:
+      "https://woyawater.com/wp-content/uploads/2024/01/ISI-700-%C3%97-700-px.png",
+    circleColor: "rgba(20, 84, 43, 0.15)", // Dark Forest Green
   },
 ];
 
-export default function HeroSlider() {
-  const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
+export default function HeroSection() {
+  const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
-    if (paused) return;
-    const timer = setInterval(() => {
-      setActive((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [paused]);
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % slides.length);
+    }, 4500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const prevSlide = () => {
+    setActiveSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setActiveSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const slide = slides[activeSlide];
 
   return (
     <section
-      className="relative -mt-18 h-[90vh] w-full overflow-hidden"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      className="flex justify-center h-[70vh] overflow-hidden relative"
+      style={{ background: "var(--clr-bg-light)" }}
     >
-      {/* Slides */}
-      {slides.map((slide, index) => (
-        <div
-          key={slide.img}
-          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-            index === active ? "opacity-100" : "opacity-0"
-          }`}
-          style={{ backgroundImage: `url(${slide.img})` }}
-        />
-      ))}
+      <div className="ui-section grid grid-cols-1 lg:grid-cols-2 items-center gap-16 relative">
+        {/* LEFT CONTENT */}
+        <div>
+          <span className="ui-badge mb-4 inline-block">We Are</span>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/10" />
-
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
-        <div className="max-w-2xl text-white">
-          <p className="text-sm uppercase tracking-widest mb-4 text-gray-200">
-            {slides[active].tag}
-          </p>
-
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
-            {slides[active].title}
-            <span className="text-sky-400">{slides[active].highlight}</span>
+          <h1 className="ui-h1 mt-sm">
+            {slide.title} <br />
+            {slide.subtitle} <br />
+            <span
+              style={{
+                color: "var(--clr-accent)",
+                WebkitTextFillColor: "unset",
+              }}
+            >
+              {slide.location}
+            </span>
           </h1>
 
-          <h3 className="text-xl md:text-2xl font-medium mb-6">
-            {slides[active].subtitle}
-          </h3>
-
-          <p className="text-gray-200 leading-relaxed mb-10">
-            Our investment and advice can be tailored to a client’s specific
-            needs, and in ways that add value. We introduce clients to better
-            sources of capital and smarter business strategies.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/case-studies"
-              className="bg-sky-500 hover:bg-sky-600 transition text-white px-8 py-3 font-semibold"
-            >
-              Get Case Studies
+          <div className="ui-actions">
+            <Link href="/contact" className="ui-btn ui-btn-primary">
+              Get A Quote
             </Link>
 
-            <Link
-              href="/projects"
-              className="bg-white text-gray-900 hover:bg-gray-100 transition px-8 py-3 font-semibold"
-            >
-              See More Project
+            <Link href="/products" className="ui-btn ui-btn-outline">
+              View Products
             </Link>
           </div>
         </div>
-      </div>
 
-      {/* Arrows */}
-      <button
-        onClick={() => setActive((active - 1 + slides.length) % slides.length)}
-        className="absolute left-6 top-1/2 -translate-y-1/2 z-10 h-12 w-12 bg-black/40 text-white hover:bg-sky-500 transition"
-      >
-        ‹
-      </button>
+        {/* RIGHT IMAGE */}
+        <div className="relative flex justify-center lg:justify-end">
+          {/* Background Circle */}
+          <div
+            className="absolute -right-20 top-1/2 -translate-y-1/2 rounded-full transition-all duration-700"
+            style={{
+              height: "520px",
+              width: "520px",
+              background: slide.circleColor,
+            }}
+          >
+            {/* Product Image */}
+            <Image
+              src={slide.image}
+              alt="Water Bottle"
+              width={520}
+              height={520}
+              className="relative scale-110  z-10 transition-all duration-700"
+              priority
+            />
+          </div>
+        </div>
 
-      <button
-        onClick={() => setActive((active + 1) % slides.length)}
-        className="absolute right-6 top-1/2 -translate-y-1/2 z-10 h-12 w-12 bg-black/40 text-white hover:bg-sky-500 transition"
-      >
-        ›
-      </button>
+        {/* NAVIGATION BUTTONS */}
+        <button
+          onClick={prevSlide}
+          className="absolute flex justify-center items-center left-2 lg:-left-60 top-1/2 -translate-y-1/2 z-20"
+          style={{
+            height: "44px",
+            width: "44px",
+            borderRadius: "50%",
+            background: "var(--clr-bg-white)",
+            color: "var(--clr-primary)",
+            boxShadow: "var(--shadow-soft)",
+            fontSize: "18px",
+            fontWeight: 700,
+          }}
+        >
+          <CaretLeftIcon size={32} />
+        </button>
 
-      {/* Dots */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-10">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setActive(index)}
-            className={`h-2 rounded-full transition-all ${
-              index === active ? "bg-sky-400 w-6" : "bg-white/60 w-2"
-            }`}
-          />
-        ))}
+        <button
+          onClick={nextSlide}
+          className="absolute flex justify-center items-center right-2 lg:-right-60 top-1/2 -translate-y-1/2 z-20"
+          style={{
+            height: "44px",
+            width: "44px",
+            borderRadius: "50%",
+            background: "var(--clr-bg-white)",
+            color: "var(--clr-primary)",
+            boxShadow: "var(--shadow-soft)",
+            fontSize: "18px",
+            fontWeight: 700,
+          }}
+        >
+          <CaretRightIcon size={32} />
+        </button>
       </div>
     </section>
   );

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Snappy",
+  title: "Medicosmo",
   description: "Finance & Business Website",
 };
 

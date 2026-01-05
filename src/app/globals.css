@@ -58,22 +58,27 @@
    ROOT TOKENS (DEFAULT / VERY SMALL DEVICES)
 ----------------------------------------------------- */
 :root {
-  /* Brand Palette */
-  --clr-primary: #647AB7;
-  /* Main blue */
-  --clr-secondary: #7ACAC7;
-  /* Soft teal */
-  --clr-accent: #5ac1da;
-  /* Cyan accent */
+  /* ===============================
+     BRAND COLOR PALETTE
+  =============================== */
 
-  /* Base */
-  --clr-bg-light: #f8fafc;
-  --clr-bg-white: #ffffff;
+  /* Core Brand */
+  --clr-primary: #53945B;
+  /* Primary Green (Brand Core) */
+  --clr-secondary: #83A33C;
+  /* Leaf Accent Green */
+  --clr-accent: #14542B;
+  /* Dark Forest Green */
 
-  /* Text */
-  --clr-text-dark: #0f172a;
-  --clr-text-muted: #475569;
+  /* Neutrals */
+  --clr-text-dark: #242424;
+  /* Charcoal Black */
+  --clr-text-muted: rgba(36, 36, 36, 0.7);
   --clr-white: #ffffff;
+
+  /* Backgrounds */
+  --clr-bg-light: #f6f8f6;
+  --clr-bg-white: #ffffff;
 
   /* Radius */
   --radius: 20px;
@@ -82,17 +87,18 @@
   --radius-lg: 24px;
   --radius-xl: 28px;
 
-  /* Shadows */
-  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
-  --shadow-strong: 0 20px 50px rgba(15, 23, 42, 0.15);
+  /* Shadows (green-tinted, premium) */
+  --shadow-soft: 0 10px 30px rgba(20, 84, 43, 0.12);
+  --shadow-strong: 0 20px 50px rgba(20, 84, 43, 0.22);
 
-  /* Typography */
+  /* Typography Sizes */
   --h1-size: 1.8rem;
   --h2-size: 1.5rem;
   --h3-size: 1.1rem;
   --para-size: 0.95rem;
   --desc-size: 0.85rem;
 }
+
 
 /* -----------------------------------------------------
    LAYOUT
@@ -181,9 +187,7 @@
   display: inline-block;
   padding: 0.35rem 0.75rem;
   color: var(--clr-white);
-  background: linear-gradient(135deg,
-      var(--clr-primary),
-      var(--clr-accent));
+  background: var(--clr-secondary);
 
   font-size: 0.7rem;
   font-weight: 700;
@@ -214,10 +218,10 @@
 }
 
 .ui-btn-primary {
-  color: var(--clr-white);
+  color: var(--clr-bg-white);
   background: linear-gradient(135deg,
-      var(--clr-primary),
-      var(--clr-accent));
+      var(--clr-secondary),
+      var(--clr-secondary));
   box-shadow: var(--shadow-soft);
 }
 
@@ -349,8 +353,8 @@
     --h1-size: 3.6rem;
     --h1-weight: 650;
     --h2-size: 2.8rem;
-    --h3-size: 1.3rem;
-    --h3-weight: 550;
+    --h3-size: 1.15rem;
+    --h3-weight: 650;
     --para-size: 1.18rem;
   }
 }
@@ -618,6 +622,46 @@
     background-color 0.3s ease,
     color 0.3s ease,
     border-color 0.3s ease;
+}
+
+/* ===== CERTIFICATE MARQUEE (LEFT ➜ RIGHT) ===== */
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  flex-direction: row;
+  /* 👈 FORCE HORIZONTAL */
+  align-items: center;
+  width: max-content;
+  animation: marquee-left-right 30s linear infinite;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+}
+
+/* LEFT ➜ RIGHT animation */
+@keyframes marquee-left-right {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause on hover */
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
 }
 
 /* corner notch */

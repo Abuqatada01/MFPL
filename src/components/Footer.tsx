@@ -6,7 +6,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* About */}
         <div>
-          <h2 className="text-2xl font-semibold text-sky-400 mb-4">Snappy</h2>
+          <h2 className="text-2xl font-semibold bg-white p-2 mb-4">
+            <img src="/Logoblack.png" />
+          </h2>
           <p className="text-sm leading-6">
             We create finance & business websites for professionals, trainers,
             consultants and specialists who need a personal online presence.
@@ -32,7 +34,7 @@ export default function Footer() {
               <Link href="/">Business Partners</Link>
             </li>
             <li>
-              <Link href="/">Snappy</Link>
+              <Link href="/">Medicosmo</Link>
             </li>
             <li>
               <Link href="/">FAQ</Link>
@@ -93,8 +95,8 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="bg-[#1b1f22] text-center text-sm py-4 text-gray-400">
-        Copyright © 2017 <span className="text-sky-400">Snappy</span> Template
-        by Themazine
+        Copyright © 2017 <span className="text-sky-400">Medicosmo</span>{" "}
+        Template by Themazine
       </div>
     </footer>
   );

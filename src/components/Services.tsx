@@ -45,7 +45,7 @@ export default function OurServicesSection() {
               {/* Content */}
               <div className="relative px-8 py-10">
                 {/* Icon */}
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center border border-sky-400 text-sky-400 transition-all duration-300 group-hover:bg-sky-400 group-hover:text-white">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center border border-[#53945B] text-[#53945B] transition-all duration-300 group-hover:bg-[#53945B] group-hover:text-white">
                   <svg
                     width="26"
                     height="26"
@@ -61,7 +61,7 @@ export default function OurServicesSection() {
                 </div>
 
                 {/* Title */}
-                <h3 className="mb-3 text-lg font-semibold text-gray-900 transition-colors duration-300 group-hover:text-sky-400">
+                <h3 className="mb-3 text-lg font-semibold text-gray-900 transition-colors duration-300 group-hover:text-[#53945B]">
                   {service.title}
                 </h3>
 
@@ -74,7 +74,7 @@ export default function OurServicesSection() {
                 {/* Read More Button (Hover Only) */}
                 <Link
                   href={service.link}
-                  className="absolute left-1/2 bottom-6 -translate-x-1/2 bg-sky-400 px-8 py-3 text-sm font-semibold text-white opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:bottom-8"
+                  className="absolute left-1/2 bottom-6 -translate-x-1/2 bg-[#53945B] px-8 py-3 text-sm font-semibold text-white opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:bottom-8"
                 >
                   Read More
                 </Link>
@@ -85,7 +85,7 @@ export default function OurServicesSection() {
 
         {/* ================= DOT INDICATOR ================= */}
         <div className="mt-14 flex justify-center gap-2">
-          <span className="h-2 w-2 bg-sky-500"></span>
+          <span className="h-2 w-2 bg-[#53945B]"></span>
           <span className="h-2 w-2 bg-gray-300"></span>
           <span className="h-2 w-2 bg-gray-300"></span>
         </div>
