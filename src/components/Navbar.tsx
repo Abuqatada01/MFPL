@@ -2,39 +2,47 @@
 
 import Link from "next/link";
 
+const menuItems = [
+  "Home",
+  "About Us",
+  "Services",
+  "Products",
+  "Projects",
+  "Blog",
+  "Contact",
+];
+
 export default function Navbar() {
   return (
-    <header className="w-full sticky top-0 z-50">
+    <header className="sticky top-0 z-50">
       {/* ================= TOP INFO BAR ================= */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-          {/* Logo */}
-          <div>
-            {/* <h1 className="text-2xl font-semibold text-sky-500 leading-none">
-              Medicosmo
-            </h1>
-            <p className="text-xs text-gray-500 tracking-wide">
-              Finance & business
-            </p> */}
-            <img src="/Logoblack.png" className="h-10" />
-          </div>
-
-          {/* Contact Info */}
-          <div className="hidden md:flex items-center gap-8 text-sm text-gray-600">
-            <div className="flex items-center gap-4">
-              <span className="icon-shape">✉</span>
-              <span>Medicosmo_info@gmail.com</span>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <span className="icon-shape">☎</span>
-              <span>+088 01823456797</span>
-            </div>
-          </div>
-
-          {/* Social Icons */}
+      <div style={{ background: "var(--clr-bg-white)" }} className="border-b">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+          {/* LOGO */}
           <div className="flex items-center gap-3">
-            {["in", "f", "t", "G+"].map((icon) => (
+            <img src="/Logoblack.png" className="h-10" alt="Logo" />
+          </div>
+
+          {/* CONTACT INFO */}
+          <div className="hidden md:flex items-center gap-10 text-sm">
+            <div className="flex items-center gap-3">
+              <span className="icon-shape">✉</span>
+              <span style={{ color: "var(--clr-text-muted)" }}>
+                Medicosmo_info@gmail.com
+              </span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span className="icon-shape">☎</span>
+              <span style={{ color: "var(--clr-text-muted)" }}>
+                +088 01823456797
+              </span>
+            </div>
+          </div>
+
+          {/* SOCIAL ICONS */}
+          <div className="flex items-center gap-2">
+            {["in", "f", "t"].map((icon) => (
               <span
                 key={icon}
                 className="h-9 w-9 flex items-center justify-center icon-shape"
@@ -46,24 +54,29 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ================= MAIN NAVBAR ================= */}
-      <nav className="flex justify-center ">
-        <div className="w-[50vw] bg-[#0f2a35] mx-auto px-2 h-[70px] flex items-center justify-between">
-          {/* Menu */}
-          <ul className="hidden md:flex items-center gap-10 text-white font-medium w-[40vw] justify-center">
-            {[
-              "Home",
-              "About Us",
-              "Page",
-              "Services",
-              "Project",
-              "Blog",
-              "Contact Us",
-            ].map((item) => (
+      {/* ================= MAIN NAV ================= */}
+      <nav className="flex justify-center py-4">
+        <div
+          className="flex items-center justify-between px-8 h-[68px] rounded-full w-[90%] max-w-6xl backdrop-blur-md"
+          style={{
+            background: "rgba(20,84,43,0.92)",
+            boxShadow: "0 20px 50px rgba(20,84,43,0.35)",
+          }}
+        >
+          {/* MENU */}
+          <ul className="hidden md:flex items-center gap-10 font-medium">
+            {menuItems.map((item) => (
               <li key={item}>
                 <Link
                   href="/"
-                  className="relative hover:text-sky-400 transition after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-sky-400 hover:after:w-full after:transition-all"
+                  className="relative text-white transition-all duration-300
+                  after:absolute after:left-0 after:-bottom-1 after:h-[2px]
+                  after:w-0 hover:after:w-full after:transition-all"
+                  style={{
+                    after: {
+                      background: "var(--clr-secondary)",
+                    } as any,
+                  }}
                 >
                   {item}
                 </Link>
@@ -71,10 +84,16 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* CTA */}
+          {/* CTA BUTTON */}
           <Link
             href="/quote"
-            className="bg-sky-500 text-white px-6 py-3 font-semibold flex items-center gap-2 hover:bg-sky-600 transition"
+            className="px-7 py-3 rounded-full font-semibold flex items-center gap-2 transition-all"
+            style={{
+              background:
+                "linear-gradient(135deg, var(--clr-secondary), var(--clr-primary))",
+              color: "#fff",
+              boxShadow: "0 10px 25px rgba(131,163,60,0.4)",
+            }}
           >
             Free Quote →
           </Link>

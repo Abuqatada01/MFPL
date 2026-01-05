@@ -687,9 +687,9 @@
 
 /* 🔥 Hover: invert shape */
 .icon-shape:hover {
-  background-color: #38bdf8;
+  background-color: var(--clr-secondary);
   color: #fff;
-  border-color: #38bdf8;
+  border-color: var(--clr-secondary);
 
   /* inverse asymmetric shape */
   border-radius: 60px 6px 0 6px;
@@ -700,7 +700,7 @@
   opacity: 1;
   right: auto;
   left: -6px;
-  border-color: #38bdf8;
+  border-color: var(--clr-secondary);
 }
 
 
