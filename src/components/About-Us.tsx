@@ -6,6 +6,7 @@ export default function AboutUs() {
   return (
     <section className="" style={{ background: "var(--clr-bg-light)" }}>
       <div className=" ui-section ui-container">
+        <div className="ui-badge text-center">About Us</div>
         {/* TOP CONTENT */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           {/* LEFT */}
@@ -116,10 +117,14 @@ export default function AboutUs() {
           {/* CERTIFICATIONS */}
           <div className="flex gap-12 items-center">
             {[
-              "/images/certifications/fda.png",
-              "/images/certifications/cruelty-free.png",
-              "/images/certifications/halal.png",
-              "/images/certifications/iso.png",
+              "https://palmisthealthcare.com/public/imgs/about/certificate/01.png",
+              "https://palmisthealthcare.com/public/imgs/about/certificate/02.png",
+              "https://palmisthealthcare.com/public/imgs/about/certificate/03.png",
+              "https://palmisthealthcare.com/public/imgs/about/certificate/04.png",
+              "https://palmisthealthcare.com/public/imgs/about/certificate/05.png",
+              "https://palmisthealthcare.com/public/imgs/about/certificate/06.png",
+              "https://palmisthealthcare.com/public/imgs/about/certificate/07.png",
+              "https://palmisthealthcare.com/public/imgs/about/certificate/08.png",
             ].map((src, i) => (
               <div
                 key={i}
