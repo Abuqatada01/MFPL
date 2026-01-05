@@ -69,12 +69,7 @@ export default function Navbar() {
               <li key={item}>
                 <Link
                   href="/"
-                  className="relative text-white transition-all duration-300
-                  after:absolute after:left-0 after:-bottom-1 after:h-[2px]
-                  after:w-0 hover:after:w-full after:transition-all"
-                  style={{
-                    after: { background: "var(--clr-secondary)" } as any,
-                  }}
+                  className="relative text-white transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--clr-secondary)] after:transition-all hover:after:w-full"
                 >
                   {item}
                 </Link>
