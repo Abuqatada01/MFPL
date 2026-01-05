@@ -6,77 +6,126 @@ import Link from "next/link";
 const steps = [
   {
     step: "01",
-    title: "Submit A Quote",
-    desc: "Tell us about your brand and specify your needs in our convenient inquiry form.",
+    title: "Submit Your Requirements",
+    desc: "Share your brand details and product needs through our simple enquiry form.",
     image: "https://watergram.in/wp-content/uploads/2023/07/asdas.png",
   },
   {
     step: "02",
-    title: "Approve Designs",
-    desc: "Get the best design options for your brand and finalise pricing, label and bottle.",
+    title: "Approve Design & Pricing",
+    desc: "Review customised designs, labels, and pricing before we begin production.",
     image:
       "https://watergram.in/wp-content/uploads/2023/06/Costumization-lebal.png",
   },
   {
     step: "03",
-    title: "Place Your Order",
-    desc: "Get your custom bottled water delivered safely to your doorstep.",
+    title: "Production & Delivery",
+    desc: "We manufacture and deliver your customised bottled water safely and on time.",
     image: "https://watergram.in/wp-content/uploads/2023/07/3.png",
   },
 ];
 
 export default function OrderSteps() {
   return (
-    <section className="ui-section">
-      <div className="ui-container text-center">
-        {/* SECTION TITLE */}
-        <h2 className="ui-h2 mb-12">How To Order</h2>
+    <section className="" style={{ background: "var(--clr-bg-light)" }}>
+      <div className="ui-section ui-container text-center">
+        {/* SECTION HEADER */}
+        <div className="mb-20">
+          <h2 className="ui-h2">
+            How to <span style={{ color: "var(--clr-primary)" }}>Order</span>
+          </h2>
+          <p
+            className="mt-3 max-w-xl mx-auto"
+            style={{ color: "var(--clr-text-muted)" }}
+          >
+            A simple, transparent process designed to take your brand from idea
+            to delivery with ease.
+          </p>
+        </div>
 
         {/* STEPS */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-14 relative">
           {steps.map((item, index) => (
             <div key={index} className="relative flex flex-col items-center">
-              {/* IMAGE CIRCLE */}
-              <div className="relative h-[300px] flex items-center justify-center rounded-full mb-4">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={300}
-                  height={300}
-                  className="object-contain"
+              {/* CONNECTOR (Desktop Only) */}
+              {index < steps.length - 1 && (
+                <div
+                  className="hidden md:block absolute top-[140px] right-[-70px]"
+                  style={{
+                    width: "140px",
+                    height: "2px",
+                    background:
+                      "linear-gradient(90deg, var(--clr-primary), transparent)",
+                  }}
                 />
-              </div>
+              )}
 
-              {/* STEP NUMBER */}
-              <span
-                className="mb-3 ui-para"
+              {/* CARD */}
+              <div
+                className="p-8 rounded-3xl w-full max-w-sm transition-all duration-300"
                 style={{
-                  height: "36px",
-                  width: "36px",
-                  borderRadius: "50%",
-                  background: "var(--clr-secondary)",
-                  color: "var(--clr-white)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-
-                  fontWeight: 700,
+                  background: "var(--clr-bg-white)",
+                  boxShadow: "0 25px 60px rgba(20,84,43,0.12)",
                 }}
               >
-                {item.step}
-              </span>
+                {/* IMAGE */}
+                <div className="flex justify-center mb-6">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={180}
+                    height={180}
+                    className="object-contain"
+                  />
+                </div>
 
-              {/* TEXT */}
-              <h3 className="ui-h3 font-semibold">{item.title}</h3>
-              <p className="ui-desc text-center">{item.desc}</p>
+                {/* STEP NUMBER */}
+                <div
+                  className="mx-auto mb-4 flex items-center justify-center"
+                  style={{
+                    height: "42px",
+                    width: "42px",
+                    borderRadius: "50%",
+                    background:
+                      "linear-gradient(135deg, var(--clr-secondary), var(--clr-primary))",
+                    color: "#fff",
+                    fontWeight: 700,
+                  }}
+                >
+                  {item.step}
+                </div>
+
+                {/* TEXT */}
+                <h3
+                  className="text-lg font-semibold mb-2"
+                  style={{ color: "var(--clr-text-dark)" }}
+                >
+                  {item.title}
+                </h3>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: "var(--clr-text-muted)" }}
+                >
+                  {item.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="mt-lg">
-          <Link href="/contact" className="ui-btn ui-btn-primary">
-            Get A Quote
+        <div className="mt-20">
+          <Link
+            href="/contact-us"
+            className="inline-flex items-center gap-3 px-10 py-4 rounded-full text-lg font-semibold transition-all"
+            style={{
+              background:
+                "linear-gradient(135deg, var(--clr-primary), var(--clr-secondary))",
+              color: "#fff",
+              boxShadow: "0 20px 40px rgba(83,148,91,0.35)",
+            }}
+          >
+            Get a Free Quote →
           </Link>
         </div>
       </div>

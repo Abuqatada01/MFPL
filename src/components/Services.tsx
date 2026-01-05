@@ -1,51 +1,80 @@
 import Link from "next/link";
 
+const services = [
+  {
+    title: "Business Growth",
+    img: "https://themazine.com/html/snappy/images/service/1.jpg",
+    link: "/services/business-growth",
+  },
+  {
+    title: "Strategy Made Easy",
+    img: "https://themazine.com/html/snappy/images/service/2.jpg",
+    link: "/services/strategy",
+  },
+  {
+    title: "Financial Planning",
+    img: "https://themazine.com/html/snappy/images/service/3.jpg",
+    link: "/services/financial-planning",
+  },
+];
+
 export default function OurServicesSection() {
   return (
-    <section className="ui-section bg-white">
-      <div className="ui-container">
-        {/* ================= SECTION HEADER ================= */}
-        <div className="text-center mb-16">
-          <h2 className="ui-h1">Our Services</h2>
-          <p className="ui-para-sm mt-2">What we do</p>
+    <section className="" style={{ background: "var(--clr-bg-light)" }}>
+      <div className="ui-section ui-container">
+        {/* ================= HEADER ================= */}
+        <div className="text-center mb-20">
+          <h2 className="ui-h2">
+            Our <span style={{ color: "var(--clr-primary)" }}>Services</span>
+          </h2>
+          <p
+            className="mt-3 max-w-xl mx-auto"
+            style={{ color: "var(--clr-text-muted)" }}
+          >
+            Strategic solutions designed to help businesses grow, scale, and
+            succeed with confidence.
+          </p>
         </div>
 
-        {/* ================= SERVICES GRID ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Business Growth",
-              img: "https://themazine.com/html/snappy/images/service/1.jpg",
-              link: "/services/business-growth",
-            },
-            {
-              title: "Strategy Made Easy",
-              img: "https://themazine.com/html/snappy/images/service/2.jpg",
-              link: "/services/strategy",
-            },
-            {
-              title: "Financial Planning",
-              img: "https://themazine.com/html/snappy/images/service/3.jpg",
-              link: "/services/financial-planning",
-            },
-          ].map((service, index) => (
+        {/* ================= GRID ================= */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {services.map((service, index) => (
             <div
               key={index}
-              className="group border border-gray-200 bg-white text-center transition-all duration-300 hover:shadow-xl"
+              className="group rounded-3xl overflow-hidden transition-all duration-300"
+              style={{
+                background: "rgba(255,255,255,0.9)",
+                boxShadow: "0 20px 50px rgba(20,84,43,0.12)",
+              }}
             >
-              {/* Image */}
-              <div className="h-[240px] overflow-hidden">
+              {/* IMAGE */}
+              <div className="relative h-[240px] overflow-hidden">
                 <img
                   src={service.img}
                   alt={service.title}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+
+                {/* Overlay */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, rgba(20,84,43,0.0), rgba(20,84,43,0.55))",
+                  }}
                 />
               </div>
 
-              {/* Content */}
-              <div className="relative px-8 py-10">
-                {/* Icon */}
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center border border-[#53945B] text-[#53945B] transition-all duration-300 group-hover:bg-[#53945B] group-hover:text-white">
+              {/* CONTENT */}
+              <div className="p-8 text-center">
+                {/* ICON */}
+                <div
+                  className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full transition"
+                  style={{
+                    border: "2px solid var(--clr-primary)",
+                    color: "var(--clr-primary)",
+                  }}
+                >
                   <svg
                     width="26"
                     height="26"
@@ -60,34 +89,35 @@ export default function OurServicesSection() {
                   </svg>
                 </div>
 
-                {/* Title */}
-                <h3 className="mb-3 text-lg font-semibold text-gray-900 transition-colors duration-300 group-hover:text-[#53945B]">
+                {/* TITLE */}
+                <h3
+                  className="mb-3 text-xl font-semibold transition"
+                  style={{ color: "var(--clr-text-dark)" }}
+                >
                   {service.title}
                 </h3>
 
-                {/* Description */}
-                <p className="text-sm text-gray-500 leading-relaxed">
-                  Sometimes it’s hard running a business. Where are all the good
-                  people to be found?
+                {/* DESC */}
+                <p
+                  className="mb-6 text-sm leading-relaxed"
+                  style={{ color: "var(--clr-text-muted)" }}
+                >
+                  We provide tailored strategies and expert guidance to help
+                  organisations achieve sustainable growth and long-term
+                  success.
                 </p>
 
-                {/* Read More Button (Hover Only) */}
+                {/* CTA */}
                 <Link
                   href={service.link}
-                  className="absolute left-1/2 bottom-6 -translate-x-1/2 bg-[#53945B] px-8 py-3 text-sm font-semibold text-white opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:bottom-8"
+                  className="inline-flex items-center gap-2 font-semibold transition-all"
+                  style={{ color: "var(--clr-primary)" }}
                 >
-                  Read More
+                  Learn More →
                 </Link>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* ================= DOT INDICATOR ================= */}
-        <div className="mt-14 flex justify-center gap-2">
-          <span className="h-2 w-2 bg-[#53945B]"></span>
-          <span className="h-2 w-2 bg-gray-300"></span>
-          <span className="h-2 w-2 bg-gray-300"></span>
         </div>
       </div>
     </section>
