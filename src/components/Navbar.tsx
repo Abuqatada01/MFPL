@@ -3,25 +3,25 @@
 import Link from "next/link";
 
 const menuItems = [
-  "Home",
-  "About Us",
-  "Services",
-  "Products",
-  "Projects",
-  "Blog",
-  "Contact",
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Services", href: "/services" },
+  { label: "Products", href: "/products" },
+  { label: "Projects", href: "/projects" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact-us" },
 ];
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50">
       {/* ================= TOP INFO BAR ================= */}
-      <div style={{ background: "var(--clr-bg-white)" }} className="border-b">
+      <div className="border-b" style={{ background: "var(--clr-bg-white)" }}>
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           {/* LOGO */}
-          <div className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <img src="/Logoblack.png" className="h-10" alt="Logo" />
-          </div>
+          </Link>
 
           {/* CONTACT INFO */}
           <div className="hidden md:flex items-center gap-10 text-sm">
@@ -35,7 +35,7 @@ export default function Navbar() {
             <div className="flex items-center gap-3">
               <span className="icon-shape">☎</span>
               <span style={{ color: "var(--clr-text-muted)" }}>
-                +088 01823456797
+                +91 92050 94789
               </span>
             </div>
           </div>
@@ -66,12 +66,15 @@ export default function Navbar() {
           {/* MENU */}
           <ul className="hidden md:flex items-center gap-10 font-medium">
             {menuItems.map((item) => (
-              <li key={item}>
+              <li key={item.label}>
                 <Link
-                  href="/"
-                  className="relative text-white transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--clr-secondary)] after:transition-all hover:after:w-full"
+                  href={item.href}
+                  className="relative text-white transition-all duration-300
+                  after:absolute after:left-0 after:-bottom-1 after:h-[2px]
+                  after:w-0 after:bg-[var(--clr-secondary)]
+                  after:transition-all hover:after:w-full"
                 >
-                  {item}
+                  {item.label}
                 </Link>
               </li>
             ))}
@@ -79,7 +82,7 @@ export default function Navbar() {
 
           {/* CTA BUTTON */}
           <Link
-            href="/quote"
+            href="/contact-us"
             className="px-7 py-3 rounded-full font-semibold flex items-center gap-2 transition-all"
             style={{
               background:
