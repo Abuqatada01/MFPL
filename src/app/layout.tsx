@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   description: "Professional Healthcare & Manufacturing Solutions",
   icons: {
-    icon: "/Logoblack.png",
-    shortcut: "/Logoblack.png",
-    apple: "/Logoblack.png",
+    icon: "/LogoIconWhite.png",
+    shortcut: "/LogoIconWhite.png",
+    apple: "/LogoIconWhite.png",
   },
   openGraph: {
     title: "Medicosmo",
