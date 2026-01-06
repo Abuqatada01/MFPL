@@ -1,0 +1,69 @@
+.bento-card {
+    padding: 1.75rem;
+    border-radius: 1.25rem;
+    transition: all 0.35s ease;
+    position: relative;
+    border: 1px solid rgba(83, 148, 91, 0.15);
+}
+
+.bento-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(83, 148, 91, 0.25);
+    border-color: var(--clr-primary);
+}
+
+.bento-feature {
+    transition: all 0.35s ease;
+    box-shadow: 0 30px 80px rgba(20, 84, 43, 0.35);
+}
+
+.bento-feature:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 40px 100px rgba(20, 84, 43, 0.45);
+}
+
+.icon-wrap {
+    height: 42px;
+    width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    margin-bottom: 14px;
+    font-size: 20px;
+    border: 1px solid var(--clr-primary);
+    color: var(--clr-primary);
+}
+
+.icon-wrap-dark {
+    height: 42px;
+    width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    margin-bottom: 14px;
+    font-size: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.bento-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--clr-text-dark);
+}
+
+.bento-desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--clr-text-muted);
+}
+
+.team-card:hover .team-img {
+    transform: scale(1.06);
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+}

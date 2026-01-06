@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-export default function WhyChooseWater() {
+export default function OurProcess() {
   return (
     <section className="relative overflow-hidden">
       {/* BACKGROUND IMAGE */}
@@ -20,7 +20,7 @@ export default function WhyChooseWater() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(238,247,241,0.95) 0%, rgba(255,255,255,0.92) 65%)",
+              "linear-gradient(180deg, rgba(238,247,241,0.95) 20%, rgba(255,255,255,0.92) 75%)",
           }}
         />
       </div>

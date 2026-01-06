@@ -2,14 +2,14 @@ import CertificatesMarquee from "@/components/Certificates";
 import HeroSlider from "@/components/Hero";
 import OrderSteps from "@/components/OrderSteps";
 import OurProducts from "@/components/OurProducts";
-// import OurBlogs from "@/components/OurBlogs";
-import WhyChooseWater from "@/components/Process";
+
 import ConsultationSection from "@/components/Form";
 import OurServicesSection from "@/components/Services";
 import StatsTestimonialSection from "@/components/Stats";
 import AboutUs from "@/components/About-Us";
 
 import Image from "next/image";
+import OurProcess from "../components/Process";
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
       <OurServicesSection />
       <CertificatesMarquee />
       <OurProducts />
-      <WhyChooseWater />
+      <OurProcess />
       <OrderSteps />
       <StatsTestimonialSection />
       <ConsultationSection />

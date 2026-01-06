@@ -2,101 +2,130 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-black via-[#120f0f] to-black text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
-        {/* About */}
+    <footer
+      style={{
+        background: "linear-gradient(180deg, var(--clr-accent), #0f2f1c)",
+        color: "#ffffff",
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-4 gap-12">
+        {/* ================= BRAND ================= */}
         <div>
-          <h2 className="text-2xl font-semibold bg-white p-2 mb-4">
-            <img src="/Logoblack.png" />
-          </h2>
-          <p className="text-sm leading-6">
-            We create finance & business websites for professionals, trainers,
-            consultants and specialists who need a personal online presence.
+          <img
+            src="/Logoblack.png"
+            alt="Logo"
+            className="h-10 mb-4 bg-white p-2 rounded"
+          />
+
+          <p className="text-sm leading-relaxed opacity-80">
+            We deliver trusted healthcare and manufacturing solutions that
+            empower brands with quality, innovation, and compliance.
           </p>
 
-          <div className="flex gap-4 mt-6 text-gray-400">
-            <span>f</span>
-            <span>in</span>
-            <span>🌐</span>
-            <span>t</span>
-            <span>v</span>
+          {/* SOCIAL */}
+          <div className="flex gap-4 mt-6">
+            {["f", "in", "t", "🌐"].map((icon) => (
+              <span
+                key={icon}
+                className="h-9 w-9 flex items-center justify-center rounded-full transition"
+                style={{
+                  background: "rgba(255,255,255,0.12)",
+                }}
+              >
+                {icon}
+              </span>
+            ))}
           </div>
         </div>
 
-        {/* About Links */}
+        {/* ================= ABOUT LINKS ================= */}
         <div>
-          <h3 className="text-white font-semibold mb-4">About</h3>
-          <ul className="space-y-2 text-sm">
+          <h3 className="font-semibold mb-5">Company</h3>
+          <ul className="space-y-3 text-sm opacity-80">
             <li>
               <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/about-us">About Us</Link>
             </li>
             <li>
               <Link href="/">Business Partners</Link>
             </li>
             <li>
-              <Link href="/">Medicosmo</Link>
-            </li>
-            <li>
               <Link href="/">FAQ</Link>
             </li>
             <li>
-              <Link href="/">About Us</Link>
-            </li>
-            <li>
-              <Link href="/">Blog</Link>
+              <Link href="/blog">Blog</Link>
             </li>
           </ul>
         </div>
 
-        {/* Short Links */}
+        {/* ================= SERVICES ================= */}
         <div>
-          <h3 className="text-white font-semibold mb-4">Short Link</h3>
-          <ul className="space-y-2 text-sm">
+          <h3 className="font-semibold mb-5">Services</h3>
+          <ul className="space-y-3 text-sm opacity-80">
             <li>
-              <Link href="/">Services</Link>
+              <Link href="/services">All Services</Link>
             </li>
             <li>
               <Link href="/">Business Growth</Link>
             </li>
             <li>
-              <Link href="/">Project</Link>
+              <Link href="/">Project Consulting</Link>
             </li>
             <li>
-              <Link href="/">Case Study</Link>
+              <Link href="/">Case Studies</Link>
             </li>
             <li>
-              <Link href="/">Privacy</Link>
+              <Link href="/">Privacy Policy</Link>
             </li>
           </ul>
         </div>
 
-        {/* Subscribe */}
+        {/* ================= NEWSLETTER ================= */}
         <div>
-          <h3 className="text-white font-semibold mb-4">Subscribes</h3>
-          <p className="text-sm mb-4">
-            Sign up for our mailing list to get latest updates and offers
+          <h3 className="font-semibold mb-5">Stay Connected</h3>
+          <p className="text-sm opacity-80 mb-5">
+            Subscribe to receive updates, insights, and company news.
           </p>
 
-          <div className="flex">
+          <div className="flex overflow-hidden rounded-full bg-white">
             <input
               type="email"
-              placeholder="Your email"
-              className="w-full px-3 py-2 text-black outline-none"
+              placeholder="Your email address"
+              className="w-full px-4 py-3 text-sm outline-none text-[var(--clr-text-dark)]"
             />
-            <button className="bg-sky-500 text-white px-4">SUBSCRIBE</button>
+            <button
+              className="px-6 text-sm font-semibold"
+              style={{
+                background:
+                  "linear-gradient(135deg, var(--clr-secondary), var(--clr-primary))",
+                color: "#fff",
+              }}
+            >
+              Subscribe
+            </button>
           </div>
 
-          <div className="text-sm mt-6">
-            <p>Working Hours : Monday-Saturday</p>
-            <p>Close : Sunday</p>
+          <div className="text-sm mt-6 opacity-80">
+            <p>Working Hours:</p>
+            <p>Mon – Sat : 9:00 AM – 6:00 PM</p>
+            <p>Sunday : Closed</p>
           </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="bg-[#1b1f22] text-center text-sm py-4 text-gray-400">
-        Copyright © 2017 <span className="text-sky-400">Medicosmo</span>{" "}
-        Template by Themazine
+      {/* ================= BOTTOM BAR ================= */}
+      <div
+        className="text-center text-sm py-5"
+        style={{
+          background: "rgba(0,0,0,0.25)",
+          color: "rgba(255,255,255,0.75)",
+        }}
+      >
+        © {new Date().getFullYear()}{" "}
+        <span style={{ color: "var(--clr-secondary)" }}>Medicosmo</span>. All
+        rights reserved.
       </div>
     </footer>
   );
