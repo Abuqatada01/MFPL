@@ -15,8 +15,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Medicosmo",
-  description: "Finance & Business Website",
+  title: {
+    default: "Medicosmo",
+    template: "%s | Medicosmo",
+  },
+  description: "Professional Healthcare & Manufacturing Solutions",
+  icons: {
+    icon: "/Logoblack.png",
+    shortcut: "/Logoblack.png",
+    apple: "/Logoblack.png",
+  },
+  openGraph: {
+    title: "Medicosmo",
+    description: "Trusted Partner for Healthcare & Manufacturing Solutions",
+    images: ["/Logoblack.png"],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
