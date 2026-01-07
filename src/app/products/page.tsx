@@ -107,7 +107,7 @@ export default function Home() {
                   <img
                     src="/product-hero.png"
                     alt="Branded Product"
-                    className="h-[85%] max-h-[220px] object-contain drop-shadow-[0_40px_40px_rgba(0,0,0,0.25)]"
+                    className="h-[100%] max-h-[220px] scale-150 object-cover drop-shadow-[0_40px_40px_rgba(0,0,0,0.25)]"
                   />
                 </div>
               </div>
