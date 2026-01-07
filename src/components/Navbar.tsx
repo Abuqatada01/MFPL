@@ -5,10 +5,7 @@ import Link from "next/link";
 const menuItems = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
-  { label: "Services", href: "/services" },
   { label: "Products", href: "/products" },
-  { label: "Projects", href: "/projects" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact-us" },
 ];
 
@@ -55,9 +52,9 @@ export default function Navbar() {
       </div>
 
       {/* ================= MAIN NAV ================= */}
-      <nav className="flex justify-center py-4">
+      <nav className="absolute left-[40%] py-4">
         <div
-          className="flex items-center justify-between px-8 h-[68px] rounded-full w-[90%] max-w-6xl backdrop-blur-md"
+          className="flex items-center justify-between px-8 h-[68px] rounded-full w-auto max-w-6xl backdrop-blur-md"
           style={{
             background: "rgba(20,84,43,0.92)",
             boxShadow: "0 20px 50px rgba(20,84,43,0.35)",
@@ -81,7 +78,7 @@ export default function Navbar() {
           </ul>
 
           {/* CTA BUTTON */}
-          <Link
+          {/* <Link
             href="/contact-us"
             className="px-7 py-3 rounded-full font-semibold flex items-center gap-2 transition-all"
             style={{
@@ -92,7 +89,7 @@ export default function Navbar() {
             }}
           >
             Free Quote →
-          </Link>
+          </Link> */}
         </div>
       </nav>
     </header>

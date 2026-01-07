@@ -1,4 +1,5 @@
 "use client";
+import { EyesIcon, TargetIcon, VisorIcon } from "@phosphor-icons/react";
 import "./about.css";
 import Image from "next/image";
 
@@ -104,11 +105,7 @@ export default function AboutUsPage() {
                   className="w-20 h-20 rounded-full border-4 bg-white flex items-center justify-center"
                   style={{ borderColor: "var(--clr-secondary)" }}
                 >
-                  <img
-                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=200"
-                    alt="Vision"
-                    className="w-full h-full object-cover rounded-full"
-                  />
+                  <EyesIcon size={32} />
                 </div>
               </div>
 
@@ -143,11 +140,7 @@ export default function AboutUsPage() {
                   className="w-20 h-20 rounded-full border-4 bg-white flex items-center justify-center"
                   style={{ borderColor: "var(--clr-secondary)" }}
                 >
-                  <img
-                    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=200"
-                    alt="Mission"
-                    className="w-full h-full object-cover rounded-full"
-                  />
+                  <TargetIcon size={32} />
                 </div>
               </div>
 
