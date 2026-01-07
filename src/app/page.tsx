@@ -9,7 +9,7 @@ import StatsTestimonialSection from "@/components/Stats";
 import AboutUs from "@/components/About-Us";
 
 import Image from "next/image";
-import OurProcess from "./components/Process";
+import OurProcess from "../components/Process";
 
 export default function Home() {
   return (
