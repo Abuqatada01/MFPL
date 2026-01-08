@@ -7,17 +7,17 @@ export default function OurProcess() {
     {
       title: "Industry-Focused Expertise",
       desc: "We specialize exclusively in cosmetic, skincare, and haircare manufacturing—ensuring deep product understanding and reliable execution.",
-      imgs: "https://wahter.co.in/assets/images/whyusicon/1.png",
+      imgs: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn4owmMiJrNNM9RRgVSfIlrebc34uKYDPagw&s",
     },
     {
       title: "White Label Made Simple",
       desc: "Our ready-to-brand formulations help you launch faster without the cost and complexity of in-house R&D or production setup.",
-      imgs: "https://wahter.co.in/assets/images/whyusicon/advertising.png",
+      imgs: "https://icon-library.com/images/brand-icon-png/brand-icon-png-21.jpg",
     },
     {
       title: "Customization & Flexibility",
       desc: "From formulations to packaging and labeling, we adapt our manufacturing solutions to match your brand vision and market goals.",
-      imgs: "https://wahter.co.in/assets/images/whyusicon/branding.png",
+      imgs: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjEk2jo3NpB0FbRr-4j8P6M4a8XdyIq9kTPg&s",
     },
   ];
 
@@ -25,17 +25,17 @@ export default function OurProcess() {
     {
       title: "Consistent Quality Standards",
       desc: "Every product follows structured quality checks to maintain formulation consistency, safety, and performance across batches.",
-      imgs: "https://wahter.co.in/assets/images/whyusicon/social-media.png",
+      imgs: "https://png.pngtree.com/png-vector/20230206/ourmid/pngtree-quality-check-certified-badge-icon-png-image_6583296.png",
     },
     {
       title: "Scalable Production",
       desc: "Our manufacturing capabilities are built to support growing demand—whether you’re starting small or scaling up rapidly.",
-      imgs: "https://wahter.co.in/assets/images/whyusicon/cost-effectiveness.png",
+      imgs: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAOTTArZfOc-vDtZ2qjMZ5zKWfvENBEwMK3g&s",
     },
     {
       title: "Brand-Ready Compliance",
       desc: "We ensure products are manufactured with market-aligned compliance, making them retail-ready and distribution-friendly.",
-      imgs: "https://wahter.co.in/assets/images/whyusicon/insight.png",
+      imgs: "https://img.favpng.com/3/1/4/brand-management-customer-public-relations-communication-png-favpng-bkTUvMPJTfJiTQivP917Gpa7U.jpg",
     },
   ];
 

@@ -8,20 +8,21 @@ const steps = [
     step: "01",
     title: "Submit Your Requirements",
     desc: "Share your product category, formulation preferences, quantity, and branding needs through our enquiry form or consultation process.",
-    image: "https://watergram.in/wp-content/uploads/2023/07/asdas.png",
+    image:
+      "https://www.sewingmachinespare.com/home-pageimg/27-reqirement-img.jpg",
   },
   {
     step: "02",
     title: "Approve Formulation, Packaging & Pricing",
     desc: "Review selected formulations, packaging options, labeling details, and pricing. Once approved, we proceed with production planning.",
     image:
-      "https://watergram.in/wp-content/uploads/2023/06/Costumization-lebal.png",
+      "https://palmisthealthcare.com/public/imgs/home/custom_formulation.jpg",
   },
   {
     step: "03",
     title: "Manufacturing & Delivery",
     desc: "We manufacture, package, and label your products, ensuring quality checks and timely delivery—ready to launch under your brand name.",
-    image: "https://watergram.in/wp-content/uploads/2023/07/3.png",
+    image: "https://palmisthealthcare.com/public/imgs/home/logistic.jpg",
   },
 ];
 
@@ -62,20 +63,21 @@ export default function OrderSteps() {
 
               {/* CARD */}
               <div
-                className="p-8 rounded-3xl w-full max-w-sm transition-all duration-300"
+                className=" p-6 rounded-3xl w-full max-w-sm flex flex-col items-center transition-all duration-300 h-full"
                 style={{
                   background: "var(--clr-bg-white)",
                   boxShadow: "0 25px 60px rgba(20,84,43,0.12)",
                 }}
               >
                 {/* IMAGE */}
-                <div className="flex justify-center mb-6">
+                {/* IMAGE */}
+                <div className="w-full h-[250px] flex items-center justify-center mb-6">
                   <Image
                     src={item.image}
                     alt={item.title}
                     width={180}
                     height={180}
-                    className="object-contain"
+                    className="object-fill w-full max-h-full"
                   />
                 </div>
 
