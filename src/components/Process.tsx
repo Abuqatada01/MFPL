@@ -98,9 +98,15 @@ export default function OurProcess() {
     </section>
   );
 }
+type CardProps = {
+  title: string;
+  desc: string;
+  imgs: string;
+  align: "left" | "right";
+};
 
 /* CARD COMPONENT */
-function Card({ title, desc, imgs, align }) {
+function Card({ title, desc, imgs, align }: CardProps) {
   return (
     <div
       className="
