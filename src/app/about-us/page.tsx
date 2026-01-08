@@ -74,10 +74,10 @@ export default function AboutUsPage() {
         <div className="ui-container">
           {/* TOP LABEL */}
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-sm tracking-wide text-[var(--clr-text-muted)]">
-              Crafting Success
+            <span className="ui-badge tracking-wide text-[var(--clr-text-muted)]">
+              Crafting Success →
             </span>
-            <span className="text-xl">→</span>
+            <span className="text-xl"></span>
           </div>
 
           {/* HEADING */}
@@ -89,8 +89,9 @@ export default function AboutUsPage() {
             <div className="mt-6 flex items-start gap-6">
               <span className="block w-24 h-[1px] bg-[var(--clr-primary)] mt-3" />
               <p className="text-[var(--clr-text-muted)] max-w-xl leading-relaxed">
-                Driven by passion, we transform ideas into exceptional products
-                that inspire trust and deliver excellence.
+                Driven by quality and commitment, MFPL transforms ideas into
+                reliable cosmetic, skincare, and haircare products that build
+                trust and support long-term brand growth.
               </p>
             </div>
           </div>
@@ -124,10 +125,10 @@ export default function AboutUsPage() {
                 </div>
 
                 <p className="text-sm leading-relaxed text-[var(--clr-text-muted)]">
-                  To be the global leader in custom cosmetics manufacturing,
-                  setting benchmarks in innovation, sustainability, and trust
-                  while empowering brands to deliver exceptional products that
-                  resonate with customers worldwide.
+                  To become a trusted global manufacturing partner in cosmetic,
+                  skincare, and haircare, setting benchmarks in quality,
+                  consistency, and compliance—while empowering brands to create
+                  products that resonate with customers worldwide.
                 </p>
               </div>
             </div>
@@ -159,10 +160,10 @@ export default function AboutUsPage() {
                 </div>
 
                 <p className="text-sm leading-relaxed text-[var(--clr-text-muted)]">
-                  To craft high-quality cosmetic solutions that reflect brand
-                  uniqueness, uphold international standards, and embrace
-                  eco-conscious practices—ensuring businesses thrive in the
-                  competitive beauty market with confidence and excellence.
+                  To manufacture high-quality, brand-ready beauty solutions that
+                  reflect each partner’s identity, follow market-aligned
+                  standards, and support sustainable, scalable growth in a
+                  competitive beauty landscape.
                 </p>
               </div>
             </div>
@@ -175,18 +176,10 @@ export default function AboutUsPage() {
         <div className="ui-section ui-container">
           {/* SECTION HEADER */}
           <div className="mb-16 max-w-3xl">
-            <span
-              className="inline-block mb-4 px-4 py-1 text-xs rounded-full border tracking-wide"
-              style={{
-                borderColor: "var(--clr-primary)",
-                color: "var(--clr-primary)",
-              }}
-            >
-              WHY CHOOSE US
-            </span>
+            <span className="ui-badge mb-4 px-4 py-1 ">WHY CHOOSE US</span>
 
             <h2 className="text-4xl font-semibold leading-tight text-[var(--clr-text-dark)]">
-              Why <span style={{ color: "var(--clr-primary)" }}>We Are</span>{" "}
+              Why <span style={{ color: "var(--clr-primary)" }}>MFPL </span> is
               the Preferred White Label Manufacturing Partner
             </h2>
           </div>
@@ -198,18 +191,20 @@ export default function AboutUsPage() {
               <div className="icon-wrap">🏭</div>
               <h3 className="bento-title">Certified Manufacturing</h3>
               <p className="bento-desc">
-                GMP-compliant, quality-driven manufacturing with strict
-                adherence to international regulatory and safety standards.
+                Quality-driven manufacturing processes designed to meet
+                industry-aligned safety, hygiene, and compliance
+                standards—ensuring reliability across every batch.
               </p>
             </div>
 
             {/* CARD 2 */}
             <div className="bento-card bg-white">
               <div className="icon-wrap">🧪</div>
-              <h3 className="bento-title">Custom Formulation Expertise</h3>
+              <h3 className="bento-title">Formulation & Product Expertise</h3>
               <p className="bento-desc">
-                From concept to formulation, we develop tailor-made products
-                aligned with your brand vision and market demand.
+                Professionally developed cosmetic, skincare, and haircare
+                formulations crafted to align with your brand positioning,
+                market trends, and customer expectations.
               </p>
             </div>
 
@@ -225,12 +220,13 @@ export default function AboutUsPage() {
                 <div className="icon-wrap-dark">🚀</div>
 
                 <h3 className="text-2xl font-semibold mb-4">
-                  End-to-End White Label Solutions
+                  Cost-Effective Manufacturing
                 </h3>
 
                 <p className="text-sm leading-relaxed opacity-90 mb-4">
-                  We handle everything—from formulation, packaging, compliance,
-                  and branding—so you can focus on scaling your business faster.
+                  Our streamlined processes and ready-to-brand formulations help
+                  reduce development costs, enabling brands to achieve faster
+                  returns without heavy upfront investment.
                 </p>
 
                 <p className="text-sm leading-relaxed opacity-90">
@@ -254,12 +250,12 @@ export default function AboutUsPage() {
             <div className="lg:col-span-2 bento-card bg-white">
               <div className="icon-wrap">📦</div>
               <h3 className="bento-title">
-                Scalable Production & Faster Go-To-Market
+                Scalable Production & Faster Launch
               </h3>
               <p className="bento-desc">
-                Low MOQs, scalable volumes, and optimized timelines help brands
-                launch quickly and expand seamlessly without compromising
-                quality.
+                Flexible order quantities, optimized production timelines, and
+                scalable systems that help brands launch faster and expand
+                seamlessly without compromising quality.
               </p>
             </div>
           </div>
@@ -273,13 +269,7 @@ export default function AboutUsPage() {
           <div className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* LEFT */}
             <div>
-              <span
-                className="inline-block mb-4 px-4 py-1 text-xs rounded-full"
-                style={{
-                  background: "rgba(83,148,91,0.12)",
-                  color: "var(--clr-primary)",
-                }}
-              >
+              <span className="inline-block mb-4 px-4 py-1 ui-badge">
                 PURE TALENT
               </span>
 

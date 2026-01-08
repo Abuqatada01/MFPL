@@ -10,16 +10,16 @@ export default function ContactPage() {
       <div className="absolute bottom-[-160px] right-[-160px] w-[460px] h-[460px] rounded-full bg-[#53945B]/20 blur-3xl" />
 
       {/* MAIN WRAPPER */}
-      <div className="relative z-10 w-full max-w-6xl bg-white/70 backdrop-blur-xl rounded-3xl shadow-xl p-10 md:p-16">
+      <div className="relative z-10 w-full max-w-6xl border-2 border-[var(--clr-secondary)] bg-white/70 backdrop-blur-xl rounded-3xl shadow-xl p-10 md:p-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* LEFT CONTENT */}
           <div>
             <h1 className="text-5xl font-light text-[#242424] mb-8">Contact</h1>
 
             <p className="text-sm text-[#242424]/70 max-w-sm leading-relaxed mb-10">
-              Our “one office” philosophy means our global team works across
-              locations, bringing extensive international experience to our
-              work.
+              Our collaborative approach ensures our team works closely with
+              you—bringing manufacturing expertise, clarity, and reliable
+              support at every stage of your brand journey.
             </p>
 
             {/* ICON */}

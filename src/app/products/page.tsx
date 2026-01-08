@@ -406,12 +406,20 @@ export default function Home() {
       {/* ================= PRODUCT CARDS ================= */}
       <section className="bg-[#effaed]">
         <div className="ui-section mx-auto ">
-          <h1 className="ui-h1 mb-3 text-center">Products</h1>
+          <h1 className="ui-h1 mb-10 text-center">Products</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {products.map((item) => (
               <div
                 key={item.id}
-                className="rounded-2xl w-70 bg-white shadow-lg overflow-hidden hover:shadow-xl transition"
+                className="
+    rounded-2xl w-70 bg-white overflow-hidden
+    shadow-lg hover:shadow-xl transition
+    hover:scale-[1.02]
+  "
+                style={{
+                  background:
+                    "linear-gradient(135deg, #ffffff, rgba(83,148,91,0.08))",
+                }}
               >
                 {/* IMAGE */}
                 <div className="h-75 bg-gray-50 flex items-center justify-center">
@@ -438,7 +446,15 @@ export default function Home() {
                       {item.price}
                     </span> */}
 
-                    <button className="bg-[#83A33C] text-white px-4 py-2 text-xs rounded-lg font-semibold hover:scale-105 transition">
+                    <button
+                      className="
+    px-4 py-2 text-xs rounded-lg font-semibold text-white
+    transition-all hover:scale-105
+  "
+                      style={{
+                        background: "linear-gradient(135deg, #53945B, #83A33C)",
+                      }}
+                    >
                       Know More
                     </button>
                   </div>
