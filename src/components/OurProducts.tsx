@@ -42,7 +42,7 @@ export default function OurProducts() {
 
         {/* HEADING */}
         <div className="text-center mb-20">
-          <h2 className="ui-h2">
+          <h2 className="ui-h1">
             Elevate Your Brand <br />
             with Diverse Creations
           </h2>
@@ -51,9 +51,12 @@ export default function OurProducts() {
         {/* PRODUCT GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {products.map((item, i) => (
-            <div key={i} className=" text-center flex flex-col items-center">
+            <div
+              key={i}
+              className="group text-center flex flex-col items-center transition-all duration-500"
+            >
               {/* PRODUCT IMAGE */}
-              <div className="relative z-10 flex justify-center ">
+              <div className="relative z-10 flex justify-center transition-transform duration-500 ease-out group-hover:-translate-y-4">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -63,9 +66,12 @@ export default function OurProducts() {
                 />
               </div>
 
-              {/* SEMI CIRCLE + TEXT (SAME CONTAINER) */}
+              {/* SEMI CIRCLE + TEXT */}
               <div
-                className="flex items-center justify-center"
+                className="flex items-center justify-center
+    transition-all duration-500 ease-out
+    group-hover:scale-105
+    group-hover:shadow-[0_0_0_1px_#83A33C,0_12px_30px_rgba(131,163,60,0.35)]"
                 style={{
                   width: "240px",
                   height: "120px",
@@ -75,7 +81,7 @@ export default function OurProducts() {
                 }}
               >
                 <p
-                  className="text-lg font-medium leading-snug whitespace-pre-line text-center"
+                  className="text-lg font-medium leading-snug whitespace-pre-line text-center transition-transform duration-500 group-hover:scale-105"
                   style={{ color: "var(--clr-text-light)" }}
                 >
                   {item.title}

@@ -82,7 +82,7 @@ export default function AboutUsPage() {
 
           {/* HEADING */}
           <div className="max-w-3xl mb-20">
-            <h2 className="text-4xl font-semibold leading-tight text-[var(--clr-text-dark)]">
+            <h2 className="ui-h2 text-[var(--clr-accent)] ">
               LEADING WITH VISION, DELIVERING <br /> WITH EXCELLENCE.
             </h2>
 

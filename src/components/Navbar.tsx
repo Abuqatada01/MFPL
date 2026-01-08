@@ -23,14 +23,18 @@ export default function Navbar() {
           {/* CONTACT INFO */}
           <div className="hidden md:flex items-center gap-10 text-sm">
             <div className="flex items-center gap-3">
-              <span className="icon-shape">✉</span>
+              <span className="icon-shape ">
+                <span className="relative top-[1.5px] right-[1.5px] ">✉</span>
+              </span>
               <span style={{ color: "var(--clr-text-muted)" }}>
                 Medicosmo_info@gmail.com
               </span>
             </div>
 
             <div className="flex items-center gap-3">
-              <span className="icon-shape">☎</span>
+              <span className="icon-shape">
+                <span className="relative top-[1.5px] right-[1.5px] ">☎</span>
+              </span>
               <span style={{ color: "var(--clr-text-muted)" }}>
                 +91 92050 94789
               </span>
@@ -44,7 +48,9 @@ export default function Navbar() {
                 key={icon}
                 className="h-9 w-9 flex items-center justify-center icon-shape"
               >
-                {icon}
+                <span className="relative top-[1.5px] right-[1.5px] ">
+                  {icon}
+                </span>
               </span>
             ))}
           </div>
@@ -56,7 +62,7 @@ export default function Navbar() {
         <div
           className="flex items-center justify-between px-8 h-[68px] rounded-full w-auto max-w-6xl backdrop-blur-md"
           style={{
-            background: "rgba(20,84,43,0.92)",
+            background: "#53945B",
             boxShadow: "0 20px 50px rgba(20,84,43,0.35)",
           }}
         >
@@ -66,7 +72,7 @@ export default function Navbar() {
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="relative text-white transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--clr-secondary)] after:transition-all hover:after:w-full"
+                  className="relative text-black transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--clr-secondary)] after:transition-all hover:after:w-full"
                 >
                   {item.label}
                 </Link>

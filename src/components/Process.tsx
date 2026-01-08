@@ -3,24 +3,55 @@
 import Image from "next/image";
 
 export default function OurProcess() {
-  return (
-    <section className="relative overflow-hidden">
-      {/* BACKGROUND IMAGE */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/mountians.png" // 🔁 replace with your bg image path
-          alt="Background"
-          fill
-          className="object-cover"
-          priority
-        />
+  const leftCards = [
+    {
+      title: "Industry-Focused Expertise",
+      desc: "We specialize exclusively in cosmetic, skincare, and haircare manufacturing—ensuring deep product understanding and reliable execution.",
+      imgs: "https://wahter.co.in/assets/images/whyusicon/1.png",
+    },
+    {
+      title: "White Label Made Simple",
+      desc: "Our ready-to-brand formulations help you launch faster without the cost and complexity of in-house R&D or production setup.",
+      imgs: "https://wahter.co.in/assets/images/whyusicon/advertising.png",
+    },
+    {
+      title: "Customization & Flexibility",
+      desc: "From formulations to packaging and labeling, we adapt our manufacturing solutions to match your brand vision and market goals.",
+      imgs: "https://wahter.co.in/assets/images/whyusicon/branding.png",
+    },
+  ];
 
-        {/* OVERLAY FOR READABILITY */}
+  const rightCards = [
+    {
+      title: "Consistent Quality Standards",
+      desc: "Every product follows structured quality checks to maintain formulation consistency, safety, and performance across batches.",
+      imgs: "https://wahter.co.in/assets/images/whyusicon/social-media.png",
+    },
+    {
+      title: "Scalable Production",
+      desc: "Our manufacturing capabilities are built to support growing demand—whether you’re starting small or scaling up rapidly.",
+      imgs: "https://wahter.co.in/assets/images/whyusicon/cost-effectiveness.png",
+    },
+    {
+      title: "Brand-Ready Compliance",
+      desc: "We ensure products are manufactured with market-aligned compliance, making them retail-ready and distribution-friendly.",
+      imgs: "https://wahter.co.in/assets/images/whyusicon/insight.png",
+    },
+  ];
+
+  return (
+    <section className="relative  overflow-hidden">
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        {/* MOVING REPEATED BACKGROUND */}
+        <div className="absolute inset-0 bg-pan-repeat" />
+
+        {/* OVERLAY */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(238,247,241,0.95) 20%, rgba(255,255,255,0.92) 75%)",
+              "linear-gradient(180deg, rgba(238,247,241,0.65) 20%, rgba(255,255,255,0.92) 75%)",
           }}
         />
       </div>
@@ -28,57 +59,20 @@ export default function OurProcess() {
       <div className="ui-section ui-container">
         {/* TITLE */}
         <div className="text-center mb-20">
-          <h2 className="ui-h2">
-            Why Choose Water <br />
+          <h2 className="ui-h1">
+            Why Choose MFPL <br />
             <span style={{ color: "var(--clr-primary)" }}>
-              As Your Branding Medium?
+              As Your Manufacturing Partner?
             </span>
           </h2>
         </div>
 
         {/* GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
-          {/* LEFT CARDS */}
+          {/* LEFT */}
           <div className="flex flex-col gap-8">
-            {[
-              {
-                title: "Align with Values",
-                desc: "With water bottles, you can ride the crest of a new marketing wave.",
-                imgs: "https://wahter.co.in/assets/images/whyusicon/1.png",
-              },
-              {
-                title: "Clutter Free Advertising",
-                desc: "Branding on a bottle is a clutter-free form of advertising.",
-                imgs: "https://wahter.co.in/assets/images/whyusicon/advertising.png",
-              },
-              {
-                title: "Customisation and Branding Opportunities",
-                desc: "Showcase our ability to customize branding according to the client's vision and needs.",
-                imgs: "https://wahter.co.in/assets/images/whyusicon/branding.png",
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="rounded-2xl px-6 py-6"
-                style={{ background: "rgba(233,247,251,0.9)" }}
-              >
-                <div className="flex items-start gap-5">
-                  <div className="flex-1">
-                    <h3 className="ui-h3 mb-2">{item.title}</h3>
-                    <p className="ui-desc">{item.desc}</p>
-                  </div>
-
-                  <div
-                    style={{
-                      width: "1px",
-                      height: "48px",
-                      background: "#bfe6ef",
-                    }}
-                  />
-
-                  <img src={item.imgs} className="h-15" />
-                </div>
-              </div>
+            {leftCards.map((item, i) => (
+              <Card key={i} {...item} align="left" />
             ))}
           </div>
 
@@ -89,55 +83,68 @@ export default function OurProcess() {
               alt="Branded Water Bottle"
               width={420}
               height={420}
-              className="relative z-10"
+              className="relative z-10 animate-[floatSlow_6s_ease-in-out_infinite]"
             />
           </div>
 
-          {/* RIGHT CARDS */}
+          {/* RIGHT */}
           <div className="flex flex-col gap-8">
-            {[
-              {
-                title: "Social Media Buzz",
-                desc: "Engaged individuals will likely share their branded water bottle experiences online.",
-                imgs: "https://wahter.co.in/assets/images/whyusicon/social-media.png",
-              },
-              {
-                title: "Cost-Effectiveness",
-                desc: "Branded water bottles offer a cost-effective marketing solution with a lower cost.",
-                imgs: "https://wahter.co.in/assets/images/whyusicon/cost-effectiveness.png",
-              },
-              {
-                title: "Data Insights",
-                desc: "Gather valuable consumer behaviour and interest data by utilising geo-mapping.",
-                imgs: "https://wahter.co.in/assets/images/whyusicon/insight.png",
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="rounded-2xl px-6 py-6"
-                style={{ background: "rgba(233,247,251,0.9)" }}
-              >
-                <div className="flex items-start gap-5">
-                  <img src={item.imgs} className="h-15" />
-
-                  <div
-                    style={{
-                      width: "1px",
-                      height: "48px",
-                      background: "#bfe6ef",
-                    }}
-                  />
-
-                  <div className="flex-1">
-                    <h3 className="ui-h3 mb-2">{item.title}</h3>
-                    <p className="ui-desc">{item.desc}</p>
-                  </div>
-                </div>
-              </div>
+            {rightCards.map((item, i) => (
+              <Card key={i} {...item} align="right" />
             ))}
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+/* CARD COMPONENT */
+function Card({ title, desc, imgs, align }) {
+  return (
+    <div
+      className="
+        group rounded-2xl px-6 py-6
+        backdrop-blur-sm
+        transition-all duration-500 ease-out
+        hover:-translate-y-2
+        hover:shadow-[0_20px_40px_rgba(83,148,91,0.25)]
+        hover:ring-1 hover:ring-[#83A33C]/60
+        animate-[fadeUp_0.8s_ease-out_forwards]
+      "
+      style={{ background: "rgba(233,247,251,0.9)" }}
+    >
+      <div className="flex items-start gap-5">
+        {align === "right" && (
+          <img
+            src={imgs}
+            className="h-14 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3"
+            alt=""
+          />
+        )}
+
+        <div
+          className="transition-colors duration-500 group-hover:bg-[#83A33C]"
+          style={{ width: "1px", height: "48px", background: "#bfe6ef" }}
+        />
+
+        <div className="flex-1">
+          <h3 className="ui-h3 mb-2 transition-colors duration-300 group-hover:text-[#53945B]">
+            {title}
+          </h3>
+          <p className="ui-desc transition-opacity duration-300 group-hover:opacity-90">
+            {desc}
+          </p>
+        </div>
+
+        {align === "left" && (
+          <img
+            src={imgs}
+            className="h-14 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
+            alt=""
+          />
+        )}
+      </div>
+    </div>
   );
 }

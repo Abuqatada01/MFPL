@@ -6,28 +6,20 @@ import Link from "next/link";
 import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
 const slides = [
   {
-    title: "Premium Label",
-    subtitle: "Water Bottle Supplier",
+    title: "Premium White Label",
+    subtitle: "Hair & Skin CareManufacturer",
     location: "In Hyderabad",
     image:
       "https://woyawater.com/wp-content/uploads/2024/01/ISI-700-%C3%97-700-px.png",
     circleColor: "rgba(83, 148, 91, 0.12)", // Primary Green
   },
   {
-    title: "Trusted Manufacturer",
-    subtitle: "Custom Water Bottles",
+    title: "Your Trusted",
+    subtitle: "White LabelBeauty Manufacturing Partner",
     location: "Across India",
     image:
       "https://woyawater.com/wp-content/uploads/2023/09/ISI-700-%C3%97-700-px-1.png",
     circleColor: "rgba(131, 163, 60, 0.15)", // Leaf Accent Green
-  },
-  {
-    title: "Bulk Supply",
-    subtitle: "Corporate & Events",
-    location: "Pan India",
-    image:
-      "https://woyawater.com/wp-content/uploads/2024/01/ISI-700-%C3%97-700-px.png",
-    circleColor: "rgba(20, 84, 43, 0.15)", // Dark Forest Green
   },
 ];
 
@@ -77,11 +69,11 @@ export default function HeroSection() {
 
           <div className="ui-actions">
             <Link href="/contact" className="ui-btn ui-btn-primary">
-              Get A Quote
+              Start Your Brand Today
             </Link>
 
             <Link href="/products" className="ui-btn ui-btn-outline">
-              View Products
+              Explore Our Product Range
             </Link>
           </div>
         </div>

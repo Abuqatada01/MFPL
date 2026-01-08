@@ -30,7 +30,7 @@ export default function ConsultationSection() {
               <h2 className="text-5xl font-semibold leading-tight text-[var(--clr-text-dark)]">
                 Let’s Build Your <br />
                 <span style={{ color: "var(--clr-primary)" }}>
-                  Next Successful Product
+                  Next Successful Brand
                 </span>
               </h2>
 
@@ -38,21 +38,22 @@ export default function ConsultationSection() {
                 className="mt-6 max-w-xl text-lg"
                 style={{ color: "var(--clr-text-muted)" }}
               >
-                From concept to compliant manufacturing, our experts help you
-                launch cosmetic, skincare, haircare and fragrance products with
-                confidence and speed.
+                From concept to compliant manufacturing, MFPL helps you launch
+                cosmetic, skincare, and haircare products with speed, quality,
+                and confidence. Our white label and private label solutions are
+                designed to support brands at every stage of growth.
               </p>
 
               {/* Trust points */}
               <div className="flex flex-wrap gap-8 mt-10">
                 {[
-                  "120+ Global Brands",
-                  "2,000+ Formulations",
-                  "International Compliance",
+                  "100+ Partnered Brands",
+                  "Multiple Ready-to-Brand Formulations",
+                  "Market-Aligned Compliance",
                 ].map((item) => (
                   <div
                     key={item}
-                    className="px-6 py-4 rounded-xl"
+                    className="px-6 w-50 py-4 rounded-xl"
                     style={{
                       background: "var(--clr-bg-white)",
                       boxShadow: "0 10px 30px rgba(20,84,43,0.08)",

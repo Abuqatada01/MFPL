@@ -2,17 +2,26 @@ import Link from "next/link";
 
 const services = [
   {
-    title: "Business Growth",
+    title: "Manufacturing & Production",
+    desc: "We specialize in white label and private label manufacturing for cosmetic, skincare, and haircare products. Our streamlined production processes ensure consistent quality, scalability, and market-ready formulations.",
     img: "https://themazine.com/html/snappy/images/service/1.jpg",
     link: "/services/business-growth",
   },
   {
-    title: "Strategy Made Easy",
+    title: "Packaging & Labeling",
+    desc: "From bottle and container selection to precise labeling, we ensure your products are professionally packaged, compliant, and ready for retail or distribution under your brand name.",
     img: "https://themazine.com/html/snappy/images/service/2.jpg",
     link: "/services/strategy",
   },
   {
-    title: "Financial Planning",
+    title: "Branding & Marketing",
+    desc: "We support brands with packaging alignment, brand presentation, and market positioning essentials—helping your products stand out and connect with your target audience.",
+    img: "https://themazine.com/html/snappy/images/service/3.jpg",
+    link: "/services/financial-planning",
+  },
+  {
+    title: "Distribution & Sales",
+    desc: "Our manufacturing support extends to helping brands prepare for smooth distribution and sales readiness, ensuring products are aligned with market requirements and business growth plans.",
     img: "https://themazine.com/html/snappy/images/service/3.jpg",
     link: "/services/financial-planning",
   },
@@ -31,13 +40,13 @@ export default function OurServicesSection() {
             className="mt-3 max-w-xl mx-auto"
             style={{ color: "var(--clr-text-muted)" }}
           >
-            Strategic solutions designed to help businesses grow, scale, and
-            succeed with confidence.
+            Strategic manufacturing solutions designed to help beauty brands
+            launch, scale, and succeed with confidence.
           </p>
         </div>
 
         {/* ================= GRID ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div
               key={index}

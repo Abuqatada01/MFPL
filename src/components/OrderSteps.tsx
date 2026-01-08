@@ -7,20 +7,20 @@ const steps = [
   {
     step: "01",
     title: "Submit Your Requirements",
-    desc: "Share your brand details and product needs through our simple enquiry form.",
+    desc: "Share your product category, formulation preferences, quantity, and branding needs through our enquiry form or consultation process.",
     image: "https://watergram.in/wp-content/uploads/2023/07/asdas.png",
   },
   {
     step: "02",
-    title: "Approve Design & Pricing",
-    desc: "Review customised designs, labels, and pricing before we begin production.",
+    title: "Approve Formulation, Packaging & Pricing",
+    desc: "Review selected formulations, packaging options, labeling details, and pricing. Once approved, we proceed with production planning.",
     image:
       "https://watergram.in/wp-content/uploads/2023/06/Costumization-lebal.png",
   },
   {
     step: "03",
-    title: "Production & Delivery",
-    desc: "We manufacture and deliver your customised bottled water safely and on time.",
+    title: "Manufacturing & Delivery",
+    desc: "We manufacture, package, and label your products, ensuring quality checks and timely delivery—ready to launch under your brand name.",
     image: "https://watergram.in/wp-content/uploads/2023/07/3.png",
   },
 ];
@@ -31,7 +31,7 @@ export default function OrderSteps() {
       <div className="ui-section ui-container text-center">
         {/* SECTION HEADER */}
         <div className="mb-20">
-          <h2 className="ui-h2">
+          <h2 className="ui-h1">
             How to <span style={{ color: "var(--clr-primary)" }}>Order</span>
           </h2>
           <p

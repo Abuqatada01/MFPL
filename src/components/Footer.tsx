@@ -18,8 +18,8 @@ export default function Footer() {
           />
 
           <p className="text-sm leading-relaxed opacity-80">
-            We deliver trusted healthcare and manufacturing solutions that
-            empower brands with quality, innovation, and compliance.
+            MFPL provides reliable white label manufacturing solutions, enabling
+            beauty brands to grow with confidence, quality, and compliance.
           </p>
 
           {/* SOCIAL */}

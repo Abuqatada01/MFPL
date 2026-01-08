@@ -339,7 +339,7 @@
 /* XL DESKTOP (1501px – 1799px) */
 @media (min-width: 1501px) and (max-width: 1799px) {
   :root {
-    --h1-size: 3.2rem;
+    --h1-size: 2.8rem;
     --h1-weight: 800;
     --h2-size: 2.45rem;
     --h3-size: 1.75rem;
@@ -350,7 +350,7 @@
 /* 2XL DESKTOP (1800px+) */
 @media (min-width: 1800px) {
   :root {
-    --h1-size: 3.6rem;
+    --h1-size: 3rem;
     --h1-weight: 650;
     --h2-size: 2.8rem;
     --h3-size: 1.15rem;
@@ -605,29 +605,85 @@
 .icon-shape {
   width: 44px;
   height: 44px;
-  border: 1px solid #d1d5db;
+  border: 1px solid #e5e7eb;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9ca3af;
+
   font-size: 16px;
+  color: #9ca3af;
   background: #fff;
 
-  /* initial asymmetric shape */
-  border-radius: 6px 60px 6px 0;
+  /* modern asymmetric shape */
+  border-radius: 8px 60px 8px 0;
+
+  /* optical centering fix */
+  transform: translateY(1px);
 
   position: relative;
+  cursor: pointer;
+
   transition:
-    border-radius 0.4s ease,
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease;
+    border-radius 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
+
+/* subtle modern notch */
+.icon-shape::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -6px;
+
+  width: 6px;
+  height: 6px;
+
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  border-right: 1px solid #e5e7eb;
+
+  transform: translateY(-50%) rotate(45deg);
+  opacity: 0;
+
+  transition:
+    opacity 0.3s ease,
+    right 0.45s ease,
+    left 0.45s ease;
+}
+
+/* ✨ Hover – premium interaction */
+.icon-shape:hover {
+  background: var(--clr-secondary);
+  color: #fff;
+  border-color: var(--clr-secondary);
+
+  /* inverted shape */
+  border-radius: 60px 8px 0 8px;
+
+  /* micro-lift */
+  transform: translateY(0px) scale(1.03);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* move notch smoothly */
+.icon-shape:hover::after {
+  opacity: 1;
+  right: auto;
+  left: -6px;
+  border-color: var(--clr-secondary);
+}
+
 
 /* ===== CERTIFICATE MARQUEE (LEFT ➜ RIGHT) ===== */
 
 .marquee {
   width: 100%;
+  height: 20vh;
   overflow: hidden;
   position: relative;
 }
@@ -664,43 +720,55 @@
   animation-play-state: paused;
 }
 
-/* corner notch */
-.icon-shape::after {
-  content: "";
-  position: absolute;
-  right: -6px;
-  top: 50%;
-  width: 6px;
-  height: 6px;
-  border-top: 1px solid #d1d5db;
-  border-right: 1px solid #d1d5db;
-  background: #fff;
 
-  transform: translateY(-50%) rotate(45deg);
-  opacity: 0;
+@keyframes floatSlow {
 
-  transition:
-    opacity 0.3s ease,
-    right 0.4s ease,
-    left 0.4s ease;
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-/* 🔥 Hover: invert shape */
-.icon-shape:hover {
-  background-color: var(--clr-secondary);
-  color: #fff;
-  border-color: var(--clr-secondary);
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
 
-  /* inverse asymmetric shape */
-  border-radius: 60px 6px 0 6px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* move notch to opposite side */
-.icon-shape:hover::after {
-  opacity: 1;
-  right: auto;
-  left: -6px;
-  border-color: var(--clr-secondary);
+@keyframes panRepeat {
+  from {
+    background-position: 0px center;
+  }
+
+  to {
+    background-position: -2000px center;
+  }
+}
+
+.bg-pan-repeat {
+  background-image: url("/mountians.png");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: 0 center;
+
+  animation: panRepeat 50s linear infinite;
+  will-change: background-position;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-pan-repeat {
+    animation: none;
+  }
 }
 
 
