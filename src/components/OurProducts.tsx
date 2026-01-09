@@ -15,11 +15,6 @@ const products = [
     title: "Haircare\nFormulation",
     image: "https://palmisthealthcare.com/public/imgs/home/i3.jpg",
   },
-  {
-    title: "Fragrances\nFormulation",
-    image:
-      "https://www.4customize.com/wp-content/uploads/2023/08/comestic-bottle-sticker-uv-transfer-dtf-510x510.webp",
-  },
 ];
 
 export default function OurProducts() {
@@ -50,43 +45,46 @@ export default function OurProducts() {
         </div>
 
         {/* PRODUCT GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {products.map((item, i) => (
-            <div
-              key={i}
-              className="group text-center flex flex-col items-center transition-all duration-500"
-            >
-              {/* PRODUCT IMAGE */}
-              <div className="relative z-10 flex justify-center transition-transform duration-500 ease-out group-hover:-translate-y-4">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={220}
-                  height={220}
-                  className="object-contain"
-                />
-              </div>
-
-              {/* SEMI CIRCLE + TEXT */}
+            <div key={i} className="group flex justify-center">
+              {/* CARD FRAME */}
               <div
-                className="flex items-center justify-center
-    transition-all duration-500 ease-out
-    group-hover:scale-105
-    group-hover:shadow-[0_0_0_1px_#83A33C,0_12px_30px_rgba(131,163,60,0.35)]"
+                className="relative flex flex-col items-center justify-between transition-all duration-500"
                 style={{
-                  width: "240px",
-                  height: "120px",
-                  background: "#53945B",
-                  borderBottomLeftRadius: "240px",
-                  borderBottomRightRadius: "240px",
+                  width: "260px",
+                  height: "360px",
                 }}
               >
-                <p
-                  className="text-lg font-medium leading-snug whitespace-pre-line text-center transition-transform duration-500 group-hover:scale-105"
-                  style={{ color: "var(--clr-text-light)" }}
+                {/* IMAGE HOLDER */}
+                <div className="relative z-10 flex justify-center items-center transition-transform duration-500 ease-out group-hover:-translate-y-4">
+                  <div className="w-[220px] h-[220px] flex items-center justify-center">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+
+                {/* SEMI CIRCLE */}
+                <div
+                  className="flex items-center justify-center text-center transition-all duration-500 ease-out
+          group-hover:scale-105
+          group-hover:shadow-[0_0_0_1px_#83A33C,0_12px_30px_rgba(131,163,60,0.35)]"
+                  style={{
+                    width: "240px",
+                    height: "120px",
+                    background: "#53945B",
+                    borderBottomLeftRadius: "240px",
+                    borderBottomRightRadius: "240px",
+                  }}
                 >
-                  {item.title}
-                </p>
+                  <p className="ui-para text-white font-medium leading-snug whitespace-pre-line transition-transform duration-500 group-hover:scale-105">
+                    {item.title}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
