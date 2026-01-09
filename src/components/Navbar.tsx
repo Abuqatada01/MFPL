@@ -72,7 +72,7 @@ export default function Navbar() {
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="relative text-black transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--clr-secondary)] after:transition-all hover:after:w-full"
+                  className="relative text-white transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--clr-secondary)] after:transition-all hover:after:w-full"
                 >
                   {item.label}
                 </Link>
