@@ -9,7 +9,7 @@ const steps = [
     title: "Submit Your Requirements",
     desc: "Share your product category, formulation preferences, quantity, and branding needs through our enquiry form or consultation process.",
     image:
-      "https://www.sewingmachinespare.com/home-pageimg/27-reqirement-img.jpg",
+      "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/6960d3eb00068ca891f0/view?project=6912e771002b88166cae",
   },
   {
     step: "02",
@@ -77,7 +77,7 @@ export default function OrderSteps() {
                     alt={item.title}
                     width={180}
                     height={180}
-                    className="object-fill w-full max-h-full"
+                    className="object-cover w-full max-h-full"
                   />
                 </div>
 
