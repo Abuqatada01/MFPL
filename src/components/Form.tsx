@@ -136,11 +136,7 @@ export default function ConsultationSection() {
 
                   <Link
                     href="/contact-us"
-                    className="block text-center w-full py-3 rounded-full font-semibold transition-all"
-                    style={{
-                      background: "var(--clr-accent)",
-                      color: "#fff",
-                    }}
+                    className="block ui-badge-2 text-center w-full py-3 rounded-full font-semibold transition-all"
                   >
                     Contact Our Team →
                   </Link>

@@ -70,13 +70,13 @@ export default function OurProducts() {
 
                 {/* SEMI CIRCLE */}
                 <div
-                  className="flex items-center justify-center text-center transition-all duration-500 ease-out
+                  className="flex items-center ui-badge-2 justify-center text-center transition-all duration-500 ease-out
           group-hover:scale-105
           group-hover:shadow-[0_0_0_1px_#83A33C,0_12px_30px_rgba(131,163,60,0.35)]"
                   style={{
                     width: "240px",
                     height: "120px",
-                    background: "#53945B",
+                    // background: "#53945B",
                     borderBottomLeftRadius: "240px",
                     borderBottomRightRadius: "240px",
                   }}

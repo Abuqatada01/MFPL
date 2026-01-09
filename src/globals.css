@@ -183,6 +183,14 @@
 /* -----------------------------------------------------
    BADGE
 ----------------------------------------------------- */
+.ui-badge-2 {
+  background: linear-gradient(135deg,
+      var(--clr-primary),
+      var(--clr-secondary));
+  color: #ffffff;
+  box-shadow: 0 20px 40px rgba(83, 148, 91, 0.35);
+}
+
 .ui-badge {
   display: inline-block;
   padding: 0.35rem 0.75rem;
@@ -194,6 +202,8 @@
   letter-spacing: 0.08em;
   border-radius: 999px;
 }
+
+
 
 /* -----------------------------------------------------
    BUTTONS

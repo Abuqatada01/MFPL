@@ -77,7 +77,7 @@ export default function OrderSteps() {
                     alt={item.title}
                     width={180}
                     height={180}
-                    className="object-cover w-full max-h-full"
+                    className="object-cover rounded-md w-full max-h-full"
                   />
                 </div>
 

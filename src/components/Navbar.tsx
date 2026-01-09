@@ -60,11 +60,11 @@ export default function Navbar() {
       {/* ================= MAIN NAV ================= */}
       <nav className="absolute left-[40%] py-4">
         <div
-          className="flex items-center justify-between px-8 h-[68px] rounded-full w-auto max-w-6xl backdrop-blur-md"
-          style={{
-            background: "#53945B",
-            boxShadow: "0 20px 50px rgba(20,84,43,0.35)",
-          }}
+          className="flex items-center ui-badge-2 justify-between px-8 h-[68px] rounded-full w-auto max-w-6xl backdrop-blur-md"
+          // style={{
+          //   background: "#53945B",
+          //   boxShadow: "0 20px 50px rgba(20,84,43,0.35)",
+          // }}
         >
           {/* MENU */}
           <ul className="hidden md:flex items-center gap-10 font-medium">
@@ -72,7 +72,7 @@ export default function Navbar() {
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="relative text-white transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[var(--clr-secondary)] after:transition-all hover:after:w-full"
+                  className="relative text-white transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-white after:transition-all hover:after:w-full"
                 >
                   {item.label}
                 </Link>

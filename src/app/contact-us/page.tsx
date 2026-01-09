@@ -14,9 +14,11 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* LEFT CONTENT */}
           <div>
-            <h1 className="text-5xl font-light text-[#242424] mb-8">Contact</h1>
+            <h1 className="text-5xl font-semibold text-[#242424] mb-3">
+              Contact
+            </h1>
 
-            <p className="text-sm text-[#242424]/70 max-w-sm leading-relaxed mb-10">
+            <p className="ui-para text-[#242424]/70 max-w-sm leading-relaxed mb-4">
               Our collaborative approach ensures our team works closely with
               you—bringing manufacturing expertise, clarity, and reliable
               support at every stage of your brand journey.
@@ -66,7 +68,7 @@ export default function ContactPage() {
             {/* SUBMIT */}
             <button
               type="submit"
-              className="bg-black text-white px-10 py-3 rounded-full text-sm hover:bg-[#14542B] transition"
+              className="ui-badge-2 text-white px-10 py-3 rounded-full font-semibold text-sm hover:bg-[#14542B] transition"
             >
               Submit
             </button>
