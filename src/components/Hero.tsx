@@ -7,7 +7,7 @@ import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
 const slides = [
   {
     title: "Premium White Label",
-    subtitle: "Hair & Skin CareManufacturer",
+    subtitle: "Hair & Skin Care Manufacturer",
     location: "In Hyderabad",
     image:
       "https://woyawater.com/wp-content/uploads/2024/01/ISI-700-%C3%97-700-px.png",
@@ -15,7 +15,7 @@ const slides = [
   },
   {
     title: "Your Trusted",
-    subtitle: "White LabelBeauty Manufacturing Partner",
+    subtitle: "White Label Beauty Manufacturing Partner",
     location: "Across India",
     image:
       "https://woyawater.com/wp-content/uploads/2023/09/ISI-700-%C3%97-700-px-1.png",
@@ -54,19 +54,8 @@ export default function HeroSection() {
         <div>
           <span className="ui-badge mb-4 inline-block">We Are</span>
 
-          <h1 className="ui-h1 mt-sm">
-            {slide.title} <br />
-            {slide.subtitle} <br />
-            <span
-              style={{
-                color: "var(--clr-accent)",
-                WebkitTextFillColor: "unset",
-              }}
-            >
-              {slide.location}
-            </span>
-          </h1>
-
+          <h1 className="ui-h1 mt-sm">{slide.title}</h1>
+          <h2 className="ui-h2"> {slide.subtitle}</h2>
           <div className="ui-actions">
             <Link href="/contact" className="ui-btn ui-btn-primary">
               Start Your Brand Today

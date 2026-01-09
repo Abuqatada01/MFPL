@@ -341,7 +341,7 @@
   :root {
     --h1-size: 2.8rem;
     --h1-weight: 800;
-    --h2-size: 2.45rem;
+    --h2-size: 2rem;
     --h3-size: 1.75rem;
     --para-size: 1.12rem;
   }
@@ -352,7 +352,7 @@
   :root {
     --h1-size: 3rem;
     --h1-weight: 650;
-    --h2-size: 2.8rem;
+    --h2-size: 2rem;
     --h3-size: 1.15rem;
     --h3-weight: 650;
     --para-size: 1.18rem;

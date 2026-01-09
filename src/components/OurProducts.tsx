@@ -17,7 +17,8 @@ const products = [
   },
   {
     title: "Fragrances\nFormulation",
-    image: "https://palmisthealthcare.com/public/imgs/home/i2.jpg",
+    image:
+      "https://www.4customize.com/wp-content/uploads/2023/08/comestic-bottle-sticker-uv-transfer-dtf-510x510.webp",
   },
 ];
 
