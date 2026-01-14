@@ -28,15 +28,15 @@ const steps = [
 
 export default function OrderSteps() {
   return (
-    <section className="" style={{ background: "var(--clr-bg-light)" }}>
+    <section style={{ background: "var(--clr-bg-light)" }}>
       <div className="ui-section ui-container text-center">
-        {/* SECTION HEADER */}
-        <div className="mb-20">
+        {/* HEADER */}
+        <div className="mb-4 md:mb-20">
           <h2 className="ui-h1">
             How to <span style={{ color: "var(--clr-primary)" }}>Order</span>
           </h2>
           <p
-            className="mt-3 max-w-xl mx-auto"
+            className="lg:mt-3 max-w-xl mx-auto"
             style={{ color: "var(--clr-text-muted)" }}
           >
             A simple, transparent process designed to take your brand from idea
@@ -45,10 +45,22 @@ export default function OrderSteps() {
         </div>
 
         {/* STEPS */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-14 relative">
+        <div
+          className="
+            flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory
+            md:grid md:grid-cols-3 md:gap-14 md:overflow-visible
+          "
+        >
           {steps.map((item, index) => (
-            <div key={index} className="relative flex flex-col items-center">
-              {/* CONNECTOR (Desktop Only) */}
+            <div
+              key={index}
+              className="
+                relative flex flex-col items-center
+                min-w-[85%] snap-center
+                md:min-w-0
+              "
+            >
+              {/* CONNECTOR (Desktop only) */}
               {index < steps.length - 1 && (
                 <div
                   className="hidden md:block absolute top-[140px] right-[-70px]"
@@ -63,31 +75,28 @@ export default function OrderSteps() {
 
               {/* CARD */}
               <div
-                className=" p-6 rounded-3xl w-full max-w-sm flex flex-col items-center transition-all duration-300 h-full"
+                className="p-6 rounded-3xl w-full max-w-sm flex flex-col items-center transition-all duration-300 h-full bg-white"
                 style={{
-                  background: "var(--clr-bg-white)",
                   boxShadow: "0 25px 60px rgba(20,84,43,0.12)",
                 }}
               >
                 {/* IMAGE */}
-                {/* IMAGE */}
-                <div className="w-full h-[250px] flex items-center justify-center mb-6">
+                <div className="w-full h-[240px] flex items-center justify-center mb-6 overflow-hidden rounded-xl bg-[#EDF5EE]">
                   <Image
                     src={item.image}
                     alt={item.title}
-                    width={180}
-                    height={180}
-                    className="object-cover rounded-md w-full max-h-full"
+                    width={400}
+                    height={300}
+                    className="object-cover w-full h-full"
                   />
                 </div>
 
                 {/* STEP NUMBER */}
                 <div
-                  className="mx-auto mb-4 flex items-center justify-center"
+                  className="mx-auto mb-4 flex items-center justify-center rounded-full"
                   style={{
                     height: "42px",
                     width: "42px",
-                    borderRadius: "50%",
                     background:
                       "linear-gradient(135deg, var(--clr-secondary), var(--clr-primary))",
                     color: "#fff",
@@ -116,7 +125,7 @@ export default function OrderSteps() {
         </div>
 
         {/* CTA */}
-        <div className="mt-20">
+        <div className="mt-16 md:mt-20">
           <Link
             href="/contact-us"
             className="inline-flex items-center gap-3 px-10 py-4 rounded-full text-lg font-semibold transition-all"

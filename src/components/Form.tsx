@@ -27,7 +27,7 @@ export default function ConsultationSection() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             {/* ================= LEFT CONTENT ================= */}
             <div className="lg:col-span-7">
-              <h2 className="text-5xl font-semibold leading-tight text-[var(--clr-text-dark)]">
+              <h2 className="text-3xl lg:text-5xl font-semibold leading-tight text-[var(--clr-text-dark)]">
                 Let’s Build Your <br />
                 <span style={{ color: "var(--clr-primary)" }}>
                   Next Successful Brand
@@ -35,7 +35,7 @@ export default function ConsultationSection() {
               </h2>
 
               <p
-                className="mt-6 max-w-xl text-lg"
+                className="lg:mt-6 max-w-xl ui-para"
                 style={{ color: "var(--clr-text-muted)" }}
               >
                 From concept to compliant manufacturing, MFPL helps you launch
@@ -45,7 +45,7 @@ export default function ConsultationSection() {
               </p>
 
               {/* Trust points */}
-              <div className="flex flex-wrap gap-8 mt-10">
+              <div className="flex lg:flex-wrap gap-3 lg:gap-8 mt-4 lg:mt-10">
                 {[
                   "100+ Partnered Brands",
                   "Multiple Ready-to-Brand Formulations",
@@ -53,14 +53,14 @@ export default function ConsultationSection() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="px-6 w-50 py-4 rounded-xl"
+                    className="px-3 py-2 lg:px-6 lg:w-50 lg:py-4 rounded-xl"
                     style={{
                       background: "var(--clr-bg-white)",
                       boxShadow: "0 10px 30px rgba(20,84,43,0.08)",
                     }}
                   >
                     <p
-                      className="font-semibold"
+                      className="font-semibold ui-desc"
                       style={{ color: "var(--clr-accent)" }}
                     >
                       {item}
