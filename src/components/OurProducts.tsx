@@ -37,7 +37,7 @@ export default function OurProducts() {
         </div>
 
         {/* HEADING */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-3 lg:mb-20">
           <h2 className="ui-h1">
             Elevate Your Brand <br />
             with Diverse Creations
@@ -45,20 +45,14 @@ export default function OurProducts() {
         </div>
 
         {/* PRODUCT GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {products.map((item, i) => (
             <div key={i} className="group flex justify-center">
               {/* CARD FRAME */}
-              <div
-                className="relative flex flex-col items-center justify-between transition-all duration-500"
-                style={{
-                  width: "260px",
-                  height: "360px",
-                }}
-              >
+              <div className="relative w-[150px] lg:w-[260px] lg:h-[360px] flex flex-col items-center justify-between transition-all duration-500">
                 {/* IMAGE HOLDER */}
                 <div className="relative z-10 flex justify-center items-center transition-transform duration-500 ease-out group-hover:-translate-y-4">
-                  <div className="w-[220px] h-[220px] flex items-center justify-center">
+                  <div className="w-[80px] h-[80px] lg:w-[220px] lg:h-[220px] flex items-center justify-center">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -70,18 +64,20 @@ export default function OurProducts() {
 
                 {/* SEMI CIRCLE */}
                 <div
-                  className="flex items-center ui-badge-2 justify-center text-center transition-all duration-500 ease-out
-          group-hover:scale-105
-          group-hover:shadow-[0_0_0_1px_#83A33C,0_12px_30px_rgba(131,163,60,0.35)]"
-                  style={{
-                    width: "240px",
-                    height: "120px",
-                    // background: "#53945B",
-                    borderBottomLeftRadius: "240px",
-                    borderBottomRightRadius: "240px",
-                  }}
+                  className="
+    flex items-center justify-center text-center ui-badge-2
+    transition-all duration-500 ease-out
+    group-hover:scale-105
+    group-hover:shadow-[0_0_0_1px_#83A33C,0_12px_30px_rgba(131,163,60,0.35)]
+
+    w-[100px] h-[50px]
+    sm:w-[200px] sm:h-[100px]
+    md:w-[240px] md:h-[120px]
+
+    rounded-b-full
+  "
                 >
-                  <p className="ui-para text-white font-medium leading-snug whitespace-pre-line transition-transform duration-500 group-hover:scale-105">
+                  <p className="ui-desc lg:ui-para text-white font-medium lg:leading-snug lg:whitespace-pre-line transition-transform duration-500 group-hover:scale-105">
                     {item.title}
                   </p>
                 </div>

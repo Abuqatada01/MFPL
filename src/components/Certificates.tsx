@@ -43,16 +43,19 @@ const certificates = [
 export default function CertificatesMarquee() {
   return (
     <section className="relative ui-section overflow-hidden py-1 bg-white">
-      <div className="marquee h-[15vh]">
+      <div className="marquee h-[10vh] lg:h-[15vh]">
         <div className="marquee-track">
           {[...certificates, ...certificates].map((item, index) => (
-            <div key={index} className="marquee-item">
+            <div
+              key={index}
+              className="marquee-item p-3 lg:p-6 flex items-center justify-center"
+            >
               <Image
                 src={item.src}
                 alt={item.alt}
-                width={item.width}
-                height={10}
-                className="opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition duration-300"
+                width={200}
+                height={80}
+                className="opacity-80 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 w-12 sm:w-32 md:w-40 lg:w-48 h-auto object-contain"
               />
             </div>
           ))}

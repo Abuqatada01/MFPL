@@ -68,7 +68,7 @@ export default function OurProcess() {
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 items-center">
           {/* LEFT */}
           <div className="flex flex-col gap-8">
             {leftCards.map((item, i) => (
