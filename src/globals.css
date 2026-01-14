@@ -319,11 +319,35 @@
 /* LARGE MOBILE (400px – 500px) */
 @media (min-width: 400px) and (max-width: 500px) {
   :root {
-    --h1-size: 2.2rem;
-    --h2-size: 1.7rem;
-    --h3-size: 1.35rem;
-    --para-size: 1.05rem;
-    --desc-size: 0.9rem;
+    --h1-size: 1.2rem;
+    --h2-size: 1rem;
+    --h3-size: 1.2rem;
+    --para-size: 1rem;
+    --desc-size: 0.7rem;
+
+  }
+
+  .ui-badge {
+    font-size: 12px;
+  }
+
+  .ui-btn {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-size: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+  }
+
+  .ui-section {
+    width: 90%;
+    margin: 0 auto;
+    /* 10% left + 10% right automatically */
+    padding: clamp(2rem, 5vw, 4rem) 0;
   }
 }
 
