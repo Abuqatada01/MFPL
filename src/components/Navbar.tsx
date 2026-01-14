@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
+import { List, X } from "@phosphor-icons/react";
 
 const menuItems = [
   { label: "Home", href: "/" },
@@ -10,89 +12,100 @@ const menuItems = [
 ];
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50">
       {/* ================= TOP INFO BAR ================= */}
-      <div className="border-b" style={{ background: "var(--clr-bg-white)" }}>
+      <div className="border-b bg-white">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           {/* LOGO */}
           <Link href="/" className="flex items-center gap-3">
             <img src="/Logoblack.png" className="h-10" alt="Logo" />
           </Link>
 
-          {/* CONTACT INFO */}
+          {/* CONTACT INFO (Desktop only) */}
           <div className="hidden md:flex items-center gap-10 text-sm">
             <div className="flex items-center gap-3">
-              <span className="icon-shape ">
-                <span className="relative top-[1.5px] right-[1.5px] ">✉</span>
-              </span>
-              <span style={{ color: "var(--clr-text-muted)" }}>
-                Medicosmo_info@gmail.com
-              </span>
+              <span className="icon-shape">✉</span>
+              <span className="text-gray-500">Medicosmo_info@gmail.com</span>
             </div>
 
             <div className="flex items-center gap-3">
-              <span className="icon-shape">
-                <span className="relative top-[1.5px] right-[1.5px] ">☎</span>
-              </span>
-              <span style={{ color: "var(--clr-text-muted)" }}>
-                +91 92050 94789
-              </span>
+              <span className="icon-shape">☎</span>
+              <span className="text-gray-500">+91 92050 94789</span>
             </div>
           </div>
 
-          {/* SOCIAL ICONS */}
+          {/* SOCIALS + HAMBURGER */}
           <div className="flex items-center gap-2">
-            {["in", "f", "t"].map((icon) => (
-              <span
-                key={icon}
-                className="h-9 w-9 flex items-center justify-center icon-shape"
-              >
-                <span className="relative top-[1.5px] right-[1.5px] ">
+            {/* Desktop socials */}
+            <div className="hidden md:flex items-center gap-2">
+              {["in", "f", "t"].map((icon) => (
+                <span
+                  key={icon}
+                  className="h-9 w-9 flex items-center justify-center icon-shape"
+                >
                   {icon}
                 </span>
-              </span>
-            ))}
+              ))}
+            </div>
+
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setOpen(!open)}
+              className="md:hidden h-10 w-10 flex items-center justify-center rounded-full bg-[#EDF5EE]"
+            >
+              {open ? <X size={22} /> : <List size={22} />}
+            </button>
           </div>
         </div>
       </div>
 
-      {/* ================= MAIN NAV ================= */}
-      <nav className="absolute left-[40%] py-4">
-        <div
-          className="flex items-center ui-badge-2 justify-between px-8 h-[68px] rounded-full w-auto max-w-6xl backdrop-blur-md"
-          // style={{
-          //   background: "#53945B",
-          //   boxShadow: "0 20px 50px rgba(20,84,43,0.35)",
-          // }}
-        >
-          {/* MENU */}
-          <ul className="hidden md:flex items-center gap-10 font-medium">
+      {/* ================= MOBILE MENU ================= */}
+      {open && (
+        <div className="md:hidden bg-white shadow-lg rounded-b-3xl">
+          <div className="flex flex-col p-6 gap-5">
+            {menuItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="text-lg font-semibold text-[#14542B]"
+              >
+                {item.label}
+              </Link>
+            ))}
+
+            <Link
+              href="/contact-us"
+              onClick={() => setOpen(false)}
+              className="mt-4 text-center py-3 rounded-full text-white font-semibold"
+              style={{
+                background: "linear-gradient(135deg, #53945B, #83A33C)",
+              }}
+            >
+              Get Free Quote
+            </Link>
+          </div>
+        </div>
+      )}
+
+      {/* ================= DESKTOP FLOATING NAV ================= */}
+      <nav className="absolute left-1/2 -translate-x-1/2 py-4 hidden md:block">
+        <div className="flex items-center justify-between px-8 h-[68px] rounded-full backdrop-blur-md ui-badge-2">
+          <ul className="flex items-center gap-10 font-medium">
             {menuItems.map((item) => (
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="relative text-white transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-white after:transition-all hover:after:w-full"
+                  className="relative ui-h3 text-white transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-white after:transition-all hover:after:w-full"
                 >
                   {item.label}
                 </Link>
               </li>
             ))}
           </ul>
-
-          {/* CTA BUTTON */}
-          {/* <Link
-            href="/contact-us"
-            className="px-7 py-3 rounded-full font-semibold flex items-center gap-2 transition-all"
-            style={{
-              background:
-                "linear-gradient(135deg, var(--clr-secondary), var(--clr-primary))",
-              color: "#fff",
-              boxShadow: "0 10px 25px rgba(131,163,60,0.4)",
-            }}
-          >
-            Free Quote →
-          </Link> */}
         </div>
       </nav>
     </header>

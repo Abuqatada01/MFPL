@@ -8,10 +8,10 @@ export default function AboutUs() {
       <div className=" ui-section ui-container">
         <div className="ui-badge text-center">About Us</div>
         {/* TOP CONTENT */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-20 items-start">
           {/* LEFT */}
           <div>
-            <h2 className="ui-h2 uppercase tracking-wide">
+            <h2 className="ui-h2 mt-2 uppercase tracking-wide">
               YOUR TRUSTED PARTNER FOR <br />
               <span style={{ color: "var(--clr-primary)" }}>
                 COSMETIC, SKINCARE & HAIRCARE MANUFACTURING
@@ -19,27 +19,27 @@ export default function AboutUs() {
             </h2>
 
             {/* STATS */}
-            <div className="flex gap-8 mt-12">
+            <div className="flex gap-8 mt-3 xl:mt-12">
               {[
                 { value: "120+", label: "Global Brands" },
                 { value: "2,000+", label: "Formulations" },
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="px-6 py-5 rounded-xl"
+                  className="px-4 py-3 lg:px-6 lg:py-5 rounded-xl"
                   style={{
                     background: "var(--clr-bg-white)",
                     boxShadow: "0 10px 30px rgba(20,84,43,0.08)",
                   }}
                 >
                   <p
-                    className="text-4xl font-bold"
+                    className="ui-para font-bold"
                     style={{ color: "var(--clr-accent)" }}
                   >
                     {item.value}
                   </p>
                   <p
-                    className="mt-1 text-sm"
+                    className="lg:mt-1 ui-desc"
                     style={{ color: "var(--clr-text-muted)" }}
                   >
                     {item.label}
@@ -90,16 +90,16 @@ export default function AboutUs() {
 
         {/* ASSURANCE STRIP */}
         <div
-          className="mt-24 px-12 py-8 rounded-full flex items-center gap-12 overflow-x-auto"
+          className="mt-4 md:mt-12 xl:mt-24 px-4 py-2 lg:px-12 lg:py-8 rounded-full flex items-center lg:gap-12 overflow-x-auto"
           style={{
             background: "var(--clr-bg-white)",
             boxShadow: "0 15px 50px rgba(20,84,43,0.12)",
           }}
         >
           {/* LEFT TEXT */}
-          <div className="min-w-[220px]">
+          <div className=" w-40 lg:w-[220px]">
             <p
-              className="font-semibold leading-snug"
+              className="font-semibold ui-desc leading-snug"
               style={{ color: "var(--clr-accent)" }}
             >
               Assurances <br />
@@ -118,7 +118,7 @@ export default function AboutUs() {
           />
 
           {/* CERTIFICATIONS */}
-          <div className="flex gap-12 items-center">
+          <div className="flex gap-2 lg:gap-12 items-center">
             {[
               "https://www.shutterstock.com/image-vector/sulfate-free-green-outline-icon-260nw-1612991506.jpg",
               "https://t3.ftcdn.net/jpg/02/78/93/28/360_F_278932877_e0dhgcte3cFvCSFQSM5rnZNvL8DVo6AJ.jpg",
@@ -131,20 +131,28 @@ export default function AboutUs() {
             ].map((src, i) => (
               <div
                 key={i}
-                className="flex items-center overflow-hidden justify-center rounded-full"
-                style={{
-                  width: "72px",
-                  height: "72px",
-                  border: "2px solid rgba(83,148,91,0.35)",
-                  background: "#fff",
-                }}
+                className="
+    flex items-center justify-center rounded-full
+    border-2 border-[rgba(83,148,91,0.35)]
+    bg-white
+    w-6 h-6
+    sm:w-14 sm:h-14
+    md:w-16 md:h-16
+    lg:w-[72px] lg:h-[72px]
+  "
               >
                 <Image
                   src={src}
                   alt="Certification"
-                  width={60}
-                  height={60}
-                  className="object-contain overflow-hidden"
+                  width={72}
+                  height={72}
+                  className="
+      object-contain
+      w-4 h-4
+      sm:w-10 sm:h-10
+      md:w-12 md:h-12
+      lg:w-[60px] lg:h-[60px]
+    "
                 />
               </div>
             ))}

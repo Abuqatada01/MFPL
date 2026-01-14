@@ -284,34 +284,57 @@
 /* XS MOBILE (360px – 399px) */
 @media (min-width: 360px) and (max-width: 399px) {
   :root {
-    --h1-size: 1.6rem;
-    --h2-size: 1.3rem;
-    --h3-size: 1.1rem;
-    --para-size: 0.92rem;
-    --desc-size: 0.82rem;
+    --h1-size: 1.2rem;
+    --h2-size: 1rem;
+    --h3-size: 1.2rem;
+    --para-size: 1rem;
+    --desc-size: 0.7rem;
+
+  }
+
+  .ui-badge {
+    font-size: 12px;
+  }
+
+  .ui-btn {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-size: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+  }
+
+  .ui-section {
+    width: 90%;
+    margin: 0 auto;
+    /* 10% left + 10% right automatically */
+    padding: clamp(2rem, 5vw, 4rem) 0;
   }
 }
 
 /* LARGE MOBILE (400px – 500px) */
 @media (min-width: 400px) and (max-width: 500px) {
   :root {
-    --h1-size: 1.85rem;
-    --h1-weight: 620;
-    --h2-size: 1.45rem;
-    --h3-size: 1.2rem;
-    --para-size: 0.95rem;
+    --h1-size: 2.2rem;
+    --h2-size: 1.7rem;
+    --h3-size: 1.35rem;
+    --para-size: 1.05rem;
+    --desc-size: 0.9rem;
   }
 }
 
 /* TABLET (501px – 768px) */
 @media (min-width: 700px) and (max-width: 900px) {
   :root {
-    --h1-size: 1.4rem;
-    --h1-weight: 650;
-    --h2-size: 1.7rem;
-    --h3-size: 12px;
-    --para-size: 0.5rem;
-    --desc-size: 0.4rem;
+    --h1-size: 2.6rem;
+    --h2-size: 2rem;
+    --h3-size: 1.5rem;
+    --para-size: 1.1rem;
+    --desc-size: 1rem;
   }
 
   .ui-section {
@@ -327,33 +350,33 @@
 /* LAPTOP (1024px – 1280px) */
 @media (min-width: 1020px) and (max-width: 1280px) {
   :root {
-    --h1-size: 2rem;
-    --h1-weight: 700;
-    --h2-size: 1rem;
-    --h3-size: 1.15rem;
-    --para-size: 0.80rem;
+    --h1-size: 3rem;
+    --h2-size: 2.3rem;
+    --h3-size: 1.6rem;
+    --para-size: 1.12rem;
+    --desc-size: 1.02rem;
   }
 }
 
 /* SMALL DESKTOP (1281px – 1500px) */
 @media (min-width: 1281px) and (max-width: 1500px) {
   :root {
-    --h1-size: 2.9rem;
-    --h1-weight: 760;
-    --h2-size: 2.2rem;
-    --h3-size: 1rem;
-    --para-size: 1.08rem;
+    --h1-size: 3.4rem;
+    --h2-size: 2.6rem;
+    --h3-size: 1.8rem;
+    --para-size: 1.15rem;
+    --desc-size: 1.05rem;
   }
 }
 
 /* XL DESKTOP (1501px – 1799px) */
 @media (min-width: 1501px) and (max-width: 1799px) {
   :root {
-    --h1-size: 2.8rem;
-    --h1-weight: 800;
-    --h2-size: 2rem;
-    --h3-size: 1.75rem;
-    --para-size: 1.12rem;
+    --h1-size: 3.8rem;
+    --h2-size: 3rem;
+    --h3-size: 2rem;
+    --para-size: 1.2rem;
+    --desc-size: 1.1rem;
   }
 }
 
