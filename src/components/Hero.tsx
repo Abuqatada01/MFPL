@@ -47,7 +47,7 @@ export default function HeroSection() {
         <div>
           <span className="ui-badge mb-4 inline-block">We Are</span>
 
-          <h1 className="ui-h1 mt-sm">{slide.title}</h1>
+          <h1 className="ui-h2 mt-sm">{slide.title}</h1>
           <h2 className="ui-h2">{slide.subtitle}</h2>
 
           <div className="ui-actions">

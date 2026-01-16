@@ -176,9 +176,11 @@ export default function AboutUsPage() {
         <div className="ui-section ui-container">
           {/* SECTION HEADER */}
           <div className="mb-16 max-w-3xl">
-            <span className="ui-badge mb-4 px-4 py-1 ">WHY CHOOSE US</span>
+            <span className="ui-badge mb-2 lg:mb-4 px-4 py-1 ">
+              WHY CHOOSE US
+            </span>
 
-            <h2 className="text-4xl font-semibold leading-tight text-[var(--clr-text-dark)]">
+            <h2 className="ui-h1 font-bold leading-tight text-[var(--clr-text-dark)]">
               Why <span style={{ color: "var(--clr-primary)" }}>MFPL </span> is
               the Preferred White Label Manufacturing Partner
             </h2>
@@ -265,15 +267,15 @@ export default function AboutUsPage() {
       {/* ================= OUR TEAM ================= */}
       <section className="ui-section bg-white">
         <div className="ui-container">
-          {/* TOP CONTENT */}
-          <div className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* ================= TOP CONTENT ================= */}
+          <div className="mb-6 lg:mb-16 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             {/* LEFT */}
             <div>
               <span className="inline-block mb-4 px-4 py-1 ui-badge">
                 PURE TALENT
               </span>
 
-              <h2 className="text-4xl font-semibold text-[var(--clr-text-dark)] mb-4">
+              <h2 className="ui-h1 font-semibold text-[var(--clr-text-dark)] mb-4">
                 Meet our team
               </h2>
 
@@ -304,8 +306,13 @@ export default function AboutUsPage() {
             </div>
           </div>
 
-          {/* TEAM GRID */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* ================= TEAM CARDS ================= */}
+          <div
+            className="
+        flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory
+        sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-10
+      "
+          >
             {[
               {
                 name: "Dr. A. Sharma",
@@ -330,7 +337,11 @@ export default function AboutUsPage() {
             ].map((member, i) => (
               <div
                 key={i}
-                className="team-card text-center transition-all duration-300"
+                className="
+            team-card text-center transition-all duration-300
+            min-w-[80%] snap-center
+            sm:min-w-0
+          "
               >
                 {/* IMAGE */}
                 <div className="relative overflow-hidden rounded-2xl mb-5">
