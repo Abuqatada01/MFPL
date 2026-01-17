@@ -1,3 +1,10 @@
+"use client";
+import {
+  FacebookLogoIcon,
+  GlobeIcon,
+  LinkedinLogoIcon,
+  TwitterLogoIcon,
+} from "@phosphor-icons/react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -23,14 +30,18 @@ export default function Footer() {
           </p>
 
           {/* SOCIAL */}
+
           <div className="flex gap-4 mt-6">
-            {["f", "in", "t", "🌐"].map((icon) => (
+            {[
+              <LinkedinLogoIcon weight="fill" size={25} />,
+              <FacebookLogoIcon weight="fill" size={25} />,
+              <TwitterLogoIcon weight="fill" size={25} />,
+              <GlobeIcon weight="fill" size={25} />,
+            ].map((icon, index) => (
               <span
-                key={icon}
-                className="h-9 w-9 flex items-center justify-center rounded-full transition"
-                style={{
-                  background: "rgba(255,255,255,0.12)",
-                }}
+                key={index}
+                className="h-9 w-9 flex items-center justify-center rounded-full transition hover:scale-110 cursor-pointer"
+                style={{ background: "rgba(255,255,255,0.12)" }}
               >
                 {icon}
               </span>
@@ -83,7 +94,7 @@ export default function Footer() {
         </div>
 
         {/* ================= NEWSLETTER ================= */}
-        <div>
+        {/* <div>
           <h3 className="font-semibold mb-5">Stay Connected</h3>
           <p className="text-sm opacity-80 mb-5">
             Subscribe to receive updates, insights, and company news.
@@ -112,7 +123,7 @@ export default function Footer() {
             <p>Mon – Sat : 9:00 AM – 6:00 PM</p>
             <p>Sunday : Closed</p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* ================= BOTTOM BAR ================= */}

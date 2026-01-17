@@ -61,10 +61,15 @@ export default function Home() {
   return (
     <>
       {/* ================= BANNER ================= */}
-      <section className="lg:relative lg:py-6 bg-[#effaed]">
+      <section className="lg:relative lg:h-[23vh] xl:h-[30vh] lg:py-6 bg-[#effaed]">
         <div className="max-w-[1500px] mx-auto lg:px-6">
-          <div className="relative rounded-[2rem] py-2 md:rounded-[3.5rem] p-2 bg-gradient-to-b from-white/60 to-transparent">
-            <div className="relative h-auto md:h-[30vh] min-h-[320px] overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-gradient-to-r from-[#EDF5EE] via-[#E1EFE4] to-[#D4E8D8] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.15)]">
+          <div className="relative rounded-[2rem] md:rounded-[3.5rem] p-2 bg-gradient-to-b from-white/60 to-transparent">
+            <div
+              className="relative min-h-[360px] md:min-h-[420px] lg:min-h-[300px]
+        overflow-hidden rounded-[2rem] md:rounded-[3rem]
+        bg-gradient-to-r from-[#EDF5EE] via-[#E1EFE4] to-[#D4E8D8]
+        shadow-[0_40px_80px_-30px_rgba(0,0,0,0.15)]"
+            >
               <div className="absolute inset-0 bg-[radial-gradient(60%_80%_at_90%_50%,rgba(255,255,255,0.45),transparent)]"></div>
 
               <div className="relative grid h-full grid-cols-1 md:grid-cols-2 items-center px-6 sm:px-10 md:px-20">
@@ -86,11 +91,12 @@ export default function Home() {
                 </div>
 
                 {/* IMAGE */}
-                <div className="relative flex justify-center md:justify-end items-center h-full mt-6 md:mt-0">
+                <div className="relative flex justify-center md:justify-end items-end h-full mt-6 md:mt-0">
                   <img
                     src="/product-hero.png"
                     alt="Branded Product"
-                    className="h-[180px] sm:h-[220px] md:h-full scale-110 md:scale-150 object-contain drop-shadow-[0_40px_40px_rgba(0,0,0,0.25)]"
+                    className="h-[200px] sm:h-[240px] md:h-[280px] lg:h-[320px]
+                object-contain drop-shadow-[0_40px_40px_rgba(0,0,0,0.25)]"
                   />
                 </div>
               </div>
