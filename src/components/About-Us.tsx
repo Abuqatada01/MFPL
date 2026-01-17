@@ -76,7 +76,7 @@ export default function AboutUs() {
             </p>
 
             {/* BRAND DECORATIVE SHAPE */}
-            <div
+            {/* <div
               className="absolute -right-12 top-1/2 -translate-y-1/2 hidden lg:block"
               style={{
                 width: "140px",
@@ -84,7 +84,7 @@ export default function AboutUs() {
                 background:
                   "radial-gradient(circle at center, rgba(83,148,91,0.25), transparent 70%)",
               }}
-            />
+            /> */}
           </div>
         </div>
 
