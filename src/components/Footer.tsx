@@ -2,8 +2,10 @@
 import {
   FacebookLogoIcon,
   GlobeIcon,
+  InstagramLogoIcon,
   LinkedinLogoIcon,
   TwitterLogoIcon,
+  YoutubeLogoIcon,
 } from "@phosphor-icons/react";
 import Link from "next/link";
 
@@ -33,10 +35,10 @@ export default function Footer() {
 
           <div className="flex gap-4 mt-6">
             {[
-              <LinkedinLogoIcon weight="fill" size={25} />,
+              <InstagramLogoIcon weight="fill" size={25} />,
               <FacebookLogoIcon weight="fill" size={25} />,
-              <TwitterLogoIcon weight="fill" size={25} />,
-              <GlobeIcon weight="fill" size={25} />,
+              <LinkedinLogoIcon weight="fill" size={25} />,
+              <YoutubeLogoIcon weight="fill" size={25} />,
             ].map((icon, index) => (
               <span
                 key={index}

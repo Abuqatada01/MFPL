@@ -45,10 +45,11 @@ export default function HeroSection() {
       <Image
         src={slide.mobileImage}
         alt="Hero Banner Mobile"
-        fill
+        width={600}
+        height={900}
         priority
-        sizes="(max-width: 767px) 100vw, 0"
-        className="block md:hidden object-cover"
+        sizes="(max-width: 767px) 100vw"
+        className="block h-[90vh] md:hidden object-fill md:object-cover "
       />
 
       {/* OVERLAY */}

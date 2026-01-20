@@ -124,15 +124,43 @@ export default function ConsultationSection() {
                     style={{ borderColor: "rgba(20,84,43,0.25)" }}
                   />
 
-                  <select
-                    className="w-full px-4 py-3 rounded-lg border focus:outline-none"
-                    style={{ borderColor: "rgba(20,84,43,0.25)" }}
-                  >
-                    <option>Interested In</option>
-                    <option>Cosmetic Manufacturing</option>
-                    <option>Private Labelling</option>
-                    <option>Product Development</option>
-                  </select>
+                  <div className="relative w-full">
+                    <select
+                      className="
+      w-full appearance-none
+      px-4 py-3 pr-12
+      rounded-lg
+      border
+      focus:outline-none focus:ring-2
+    "
+                      style={{
+                        borderColor: "rgba(20,84,43,0.25)",
+                        outlineColor: "#53945B",
+                      }}
+                    >
+                      <option>Interested In</option>
+                      <option>Cosmetic Manufacturing</option>
+                      <option>Private Labelling</option>
+                      <option>Product Development</option>
+                    </select>
+
+                    {/* Custom Dropdown Icon */}
+                    <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                      <svg
+                        className="w-4 h-4 text-[#14542B]"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </span>
+                  </div>
 
                   <Link
                     href="/contact-us"
