@@ -8,7 +8,7 @@ export default function AboutUsPage() {
     <>
       {/* ================= ABOUT BANNER ================= */}
       <section
-        className="relative h-[320px] flex items-start overflow-hidden"
+        className="relative h-[50vh] flex items-start overflow-hidden"
         style={{ backgroundColor: "var(--clr-accent)" }}
       >
         {/* BACKGROUND IMAGE */}
@@ -16,23 +16,23 @@ export default function AboutUsPage() {
           className="absolute inset-0 z-0"
           style={{
             backgroundImage:
-              "url('https://wordpress.zozothemes.com/hirxpert/wp-content/uploads/sites/38/2025/02/service-6-1200x800.webp')",
+              "url('https://bestcare.co.in/wp-content/uploads/2023/07/Best-care-Page-banner-13-scaled.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         />
 
         {/* DARK BRAND OVERLAY */}
-        <div
+        {/* <div
           className="absolute inset-0 z-10"
           style={{
             background:
               "linear-gradient(90deg, rgba(20,84,43,0.78), rgba(20,84,43,0.72))",
           }}
-        />
+        /> */}
 
         {/* 🟢 HONEYCOMB PATTERN (PURE CSS) */}
-        <div
+        {/* <div
           className="absolute inset-0 z-20 pointer-events-none"
           style={{
             backgroundImage: `
@@ -44,19 +44,19 @@ export default function AboutUsPage() {
             backgroundPosition: "0 0, 0 0, 24px 42px",
             mixBlendMode: "overlay",
           }}
-        />
+        /> */}
 
         {/* DIAGONAL SOFT LIGHT */}
-        <div
+        {/* <div
           className="absolute inset-0 z-30 pointer-events-none"
           style={{
             background:
               "linear-gradient(120deg, rgba(255,255,255,0.18) 0%, transparent 55%)",
           }}
-        />
+        /> */}
 
         {/* CONTENT */}
-        <div className="ui-container relative z-40 pt-24">
+        {/* <div className="ui-container relative z-40 pt-24">
           <h1 className="text-5xl font-semibold text-white mb-3">About Us</h1>
 
           <div className="flex items-center gap-2 text-sm text-white/80">
@@ -66,7 +66,7 @@ export default function AboutUsPage() {
             <span className="text-white/50">›</span>
             <span className="font-medium text-white">About Us</span>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* ================= VISION & MISSION ================= */}

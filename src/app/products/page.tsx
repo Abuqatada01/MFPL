@@ -223,12 +223,22 @@ export default function Home() {
                       />
 
                       {/* Content */}
-                      <div className="relative z-10 flex flex-col justify-center items-center p-8 ">
-                        <h3 className="ui-h2 font-semibold text-[#242424] mb-4 leading-snug">
+                      {/* Content */}
+                      <div
+                        className="
+  relative z-10
+  flex flex-col
+  justify-center items-center
+  text-center
+  p-8
+  h-full
+"
+                      >
+                        <h3 className="text-2xl lg:text-3xl font-semibold text-[#242424] mb-4 leading-snug">
                           {item.name}
                         </h3>
 
-                        <p className="ui-para text-[#242424]/70 leading-relaxed">
+                        <p className="ui-para text-[#242424]/70 leading-relaxed max-w-[280px]">
                           {item.description}
                         </p>
                       </div>
