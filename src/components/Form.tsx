@@ -53,7 +53,7 @@ export default function ConsultationSection() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="px-3 py-2 lg:px-6 lg:w-50 lg:py-4 rounded-xl"
+                    className="flex justify-center items-center px-3 py-2 lg:px-6 lg:w-50 lg:py-4 rounded-xl"
                     style={{
                       background: "var(--clr-bg-white)",
                       boxShadow: "0 10px 30px rgba(20,84,43,0.08)",

@@ -76,19 +76,19 @@ export default function Footer() {
           <h3 className="font-semibold mb-5">Services</h3>
           <ul className="space-y-3 text-sm opacity-80">
             <li>
-              <Link href="/services">All Services</Link>
+              <Link href="/products">All Products</Link>
             </li>
             <li>
-              <Link href="/">Business Growth</Link>
+              <Link href="/products">Cosmetics</Link>
             </li>
             <li>
-              <Link href="/">Project Consulting</Link>
+              <Link href="/products">Hair Care</Link>
             </li>
             <li>
-              <Link href="/">Case Studies</Link>
+              <Link href="/products">Skin Care</Link>
             </li>
             <li>
-              <Link href="/">Privacy Policy</Link>
+              <Link href="/products">Mens Grooming</Link>
             </li>
           </ul>
         </div>
@@ -118,7 +118,7 @@ export default function Footer() {
             </button>
           </div> */}
 
-          <div className="text-sm mt-6 opacity-80">
+          <div className="text-sm  opacity-80">
             <p>Working Hours:</p>
             <p>Mon – Sat : 9:00 AM – 6:00 PM</p>
             <p>Sunday : Closed</p>
@@ -137,6 +137,7 @@ export default function Footer() {
         © {new Date().getFullYear()}{" "}
         <span style={{ color: "var(--clr-secondary)" }}>Medicosmo</span>. All
         rights reserved.
+        <span style={{ color: "var(--clr-secondary)" }}>Greens Media</span>
       </div>
     </footer>
   );

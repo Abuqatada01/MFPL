@@ -8,50 +8,50 @@ import { products } from "./data";
 
 const categoryImages: Record<string, string> = {
   Creams:
-    "https://www.bointernational.net/wp-content/uploads/2025/11/DD-Cream-220x255.jpg",
-  Gels: "https://www.bointernational.net/wp-content/uploads/2025/09/Skin-Barrier-Repair-Creams-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a42fe000e4e6789e1/view?project=6912e771002b88166cae",
+  Gels: "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43620034bed01025/view?project=6912e771002b88166cae",
   "Skin Serums":
-    "https://www.bointernational.net/wp-content/uploads/2025/02/Snail-Micin-Serum-Bo-Product-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a435c0018b2528c74/view?project=6912e771002b88166cae",
   Lotions:
-    "https://www.bointernational.net/wp-content/uploads/2025/01/SPF-50-Sunscreen-Body-Lotion-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43670011cc156a53/view?project=6912e771002b88166cae",
   "Hair Conditioners":
-    "https://www.bointernational.net/wp-content/uploads/2025/07/Curl-Care-Hair-Conditioner-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a435f0026bb4f1da6/view?project=6912e771002b88166cae",
   "Hair Serums":
-    "https://www.bointernational.net/wp-content/uploads/2025/07/Anti-Grey-Hair-Serum-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a435c0018b2528c74/view?project=6912e771002b88166cae",
   "Hair Cleansers":
-    "https://www.bointernational.net/wp-content/uploads/2024/10/Bioferment-Complex-Shampoo-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43670011cc156a53/view?project=6912e771002b88166cae",
   "Hand Wash":
-    "https://www.bointernational.net/wp-content/uploads/2023/03/Private-Label-Anti-Bacterial-Hand-Wash-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a436300304b40ff68/view?project=6912e771002b88166cae",
   "Intimate Care":
-    "https://www.bointernational.net/wp-content/uploads/2025/08/Lactic-Acid-Intimate-Wash-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43660018e53653b4/view?project=6912e771002b88166cae",
   "Body Wash":
-    "https://www.bointernational.net/wp-content/uploads/2025/10/Perfume-Body-Lotion-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43650025b222dd80/view?project=6912e771002b88166cae",
   "Face Cleansers":
-    "https://www.bointernational.net/wp-content/uploads/2025/07/Facial-Cleansing-Gel-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a42fe000e4e6789e1/view?project=6912e771002b88166cae",
   "Hair Masks":
-    "https://www.bointernational.net/wp-content/uploads/2025/11/Repair-Damaged-Hair-Mask-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a436400265ef12014/view?project=6912e771002b88166cae",
   "Hair Spa":
-    "https://www.bointernational.net/wp-content/uploads/2025/08/Hair-Spa-Cream-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43620034bed01025/view?project=6912e771002b88166cae",
   "Scrubs & Packs":
-    "https://www.bointernational.net/wp-content/uploads/2025/05/Dead-Sea-Mud-Face-Scrub-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a436400265ef12014/view?project=6912e771002b88166cae",
   "Skin Toners":
-    "https://www.bointernational.net/wp-content/uploads/2022/11/Private-Label-Skin-Glow-Face-Toner-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a435e003190fea045/view?project=6912e771002b88166cae",
   "Hair & Body Mists":
-    "https://www.bointernational.net/wp-content/uploads/2024/05/Private-Label-Cherry-Blossom-Body-Mist-Manufacturer-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a435e003190fea045/view?project=6912e771002b88166cae",
   "Baby Care":
-    "https://www.bointernational.net/wp-content/uploads/2022/12/Private-Label-Softening-Baby-Face-Wash-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43660018e53653b4/view?project=6912e771002b88166cae",
   "Sun Care":
-    "https://www.bointernational.net/wp-content/uploads/2025/01/Fluid-Sunscreen-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43620034bed01025/view?project=6912e771002b88166cae",
   "Under Eye & Lip Care":
-    "https://www.bointernational.net/wp-content/uploads/2024/08/Lip-Plumping-Mask-Product-Image.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a4362000d4eb33ae3/view?project=6912e771002b88166cae",
   "Men's Grooming":
-    "https://www.bointernational.net/wp-content/uploads/2024/09/Beard-Spray-220x255.jpg",
+    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a42fe000e4e6789e1/view?project=6912e771002b88166cae",
 };
 
 // AUTO-EXTRACT CATEGORIES
 const categories = [
   ...new Set(
-    products.filter((p) => p.category !== "Range").map((p) => p.category)
+    products.filter((p) => p.category !== "Range").map((p) => p.category),
   ),
 ];
 
@@ -108,13 +108,11 @@ export default function Home() {
       {/* ================= PRODUCTS ================= */}
       <section className="bg-[#effaed] py-16">
         <div className="ui-section mx-auto">
-          <h1 className="ui-h1 mb-10 text-center">
-            {selectedCategory ? selectedCategory : "Product Categories"}
-          </h1>
+          <h1 className="ui-h1  text-center">Product Categories</h1>
 
           {/* ===== CATEGORY VIEW ===== */}
           {!selectedCategory && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+            <div className="grid mt-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
               {categories.map((cat) => (
                 <div
                   key={cat}
@@ -158,58 +156,101 @@ export default function Home() {
           {/* ===== PRODUCT VIEW ===== */}
           {selectedCategory && (
             <div>
+              {/* BACK BUTTON */}
               <button
                 onClick={() => setSelectedCategory(null)}
-                className="mb-6 ui-badge text-sm text-[#14542B] font-semibold "
+                className="mb-6 ui-badge text-sm text-[#14542B] font-semibold"
               >
                 ← Back to Categories
               </button>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+              {/* PRODUCT CARDS */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
                 {products
                   .filter((p) => p.category === selectedCategory)
                   .map((item) => (
                     <div
                       key={item.id}
                       className="
-                        rounded-2xl overflow-hidden shadow-lg
-                        hover:shadow-xl transition hover:scale-[1.02]
-                        bg-gradient-to-br from-white to-[#EDF5EE]
-                      "
+          group relative overflow-hidden rounded-3xl
+          backdrop-blur-xl
+          bg-white/60
+          border border-white/30
+          shadow-[0_12px_40px_rgba(20,84,43,0.18)]
+          transition-all duration-500
+          hover:-translate-y-2
+          hover:bg-white/75
+          hover:shadow-[0_30px_80px_rgba(83,148,91,0.45)]
+          min-h-[280px]
+        "
                     >
-                      <div className="h-72 bg-white flex items-center justify-center">
-                        <img
-                          src={item.img}
-                          alt={item.name}
-                          className="h-full w-full object-contain"
-                        />
-                      </div>
+                      {/* BORDER GLOW */}
+                      <div
+                        className="
+            absolute inset-0 rounded-3xl
+            bg-gradient-to-r
+            from-[#14542B]
+            via-[#53945B]
+            to-[#83A33C]
+            opacity-0
+            group-hover:opacity-100
+            blur-xl
+            transition duration-500
+          "
+                      />
 
-                      <div className="p-4">
-                        <h3 className="text-base font-semibold text-[#242424] mb-1">
+                      {/* INNER GLASS LAYER */}
+                      <div
+                        className="
+            absolute inset-[1.5px] rounded-[22px]
+            bg-white/70
+            backdrop-blur-xl
+          "
+                      />
+
+                      {/* Gradient Glow */}
+                      <div
+                        className="
+            absolute -top-28 -right-28 w-72 h-72 rounded-full
+            bg-gradient-to-br
+            from-[#53945B]/40
+            via-[#83A33C]/30
+            to-transparent
+            blur-3xl
+            opacity-70
+            group-hover:scale-110 transition duration-500
+          "
+                      />
+
+                      {/* Content */}
+                      <div className="relative z-10 flex flex-col justify-center items-center p-8 ">
+                        <h3 className="ui-h2 font-semibold text-[#242424] mb-4 leading-snug">
                           {item.name}
                         </h3>
 
-                        <p className="text-sm text-gray-500 mb-3">
+                        <p className="ui-para text-[#242424]/70 leading-relaxed">
                           {item.description}
                         </p>
-
-                        <Link
-                          href="/contact-us"
-                          className="
-                            inline-block px-4 py-2 text-xs rounded-lg
-                            font-semibold text-white transition hover:scale-105
-                          "
-                          style={{
-                            background:
-                              "linear-gradient(135deg, #53945B, #83A33C)",
-                          }}
-                        >
-                          Get Quote
-                        </Link>
                       </div>
                     </div>
                   ))}
+              </div>
+
+              {/* COMMON GET QUOTE BUTTON */}
+              <div className="flex justify-center mt-10">
+                <Link
+                  href="/contact-us"
+                  className="
+          px-8 py-3 text-sm rounded-xl
+          font-semibold text-white
+          transition hover:scale-105
+        "
+                  style={{
+                    background: "linear-gradient(135deg, #53945B, #83A33C)",
+                  }}
+                >
+                  Get Quote for {selectedCategory}
+                </Link>
               </div>
             </div>
           )}

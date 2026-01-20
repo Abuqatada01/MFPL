@@ -52,7 +52,7 @@ export default function HeroSection() {
       />
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-black/30" />
+      {/* <div className="absolute inset-0 bg-black/30" /> */}
 
       {/* CTA CONTENT (LEFT OVERLAY) */}
       <div className="absolute top-120 inset-0 flex items-center">

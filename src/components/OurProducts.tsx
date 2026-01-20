@@ -5,15 +5,18 @@ import Image from "next/image";
 const products = [
   {
     title: "Cosmetic\nFormulation",
-    image: "https://palmisthealthcare.com/public/imgs/home/i4.jpg",
+    image:
+      "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a4362000d4eb33ae3/view?project=6912e771002b88166cae",
   },
   {
     title: "Skincare\nFormulation",
-    image: "https://palmisthealthcare.com/public/imgs/home/innovation.jpg",
+    image:
+      "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a42fe000e4e6789e1/view?project=6912e771002b88166cae",
   },
   {
     title: "Haircare\nFormulation",
-    image: "https://palmisthealthcare.com/public/imgs/home/i3.jpg",
+    image:
+      "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43670011cc156a53/view?project=6912e771002b88166cae",
   },
 ];
 
@@ -57,7 +60,7 @@ export default function OurProducts() {
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-contain"
+                      className="object-contain scale-125"
                     />
                   </div>
                 </div>

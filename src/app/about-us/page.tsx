@@ -177,7 +177,7 @@ export default function AboutUsPage() {
           {/* SECTION HEADER */}
           <div className="mb-16 max-w-3xl">
             <span className="ui-badge mb-2 lg:mb-4 px-4 py-1 ">
-              WHY CHOOSE US
+              WHY CHOOSE US ?
             </span>
 
             <h2 className="ui-h1 font-bold leading-tight text-[var(--clr-text-dark)]">
