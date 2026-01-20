@@ -59,15 +59,15 @@ export default function Footer() {
             <li>
               <Link href="/about-us">About Us</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/">Business Partners</Link>
-            </li>
+            </li> */}
             <li>
               <Link href="/">FAQ</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/blog">Blog</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
 
@@ -94,8 +94,8 @@ export default function Footer() {
         </div>
 
         {/* ================= NEWSLETTER ================= */}
-        {/* <div>
-          <h3 className="font-semibold mb-5">Stay Connected</h3>
+        <div>
+          {/* <h3 className="font-semibold mb-5">Stay Connected</h3>
           <p className="text-sm opacity-80 mb-5">
             Subscribe to receive updates, insights, and company news.
           </p>
@@ -116,14 +116,14 @@ export default function Footer() {
             >
               Subscribe
             </button>
-          </div>
+          </div> */}
 
           <div className="text-sm mt-6 opacity-80">
             <p>Working Hours:</p>
             <p>Mon – Sat : 9:00 AM – 6:00 PM</p>
             <p>Sunday : Closed</p>
           </div>
-        </div> */}
+        </div>
       </div>
 
       {/* ================= BOTTOM BAR ================= */}

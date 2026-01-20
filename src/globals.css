@@ -241,8 +241,8 @@
 }
 
 .ui-btn-outline {
-  border: 1px solid var(--clr-text-dark);
-  color: var(--clr-primary);
+  color: (var(--clr-secondary));
+  background-color: var(--clr-bg-white);
 }
 
 .ui-btn-outline:hover {
