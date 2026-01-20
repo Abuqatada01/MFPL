@@ -1,8 +1,52 @@
 "use client";
 
+import { useState } from "react";
 import { Heart } from "@phosphor-icons/react";
+import { products } from "../products/data"; // adjust path if needed
+
+const categories: string[] = [
+  "Creams",
+  "Skin Serums",
+  "Lotions",
+  "Hair Conditioners",
+  "Hair Serums",
+  "Hair Cleansers",
+  "Hand Wash",
+  "Intimate Care",
+  "Body Wash",
+  "Face Cleansers",
+  "Hair Masks",
+  "Hair Spa",
+  "Scrubs & Packs",
+  "Skin Toners",
+  "Hair & Body Mists",
+  "Baby Care",
+  "Sun Care",
+  "Under Eye & Lip Care",
+  "Men's Grooming",
+];
+
+const MIN_QTY = 100;
 
 export default function ContactPage() {
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState("");
+  const [quantity, setQuantity] = useState<number | "">("");
+
+  const filteredProducts = products.filter(
+    (product) => product.category === selectedCategory,
+  );
+
+  const handleQuantityChange = (value: string) => {
+    if (value === "") {
+      setQuantity("");
+      return;
+    }
+
+    const num = Number(value);
+    setQuantity(num < MIN_QTY ? MIN_QTY : num);
+  };
+
   return (
     <section className="relative py-10 xl:py-25 flex items-start justify-center px-6 overflow-hidden bg-gradient-to-br from-[#effaed] via-white to-[#f6fbf3]">
       {/* SOFT SHAPES */}
@@ -24,7 +68,6 @@ export default function ContactPage() {
               support at every stage of your brand journey.
             </p>
 
-            {/* ICON */}
             <div className="flex items-center gap-3 text-[#14542B]">
               <Heart size={22} weight="fill" />
               <span className="text-sm">We’re happy to help</span>
@@ -42,15 +85,89 @@ export default function ContactPage() {
             {/* ROW 2 */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <Input label="Email" />
+
               <div>
                 <label className="text-xs uppercase tracking-wide text-[#242424]/60">
                   Country
                 </label>
-                <select className="w-full border-b border-[#242424]/20 py-2 bg-transparent focus:outline-none focus:border-[#53945B] transition">
+                <select className="form-select">
                   <option>India</option>
                   <option>UAE</option>
                   <option>USA</option>
                 </select>
+              </div>
+            </div>
+
+            {/* ROW 3 – CATEGORY */}
+            <div>
+              <label className="text-xs uppercase tracking-wide text-[#242424]/60">
+                Category
+              </label>
+              <select
+                className="form-select"
+                value={selectedCategory}
+                onChange={(e) => {
+                  setSelectedCategory(e.target.value);
+                  setSelectedProduct("");
+                  setQuantity("");
+                }}
+              >
+                <option value="">Select Category</option>
+                {categories.map((cat) => (
+                  <option key={cat} value={cat}>
+                    {cat}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* ROW 4 – PRODUCT & QUANTITY */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              {/* PRODUCT */}
+              <div>
+                <label className="text-xs uppercase tracking-wide text-[#242424]/60">
+                  Product
+                </label>
+                <select
+                  className="form-select"
+                  value={selectedProduct}
+                  disabled={!selectedCategory}
+                  onChange={(e) => {
+                    setSelectedProduct(e.target.value);
+                    setQuantity("");
+                  }}
+                >
+                  <option value="">
+                    {selectedCategory
+                      ? "Select Product"
+                      : "Select Category First"}
+                  </option>
+
+                  {filteredProducts.map((product) => (
+                    <option key={product.id} value={product.name}>
+                      {product.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* QUANTITY */}
+              <div>
+                <label className="text-xs uppercase tracking-wide text-[#242424]/60">
+                  Quantity
+                </label>
+                <input
+                  type="number"
+                  min={MIN_QTY}
+                  placeholder={`Minimum ${MIN_QTY} units`}
+                  value={quantity}
+                  disabled={!selectedProduct}
+                  onChange={(e) => handleQuantityChange(e.target.value)}
+                  className="w-full border-b border-[#242424]/20 py-2 bg-transparent focus:outline-none focus:border-[#53945B] transition disabled:opacity-40"
+                />
+                <p className="mt-1 text-xs text-[#242424]/50">
+                  MOQ: {MIN_QTY} units
+                </p>
               </div>
             </div>
 
@@ -59,16 +176,14 @@ export default function ContactPage() {
               <label className="text-xs uppercase tracking-wide text-[#242424]/60">
                 Message
               </label>
-              <textarea
-                rows={4}
-                className="w-full border-b border-[#242424]/20 py-2 bg-transparent resize-none focus:outline-none focus:border-[#53945B] transition"
-              />
+              <textarea rows={4} className="form-textarea" />
             </div>
 
             {/* SUBMIT */}
             <button
               type="submit"
-              className="ui-badge-2 text-white px-10 py-3 rounded-full font-semibold text-sm hover:bg-[#14542B] transition"
+              disabled={!selectedProduct || quantity === ""}
+              className="ui-badge-2 text-white px-10 py-3 rounded-full font-semibold text-sm hover:bg-[#14542B] transition disabled:opacity-50"
             >
               Submit
             </button>

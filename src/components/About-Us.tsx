@@ -1,12 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutUs() {
   return (
     <section className="" style={{ background: "var(--clr-bg-light)" }}>
       <div className=" ui-section ">
-        <div className="ui-badge text-center">About Us</div>
+        <div className="ui-badge text-center">
+          <Link href="/about-us">About Us</Link>{" "}
+        </div>
         {/* TOP CONTENT */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-20 items-start">
           {/* LEFT */}

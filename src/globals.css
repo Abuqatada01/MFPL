@@ -277,6 +277,127 @@
   margin-top: 2rem;
 }
 
+.glass-icon {
+  height: 42px;
+  width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+
+  /* Glass Effect */
+  background: linear-gradient(135deg,
+      rgba(83, 148, 91, 0.35),
+      rgba(131, 163, 60, 0.25));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  color: #14542B;
+  /* Dark Forest Green */
+  box-shadow:
+    0 8px 20px rgba(20, 84, 43, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.glass-icon:hover {
+  transform: translateY(-4px) scale(1.06);
+  color: #ffffff;
+
+  background: linear-gradient(135deg,
+      #53945B,
+      #83A33C);
+
+  box-shadow:
+    0 15px 35px rgba(20, 84, 43, 0.45),
+    0 0 20px rgba(131, 163, 60, 0.6);
+}
+
+.glass-contact {
+  transition: all 0.3s ease;
+}
+
+.glass-icon-sm {
+  height: 36px;
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  /* Glass Gradient */
+  background: linear-gradient(135deg,
+      rgba(83, 148, 91, 0.35),
+      rgba(131, 163, 60, 0.25));
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  color: #14542B;
+  font-size: 16px;
+
+  box-shadow:
+    0 6px 16px rgba(20, 84, 43, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+
+  transition: all 0.3s ease;
+}
+
+.glass-text {
+  color: #242424;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.glass-contact:hover .glass-icon-sm {
+  background: linear-gradient(135deg,
+      #53945B,
+      #83A33C);
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow:
+    0 12px 30px rgba(20, 84, 43, 0.45);
+}
+
+.glass-contact:hover .glass-text {
+  color: #14542B;
+}
+
+.form-select {
+  width: 100%;
+  border-bottom: 1px solid rgba(36, 36, 36, 0.2);
+  padding: 8px 0;
+  background: transparent;
+  color: #242424;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-select:focus {
+  border-color: #53945B;
+}
+
+.form-textarea {
+  width: 100%;
+  border-bottom: 1px solid rgba(36, 36, 36, 0.2);
+  padding: 8px 0;
+  background: transparent;
+  resize: none;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-textarea:focus {
+  border-color: #53945B;
+}
+
 /* =====================================================
    RESPONSIVE BREAKPOINTS (VARIABLE-ONLY CHANGES)
 ===================================================== */

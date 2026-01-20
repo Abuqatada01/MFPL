@@ -2,7 +2,14 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { List, X } from "@phosphor-icons/react";
+import {
+  FacebookLogoIcon,
+  InstagramLogoIcon,
+  LinkedinLogoIcon,
+  List,
+  X,
+  YoutubeLogoIcon,
+} from "@phosphor-icons/react";
 
 const menuItems = [
   { label: "Home", href: "/" },
@@ -26,26 +33,28 @@ export default function Navbar() {
 
           {/* CONTACT INFO (Desktop only) */}
           <div className="hidden md:flex items-center gap-10 text-sm">
-            <div className="flex items-center gap-3">
-              <span className="icon-shape">✉</span>
-              <span className="text-gray-500">Medicosmo_info@gmail.com</span>
+            <div className="flex items-center gap-3 glass-contact">
+              <span className="glass-icon-sm">✉</span>
+              <span className="glass-text">Medicosmo_info@gmail.com</span>
             </div>
 
-            <div className="flex items-center gap-3">
-              <span className="icon-shape">☎</span>
-              <span className="text-gray-500">+91 92050 94789</span>
+            <div className="flex items-center gap-3 glass-contact">
+              <span className="glass-icon-sm">☎</span>
+              <span className="glass-text">+91 92050 94789</span>
             </div>
           </div>
 
           {/* SOCIALS + HAMBURGER */}
           <div className="flex items-center gap-2">
             {/* Desktop socials */}
-            <div className="hidden md:flex items-center gap-2">
-              {["in", "f", "t"].map((icon) => (
-                <span
-                  key={icon}
-                  className="h-9 w-9 flex items-center justify-center icon-shape"
-                >
+            <div className="hidden md:flex items-center gap-3">
+              {[
+                <InstagramLogoIcon weight="fill" size={22} />,
+                <FacebookLogoIcon weight="fill" size={22} />,
+                <LinkedinLogoIcon weight="fill" size={22} />,
+                <YoutubeLogoIcon weight="fill" size={22} />,
+              ].map((icon, index) => (
+                <span key={index} className="glass-icon">
                   {icon}
                 </span>
               ))}
