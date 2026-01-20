@@ -3,10 +3,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import {
+  EnvelopeIcon,
   FacebookLogoIcon,
   InstagramLogoIcon,
   LinkedinLogoIcon,
   List,
+  MailboxIcon,
+  PhoneCallIcon,
   X,
   YoutubeLogoIcon,
 } from "@phosphor-icons/react";
@@ -34,12 +37,16 @@ export default function Navbar() {
           {/* CONTACT INFO (Desktop only) */}
           <div className="hidden md:flex items-center gap-10 text-sm">
             <div className="flex items-center gap-3 glass-contact">
-              <span className="glass-icon-sm">✉</span>
+              <span className="glass-icon-sm">
+                <EnvelopeIcon weight="fill" size={22} />
+              </span>
               <span className="glass-text">Medicosmo_info@gmail.com</span>
             </div>
 
             <div className="flex items-center gap-3 glass-contact">
-              <span className="glass-icon-sm">☎</span>
+              <span className="glass-icon-sm">
+                <PhoneCallIcon weight="fill" size={22} />
+              </span>
               <span className="glass-text">+91 92050 94789</span>
             </div>
           </div>
