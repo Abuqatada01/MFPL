@@ -79,10 +79,10 @@ export default function OurProcess() {
           {/* CENTER IMAGE */}
           <div className="relative flex justify-center">
             <Image
-              src="https://wahter.co.in/assets/images/bottle-collage.png"
+              src="/processimg.png"
               alt="Branded Water Bottle"
-              width={420}
-              height={420}
+              width={450}
+              height={450}
               className="relative z-10 animate-[floatSlow_6s_ease-in-out_infinite]"
             />
           </div>
