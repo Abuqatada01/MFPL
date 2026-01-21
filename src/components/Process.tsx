@@ -12,12 +12,12 @@ export default function OurProcess() {
     {
       title: "White Label Made Simple",
       desc: "Our ready-to-brand formulations help you launch faster without the cost and complexity of in-house R&D or production setup.",
-      imgs: "https://icon-library.com/images/brand-icon-png/brand-icon-png-21.jpg",
+      imgs: "https://uxwing.com/wp-content/themes/uxwing/download/e-commerce-currency-shopping/tag-label-green-icon.png",
     },
     {
       title: "Customization & Flexibility",
       desc: "From formulations to packaging and labeling, we adapt our manufacturing solutions to match your brand vision and market goals.",
-      imgs: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjEk2jo3NpB0FbRr-4j8P6M4a8XdyIq9kTPg&s",
+      imgs: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxCN7gP4OqQ3VXDIuqZeZrBSvrev3wl7umNg&s",
     },
   ];
 
@@ -30,12 +30,12 @@ export default function OurProcess() {
     {
       title: "Scalable Production",
       desc: "Our manufacturing capabilities are built to support growing demand—whether you’re starting small or scaling up rapidly.",
-      imgs: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAOTTArZfOc-vDtZ2qjMZ5zKWfvENBEwMK3g&s",
+      imgs: "https://cdn-icons-png.freepik.com/512/5575/5575052.png",
     },
     {
       title: "Brand-Ready Compliance",
       desc: "We ensure products are manufactured with market-aligned compliance, making them retail-ready and distribution-friendly.",
-      imgs: "https://img.favpng.com/3/1/4/brand-management-customer-public-relations-communication-png-favpng-bkTUvMPJTfJiTQivP917Gpa7U.jpg",
+      imgs: "https://media.istockphoto.com/id/1124963130/vector/compliance-inspection-approved.jpg?s=612x612&w=0&k=20&c=gwhSA0Yq90ZBgfUclULpH_YbQ2ZKaGWsr2mGQvxD2Qk=",
     },
   ];
 
