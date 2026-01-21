@@ -1,22 +1,35 @@
-// lenis-provider.tsx
 "use client";
-import { ReactLenis } from "@studio-freight/react-lenis";
-import { FC, useRef } from "react";
 
-type LenisScrollProviderProps = {
-  children: React.ReactNode;
-};
-const LenisScrollProvider: FC<LenisScrollProviderProps> = ({ children }) => {
-  const lenisRef = useRef(null);
-  return (
-    <ReactLenis
-      ref={lenisRef}
-      root
-      options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}
-    >
-      {children}
-    </ReactLenis>
-  );
+import Lenis from "lenis";
+import { useEffect, useRef, type ReactNode } from "react";
+
+type Props = {
+  children: ReactNode;
 };
 
-export default LenisScrollProvider;
+export default function SmoothScroll({ children }: Props) {
+  const lenisRef = useRef<Lenis | null>(null);
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      lerp: 0.1,
+      duration: 1.5,
+      smoothWheel: true,
+    });
+
+    lenisRef.current = lenis;
+
+    const raf = (time: number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
+  return <>{children}</>;
+}
