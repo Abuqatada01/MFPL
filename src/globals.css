@@ -229,24 +229,28 @@
 
 .ui-btn-primary {
   color: var(--clr-bg-white);
-  background: linear-gradient(135deg,
-      var(--clr-secondary),
-      var(--clr-secondary));
+  background: var(--clr-secondary);
   box-shadow: var(--shadow-soft);
 }
 
 .ui-btn-primary:hover {
-  transform: translateY(-2px);
+  background: var(--clr-primary);
+  /* darker green */
   box-shadow: var(--shadow-strong);
+  transform: translateY(-2px);
 }
 
+
+/* OUTLINE */
 .ui-btn-outline {
-  color: (var(--clr-secondary));
+  color: var(--clr-secondary);
+  /* 👈 fixed */
   background-color: var(--clr-bg-white);
+  /* border: 1px solid var(--clr-secondary); */
 }
 
 .ui-btn-outline:hover {
-  background: var(--clr-primary);
+  background-color: var(--clr-primary);
   color: var(--clr-white);
 }
 

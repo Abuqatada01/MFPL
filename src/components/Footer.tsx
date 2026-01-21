@@ -23,7 +23,7 @@ export default function Footer() {
           <img
             src="/Logoblack.png"
             alt="Logo"
-            className="h-10 mb-4 bg-white p-2 rounded"
+            className="h-10 mb-4 p-2 rounded"
           />
 
           <p className="text-sm leading-relaxed opacity-80">
@@ -35,18 +35,40 @@ export default function Footer() {
 
           <div className="flex gap-4 mt-6">
             {[
-              <InstagramLogoIcon weight="fill" size={25} />,
-              <FacebookLogoIcon weight="fill" size={25} />,
-              <LinkedinLogoIcon weight="fill" size={25} />,
-              <YoutubeLogoIcon weight="fill" size={25} />,
-            ].map((icon, index) => (
-              <span
+              {
+                href: "https://www.instagram.com/mfpl__?igsh=dXY5NDV1ZXcwdWM1",
+                icon: <InstagramLogoIcon weight="fill" size={25} />,
+                label: "Instagram",
+              },
+              {
+                href: "https://www.facebook.com/profile.php?id=61585006272529",
+                icon: <FacebookLogoIcon weight="fill" size={25} />,
+                label: "Facebook",
+              },
+              {
+                href: "https://www.linkedin.com/company/medicosmoformulations",
+                icon: <LinkedinLogoIcon weight="fill" size={25} />,
+                label: "LinkedIn",
+              },
+              {
+                href: "https://www.youtube.com/@medicosmoformulations",
+                icon: <YoutubeLogoIcon weight="fill" size={25} />,
+                label: "YouTube",
+              },
+            ].map((item, index) => (
+              <a
                 key={index}
-                className="h-9 w-9 flex items-center justify-center rounded-full transition hover:scale-110 cursor-pointer"
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={item.label}
+                className="h-9 w-9 flex items-center justify-center rounded-full
+                 transition hover:scale-110 hover:bg-white/20
+                 cursor-pointer"
                 style={{ background: "rgba(255,255,255,0.12)" }}
               >
-                {icon}
-              </span>
+                {item.icon}
+              </a>
             ))}
           </div>
         </div>
@@ -61,11 +83,11 @@ export default function Footer() {
             <li>
               <Link href="/about-us">About Us</Link>
             </li>
-            {/* <li>
-              <Link href="/">Business Partners</Link>
-            </li> */}
             <li>
-              <Link href="/">FAQ</Link>
+              <Link href="/products">Products</Link>
+            </li>
+            <li>
+              <Link href="/contact-us">Contact Us</Link>
             </li>
             {/* <li>
               <Link href="/blog">Blog</Link>
@@ -120,8 +142,18 @@ export default function Footer() {
             </button>
           </div> */}
 
-          <div className="text-sm  opacity-80">
-            <p>Working Hours:</p>
+          <div className="text-sm  ">
+            <p>
+              <span className="text-white font-semibold">Mobile</span> : +91
+              92050 94789
+            </p>
+            <p>
+              <span className="text-white font-semibold">Email </span>:
+              Medicosmo_info@gmail.com
+            </p>
+            <p>
+              <span className="text-white font-semibold">Working Hours</span>:
+            </p>
             <p>Mon – Sat : 9:00 AM – 6:00 PM</p>
             <p>Sunday : Closed</p>
           </div>

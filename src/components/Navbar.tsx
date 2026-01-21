@@ -35,7 +35,7 @@ export default function Navbar() {
           </Link>
 
           {/* CONTACT INFO (Desktop only) */}
-          <div className="hidden md:flex items-center gap-10 text-sm">
+          {/* <div className="hidden md:flex items-center gap-10 text-sm">
             <div className="flex items-center gap-3 glass-contact">
               <span className="glass-icon-sm">
                 <EnvelopeIcon weight="fill" size={22} />
@@ -49,7 +49,7 @@ export default function Navbar() {
               </span>
               <span className="glass-text">+91 92050 94789</span>
             </div>
-          </div>
+          </div> */}
 
           {/* SOCIALS + HAMBURGER */}
           <div className="flex items-center gap-2">

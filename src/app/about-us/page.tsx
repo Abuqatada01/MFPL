@@ -2,6 +2,7 @@
 import { EyesIcon, TargetIcon, VisorIcon } from "@phosphor-icons/react";
 import "./about.css";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutUsPage() {
   return (
@@ -222,30 +223,34 @@ export default function AboutUsPage() {
                 <div className="icon-wrap-dark">🚀</div>
 
                 <h3 className="text-2xl font-semibold mb-4">
-                  Cost-Effective Manufacturing
+                  Ready to Launch Your White Label Brand?
                 </h3>
 
                 <p className="text-sm leading-relaxed opacity-90 mb-4">
-                  Our streamlined processes and ready-to-brand formulations help
-                  reduce development costs, enabling brands to achieve faster
-                  returns without heavy upfront investment.
+                  Turn your idea into a market-ready cosmetic, skincare, or
+                  haircare product with MFPL’s end-to-end manufacturing support.
+                  From formulation and packaging to compliance and production,
+                  we deliver cost-effective manufacturing solutions that help
+                  you launch faster and scale smarter—while we guide you at
+                  every step.
                 </p>
 
-                <p className="text-sm leading-relaxed opacity-90">
+                {/* <p className="text-sm leading-relaxed opacity-90">
                   Whether you’re launching a new brand or expanding your
                   portfolio, our flexible systems adapt to your growth stage.
-                </p>
+                </p> */}
               </div>
 
-              <button
+              <Link
+                href="/contact-us"
                 className="mt-10 w-fit px-7 py-3 rounded-full font-semibold text-sm transition"
                 style={{
                   background: "var(--clr-secondary)",
-                  color: "var(--clr-text-dark)",
+                  color: "var(--clr-text-light)",
                 }}
               >
                 Start Your White Label Journey →
-              </button>
+              </Link>
             </div>
 
             {/* CARD 4 */}
@@ -265,11 +270,11 @@ export default function AboutUsPage() {
       </section>
 
       {/* ================= OUR TEAM ================= */}
-      <section className="ui-section bg-white">
+      {/* <section className="ui-section bg-white">
         <div className="ui-container">
-          {/* ================= TOP CONTENT ================= */}
+        
           <div className="mb-6 lg:mb-16 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
-            {/* LEFT */}
+            
             <div>
               <span className="inline-block mb-4 px-4 py-1 ui-badge">
                 PURE TALENT
@@ -289,7 +294,6 @@ export default function AboutUsPage() {
               </p>
             </div>
 
-            {/* RIGHT – BRAND LOGOS */}
             <div className="flex flex-wrap gap-6 lg:justify-end items-center opacity-70">
               {["GMP", "ISO", "FDA", "HALAL"].map((logo, i) => (
                 <div
@@ -306,7 +310,7 @@ export default function AboutUsPage() {
             </div>
           </div>
 
-          {/* ================= TEAM CARDS ================= */}
+         
           <div
             className="
         flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory
@@ -343,7 +347,7 @@ export default function AboutUsPage() {
             sm:min-w-0
           "
               >
-                {/* IMAGE */}
+            
                 <div className="relative overflow-hidden rounded-2xl mb-5">
                   <img
                     src={member.img}
@@ -352,12 +356,12 @@ export default function AboutUsPage() {
                   />
                 </div>
 
-                {/* NAME */}
+              
                 <h3 className="font-semibold text-lg text-[var(--clr-text-dark)]">
                   {member.name}
                 </h3>
 
-                {/* ROLE */}
+          
                 <p className="text-sm mt-1 text-[var(--clr-text-muted)]">
                   {member.role}
                 </p>
@@ -365,7 +369,7 @@ export default function AboutUsPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

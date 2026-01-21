@@ -59,7 +59,10 @@ export default function HeroSection() {
       <div className="absolute top-120 inset-0 flex items-center">
         <div className="ui-section">
           <div className="flex gap-4">
-            <Link href="/contact-us" className="ui-btn ui-btn-primary">
+            <Link
+              href="/contact-us"
+              className="ui-btn ui-btn-primary hover:bg-green-700 "
+            >
               Start Your Brand Today
             </Link>
 
