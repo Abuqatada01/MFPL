@@ -125,7 +125,7 @@ export default function OrderSteps() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 md:mt-20">
+        <div className="mt-6 md:mt-20">
           <Link
             href="/contact-us"
             className="inline-flex items-center gap-3 px-10 py-4 rounded-full text-lg font-semibold transition-all"

@@ -75,7 +75,7 @@ export default function Home() {
               <div className="relative grid h-full grid-cols-1 md:grid-cols-2 items-center px-6 sm:px-10 md:px-20">
                 {/* TEXT */}
                 <div className="max-w-xl text-center md:text-left">
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#14542B] leading-tight mb-3">
+                  <h2 className="text-xl mt-4 lg:mt-0 sm:text-2xl md:text-3xl font-extrabold text-[#14542B] leading-tight mb-0 lg:mb-3">
                     Branded products that fit <br />
                     your industry, perfectly.
                   </h2>
@@ -91,7 +91,7 @@ export default function Home() {
                 </div>
 
                 {/* IMAGE */}
-                <div className="relative flex justify-center md:justify-end items-end h-full mt-6 md:mt-0">
+                <div className="relative flex justify-center md:justify-end items-end h-full mt-0 md:mt-0">
                   <img
                     src="/product-hero.png"
                     alt="Branded Product"
@@ -106,13 +106,13 @@ export default function Home() {
       </section>
 
       {/* ================= PRODUCTS ================= */}
-      <section className="bg-[#effaed] py-16">
-        <div className="ui-section mx-auto">
-          <h1 className="ui-h1  text-center">Product Categories</h1>
+      <section className="ui-section ">
+        <div className=" ">
+          <h1 className="ui-h1 text-center">Product Categories</h1>
 
           {/* ===== CATEGORY VIEW ===== */}
           {!selectedCategory && (
-            <div className="grid mt-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+            <div className="grid mt-4 lg:mt-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
               {categories.map((cat) => (
                 <div
                   key={cat}
@@ -165,7 +165,7 @@ export default function Home() {
               </button>
 
               {/* PRODUCT CARDS */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-10">
                 {products
                   .filter((p) => p.category === selectedCategory)
                   .map((item) => (
@@ -181,7 +181,7 @@ export default function Home() {
           hover:-translate-y-2
           hover:bg-white/75
           hover:shadow-[0_30px_80px_rgba(83,148,91,0.45)]
-          min-h-[280px]
+          min-h-[180px]
         "
                     >
                       {/* BORDER GLOW */}
@@ -247,7 +247,7 @@ export default function Home() {
               </div>
 
               {/* COMMON GET QUOTE BUTTON */}
-              <div className="flex justify-center mt-10">
+              <div className="flex justify-center mt-4 lg:mt-10">
                 <Link
                   href="/contact-us"
                   className="

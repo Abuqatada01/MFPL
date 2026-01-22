@@ -26,7 +26,7 @@ const categories: string[] = [
   "Men's Grooming",
 ];
 
-const MIN_QTY = 100;
+const MIN_QTY = 50;
 
 export default function ContactPage() {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -91,9 +91,10 @@ export default function ContactPage() {
                   Country
                 </label>
                 <select className="form-select">
+                  <option>Select Country</option>
                   <option>India</option>
-                  <option>UAE</option>
                   <option>USA</option>
+                  <option>Other</option>
                 </select>
               </div>
             </div>

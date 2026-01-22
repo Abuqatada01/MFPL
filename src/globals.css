@@ -438,7 +438,7 @@
     width: 90%;
     margin: 0 auto;
     /* 10% left + 10% right automatically */
-    padding: clamp(2rem, 5vw, 4rem) 0;
+    padding: clamp(1rem, 5vw, 4rem) 0;
   }
 }
 
@@ -473,8 +473,7 @@
   .ui-section {
     width: 90%;
     margin: 0 auto;
-    /* 10% left + 10% right automatically */
-    padding: clamp(2rem, 5vw, 4rem) 0;
+    padding: clamp(1rem, 5vw, 4rem) 0;
   }
 }
 

@@ -24,7 +24,7 @@ export default function ConsultationSection() {
         />
 
         <div className="ui-container relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16 items-center">
             {/* ================= LEFT CONTENT ================= */}
             <div className="lg:col-span-7">
               <h2 className="text-3xl lg:text-5xl font-semibold leading-tight text-[var(--clr-text-dark)]">
@@ -70,7 +70,7 @@ export default function ConsultationSection() {
               </div>
 
               {/* Primary CTA */}
-              <div className="mt-12">
+              <div className="mt-5 lg:mt-12">
                 <Link
                   href="/contact-us"
                   className="inline-flex items-center gap-3 px-10 py-4 rounded-full text-lg font-semibold transition-all"
