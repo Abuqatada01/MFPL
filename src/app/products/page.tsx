@@ -108,11 +108,13 @@ export default function Home() {
       {/* ================= PRODUCTS ================= */}
       <section className="ui-section ">
         <div className=" ">
-          <h1 className="ui-h1 text-center">Product Categories</h1>
+          <h1 className="ui-h1 text-[var(--clr-primary)] font semibold text-center">
+            Product Categories
+          </h1>
 
           {/* ===== CATEGORY VIEW ===== */}
           {!selectedCategory && (
-            <div className="grid mt-4 lg:mt-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+            <div className="grid mt-4 lg:mt-10 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-10">
               {categories.map((cat) => (
                 <div
                   key={cat}
@@ -129,7 +131,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-br from-[#83A33C]/20 via-[#53945B]/20 to-transparent opacity-0 group-hover:opacity-100 transition" />
 
                   {/* Image */}
-                  <div className="relative h-80 bg-[#EDF5EE] flex items-center justify-center">
+                  <div className="relative h-40 lg:h-80 bg-[#EDF5EE] flex items-center justify-center">
                     <img
                       src={categoryImages[cat]}
                       alt={cat}
@@ -139,12 +141,12 @@ export default function Home() {
 
                   {/* Content */}
                   <div className="relative p-6 text-center bg-white">
-                    <h3 className="text-lg font-bold text-[#14542B]">{cat}</h3>
-                    <p className="text-sm text-[#14542B]/70 mt-1">
+                    <h3 className="ui-para font-bold text-[#14542B]">{cat}</h3>
+                    <p className="ui-desc text-[#14542B]/70 mt-1">
                       Explore the full range
                     </p>
 
-                    <div className="mt-4 inline-flex items-center justify-center gap-2 text-sm font-semibold text-[#53945B]">
+                    <div className="mt-2 lg:mt-4 inline-flex items-center justify-center gap-2 ui-desc font-semibold text-[#53945B]">
                       View Products →
                     </div>
                   </div>
