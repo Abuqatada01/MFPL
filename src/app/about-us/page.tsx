@@ -8,66 +8,15 @@ export default function AboutUsPage() {
   return (
     <>
       {/* ================= ABOUT BANNER ================= */}
-      <section
-        className="relative h-[50vh] flex items-start overflow-hidden"
-        style={{ backgroundColor: "var(--clr-accent)" }}
-      >
-        {/* BACKGROUND IMAGE */}
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage:
-              "url('https://bestcare.co.in/wp-content/uploads/2023/07/Best-care-Page-banner-13-scaled.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-
-        {/* DARK BRAND OVERLAY */}
-        {/* <div
-          className="absolute inset-0 z-10"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(20,84,43,0.78), rgba(20,84,43,0.72))",
-          }}
-        /> */}
-
-        {/* 🟢 HONEYCOMB PATTERN (PURE CSS) */}
-        {/* <div
-          className="absolute inset-0 z-20 pointer-events-none"
-          style={{
-            backgroundImage: `
-        linear-gradient(30deg, rgba(255,255,255,0.18) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.18) 87.5%, rgba(255,255,255,0.18)),
-        linear-gradient(150deg, rgba(255,255,255,0.18) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.18) 87.5%, rgba(255,255,255,0.18)),
-        linear-gradient(90deg, rgba(255,255,255,0.12) 2%, transparent 2.5%, transparent 97%, rgba(255,255,255,0.12) 97.5%, rgba(255,255,255,0.12))
-      `,
-            backgroundSize: "48px 84px",
-            backgroundPosition: "0 0, 0 0, 24px 42px",
-            mixBlendMode: "overlay",
-          }}
-        /> */}
-
-        {/* DIAGONAL SOFT LIGHT */}
-        {/* <div
-          className="absolute inset-0 z-30 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(120deg, rgba(255,255,255,0.18) 0%, transparent 55%)",
-          }}
-        /> */}
-
-        {/* CONTENT */}
-        {/* <div className="ui-container relative z-40 pt-24">
-          <h1 className="text-5xl font-semibold text-white mb-3">About Us</h1>
-
-          <div className="flex items-center gap-2 text-sm text-white/80">
-            <span className="hover:text-white transition cursor-pointer">
-              Home
-            </span>
-            <span className="text-white/50">›</span>
-            <span className="font-medium text-white">About Us</span>
-          </div>
-        </div> */}
+      <section className="relative h-[35vh] lg:h-[50vh] overflow-hidden">
+        <picture className="absolute inset-0">
+          <source media="(max-width: 768px)" srcSet="/about-bn-mb.jpeg" />
+          <img
+            src="/about-bn-dk.jpeg"
+            alt="About banner"
+            className="w-full h-full object-fill lg:object-cover"
+          />
+        </picture>
       </section>
 
       {/* ================= VISION & MISSION ================= */}
