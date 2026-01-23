@@ -25,7 +25,7 @@ export default function OurProducts() {
     <section className="ui-section">
       <div className="ui-container">
         {/* TOP LABEL */}
-        <div className="flex items-center gap-4 mb-10">
+        <div className="flex items-center gap-4 mb-0">
           <span
             style={{
               height: "10px",

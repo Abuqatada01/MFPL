@@ -43,16 +43,16 @@ export default function Footer() {
                 icon: <FacebookLogoIcon weight="fill" size={22} />,
                 label: "Facebook",
               },
-              {
-                href: "https://www.linkedin.com/company/medicosmoformulations",
-                icon: <LinkedinLogoIcon weight="fill" size={22} />,
-                label: "LinkedIn",
-              },
-              {
-                href: "https://www.youtube.com/@medicosmoformulations",
-                icon: <YoutubeLogoIcon weight="fill" size={22} />,
-                label: "YouTube",
-              },
+              // {
+              //   href: "https://www.linkedin.com/company/medicosmoformulations",
+              //   icon: <LinkedinLogoIcon weight="fill" size={22} />,
+              //   label: "LinkedIn",
+              // },
+              // {
+              //   href: "https://www.youtube.com/@medicosmoformulations",
+              //   icon: <YoutubeLogoIcon weight="fill" size={22} />,
+              //   label: "YouTube",
+              // },
             ].map((item, index) => (
               <a
                 key={index}
@@ -117,18 +117,23 @@ export default function Footer() {
         {/* ================= CONTACT (FULL WIDTH ON MOBILE) ================= */}
         <div className="col-span-full md:col-span-1 text-sm space-y-2 opacity-90">
           <p>
-            <span className="font-semibold text-white">Mobile:</span> +91 92050
-            94789
+            {" "}
+            <span className="font-semibold text-white">Address:</span>
+            109, 110, 111, Pushparaj Industrial Estate, S. No. 66, Naikpada,
+            Near Laxmi Compound, Vasai (E) - 401208
           </p>
           <p>
+            <span className="font-semibold text-white">Mobile:</span> +91 92050
+            94789
+            <br />
             <span className="font-semibold text-white">Email:</span>{" "}
             Medicosmo_info@gmail.com
           </p>
           <p>
             <span className="font-semibold text-white">Working Hours:</span>
+            <br /> Mon – Sat : 9:00 AM – 6:00 PM <br />
+            Sunday : Closed
           </p>
-          <p>Mon – Sat : 9:00 AM – 6:00 PM</p>
-          <p>Sunday : Closed</p>
         </div>
       </div>
 
@@ -141,9 +146,10 @@ export default function Footer() {
         }}
       >
         © {new Date().getFullYear()}{" "}
+        <span style={{ color: "var(--clr-secondary)" }}>Medicosmo</span>. All
+        rights reserved.{" "}
         <Link href="https://greensmedia.co.in">
-          <span style={{ color: "var(--clr-secondary)" }}>Medicosmo</span>. All
-          rights reserved.{" "}
+          {" "}
           <span style={{ color: "var(--clr-secondary)" }}>Greens Media</span>
         </Link>
       </div>

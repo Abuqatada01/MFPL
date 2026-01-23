@@ -31,12 +31,12 @@ export default function OrderSteps() {
     <section style={{ background: "var(--clr-bg-light)" }}>
       <div className="ui-section ui-container text-center">
         {/* HEADER */}
-        <div className="mb-4 md:mb-20">
+        <div className="mb-4 md:mb-15">
           <h2 className="ui-h1">
             How to <span style={{ color: "var(--clr-primary)" }}>Order</span>
           </h2>
           <p
-            className="lg:mt-3 max-w-xl mx-auto"
+            className="lg:mt-1 max-w-xl mx-auto"
             style={{ color: "var(--clr-text-muted)" }}
           >
             A simple, transparent process designed to take your brand from idea
@@ -125,7 +125,7 @@ export default function OrderSteps() {
         </div>
 
         {/* CTA */}
-        <div className="mt-6 md:mt-20">
+        <div className="mt-6 md:mt-10">
           <Link
             href="/contact-us"
             className="inline-flex items-center gap-3 px-10 py-4 rounded-full text-lg font-semibold transition-all"

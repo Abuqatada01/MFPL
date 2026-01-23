@@ -1,7 +1,7 @@
 export default function StatsTestimonialSection() {
   return (
     <section className="" style={{ background: "var(--clr-bg-light)" }}>
-      <div className="ui-section ui-container">
+      <div className="ui-section ">
         {/* ================= STATS ================= */}
         <div
           className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center rounded-3xl px-10 py-16"
