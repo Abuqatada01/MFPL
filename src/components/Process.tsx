@@ -58,17 +58,17 @@ export default function OurProcess() {
 
       <div className="ui-section ui-container">
         {/* TITLE */}
-        <div className="text-center mb-20">
-          <h2 className="ui-h1">
+        <div className="text-center mb-4 lg:mb-20">
+          <h2 className="ui-h1 ">
             Why Choose MFPL <br />
-            <span style={{ color: "var(--clr-primary)" }}>
+            <span className="-mb-2" style={{ color: "var(--clr-primary)" }}>
               As Your Manufacturing Partner?
             </span>
           </h2>
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 lg:gap-16 items-center">
           {/* LEFT */}
           <div className="flex flex-col gap-8">
             {leftCards.map((item, i) => (
@@ -110,7 +110,7 @@ function Card({ title, desc, imgs, align }: CardProps) {
   return (
     <div
       className="
-        group rounded-2xl px-6 py-6
+        group rounded-2xl px-3 py-4 lg:px-6 lg:py-6
         backdrop-blur-sm
         transition-all duration-500 ease-out
         hover:-translate-y-2

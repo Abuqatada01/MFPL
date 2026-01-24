@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function AboutUs() {
   return (
     <section className="" style={{ background: "var(--clr-bg-light)" }}>
-      <div className=" ui-section ">
+      <div className="ui-section  ">
         <div className="ui-badge text-center">
           <Link href="/about-us">About Us</Link>{" "}
         </div>
@@ -93,7 +93,7 @@ export default function AboutUs() {
 
         {/* ASSURANCE STRIP */}
         <div
-          className="mt-4 md:mt-12 xl:mt-24 px-4 py-2 lg:px-12 lg:py-8 rounded-full flex items-center lg:gap-12 overflow-x-auto"
+          className="mt-2 md:mt-12 xl:mt-10 px-4 py-2 lg:px-12 lg:py-8 rounded-full flex items-center lg:gap-12 overflow-x-auto"
           style={{
             background: "var(--clr-bg-white)",
             boxShadow: "0 15px 50px rgba(20,84,43,0.12)",

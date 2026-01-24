@@ -1,10 +1,9 @@
 "use client";
+
 import {
   FacebookLogoIcon,
-  GlobeIcon,
   InstagramLogoIcon,
   LinkedinLogoIcon,
-  TwitterLogoIcon,
   YoutubeLogoIcon,
 } from "@phosphor-icons/react";
 import Link from "next/link";
@@ -17,9 +16,9 @@ export default function Footer() {
         color: "#ffffff",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-4 gap-12">
-        {/* ================= BRAND ================= */}
-        <div>
+      <div className="ui-section grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-12">
+        {/* ================= BRAND (FULL WIDTH ON MOBILE) ================= */}
+        <div className="col-span-full md:col-span-1">
           <img
             src="/Logoblack.png"
             alt="Logo"
@@ -32,29 +31,28 @@ export default function Footer() {
           </p>
 
           {/* SOCIAL */}
-
-          <div className="flex gap-4 mt-6">
+          <div className="flex gap-4 mt-3 lg:mt-6">
             {[
               {
                 href: "https://www.instagram.com/mfpl__?igsh=dXY5NDV1ZXcwdWM1",
-                icon: <InstagramLogoIcon weight="fill" size={25} />,
+                icon: <InstagramLogoIcon weight="fill" size={22} />,
                 label: "Instagram",
               },
               {
                 href: "https://www.facebook.com/profile.php?id=61585006272529",
-                icon: <FacebookLogoIcon weight="fill" size={25} />,
+                icon: <FacebookLogoIcon weight="fill" size={22} />,
                 label: "Facebook",
               },
-              // {
-              //   href: "https://www.linkedin.com/company/medicosmoformulations",
-              //   icon: <LinkedinLogoIcon weight="fill" size={25} />,
-              //   label: "LinkedIn",
-              // },
-              // {
-              //   href: "https://www.youtube.com/@medicosmoformulations",
-              //   icon: <YoutubeLogoIcon weight="fill" size={25} />,
-              //   label: "YouTube",
-              // },
+              {
+                href: "https://www.linkedin.com/company/medicosmoformulations",
+                icon: <LinkedinLogoIcon weight="fill" size={25} />,
+                label: "LinkedIn",
+              },
+              {
+                href: "https://www.youtube.com/@medicosmoformulations",
+                icon: <YoutubeLogoIcon weight="fill" size={25} />,
+                label: "YouTube",
+              },
             ].map((item, index) => (
               <a
                 key={index}
@@ -63,8 +61,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label={item.label}
                 className="h-9 w-9 flex items-center justify-center rounded-full
-                 transition hover:scale-110 hover:bg-white/20
-                 cursor-pointer"
+                transition hover:scale-110 hover:bg-white/20"
                 style={{ background: "rgba(255,255,255,0.12)" }}
               >
                 {item.icon}
@@ -75,7 +72,7 @@ export default function Footer() {
 
         {/* ================= ABOUT LINKS ================= */}
         <div>
-          <h3 className="font-semibold mb-5">Quick Links</h3>
+          <h3 className="font-semibold mb-5">Company</h3>
           <ul className="space-y-3 text-sm opacity-80">
             <li>
               <Link href="/">Home</Link>
@@ -97,7 +94,7 @@ export default function Footer() {
 
         {/* ================= SERVICES ================= */}
         <div>
-          <h3 className="font-semibold mb-5">Products</h3>
+          <h3 className="font-semibold mb-5">Services</h3>
           <ul className="space-y-3 text-sm opacity-80">
             <li>
               <Link href="/products">All Products</Link>
@@ -117,46 +114,26 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* ================= NEWSLETTER ================= */}
-        <div>
-          {/* <h3 className="font-semibold mb-5">Stay Connected</h3>
-          <p className="text-sm opacity-80 mb-5">
-            Subscribe to receive updates, insights, and company news.
+        {/* ================= CONTACT (FULL WIDTH ON MOBILE) ================= */}
+        <div className="col-span-full md:col-span-1 text-sm space-y-2 opacity-90">
+          <p>
+            {" "}
+            <span className="font-semibold text-white">Address:</span>
+            109, 110, 111, Pushparaj Industrial Estate, S. No. 66, Naikpada,
+            Near Laxmi Compound, Vasai (E) - 401208
           </p>
-
-          <div className="flex overflow-hidden rounded-full bg-white">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="w-full px-4 py-3 text-sm outline-none text-[var(--clr-text-dark)]"
-            />
-            <button
-              className="px-6 text-sm font-semibold"
-              style={{
-                background:
-                  "linear-gradient(135deg, var(--clr-secondary), var(--clr-primary))",
-                color: "#fff",
-              }}
-            >
-              Subscribe
-            </button>
-          </div> */}
-
-          <div className="text-sm  ">
-            <p>
-              <span className="text-white font-semibold">Mobile</span> : +91
-              92050 94789
-            </p>
-            <p>
-              <span className="text-white font-semibold">Email </span>:
-              Medicosmo_info@gmail.com
-            </p>
-            <p>
-              <span className="text-white font-semibold">Working Hours</span>:
-            </p>
-            <p>Mon – Sat : 9:00 AM – 6:00 PM</p>
-            <p>Sunday : Closed</p>
-          </div>
+          <p>
+            <span className="font-semibold text-white">Mobile:</span> +91 92050
+            94789
+            <br />
+            <span className="font-semibold text-white">Email:</span>{" "}
+            Medicosmo_info@gmail.com
+          </p>
+          <p>
+            <span className="font-semibold text-white">Working Hours:</span>
+            <br /> Mon – Sat : 9:00 AM – 6:00 PM <br />
+            Sunday : Closed
+          </p>
         </div>
       </div>
 
@@ -170,8 +147,11 @@ export default function Footer() {
       >
         © {new Date().getFullYear()}{" "}
         <span style={{ color: "var(--clr-secondary)" }}>Medicosmo</span>. All
-        rights reserved.
-        <span style={{ color: "var(--clr-secondary)" }}>Greens Media</span>
+        rights reserved.{" "}
+        <Link href="https://greensmedia.co.in">
+          {" "}
+          <span style={{ color: "var(--clr-secondary)" }}>Greens Media</span>
+        </Link>
       </div>
     </footer>
   );
