@@ -45,16 +45,16 @@ export default function Footer() {
                 icon: <FacebookLogoIcon weight="fill" size={25} />,
                 label: "Facebook",
               },
-              {
-                href: "https://www.linkedin.com/company/medicosmoformulations",
-                icon: <LinkedinLogoIcon weight="fill" size={25} />,
-                label: "LinkedIn",
-              },
-              {
-                href: "https://www.youtube.com/@medicosmoformulations",
-                icon: <YoutubeLogoIcon weight="fill" size={25} />,
-                label: "YouTube",
-              },
+              // {
+              //   href: "https://www.linkedin.com/company/medicosmoformulations",
+              //   icon: <LinkedinLogoIcon weight="fill" size={25} />,
+              //   label: "LinkedIn",
+              // },
+              // {
+              //   href: "https://www.youtube.com/@medicosmoformulations",
+              //   icon: <YoutubeLogoIcon weight="fill" size={25} />,
+              //   label: "YouTube",
+              // },
             ].map((item, index) => (
               <a
                 key={index}
@@ -75,7 +75,7 @@ export default function Footer() {
 
         {/* ================= ABOUT LINKS ================= */}
         <div>
-          <h3 className="font-semibold mb-5">Company</h3>
+          <h3 className="font-semibold mb-5">Quick Links</h3>
           <ul className="space-y-3 text-sm opacity-80">
             <li>
               <Link href="/">Home</Link>
@@ -97,7 +97,7 @@ export default function Footer() {
 
         {/* ================= SERVICES ================= */}
         <div>
-          <h3 className="font-semibold mb-5">Services</h3>
+          <h3 className="font-semibold mb-5">Products</h3>
           <ul className="space-y-3 text-sm opacity-80">
             <li>
               <Link href="/products">All Products</Link>
