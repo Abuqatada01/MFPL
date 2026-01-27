@@ -43,7 +43,7 @@ const certificates = [
 export default function CertificatesMarquee() {
   return (
     <section className="relative ui-section overflow-hidden py-1 bg-white">
-      <div className="marquee h-[10vh] lg:h-[15vh]">
+      <div className="marquee h-[10vh] lg:h-[30vh]">
         <div className="marquee-track">
           {[...certificates, ...certificates].map((item, index) => (
             <div

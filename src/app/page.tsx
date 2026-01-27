@@ -17,9 +17,9 @@ export default function Home() {
       <HeroSlider />
       <AboutUs />
       <OurServicesSection />
-      {/* <CertificatesMarquee /> */}
       <OurProducts />
       <OurProcess />
+      <CertificatesMarquee />
       <OrderSteps />
       <StatsTestimonialSection />
       <ConsultationSection />
