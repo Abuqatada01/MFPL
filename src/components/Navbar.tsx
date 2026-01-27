@@ -58,8 +58,8 @@ export default function Navbar() {
               {[
                 <InstagramLogoIcon weight="fill" size={22} />,
                 <FacebookLogoIcon weight="fill" size={22} />,
-                <LinkedinLogoIcon weight="fill" size={22} />,
-                <YoutubeLogoIcon weight="fill" size={22} />,
+                // <LinkedinLogoIcon weight="fill" size={22} />,
+                // <YoutubeLogoIcon weight="fill" size={22} />,
               ].map((icon, index) => (
                 <span key={index} className="glass-icon">
                   {icon}
