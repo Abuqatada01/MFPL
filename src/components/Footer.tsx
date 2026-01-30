@@ -19,11 +19,7 @@ export default function Footer() {
       <div className="ui-section grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-12">
         {/* ================= BRAND (FULL WIDTH ON MOBILE) ================= */}
         <div className="col-span-full md:col-span-1">
-          <img
-            src="/Logoblack.png"
-            alt="Logo"
-            className="h-10 mb-4 p-2 rounded"
-          />
+          <img src="/mfpl_logo_white.jpeg" alt="Logo" className="h-10 " />
 
           <p className="text-sm leading-relaxed opacity-80">
             MFPL provides reliable white label manufacturing solutions, enabling
@@ -129,7 +125,7 @@ export default function Footer() {
             <span className="font-bold text-[15px] text-white">
               Email :
             </span>{" "}
-            Medicosmo_info@gmail.com
+            info@medicosmoformulations.com
           </p>
           <p>
             <span className="font-bold text-[15px] text-white">

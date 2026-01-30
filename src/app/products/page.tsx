@@ -6,45 +6,26 @@ import { products } from "./data";
 
 /* ================= CATEGORY IMAGES ================= */
 const categoryImages: Record<string, string> = {
-  Creams:
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a42fe000e4e6789e1/view?project=6912e771002b88166cae",
-  Gels: "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43620034bed01025/view?project=6912e771002b88166cae",
-  "Skin Serums":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a435c0018b2528c74/view?project=6912e771002b88166cae",
-  Lotions:
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43670011cc156a53/view?project=6912e771002b88166cae",
-  "Hair Conditioners":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a435f0026bb4f1da6/view?project=6912e771002b88166cae",
-  "Hair Serums":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a435c0018b2528c74/view?project=6912e771002b88166cae",
-  "Hair Cleansers":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43670011cc156a53/view?project=6912e771002b88166cae",
-  "Hand Wash":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a436300304b40ff68/view?project=6912e771002b88166cae",
-  "Intimate Care":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43660018e53653b4/view?project=6912e771002b88166cae",
-  "Body Wash":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43650025b222dd80/view?project=6912e771002b88166cae",
-  "Face Cleansers":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a42fe000e4e6789e1/view?project=6912e771002b88166cae",
-  "Hair Masks":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a436400265ef12014/view?project=6912e771002b88166cae",
-  "Hair Spa":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43620034bed01025/view?project=6912e771002b88166cae",
-  "Scrubs & Packs":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a436400265ef12014/view?project=6912e771002b88166cae",
-  "Skin Toners":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a435e003190fea045/view?project=6912e771002b88166cae",
-  "Hair & Body Mists":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a435e003190fea045/view?project=6912e771002b88166cae",
-  "Baby Care":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43660018e53653b4/view?project=6912e771002b88166cae",
-  "Sun Care":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43620034bed01025/view?project=6912e771002b88166cae",
-  "Under Eye & Lip Care":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a4362000d4eb33ae3/view?project=6912e771002b88166cae",
-  "Men's Grooming":
-    "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a42fe000e4e6789e1/view?project=6912e771002b88166cae",
+  Creams: "/Cream.png",
+  Gels: "/2.png",
+  "Skin Serums": "/12.png",
+  Lotions: "/11.png",
+  "Hair Conditioners": "/10.png",
+  "Hair Serums": "/12.png",
+  "Hair Cleansers": "/9.png",
+  "Hand Wash": "/6.png",
+  "Intimate Care": "/22.png",
+  "Body Wash": "/4.png",
+  "Face Cleansers": "/24.png",
+  "Hair Masks": "/20.png",
+  "Hair Spa": "./23.png",
+  "Scrubs & Packs": "/21.png",
+  "Skin Toners": "/13.png",
+  "Hair & Body Mists": "/13.png",
+  "Baby Care": "/19.png",
+  "Sun Care": "/9.png",
+  "Under Eye & Lip Care": "/26.png",
+  "Men's Grooming": "/18.png",
 };
 
 /* ================= EXTRACT & LIMIT CATEGORIES ================= */
@@ -108,11 +89,11 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[#83A33C]/20 via-[#53945B]/20 to-transparent opacity-0 group-hover:opacity-100 transition" />
 
-              <div className="relative h-40 lg:h-65 bg-[#EDF5EE]">
+              <div className="relative h-40 lg:h-80 bg-[#EDF5EE]">
                 <img
                   src={categoryImages[cat]}
                   alt={cat}
-                  className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                  className="w-full h-full object-fill transition duration-500 group-hover:scale-105"
                 />
               </div>
 
