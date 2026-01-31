@@ -92,14 +92,14 @@ export default function AboutUs() {
         </div>
 
         {/* ASSURANCE STRIP */}
-        <div
+        {/* <div
           className="mt-2 md:mt-12 xl:mt-10 px-4 py-2 lg:px-12 lg:py-8 rounded-full flex items-center lg:gap-12 overflow-x-auto"
           style={{
             background: "var(--clr-bg-white)",
             boxShadow: "0 15px 50px rgba(20,84,43,0.12)",
           }}
         >
-          {/* LEFT TEXT */}
+         
           <div className=" w-40 lg:w-[220px]">
             <p
               className="font-semibold ui-desc lg:ui-para w-full lg:w-[220px] leading-snug"
@@ -109,7 +109,6 @@ export default function AboutUs() {
             </p>
           </div>
 
-          {/* DIVIDER */}
           <div
             style={{
               width: "1px",
@@ -118,7 +117,6 @@ export default function AboutUs() {
             }}
           />
 
-          {/* CERTIFICATIONS */}
           <div className="relative overflow-hidden w-full">
             <div className="flex marquee marquee-track  w-max animate-marquee gap-2 lg:gap-12 items-center">
               {[
@@ -131,7 +129,7 @@ export default function AboutUs() {
                 "https://5.imimg.com/data5/SELLER/Default/2020/8/YB/DY/UN/58362300/quality-assurance-services-for-diagnostic-x-ray-machines.jpeg",
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfIwPB_S521UytvBMhFynPzwGRMSTpbX4KYg&s",
               ]
-                // 🔁 duplicate array for seamless loop
+            
                 .concat([
                   "https://www.shutterstock.com/image-vector/sulfate-free-green-outline-icon-260nw-1612991506.jpg",
                   "https://t3.ftcdn.net/jpg/02/78/93/28/360_F_278932877_e0dhgcte3cFvCSFQSM5rnZNvL8DVo6AJ.jpg",
@@ -163,7 +161,7 @@ export default function AboutUs() {
                 ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

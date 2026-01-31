@@ -25,26 +25,18 @@ export default function OurProducts() {
     <section className="ui-section">
       <div className="ui-container">
         {/* TOP LABEL */}
-        <div className="flex items-center gap-4 mb-0">
-          <span
-            style={{
-              height: "10px",
-              width: "10px",
-              borderRadius: "50%",
-              background: "var(--clr-primary)",
-            }}
-          />
-          <p className="uppercase text-sm tracking-widest text-gray-500">
-            Crafted Collection →
-          </p>
-        </div>
-
-        {/* HEADING */}
-        <div className="text-center mb-3 lg:mb-20">
-          <h2 className="ui-h1">
+        <div className="text-center mb-4 lg:mb-16">
+          <h2 className="ui-h1 lg:ui-h2 ">
+            Our <span style={{ color: "var(--clr-primary)" }}>Products</span>
+          </h2>
+          <p
+            className="mt-0.5 lg:mt-2 ui-para max-w-xl mx-auto"
+            style={{ color: "var(--clr-text-muted)" }}
+          >
+            {" "}
             Elevate Your Brand <br />
             with Diverse Creations
-          </h2>
+          </p>
         </div>
 
         {/* PRODUCT GRID */}
