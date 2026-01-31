@@ -19,7 +19,7 @@ export default function Footer() {
       <div className="ui-section grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-12">
         {/* ================= BRAND (FULL WIDTH ON MOBILE) ================= */}
         <div className="col-span-full md:col-span-1">
-          <img src="/mfpl_logo_white.jpeg" alt="Logo" className="h-10 " />
+          <img src="/mfpl_logo_white.png" alt="Logo" className="h-10 mb-2 " />
 
           <p className="text-sm leading-relaxed opacity-80">
             MFPL provides reliable white label manufacturing solutions, enabling
