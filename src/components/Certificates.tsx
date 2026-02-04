@@ -99,7 +99,7 @@ export default function CertificatesMarquee() {
                   className="flex items-center justify-center rounded-full
             border-2 border-[rgba(83,148,91,0.35)]
             bg-white
-            w-6 h-6 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-[72px] lg:h-[72px]
+            w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-[72px] lg:h-[72px]
             overflow-hidden"
                 >
                   <Image
@@ -108,7 +108,7 @@ export default function CertificatesMarquee() {
                     width={72}
                     height={72}
                     className="object-contain
-              w-4 h-4 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-[60px] lg:h-[60px]"
+              w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-[60px] lg:h-[60px]"
                   />
                 </div>
               ))}

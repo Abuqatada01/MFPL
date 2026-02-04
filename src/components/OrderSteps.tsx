@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 const steps = [
   {
@@ -27,6 +28,33 @@ const steps = [
 ];
 
 export default function OrderSteps() {
+  const sliderRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    // run only on mobile
+    if (window.innerWidth >= 768) return;
+
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    let index = 0;
+    const cardWidth = slider.firstElementChild?.clientWidth || 0;
+
+    const interval = setInterval(() => {
+      index = (index + 1) % steps.length;
+      slider.scrollTo({
+        left: index * cardWidth,
+        behavior: "smooth",
+      });
+    }, 3000); // 3s auto slide
+
+    // pause on touch
+    const stop = () => clearInterval(interval);
+    slider.addEventListener("touchstart", stop, { once: true });
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section style={{ background: "var(--clr-bg-light)" }}>
       <div className="ui-section ui-container text-center">
@@ -46,8 +74,9 @@ export default function OrderSteps() {
 
         {/* STEPS */}
         <div
+          ref={sliderRef}
           className="
-            flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory
+            flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scroll-smooth
             md:grid md:grid-cols-3 md:gap-14 md:overflow-visible
           "
         >
@@ -75,13 +104,13 @@ export default function OrderSteps() {
 
               {/* CARD */}
               <div
-                className="p-6 rounded-3xl w-full max-w-sm flex flex-col items-center transition-all duration-300 h-full bg-white"
+                className="p-6 rounded-3xl w-full max-w-sm flex flex-col items-center h-full bg-white"
                 style={{
                   boxShadow: "0 25px 60px rgba(20,84,43,0.12)",
                 }}
               >
                 {/* IMAGE */}
-                <div className="w-full h-[240px] flex items-center justify-center mb-6 overflow-hidden rounded-xl bg-[#EDF5EE]">
+                <div className="w-full h-[240px] mb-6 overflow-hidden rounded-xl bg-[#EDF5EE]">
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -93,7 +122,7 @@ export default function OrderSteps() {
 
                 {/* STEP NUMBER */}
                 <div
-                  className="mx-auto mb-4 flex items-center justify-center rounded-full"
+                  className="mb-4 flex items-center justify-center rounded-full"
                   style={{
                     height: "42px",
                     width: "42px",

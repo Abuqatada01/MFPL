@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 const services = [
   {
@@ -24,12 +27,39 @@ const services = [
 ];
 
 export default function OurServicesSection() {
+  const sliderRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    // only auto-slide on mobile
+    if (window.innerWidth >= 640) return;
+
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    let index = 0;
+    const cardWidth = slider.firstElementChild?.clientWidth || 0;
+
+    const interval = setInterval(() => {
+      index = (index + 1) % services.length;
+      slider.scrollTo({
+        left: index * cardWidth,
+        behavior: "smooth",
+      });
+    }, 3000);
+
+    // stop auto slide when user interacts
+    const stopAuto = () => clearInterval(interval);
+    slider.addEventListener("touchstart", stopAuto, { once: true });
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section style={{ background: "var(--clr-bg-light)" }}>
       <div className="ui-section ui-container">
         {/* HEADER */}
         <div className="text-center mb-4 lg:mb-16">
-          <h2 className="ui-h1 lg:ui-h2 ">
+          <h2 className="ui-h1 lg:ui-h2">
             Our <span style={{ color: "var(--clr-primary)" }}>Services</span>
           </h2>
           <p
@@ -43,10 +73,11 @@ export default function OurServicesSection() {
 
         {/* SERVICES */}
         <div
+          ref={sliderRef}
           className="
-            flex gap-6 overflow-x-auto pb-6
+            flex gap-6 overflow-x-auto pb-6 scroll-smooth
             snap-x snap-mandatory
-            sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-8
+            sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-8 sm:overflow-visible
           "
         >
           {services.map((service, index) => (

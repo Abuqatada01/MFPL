@@ -24,6 +24,15 @@ const categories: string[] = [
   "Sun Care",
   "Under Eye & Lip Care",
   "Men's Grooming",
+  "Shampoo",
+  "Conditioner",
+  "Anti Hair Fall Treatment",
+  "Anti Dandruff Treatment",
+  "Hair Serum",
+  "Keratin Hair Treatment",
+  "Hair Botox Treatment",
+  "Hair Masque & Spa",
+  "Skin Care",
 ];
 
 const MIN_QTY = 50;

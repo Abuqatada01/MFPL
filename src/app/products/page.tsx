@@ -2,38 +2,43 @@
 
 import "./products.css";
 import Link from "next/link";
-import { products } from "./data";
 
 /* ================= CATEGORY IMAGES ================= */
 const categoryImages: Record<string, string> = {
-  Creams: "/Cream.png",
-  Gels: "/2.png",
-  "Skin Serums": "/12.png",
-  Lotions: "/11.png",
-  "Hair Conditioners": "/10.png",
-  "Hair Serums": "/12.png",
-  "Hair Cleansers": "/9.png",
-  "Hand Wash": "/6.png",
-  "Intimate Care": "/22.png",
-  "Body Wash": "/4.png",
-  "Face Cleansers": "/24.png",
-  "Hair Masks": "/20.png",
-  "Hair Spa": "./23.png",
-  "Scrubs & Packs": "/21.png",
-  "Skin Toners": "/13.png",
-  "Hair & Body Mists": "/13.png",
-  "Baby Care": "/19.png",
-  "Sun Care": "/9.png",
-  "Under Eye & Lip Care": "/26.png",
-  "Men's Grooming": "/18.png",
+  Creams: "/1.jpg",
+  Gels: "/2.jpg",
+  "Skin Serums": "/12.jpg",
+  Lotions: "/11.jpg",
+  "Hair Conditioners": "/10.jpg",
+  "Hair Serums": "/12.jpg",
+  "Hair Cleansers": "/9.jpg",
+  "Hand Wash": "/6.jpg",
+  "Intimate Care": "/22.jpg",
+  "Body Wash": "/4.jpg",
+  "Face Cleansers": "/24.jpg",
+  "Hair Masks": "/20.jpg",
+  "Hair Spa": "/23.jpg",
+  "Scrubs & Packs": "/21.jpg",
+  "Skin Toners": "/13.jpg",
+  "Hair & Body Mists": "/13.jpg",
+  "Baby Care": "/19.jpg",
+  "Sun Care": "/9.jpg",
+  "Under Eye & Lip Care": "/26.jpg",
+  "Men's Grooming": "/18.jpg",
+
+  Shampoo: "/10.jpg",
+  Conditioner: "/7.jpg",
+  "Anti Hair Fall Treatment": "/15.jpg",
+  "Anti Dandruff Treatment": "/22.jpg",
+  "Hair Serum": "/12.jpg",
+  "Keratin Hair Treatment": "/27.jpg",
+  "Hair Botox Treatment": "/16.jpg",
+  "Hair Masque & Spa": "/20.jpg",
+  "Skin Care": "/24.jpg",
 };
 
-/* ================= EXTRACT & LIMIT CATEGORIES ================= */
-const categories = [
-  ...new Set(
-    products.filter((p) => p.category !== "Range").map((p) => p.category),
-  ),
-].slice(0, 20);
+/* ================= CATEGORIES (FROM IMAGE MAP ONLY) ================= */
+const categories = Object.keys(categoryImages);
 
 /* ================= PAGE ================= */
 export default function Home() {
@@ -63,7 +68,7 @@ export default function Home() {
 
                 <div className="flex justify-center md:justify-end">
                   <img
-                    src="/product-hero.png"
+                    src="/product-hero.jpg"
                     alt="Branded Product"
                     className="h-[220px] md:h-[300px] object-contain drop-shadow-xl"
                   />
@@ -76,7 +81,7 @@ export default function Home() {
 
       {/* ================= CATEGORIES ================= */}
       <section className="ui-section">
-        <h1 className="ui-h1 text-center text-[var(--clr-primary)] mt-6">
+        <h1 className="ui-h1 text-center text-[var(--clr-primary)] mt-0 lg:mt-6">
           Product Categories
         </h1>
 
