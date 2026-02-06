@@ -43,13 +43,7 @@ const certificates = [
 export default function CertificatesMarquee() {
   return (
     <section className="relative ui-section overflow-hidden py-1 bg-white">
-      <div
-        className="mt-2 md:mt-12 xl:mt-10 px-4 py-2 lg:px-12 lg:py-8 rounded-full flex items-center lg:gap-12 overflow-x-auto"
-        style={{
-          background: "var(--clr-bg-white)",
-          boxShadow: "0 15px 50px rgba(20,84,43,0.12)",
-        }}
-      >
+      <div className="mt-2 md:mt-12 xl:mt-10 px-4 py-2 lg:px-12 lg:py-8 border-[0.5px] border-[#dfdede] rounded-full flex items-center lg:gap-12 overflow-x-auto">
         {/* LEFT TEXT */}
         <div className=" w-40 lg:w-[220px]">
           <p

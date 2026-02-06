@@ -90,7 +90,7 @@ export default function OrderSteps() {
               "
             >
               {/* CONNECTOR (Desktop only) */}
-              {index < steps.length - 1 && (
+              {/* {index < steps.length - 1 && (
                 <div
                   className="hidden md:block absolute top-[140px] right-[-70px]"
                   style={{
@@ -100,7 +100,7 @@ export default function OrderSteps() {
                       "linear-gradient(90deg, var(--clr-primary), transparent)",
                   }}
                 />
-              )}
+              )} */}
 
               {/* CARD */}
               <div

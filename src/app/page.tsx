@@ -21,7 +21,7 @@ export default function Home() {
       <OurProcess />
       <CertificatesMarquee />
       <OrderSteps />
-      <StatsTestimonialSection />
+      {/* <StatsTestimonialSection /> */}
       <ConsultationSection />
       {/* <OurBlogs /> */}
     </div>

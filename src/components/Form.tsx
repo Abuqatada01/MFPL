@@ -53,7 +53,7 @@ export default function ConsultationSection() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="flex justify-center items-center px-3 py-2 lg:px-6 lg:w-50 lg:py-4 rounded-xl"
+                    className="flex justify-start items-center px-3 py-2 lg:px-6 lg:w-50 lg:py-4 rounded-xl"
                     style={{
                       background: "var(--clr-bg-white)",
                       boxShadow: "0 10px 30px rgba(20,84,43,0.08)",
@@ -73,7 +73,7 @@ export default function ConsultationSection() {
               <div className="mt-5 lg:mt-12">
                 <Link
                   href="/contact-us"
-                  className="inline-flex items-center gap-3 px-10 py-4 rounded-full text-lg font-semibold transition-all"
+                  className="inline-flex ui-cta-premium  items-center gap-3 px-10 py-4 rounded-full text-lg font-semibold transition-all"
                   style={{
                     background:
                       "linear-gradient(135deg, var(--clr-primary), var(--clr-secondary))",
@@ -81,7 +81,8 @@ export default function ConsultationSection() {
                     boxShadow: "0 20px 40px rgba(83,148,91,0.35)",
                   }}
                 >
-                  Request a Free Consultation →
+                  Request a Free Consultation{" "}
+                  <span className="ui-cta-arrow">→</span>
                 </Link>
               </div>
             </div>
@@ -164,9 +165,10 @@ export default function ConsultationSection() {
 
                   <Link
                     href="/contact-us"
-                    className="block ui-badge-2 text-center w-full py-3 rounded-full font-semibold transition-all"
+                    className="ui-badge-2 ui-cta-premium"
                   >
-                    Contact Our Team →
+                    Contact Our Team
+                    <span className="ui-cta-arrow">→</span>
                   </Link>
                 </form>
               </div>

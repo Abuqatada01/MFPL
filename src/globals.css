@@ -224,34 +224,45 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.25s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.35s ease,
+    transform 0.25s ease;
 }
 
+/* PRIMARY BUTTON */
 .ui-btn-primary {
   color: var(--clr-bg-white);
   background: var(--clr-secondary);
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .ui-btn-primary:hover {
   background: var(--clr-primary);
-  /* darker green */
-  box-shadow: var(--shadow-strong);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.18),
+    0 0 0 3px rgba(0, 128, 0, 0.25);
+  /* subtle glow */
   transform: translateY(-2px);
 }
 
-
-/* OUTLINE */
+/* OUTLINE BUTTON */
 .ui-btn-outline {
   color: var(--clr-secondary);
-  /* 👈 fixed */
   background-color: var(--clr-bg-white);
-  /* border: 1px solid var(--clr-secondary); */
+  border: 1px solid var(--clr-secondary);
+  box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
 }
 
 .ui-btn-outline:hover {
   background-color: var(--clr-primary);
   color: var(--clr-white);
+  box-shadow:
+    0 0 0 3px rgba(0, 128, 0, 0.25),
+    /* border glow */
+    0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }
 
 /* -----------------------------------------------------
@@ -401,6 +412,45 @@
 .form-textarea:focus {
   border-color: #53945B;
 }
+
+/* PREMIUM CTA / BADGE HOVER */
+.ui-cta-premium {
+  text-align: center;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
+  will-change: transform;
+}
+
+.ui-cta-premium:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 36px rgba(83, 148, 91, 0.35),
+    0 0 0 3px rgba(131, 163, 60, 0.35);
+  /* border glow */
+}
+
+.ui-cta-premium:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(131, 163, 60, 0.45),
+    0 18px 36px rgba(83, 148, 91, 0.35);
+}
+
+/* OPTIONAL ARROW MOTION */
+.ui-cta-premium .ui-cta-arrow {
+  display: inline-block;
+  margin-left: 0.35rem;
+  transition: transform 0.3s ease;
+}
+
+.ui-cta-premium:hover .ui-cta-arrow {
+  transform: translateX(6px);
+}
+
 
 /* =====================================================
    RESPONSIVE BREAKPOINTS (VARIABLE-ONLY CHANGES)

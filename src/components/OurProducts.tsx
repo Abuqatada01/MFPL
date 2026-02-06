@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const products = [
@@ -122,17 +123,35 @@ export default function OurProducts() {
           <div className="min-w-[7.5%] sm:hidden" />
 
           {products.map((item, i) => (
-            <div
+            <Link
               key={i}
-              data-slide
+              href="/products"
               className="
-                group flex justify-center
-                min-w-[85%] snap-center
-                sm:min-w-0
-              "
+      group flex justify-center
+      min-w-[85%] snap-center
+      sm:min-w-0
+      cursor-pointer
+    "
             >
-              <div className="relative flex flex-col items-center w-[200px] lg:w-[260px] lg:h-[360px]">
-                <div className="relative z-10 w-[180px] h-[140px] lg:w-[220px] lg:h-[220px]">
+              <div
+                data-slide
+                className="
+        relative flex flex-col items-center
+        w-[200px] lg:w-[260px] lg:h-[360px]
+        transition-all duration-300 ease-out
+        group-hover:-translate-y-2
+      "
+              >
+                {/* IMAGE */}
+                <div
+                  className="
+          relative z-10
+          w-[180px] h-[140px]
+          lg:w-[220px] lg:h-[220px]
+          transition-transform duration-300
+          group-hover:scale-115
+        "
+                >
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -141,11 +160,25 @@ export default function OurProducts() {
                   />
                 </div>
 
-                <div className="ui-badge-2 w-[180px] h-[90px] lg:w-[240px] lg:h-[120px] rounded-b-full flex items-center justify-center text-center text-white text-sm lg:text-lg whitespace-pre-line">
+                {/* TITLE BADGE */}
+                <div
+                  className="
+          ui-badge-2 overflow-hidden
+          w-[180px] h-[90px]
+          lg:w-[240px] lg:h-[120px]
+          rounded-b-full
+          flex items-center justify-center
+          text-center text-white
+          text-sm lg:text-lg
+          whitespace-pre-line
+          transition-all duration-300
+          group-hover:shadow-[0_0_0_3px_rgba(131,163,60,0.25)]
+        "
+                >
                   {item.title}
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
 
           {/* RIGHT SPACER */}

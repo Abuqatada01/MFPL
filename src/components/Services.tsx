@@ -96,7 +96,7 @@ export default function OurServicesSection() {
                 <img
                   src={service.img}
                   alt={service.title}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="h-full w-full object-cover scale-105 transition-transform duration-700 group-hover:scale-110"
                 />
 
                 <div

@@ -7,7 +7,7 @@ export default function OurProcess() {
     {
       title: "Industry-Focused Expertise",
       desc: "We specialize exclusively in cosmetic, skincare, and haircare manufacturing—ensuring deep product understanding and reliable execution.",
-      imgs: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn4owmMiJrNNM9RRgVSfIlrebc34uKYDPagw&s",
+      imgs: "/Untitled design (1).png",
     },
     {
       title: "White Label Made Simple",
@@ -17,7 +17,7 @@ export default function OurProcess() {
     {
       title: "Customization & Flexibility",
       desc: "From formulations to packaging and labeling, we adapt our manufacturing solutions to match your brand vision and market goals.",
-      imgs: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxCN7gP4OqQ3VXDIuqZeZrBSvrev3wl7umNg&s",
+      imgs: "/Untitled design.png",
     },
   ];
 
@@ -35,7 +35,7 @@ export default function OurProcess() {
     {
       title: "Brand-Ready Compliance",
       desc: "We ensure products are manufactured with market-aligned compliance, making them retail-ready and distribution-friendly.",
-      imgs: "https://media.istockphoto.com/id/1124963130/vector/compliance-inspection-approved.jpg?s=612x612&w=0&k=20&c=gwhSA0Yq90ZBgfUclULpH_YbQ2ZKaGWsr2mGQvxD2Qk=",
+      imgs: "/Untitled design (2).png",
     },
   ];
 
@@ -106,7 +106,7 @@ type CardProps = {
 };
 
 /* CARD COMPONENT */
-function Card({ title, desc, imgs, align }: CardProps) {
+function Card({ title, desc, imgs }: CardProps) {
   return (
     <div
       className="
@@ -121,19 +121,20 @@ function Card({ title, desc, imgs, align }: CardProps) {
       style={{ background: "rgba(233,247,251,0.9)" }}
     >
       <div className="flex items-start gap-5">
-        {align === "right" && (
-          <img
-            src={imgs}
-            className="h-14 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3"
-            alt=""
-          />
-        )}
+        {/* ICON — ALWAYS LEFT */}
+        <img
+          src={imgs}
+          className="h-14 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
+          alt=""
+        />
 
+        {/* DIVIDER */}
         <div
           className="transition-colors duration-500 group-hover:bg-[#83A33C]"
           style={{ width: "1px", height: "48px", background: "#bfe6ef" }}
         />
 
+        {/* CONTENT */}
         <div className="flex-1">
           <h3 className="ui-h3 mb-2 transition-colors duration-300 group-hover:text-[#53945B]">
             {title}
@@ -142,14 +143,6 @@ function Card({ title, desc, imgs, align }: CardProps) {
             {desc}
           </p>
         </div>
-
-        {align === "left" && (
-          <img
-            src={imgs}
-            className="h-14 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
-            alt=""
-          />
-        )}
       </div>
     </div>
   );
