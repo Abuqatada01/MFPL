@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Heart } from "@phosphor-icons/react";
-import { products } from "../products/data"; // adjust path if needed
+import { products } from "../products/data";
 
 const categories: string[] = [
   "Creams",
@@ -39,12 +39,9 @@ const MIN_QTY = 50;
 
 export default function ContactPage() {
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState("");
   const [quantity, setQuantity] = useState<number | "">("");
-
-  const filteredProducts = products.filter(
-    (product) => product.category === selectedCategory,
-  );
+  const [country, setCountry] = useState("");
+  const [otherCountry, setOtherCountry] = useState("");
 
   const handleQuantityChange = (value: string) => {
     if (value === "") {
@@ -58,7 +55,7 @@ export default function ContactPage() {
 
   return (
     <section className="relative py-10 xl:py-25 flex items-start justify-center px-6 overflow-hidden bg-gradient-to-br from-[#effaed] via-white to-[#f6fbf3]">
-      {/* SOFT SHAPES */}
+      {/* BACKGROUND SHAPES */}
       <div className="absolute -top-40 -left-40 w-[420px] h-[420px] rounded-full bg-[#83A33C]/20 blur-3xl" />
       <div className="absolute bottom-[-160px] right-[-160px] w-[460px] h-[460px] rounded-full bg-[#53945B]/20 blur-3xl" />
 
@@ -99,77 +96,47 @@ export default function ContactPage() {
                 <label className="text-xs uppercase tracking-wide text-[#242424]/60">
                   Country
                 </label>
-                <select className="form-select">
-                  <option>Select Country</option>
+                <select
+                  className="form-select"
+                  value={country}
+                  onChange={(e) => {
+                    setCountry(e.target.value);
+                    setOtherCountry("");
+                  }}
+                >
+                  <option value="">Select Country</option>
                   <option>India</option>
                   <option>USA</option>
                   <option>United Kingdom</option>
                   <option>Canada</option>
                   <option>Australia</option>
-                  <option>New Zealand</option>
-                  <option>Germany</option>
-                  <option>France</option>
-                  <option>Italy</option>
-                  <option>Spain</option>
-                  <option>United Arab Emirates</option>
-                  <option>Singapore</option>
-                  <option>Malaysia</option>
-                  <option>Japan</option>
-                  <option>South Korea</option>
-                  <option>Brazil</option>
                   <option>Other</option>
                 </select>
               </div>
             </div>
 
-            {/* ROW 3 – CATEGORY */}
-            <div>
-              <label className="text-xs uppercase tracking-wide text-[#242424]/60">
-                Category
-              </label>
-              <select
-                className="form-select"
-                value={selectedCategory}
-                onChange={(e) => {
-                  setSelectedCategory(e.target.value);
-                  setSelectedProduct("");
-                  setQuantity("");
-                }}
-              >
-                <option value="">Select Category</option>
-                {categories.map((cat) => (
-                  <option key={cat} value={cat}>
-                    {cat}
-                  </option>
-                ))}
-              </select>
-            </div>
+            {/* OTHER COUNTRY */}
+            {country === "Other" && <Input label="Specify Country" />}
 
-            {/* ROW 4 – PRODUCT & QUANTITY */}
+            {/* CATEGORY + QUANTITY (SAME ROW) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {/* PRODUCT */}
+              {/* CATEGORY */}
               <div>
                 <label className="text-xs uppercase tracking-wide text-[#242424]/60">
-                  Product
+                  Category
                 </label>
                 <select
                   className="form-select"
-                  value={selectedProduct}
-                  disabled={!selectedCategory}
+                  value={selectedCategory}
                   onChange={(e) => {
-                    setSelectedProduct(e.target.value);
+                    setSelectedCategory(e.target.value);
                     setQuantity("");
                   }}
                 >
-                  <option value="">
-                    {selectedCategory
-                      ? "Select Product"
-                      : "Select Category First"}
-                  </option>
-
-                  {filteredProducts.map((product) => (
-                    <option key={product.id} value={product.name}>
-                      {product.name}
+                  <option value="">Select Category</option>
+                  {categories.map((cat) => (
+                    <option key={cat} value={cat}>
+                      {cat}
                     </option>
                   ))}
                 </select>
@@ -185,18 +152,18 @@ export default function ContactPage() {
                   min={MIN_QTY}
                   placeholder={`Minimum ${MIN_QTY} units`}
                   value={quantity}
-                  disabled={!selectedProduct}
+                  disabled={!selectedCategory}
                   onChange={(e) => handleQuantityChange(e.target.value)}
                   className="w-full border-b border-[#242424]/20 py-2 bg-transparent focus:outline-none focus:border-[#53945B] transition disabled:opacity-40"
                 />
-                <p className="mt-1 text-xs text-[#242424]/50">
+                {/* <p className="mt-1 text-xs text-[#242424]/50">
                   MOQ: {MIN_QTY} units
-                </p>
+                </p> */}
               </div>
             </div>
 
             {/* MESSAGE */}
-            <div>
+            <div className="border-[0.1px] p-2 border-[#242424]/40 rounded-[5px] ">
               <label className="text-xs uppercase tracking-wide text-[#242424]/60">
                 Message
               </label>
@@ -206,7 +173,7 @@ export default function ContactPage() {
             {/* SUBMIT */}
             <button
               type="submit"
-              disabled={!selectedProduct || quantity === ""}
+              disabled={!selectedCategory || quantity === ""}
               className="ui-badge-2 text-white px-10 py-3 rounded-full font-semibold text-sm hover:bg-[#14542B] transition disabled:opacity-50"
             >
               Submit
@@ -221,15 +188,6 @@ export default function ContactPage() {
               </p>
             </div>
           </form>
-        </div>
-      </div>
-
-      {/* THANK YOU CARD */}
-      <div className="hidden md:flex absolute bottom-8 left-8 bg-[#83A33C] text-[#14542B] px-6 py-4 rounded-xl shadow-lg text-sm rotate-[-4deg]">
-        <div>
-          <strong>Thank you!</strong>
-          <br />
-          Your request was sent
         </div>
       </div>
     </section>

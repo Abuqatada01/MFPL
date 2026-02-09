@@ -55,13 +55,13 @@ export default function AboutUs() {
           {/* RIGHT */}
           <div className="relative">
             <p className="ui-para mb-6">
-              At<strong> MFPL</strong>, we operate as your behind-the-scenes
-              manufacturing expert, delivering reliable white label and private
-              label solutions across cosmetic, skincare, and haircare
-              categories. We specialize in developing premium, pre-formulated
-              products that meet industry standards, helping brands enter and
-              grow in the beauty market without investing in R&D or
-              manufacturing infrastructure.
+              At<strong> Medicosmo Formulations Private Limited (MFPL)</strong>,
+              we operate as your behind-the-scenes manufacturing expert,
+              delivering reliable white label and private label solutions across
+              cosmetic, skincare, and haircare categories. We specialize in
+              developing premium, pre-formulated products that meet industry
+              standards, helping brands enter and grow in the beauty market
+              without investing in R&D or manufacturing infrastructure.
             </p>
 
             <p className="ui-para mb-6">
@@ -72,9 +72,10 @@ export default function AboutUs() {
             </p>
 
             <p className="ui-para">
-              Think of MFPL as the canvas you bring the brand story, and we help
-              transform it into market-ready cosmetic, skincare, and haircare
-              products that perform and scale.
+              Think of Medicosmo Formulations Private Limited (MFPL) as the
+              canvas you bring the brand story, and we help transform it into
+              market-ready cosmetic, skincare, and haircare products that
+              perform and scale.
             </p>
 
             {/* BRAND DECORATIVE SHAPE */}

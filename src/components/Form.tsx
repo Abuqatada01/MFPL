@@ -165,7 +165,13 @@ export default function ConsultationSection() {
 
                   <Link
                     href="/contact-us"
-                    className="ui-badge-2 ui-cta-premium"
+                    className=" py-2 flex inline-block items-center justify-center px-3 ui-cta-premium"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, var(--clr-primary), var(--clr-secondary))",
+                      color: "#fff",
+                      boxShadow: "0 20px 40px rgba(83,148,91,0.35)",
+                    }}
                   >
                     Contact Our Team
                     <span className="ui-cta-arrow">→</span>

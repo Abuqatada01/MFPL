@@ -3,15 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import {
-  EnvelopeIcon,
   FacebookLogoIcon,
   InstagramLogoIcon,
-  LinkedinLogoIcon,
   List,
-  MailboxIcon,
-  PhoneCallIcon,
   X,
-  YoutubeLogoIcon,
 } from "@phosphor-icons/react";
 
 const menuItems = [
@@ -25,45 +20,60 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50">
-      {/* ================= TOP INFO BAR ================= */}
-      <div className="border-b bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-white">
+      {/* ================= TOP NAVBAR ================= */}
+      <div className="border-b">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center gap-6">
           {/* LOGO */}
           <Link href="/" className="flex items-center gap-3">
             <img src="/Logoblack.png" className="h-10" alt="Logo" />
           </Link>
 
-          {/* CONTACT INFO (Desktop only) */}
-          {/* <div className="hidden md:flex items-center gap-10 text-sm">
-            <div className="flex items-center gap-3 glass-contact">
-              <span className="glass-icon-sm">
-                <EnvelopeIcon weight="fill" size={22} />
-              </span>
-              <span className="glass-text">Medicosmo_info@gmail.com</span>
+          {/* DESKTOP PILL NAV */}
+          <nav className="hidden md:flex flex-1 justify-center">
+            <div className="flex items-center px-8 h-[68px] rounded-full backdrop-blur-md ui-badge-2">
+              <ul className="flex items-center gap-10 font-medium">
+                {menuItems.map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="relative ui-h3 text-white transition-all duration-300
+                      after:absolute after:left-0 after:-bottom-1 after:h-[2px]
+                      after:w-0 after:bg-white after:transition-all hover:after:w-full"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            <div className="flex items-center gap-3 glass-contact">
-              <span className="glass-icon-sm">
-                <PhoneCallIcon weight="fill" size={22} />
-              </span>
-              <span className="glass-text">+91 92050 94789</span>
-            </div>
-          </div> */}
+          </nav>
 
           {/* SOCIALS + HAMBURGER */}
           <div className="flex items-center gap-2">
             {/* Desktop socials */}
             <div className="hidden md:flex items-center gap-3">
               {[
-                <InstagramLogoIcon weight="fill" size={22} />,
-                <FacebookLogoIcon weight="fill" size={22} />,
-                // <LinkedinLogoIcon weight="fill" size={22} />,
-                // <YoutubeLogoIcon weight="fill" size={22} />,
-              ].map((icon, index) => (
-                <span key={index} className="glass-icon">
+                {
+                  url: "https://www.instagram.com/mfpl__?igsh=dXY5NDV1ZXcwdWM1",
+                  icon: <InstagramLogoIcon weight="fill" size={22} />,
+                  label: "Instagram",
+                },
+                {
+                  url: "https://www.facebook.com/profile.php?id=61585006272529",
+                  icon: <FacebookLogoIcon weight="fill" size={22} />,
+                  label: "Facebook",
+                },
+              ].map(({ url, icon, label }, index) => (
+                <Link
+                  key={index}
+                  href={url}
+                  target="_blank"
+                  aria-label={label}
+                  className="glass-icon cursor-pointer"
+                >
                   {icon}
-                </span>
+                </Link>
               ))}
             </div>
 
@@ -106,24 +116,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-
-      {/* ================= DESKTOP FLOATING NAV ================= */}
-      <nav className="absolute left-1/2 -translate-x-1/2 py-4 hidden md:block">
-        <div className="flex items-center justify-between px-8 h-[68px] rounded-full backdrop-blur-md ui-badge-2">
-          <ul className="flex items-center gap-10 font-medium">
-            {menuItems.map((item) => (
-              <li key={item.label}>
-                <Link
-                  href={item.href}
-                  className="relative ui-h3 text-white transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-white after:transition-all hover:after:w-full"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
     </header>
   );
 }

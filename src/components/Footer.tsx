@@ -1,14 +1,21 @@
 "use client";
 
-import {
-  FacebookLogoIcon,
-  InstagramLogoIcon,
-  LinkedinLogoIcon,
-  YoutubeLogoIcon,
-} from "@phosphor-icons/react";
+import { FacebookLogoIcon, InstagramLogoIcon } from "@phosphor-icons/react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleProductsClick = () => {
+    if (pathname === "/products") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      router.push("/products");
+    }
+  };
+
   return (
     <footer
       style={{
@@ -17,9 +24,9 @@ export default function Footer() {
       }}
     >
       <div className="ui-section grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-12">
-        {/* ================= BRAND (FULL WIDTH ON MOBILE) ================= */}
+        {/* ================= BRAND ================= */}
         <div className="col-span-full md:col-span-1">
-          <img src="/LogoWhite.png" alt="Logo" className="h-10 mb-2 " />
+          <img src="/LogoWhite.png" alt="Logo" className="h-10 mb-2" />
 
           <p className="text-sm leading-relaxed opacity-80">
             MFPL provides reliable white label manufacturing solutions, enabling
@@ -39,16 +46,6 @@ export default function Footer() {
                 icon: <FacebookLogoIcon weight="fill" size={22} />,
                 label: "Facebook",
               },
-              // {
-              //   href: "https://www.linkedin.com/company/medicosmoformulations",
-              //   icon: <LinkedinLogoIcon weight="fill" size={22} />,
-              //   label: "LinkedIn",
-              // },
-              // {
-              //   href: "https://www.youtube.com/@medicosmoformulations",
-              //   icon: <YoutubeLogoIcon weight="fill" size={22} />,
-              //   label: "YouTube",
-              // },
             ].map((item, index) => (
               <a
                 key={index}
@@ -66,9 +63,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ================= COMPANY + SERVICES (2 COL ONLY ON MOBILE) ================= */}
+        {/* ================= LINKS ================= */}
         <div className="col-span-full md:col-span-2 grid grid-cols-2 gap-3 lg:gap-8">
-          {/* COMPANY */}
+          {/* QUICK LINKS */}
           <div>
             <h3 className="font-semibold mb-5">Quick Links</h3>
             <ul className="space-y-3 text-sm opacity-80">
@@ -79,7 +76,12 @@ export default function Footer() {
                 <Link href="/about-us">About Us</Link>
               </li>
               <li>
-                <Link href="/products">Products</Link>
+                <button
+                  onClick={handleProductsClick}
+                  className="text-left hover:underline cursor-pointer"
+                >
+                  Products
+                </button>
               </li>
               <li>
                 <Link href="/contact-us">Contact Us</Link>
@@ -87,37 +89,47 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* SERVICES */}
+          {/* PRODUCTS */}
           <div>
             <h3 className="font-semibold mb-5">Products</h3>
             <ul className="space-y-3 text-sm opacity-80">
-              {/* <li>
-                <Link href="/products">All Products</Link>
-              </li> */}
               <li>
-                <Link href="/products">Cosmetics</Link>
+                <button
+                  onClick={handleProductsClick}
+                  className="text-left hover:underline cursor-pointer"
+                >
+                  Cosmetics
+                </button>
               </li>
               <li>
-                <Link href="/products">Hair Care</Link>
+                <button
+                  onClick={handleProductsClick}
+                  className="text-left hover:underline cursor-pointer"
+                >
+                  Hair Care
+                </button>
               </li>
               <li>
-                <Link href="/products">Skin Care</Link>
+                <button
+                  onClick={handleProductsClick}
+                  className="text-left hover:underline cursor-pointer"
+                >
+                  Skin Care
+                </button>
               </li>
-              {/* <li>
-                <Link href="/products">Mens Grooming</Link>
-              </li> */}
             </ul>
           </div>
         </div>
 
-        {/* ================= CONTACT (FULL WIDTH ON MOBILE) ================= */}
+        {/* ================= CONTACT ================= */}
         <div className="col-span-full md:col-span-1 text-sm space-y-2 opacity-90">
           <p>
-            {" "}
             <span className="font-bold text-[15px] text-white">Address :</span>
+            <br />
             109, 110, 111, Pushparaj Industrial Estate, S. No. 66, Naikpada,
             Near Laxmi Compound, Vasai (E) - 401208
           </p>
+
           <p>
             <span className="font-bold text-[15px] text-white">Mobile :</span>{" "}
             +91 92050 94789
@@ -127,11 +139,14 @@ export default function Footer() {
             </span>{" "}
             info@medicosmoformulations.com
           </p>
+
           <p>
             <span className="font-bold text-[15px] text-white">
               Working Hours :
             </span>
-            <br /> Mon – Sat : 9:00 AM – 6:00 PM <br />
+            <br />
+            Mon – Sat : 9:00 AM – 6:00 PM
+            <br />
             Sunday : Closed
           </p>
         </div>
@@ -149,7 +164,6 @@ export default function Footer() {
         <span style={{ color: "var(--clr-secondary)" }}>Medicosmo</span>. All
         rights reserved.{" "}
         <Link href="https://greensmedia.co.in">
-          {" "}
           <span style={{ color: "var(--clr-secondary)" }}>Greens Media</span>
         </Link>
       </div>

@@ -98,11 +98,10 @@ export default function OurProducts() {
             Our <span style={{ color: "var(--clr-primary)" }}>Products</span>
           </h2>
           <p
-            className="mt-1 ui-para max-w-xl mx-auto"
+            className="mt-1 lg:mt-0 ui-para max-w-xl mx-auto"
             style={{ color: "var(--clr-text-muted)" }}
           >
-            Elevate Your Brand <br />
-            with Diverse Creations
+            Elevate Your Brand with Diverse Creations
           </p>
         </div>
 
@@ -164,7 +163,7 @@ export default function OurProducts() {
                 <div
                   className="
           ui-badge-2 overflow-hidden
-          w-[180px] h-[90px]
+          w-[180px] h-[90px] z-30
           lg:w-[240px] lg:h-[120px]
           rounded-b-full
           flex items-center justify-center

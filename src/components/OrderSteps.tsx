@@ -31,7 +31,7 @@ export default function OrderSteps() {
   const sliderRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // run only on mobile
+    // Mobile auto-slide only
     if (window.innerWidth >= 768) return;
 
     const slider = sliderRef.current;
@@ -46,9 +46,8 @@ export default function OrderSteps() {
         left: index * cardWidth,
         behavior: "smooth",
       });
-    }, 3000); // 3s auto slide
+    }, 3000);
 
-    // pause on touch
     const stop = () => clearInterval(interval);
     slider.addEventListener("touchstart", stop, { once: true });
 
@@ -89,40 +88,53 @@ export default function OrderSteps() {
                 md:min-w-0
               "
             >
-              {/* CONNECTOR (Desktop only) */}
-              {/* {index < steps.length - 1 && (
-                <div
-                  className="hidden md:block absolute top-[140px] right-[-70px]"
-                  style={{
-                    width: "140px",
-                    height: "2px",
-                    background:
-                      "linear-gradient(90deg, var(--clr-primary), transparent)",
-                  }}
-                />
-              )} */}
-
               {/* CARD */}
               <div
-                className="p-6 rounded-3xl w-full max-w-sm flex flex-col items-center h-full bg-white"
+                className="
+                  group relative p-6 rounded-3xl w-full max-w-sm
+                  flex flex-col items-center h-full bg-white
+                  transition-all duration-500
+                  ease-[cubic-bezier(.22,.61,.36,1)]
+                  will-change-transform
+                  hover:-translate-y-2
+                "
                 style={{
                   boxShadow: "0 25px 60px rgba(20,84,43,0.12)",
                 }}
               >
+                {/* BORDER GLOW */}
+                <div
+                  className="
+                    pointer-events-none absolute inset-0 rounded-3xl
+                    opacity-0 group-hover:opacity-100
+                    transition-opacity duration-500
+                  "
+                  style={{
+                    boxShadow:
+                      "0 0 0 1px rgba(131,163,60,0.55), 0 18px 45px rgba(83,148,91,0.28)",
+                  }}
+                />
+
                 {/* IMAGE */}
-                <div className="w-full h-[240px] mb-6 overflow-hidden rounded-xl bg-[#EDF5EE]">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    width={400}
-                    height={300}
-                    className="object-cover w-full h-full"
-                  />
+                <div className="relative w-full h-[240px] mb-6 overflow-hidden rounded-xl bg-[#EDF5EE]">
+                  <div className="w-full h-full transition-transform duration-700 group-hover:scale-105">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      width={400}
+                      height={300}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
                 </div>
 
                 {/* STEP NUMBER */}
                 <div
-                  className="mb-4 flex items-center justify-center rounded-full"
+                  className="
+                    mb-4 flex items-center justify-center rounded-full
+                    transition-all duration-500
+                    group-hover:shadow-[0_0_0_6px_rgba(83,148,91,0.18)]
+                  "
                   style={{
                     height: "42px",
                     width: "42px",
@@ -137,7 +149,11 @@ export default function OrderSteps() {
 
                 {/* TEXT */}
                 <h3
-                  className="text-lg font-semibold mb-2"
+                  className="
+                    text-lg font-semibold mb-2
+                    transition-colors duration-300
+                    group-hover:text-[var(--clr-primary)]
+                  "
                   style={{ color: "var(--clr-text-dark)" }}
                 >
                   {item.title}
@@ -157,7 +173,7 @@ export default function OrderSteps() {
         <div className="mt-6 md:mt-10">
           <Link
             href="/contact-us"
-            className="inline-flex items-center gap-3 px-10 py-4 rounded-full text-lg font-semibold transition-all"
+            className="inline-flex ui-cta-premium items-center gap-3 px-10 py-4 rounded-full text-lg font-semibold transition-all"
             style={{
               background:
                 "linear-gradient(135deg, var(--clr-primary), var(--clr-secondary))",
@@ -165,7 +181,8 @@ export default function OrderSteps() {
               boxShadow: "0 20px 40px rgba(83,148,91,0.35)",
             }}
           >
-            Get a Free Quote →
+            Get a Free Quote
+            <span className="ui-cta-arrow">→</span>
           </Link>
         </div>
       </div>
