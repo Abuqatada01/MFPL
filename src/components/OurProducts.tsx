@@ -7,18 +7,15 @@ import { useEffect, useRef, useState } from "react";
 const products = [
   {
     title: "Cosmetic\nFormulation",
-    image:
-      "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a4362000d4eb33ae3/view?project=6912e771002b88166cae",
+    image: "/ourproducts1.png",
   },
   {
     title: "Skincare\nFormulation",
-    image:
-      "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a42fe000e4e6789e1/view?project=6912e771002b88166cae",
+    image: "/ourproducts2.png",
   },
   {
     title: "Haircare\nFormulation",
-    image:
-      "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/696a43670011cc156a53/view?project=6912e771002b88166cae",
+    image: "/ourproducts3.png",
   },
 ];
 

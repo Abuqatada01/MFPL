@@ -105,12 +105,15 @@ export default function ContactPage() {
                   }}
                 >
                   <option value="">Select Country</option>
-                  <option>India</option>
-                  <option>USA</option>
-                  <option>United Kingdom</option>
-                  <option>Canada</option>
-                  <option>Australia</option>
-                  <option>Other</option>
+                  <option>India</option> <option>USA</option>{" "}
+                  <option>United Kingdom</option> <option>Canada</option>{" "}
+                  <option>Australia</option> <option>New Zealand</option>{" "}
+                  <option>Germany</option> <option>France</option>{" "}
+                  <option>Italy</option> <option>Spain</option>{" "}
+                  <option>United Arab Emirates</option>{" "}
+                  <option>Singapore</option> <option>Malaysia</option>{" "}
+                  <option>Japan</option> <option>South Korea</option>{" "}
+                  <option>Brazil</option> <option>Other</option>
                 </select>
               </div>
             </div>

@@ -6,11 +6,11 @@ import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
 
 const slides = [
   {
-    desktopImage: "/MFPL_BANNER_DK1.jpg",
+    desktopImage: "/Ak 3.jpg",
     mobileImage: "/MFPL_BANNER_MB1.jpg",
   },
   {
-    desktopImage: "/MFPL_BANNER_DK2.jpg",
+    desktopImage: "/Ak 2.jpg",
     mobileImage: "/MFPL_BANNER_MB2.jpg",
   },
 ];

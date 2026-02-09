@@ -59,7 +59,7 @@ export default function OurProcess() {
       <div className="ui-section ui-container">
         {/* TITLE */}
         <div className="text-center mb-4 lg:mb-20">
-          <h2 className="ui-h1 ">
+          <h2 className="ui-h2 ">
             Why Choose Medicosmo Formulations Private Limited (MFPL) <br />
             <span className="-mb-2" style={{ color: "var(--clr-primary)" }}>
               As Your Manufacturing Partner?

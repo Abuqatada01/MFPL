@@ -10,9 +10,9 @@ export default function AboutUsPage() {
       {/* ================= ABOUT BANNER ================= */}
       <section className="relative h-[35vh] lg:h-[50vh] overflow-hidden">
         <picture className="absolute inset-0">
-          <source media="(max-width: 768px)" srcSet="/about-bn-mb.jpeg" />
+          <source media="(max-width: 768px)" srcSet="/Ak 1.jpg" />
           <img
-            src="/about-bn-dk.jpeg"
+            src="/Ak 4.jpg"
             alt="About banner"
             className="w-full h-full object-fill lg:object-cover"
           />
@@ -22,108 +22,113 @@ export default function AboutUsPage() {
       {/* ================= VISION & MISSION ================= */}
       <section className="ui-section bg-white">
         <div className="ui-container">
-          {/* TOP LABEL */}
-          <div className="flex items-center gap-3 mb-6">
-            <span className="ui-badge tracking-wide text-[var(--clr-text-muted)]">
-              Crafting Success →
-            </span>
-            <span className="text-xl"></span>
-          </div>
+          {/* MAIN 2-COLUMN LAYOUT */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start">
+            {/* ================= LEFT: CONTENT ================= */}
+            <div>
+              {/* TOP LABEL */}
+              <div className="flex items-center gap-3 mb-6">
+                <span className="ui-badge tracking-wide text-[var(--clr-text-muted)]">
+                  Crafting Success →
+                </span>
+              </div>
 
-          {/* HEADING */}
-          <div className="max-w-3xl mb-20">
-            <h2 className="ui-h2 text-[var(--clr-accent)]">
-              LEADING WITH VISION, DELIVERING <br /> WITH EXCELLENCE.
-            </h2>
+              {/* HEADING */}
+              <div className="max-w-3xl">
+                <h2 className="ui-h2 text-[var(--clr-accent)]">
+                  LEADING WITH VISION, DELIVERING <br /> WITH EXCELLENCE.
+                </h2>
 
-            <div className="mt-6 flex-col items-start gap-6">
-              <span className="block w-24 h-[1px] bg-[var(--clr-primary)] mt-3" />
-              <p className="text-[var(--clr-text-muted)] max-w-xl leading-relaxed">
-                Driven by quality and commitment, Medicosmo Formulations Private
-                Limited (MFPL) transforms ideas into reliable cosmetic,
-                skincare, and haircare products that build trust and support
-                long-term brand growth.
-              </p>
-              <br />
-              <p className="text-[var(--clr-text-muted)] max-w-xl leading-relaxed">
-                MFPL is a trusted white label manufacturing partner, delivering
-                cosmetic, skincare, and haircare solutions built on quality,
-                consistency, and compliance.
-              </p>
-            </div>
-          </div>
+                <div className="mt-6 flex flex-col gap-6">
+                  <span className="block w-24 h-[1px] bg-[var(--clr-primary)]" />
 
-          {/* CARDS */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            {/* CARD WRAPPER */}
-            {[
-              {
-                title: "Our Vision:",
-                Icon: EyesIcon,
-                text: "To become a trusted global manufacturing partner in cosmetic, skincare, and haircare, setting benchmarks in quality, consistency, and compliance—while empowering brands to create products that resonate with customers worldwide.",
-              },
-              {
-                title: "Our Mission:",
-                Icon: TargetIcon,
-                text: "To manufacture high-quality, brand-ready beauty solutions that reflect each partner’s identity, follow market-aligned standards, and support sustainable, scalable growth in a competitive beauty landscape.",
-              },
-            ].map((item, i) => (
-              <div key={i} className="relative group">
-                {/* ICON CIRCLE */}
-                <div className="absolute -top-10 left-1/2 -translate-x-1/2 z-10">
-                  <div
-                    className="
-                w-20 h-20 rounded-full border-4 bg-white
-                flex items-center justify-center
-                transition-all duration-500
-                group-hover:shadow-[0_0_0_10px_rgba(83,148,91,0.15)]
-              "
-                    style={{ borderColor: "var(--clr-secondary)" }}
-                  >
-                    <item.Icon size={32} />
-                  </div>
-                </div>
+                  <p className="text-[var(--clr-text-muted)] max-w-xl leading-relaxed">
+                    Driven by quality and commitment, Medicosmo Formulations
+                    Private Limited (MFPL) transforms ideas into reliable
+                    cosmetic, skincare, and haircare products that build trust
+                    and support long-term brand growth.
+                  </p>
 
-                {/* CARD */}
-                <div
-                  className="
-              relative pt-16 pb-10 px-10 text-center rounded-xl
-              transition-all duration-500
-              ease-[cubic-bezier(.22,.61,.36,1)]
-              will-change-transform
-              group-hover:-translate-y-2
-            "
-                  style={{
-                    border: "1.5px dashed rgba(83,148,91,0.4)",
-                    boxShadow: "0 20px 40px rgba(0,0,0,0.06)",
-                  }}
-                >
-                  {/* BORDER GLOW */}
-                  <div
-                    className="
-                pointer-events-none absolute inset-0 rounded-xl
-                opacity-0 group-hover:opacity-100
-                transition-opacity duration-500
-              "
-                    style={{
-                      boxShadow:
-                        "0 0 0 1px rgba(131,163,60,0.55), 0 18px 45px rgba(83,148,91,0.25)",
-                    }}
-                  />
-
-                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-
-                  {/* STARS */}
-                  <div className="flex justify-center gap-1 mb-4 text-[var(--clr-secondary)] transition-opacity duration-300 group-hover:opacity-100">
-                    ★ ★ ★ ★ ★
-                  </div>
-
-                  <p className="text-sm leading-relaxed text-[var(--clr-text-muted)]">
-                    {item.text}
+                  <p className="text-[var(--clr-text-muted)] max-w-xl leading-relaxed">
+                    MFPL is a trusted white label manufacturing partner,
+                    delivering cosmetic, skincare, and haircare solutions built
+                    on quality, consistency, and compliance.
                   </p>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* ================= RIGHT: VISION + MISSION ================= */}
+            <div className="grid mt-15  lg:mt-5 grid-cols-1 md:grid-cols-2 gap-16">
+              {[
+                {
+                  title: "Our Vision:",
+                  Icon: EyesIcon,
+                  text: "To become a trusted global manufacturing partner in cosmetic, skincare, and haircare, setting benchmarks in quality, consistency, and compliance—while empowering brands to create products that resonate with customers worldwide.",
+                },
+                {
+                  title: "Our Mission:",
+                  Icon: TargetIcon,
+                  text: "To manufacture high-quality, brand-ready beauty solutions that reflect each partner’s identity, follow market-aligned standards, and support sustainable, scalable growth in a competitive beauty landscape.",
+                },
+              ].map((item, i) => (
+                <div key={i} className="relative group">
+                  {/* ICON CIRCLE */}
+                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 z-10">
+                    <div
+                      className="
+                  w-20 h-20 rounded-full border-4 bg-white
+                  flex items-center justify-center
+                  transition-all duration-500
+                  group-hover:shadow-[0_0_0_10px_rgba(83,148,91,0.15)]
+                "
+                      style={{ borderColor: "var(--clr-secondary)" }}
+                    >
+                      <item.Icon size={32} />
+                    </div>
+                  </div>
+
+                  {/* CARD */}
+                  <div
+                    className="
+                relative pt-16 pb-10 px-10 h-[35vh] lg:h-[380px] text-center rounded-xl
+                transition-all duration-500
+                ease-[cubic-bezier(.22,.61,.36,1)]
+                will-change-transform
+                group-hover:-translate-y-2
+              "
+                    style={{
+                      border: "1.5px dashed rgba(83,148,91,0.4)",
+                      boxShadow: "0 20px 40px rgba(0,0,0,0.06)",
+                    }}
+                  >
+                    {/* BORDER GLOW */}
+                    <div
+                      className="
+                  pointer-events-none absolute inset-0 rounded-xl
+                  opacity-0 group-hover:opacity-100
+                  transition-opacity duration-500
+                "
+                      style={{
+                        boxShadow:
+                          "0 0 0 1px rgba(131,163,60,0.55), 0 18px 45px rgba(83,148,91,0.25)",
+                      }}
+                    />
+
+                    <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+
+                    {/* STARS */}
+                    <div className="flex justify-center gap-1 mb-4 text-[var(--clr-secondary)]">
+                      ★ ★ ★ ★ ★
+                    </div>
+
+                    <p className="text-sm leading-relaxed text-[var(--clr-text-muted)]">
+                      {item.text}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

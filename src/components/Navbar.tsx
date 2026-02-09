@@ -23,34 +23,38 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white">
       {/* ================= TOP NAVBAR ================= */}
       <div className="border-b">
-        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center gap-6">
-          {/* LOGO */}
-          <Link href="/" className="flex items-center gap-3">
-            <img src="/Logoblack.png" className="h-10" alt="Logo" />
-          </Link>
+        <div className="max-w-7xl mx-auto px-6 py-3 grid grid-cols-3 items-center">
+          {/* LEFT — LOGO */}
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center gap-3">
+              <img src="/Logoblack.png" className="h-10" alt="Logo" />
+            </Link>
+          </div>
 
-          {/* DESKTOP PILL NAV */}
-          <nav className="hidden md:flex flex-1 justify-center">
-            <div className="flex items-center px-8 h-[68px] rounded-full backdrop-blur-md ui-badge-2">
-              <ul className="flex items-center gap-10 font-medium">
-                {menuItems.map((item) => (
-                  <li key={item.label}>
-                    <Link
-                      href={item.href}
-                      className="relative ui-h3 text-white transition-all duration-300
-                      after:absolute after:left-0 after:-bottom-1 after:h-[2px]
-                      after:w-0 after:bg-white after:transition-all hover:after:w-full"
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </nav>
+          {/* CENTER — PILL NAV (TRUE CENTER) */}
+          <div className="hidden md:flex justify-center">
+            <nav>
+              <div className="flex items-center px-8 h-[68px] rounded-full backdrop-blur-md ui-badge-2">
+                <ul className="flex items-center gap-5 font-medium">
+                  {menuItems.map((item) => (
+                    <li key={item.label}>
+                      <Link
+                        href={item.href}
+                        className="relative ui-h3 text-white transition-all duration-300
+                        after:absolute after:left-0 after:-bottom-1 after:h-[2px]
+                        after:w-0 after:bg-white after:transition-all hover:after:w-full"
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </nav>
+          </div>
 
-          {/* SOCIALS + HAMBURGER */}
-          <div className="flex items-center gap-2">
+          {/* RIGHT — SOCIALS + HAMBURGER */}
+          <div className="flex items-center justify-end gap-2">
             {/* Desktop socials */}
             <div className="hidden md:flex items-center gap-3">
               {[
