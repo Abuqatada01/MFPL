@@ -143,7 +143,7 @@ export default function OurProducts() {
                   className="
           relative z-10
           w-[180px] h-[140px]
-          lg:w-[220px] lg:h-[220px]
+          lg:w-[220px] lg:h-[220px] scale-125
           transition-transform duration-300
           group-hover:scale-115
         "
