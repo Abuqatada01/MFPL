@@ -40,7 +40,7 @@ export default function Navbar() {
             {/* CENTER   PILL NAV (DESKTOP ONLY) */}
             <div className="hidden md:flex justify-center">
               <nav>
-                <div className="flex w-[21.5vw] items-center px-8 h-[64px] rounded-full backdrop-blur-md ui-badge-2">
+                <div className="flex min-w-[21.5vw] max-w-[35vw]  items-center px-2 xl:px-8 min-h-[50px] max-h-[64px] rounded-full backdrop-blur-md ui-badge-2">
                   <ul className="flex items-center gap-6 font-medium">
                     {menuItems.map((item) => (
                       <li key={item.label}>

@@ -84,6 +84,9 @@ export default function Footer() {
                 </button>
               </li>
               <li>
+                <Link href="/privacy-policy">Privacy Policy</Link>
+              </li>
+              <li>
                 <Link href="/contact-us">Contact Us</Link>
               </li>
             </ul>
@@ -118,11 +121,6 @@ export default function Footer() {
                 </button>
               </li>
             </ul>
-            <div className="mt-2 lg:mt-4">
-              <Link className=" font-semibold mb-5" href="/privacy-policy">
-                Privacy Policy
-              </Link>
-            </div>
           </div>
         </div>
 

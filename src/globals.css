@@ -556,6 +556,12 @@
     --para-size: 1.12rem;
     --desc-size: 1.02rem;
   }
+
+  .ui-section {
+    width: 90%;
+    margin: 0 auto;
+    padding: clamp(1rem, 5vw, 4rem) 0;
+  }
 }
 
 /* SMALL DESKTOP (1281px – 1500px) */
@@ -566,6 +572,12 @@
     --h3-size: 1rem;
     --para-size: 1.15rem;
     --desc-size: 1.05rem;
+  }
+
+  .ui-section {
+    width: 90%;
+    margin: 0 auto;
+    padding: clamp(1rem, 5vw, 4rem) 0;
   }
 }
 
