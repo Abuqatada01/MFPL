@@ -188,9 +188,9 @@ export default function PrivacyPolicyPage() {
               </p>
             </PolicyBlock>
 
-            <p className="text-sm text-[#242424]/60 pt-4">
+            {/* <p className="text-sm text-[#242424]/60 pt-4">
               Last updated: <strong>{new Date().getFullYear()}</strong>
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

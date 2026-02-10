@@ -73,7 +73,7 @@ export default function ConsultationSection() {
               <div className="mt-5 lg:mt-5">
                 <Link
                   href="/contact-us"
-                  className="inline-flex ui-cta-premium  items-center gap-3 px-10 py-4 rounded-full text-lg font-semibold transition-all"
+                  className="inline-flex ui-cta-premium  items-center gap-3 px-5 py-2 lg:px-10 lg:py-4 rounded-full text-lg font-semibold transition-all"
                   style={{
                     background:
                       "linear-gradient(135deg, var(--clr-primary), var(--clr-secondary))",

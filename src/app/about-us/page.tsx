@@ -9,14 +9,19 @@ export default function AboutUsPage() {
     <>
       {/* ================= ABOUT BANNER ================= */}
       <section className="relative h-[35vh] lg:h-[45vh] overflow-hidden">
-        <picture className="absolute inset-0">
-          <source media="(max-width: 768px)" srcSet="/Ak 1.jpg" />
-          <img
-            src="/Ak 4.jpg"
-            alt="About banner"
-            className="w-full h-full object-fill lg:object-fill"
-          />
-        </picture>
+        {/* MOBILE IMAGE */}
+        <img
+          src="/Ak 12.jpg"
+          alt="About banner mobile"
+          className="absolute inset-0 w-full h-full object-fill block lg:hidden"
+        />
+
+        {/* DESKTOP IMAGE */}
+        <img
+          src="/Ak 4.jpg"
+          alt="About banner desktop"
+          className="absolute inset-0 w-full h-full object-fill hidden lg:block"
+        />
       </section>
 
       {/* ================= VISION & MISSION ================= */}
