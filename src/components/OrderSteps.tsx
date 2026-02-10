@@ -55,7 +55,10 @@ export default function OrderSteps() {
   }, []);
 
   return (
-    <section style={{ background: "var(--clr-bg-light)" }}>
+    <section
+      style={{ background: "var(--clr-bg-light)" }}
+      className="overflow-visible "
+    >
       <div className="ui-section ui-container text-center">
         {/* HEADER */}
         <div className="mb-4 md:mb-15">
@@ -178,7 +181,7 @@ export default function OrderSteps() {
               background:
                 "linear-gradient(135deg, var(--clr-primary), var(--clr-secondary))",
               color: "#fff",
-              boxShadow: "0 20px 40px rgba(83,148,91,0.35)",
+              boxShadow: "0 10px 20px rgba(83,148,91,0.35)",
             }}
           >
             Get a Free Quote

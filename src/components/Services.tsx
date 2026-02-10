@@ -17,12 +17,12 @@ const services = [
   {
     title: "Branding & Marketing",
     desc: "We support brands with packaging alignment, brand presentation, and market positioning essentials—helping your products stand out and connect with your target audience.",
-    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/6960d8a90028cfd12db3/view?project=6912e771002b88166cae",
+    img: "/mfpl 1.jpg",
   },
   {
     title: "Distribution & Sales",
     desc: "Our manufacturing support extends to helping brands prepare for smooth distribution and sales readiness, ensuring products are aligned with market requirements and business growth plans.",
-    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/6960d8a7002bac17dfd4/view?project=6912e771002b88166cae",
+    img: "/mfpl 2.jpg",
   },
 ];
 
@@ -96,7 +96,7 @@ export default function OurServicesSection() {
                 <img
                   src={service.img}
                   alt={service.title}
-                  className="h-full w-full object-cover scale-105 transition-transform duration-700 group-hover:scale-110"
+                  className="h-full w-full object-fill transition-transform duration-700 group-hover:scale-110"
                 />
 
                 <div

@@ -8,13 +8,13 @@ export default function AboutUsPage() {
   return (
     <>
       {/* ================= ABOUT BANNER ================= */}
-      <section className="relative h-[35vh] lg:h-[50vh] overflow-hidden">
+      <section className="relative h-[35vh] lg:h-[45vh] overflow-hidden">
         <picture className="absolute inset-0">
           <source media="(max-width: 768px)" srcSet="/Ak 1.jpg" />
           <img
             src="/Ak 4.jpg"
             alt="About banner"
-            className="w-full h-full object-fill lg:object-cover"
+            className="w-full h-full object-fill lg:object-fill"
           />
         </picture>
       </section>

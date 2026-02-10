@@ -11,13 +11,13 @@ export default function ConsultationSection() {
       <div className="ui-section">
         {/* Soft background accent */}
         <div
-          className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full"
+          className="absolute top-4 -left-0 w-[500px] h-[500px] rounded-full"
           style={{
             background: "rgba(83,148,91,0.12)",
           }}
         />
         <div
-          className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full"
+          className="absolute bottom-4 right-4 w-[500px] h-[500px] rounded-full"
           style={{
             background: "rgba(131,163,60,0.12)",
           }}
@@ -35,7 +35,7 @@ export default function ConsultationSection() {
               </h2>
 
               <p
-                className="lg:mt-6 max-w-xl ui-para"
+                className="lg:mt-4 max-w-xl ui-para"
                 style={{ color: "var(--clr-text-muted)" }}
               >
                 From concept to compliant manufacturing, MFPL helps you launch
@@ -45,7 +45,7 @@ export default function ConsultationSection() {
               </p>
 
               {/* Trust points */}
-              <div className="flex lg:flex-wrap gap-3 lg:gap-8 mt-4 lg:mt-10">
+              {/* <div className="flex lg:flex-wrap gap-3 lg:gap-8 mt-4 lg:mt-10">
                 {[
                   "100+ Partnered Brands",
                   "Multiple Ready-to-Brand Formulations",
@@ -67,10 +67,10 @@ export default function ConsultationSection() {
                     </p>
                   </div>
                 ))}
-              </div>
+              </div> */}
 
               {/* Primary CTA */}
-              <div className="mt-5 lg:mt-12">
+              <div className="mt-5 lg:mt-5">
                 <Link
                   href="/contact-us"
                   className="inline-flex ui-cta-premium  items-center gap-3 px-10 py-4 rounded-full text-lg font-semibold transition-all"

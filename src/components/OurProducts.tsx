@@ -87,10 +87,10 @@ export default function OurProducts() {
   };
 
   return (
-    <section className="ui-section">
+    <section className="ui-section h-[60vh] ">
       <div className="ui-container">
         {/* HEADER */}
-        <div className="text-center mb-4 lg:mb-16">
+        <div className="text-center mb-4 lg:mb-6">
           <h2 className="ui-h1 lg:ui-h2">
             Our <span style={{ color: "var(--clr-primary)" }}>Products</span>
           </h2>

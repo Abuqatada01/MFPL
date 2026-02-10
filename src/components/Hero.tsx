@@ -10,7 +10,7 @@ const slides = [
     mobileImage: "/MFPL_BANNER_MB1.jpg",
   },
   {
-    desktopImage: "/Ak 2.jpg",
+    desktopImage: "/MFPL_BANNER_DK2.jpg",
     mobileImage: "/MFPL_BANNER_MB2.jpg",
   },
 ];

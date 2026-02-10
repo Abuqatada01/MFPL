@@ -498,7 +498,7 @@
     --h1-size: 1.5rem;
     --h1-weight: 650;
     --h2-size: 1rem;
-    --h3-size: 1.2rem;
+    --h3-size: 0.8rem;
     --para-size: 1rem;
     --desc-size: 0.7rem;
 
@@ -532,7 +532,7 @@
   :root {
     --h1-size: 2.6rem;
     --h2-size: 2rem;
-    --h3-size: 1.5rem;
+    --h3-size: 0.8rem;
     --para-size: 1.1rem;
     --desc-size: 1rem;
   }
@@ -552,7 +552,7 @@
   :root {
     --h1-size: 3rem;
     --h2-size: 2.3rem;
-    --h3-size: 1.6rem;
+    --h3-size: 1rem;
     --para-size: 1.12rem;
     --desc-size: 1.02rem;
   }
@@ -563,7 +563,7 @@
   :root {
     --h1-size: 3.4rem;
     --h2-size: 2.6rem;
-    --h3-size: 1.8rem;
+    --h3-size: 1rem;
     --para-size: 1.15rem;
     --desc-size: 1.05rem;
   }
@@ -574,7 +574,7 @@
   :root {
     --h1-size: 3.8rem;
     --h2-size: 3rem;
-    --h3-size: 2rem;
+    --h3-size: 1rem;
     --para-size: 1.2rem;
     --desc-size: 1.1rem;
   }
