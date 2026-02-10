@@ -16,7 +16,7 @@ const services = [
   },
   {
     title: "Branding & Marketing",
-    desc: "We support brands with packaging alignment, brand presentation, and market positioning essentials—helping your products stand out and connect with your target audience.",
+    desc: "We support brands with packaging alignment, brand presentation, and market positioning essentials-helping your products stand out and connect with your target audience.",
     img: "/mfpl 1.jpg",
   },
   {

@@ -16,8 +16,8 @@ const categoryImages: Record<string, string> = {
   "Intimate Care": "/22.jpg",
   "Body Wash": "/4.jpg",
   "Face Cleansers": "/24.jpg",
-  "Hair Masks": "/20.jpg",
-  "Hair Spa": "/23.jpg",
+  // "Hair Masks": "/20.jpg",
+  // "Hair Spa": "/23.jpg",
   "Scrubs & Packs": "/21.jpg",
   "Skin Toners": "/13.jpg",
   "Hair & Body Mists": "/13.jpg",
@@ -50,8 +50,8 @@ export default function Home() {
           <div className="relative rounded-[2rem] md:rounded-[3.5rem] p-2 bg-gradient-to-b from-white/60 to-transparent">
             <div className="relative min-h-[360px] md:min-h-[420px] lg:min-h-[300px] overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-gradient-to-r from-[#EDF5EE] via-[#E1EFE4] to-[#D4E8D8] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.15)]">
               <div className="relative grid h-full grid-cols-1 md:grid-cols-3 items-center px-6 sm:px-10 md:px-20">
-                {/* CONTENT — 2 COLUMNS */}
-                <div className="max-w-6xl text-left md:col-span-2">
+                {/* CONTENT   2 COLUMNS */}
+                <div className="max-w-6xl mt-4 lg:mt-0 text-left md:col-span-2">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#14542B] leading-tight mb-3">
                     Branded products that fit your industry, perfectly.
                   </h2>
@@ -77,7 +77,7 @@ export default function Home() {
                   </Link>
                 </div>
 
-                {/* IMAGE — 1 COLUMN */}
+                {/* IMAGE   1 COLUMN */}
                 <div className="flex justify-center md:justify-end md:col-span-1">
                   <img
                     src="/product-hero.png"

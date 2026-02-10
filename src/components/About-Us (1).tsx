@@ -65,15 +65,14 @@ export default function AboutUs() {
             </p>
 
             <p className="ui-para mb-6">
-              Our manufacturing approach is designed to simplify
-              complexity—offering ready-to-brand formulations, consistent
-              quality, and scalable production. This allows our partners to
-              focus on building strong brand identities, marketing strategies,
-              and customer trust.
+              Our manufacturing approach is designed to simplify complexity
+              offering ready-to-brand formulations, consistent quality, and
+              scalable production. This allows our partners to focus on building
+              strong brand identities, marketing strategies, and customer trust.
             </p>
 
             <p className="ui-para">
-              Think of MFPL as the canvas—you bring the brand story, and we help
+              Think of MFPL as the canvas you bring the brand story, and we help
               transform it into market-ready cosmetic, skincare, and haircare
               products that perform and scale.
             </p>

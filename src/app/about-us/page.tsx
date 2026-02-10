@@ -64,7 +64,7 @@ export default function AboutUsPage() {
                 {
                   title: "Our Vision:",
                   Icon: EyesIcon,
-                  text: "To become a trusted global manufacturing partner in cosmetic, skincare, and haircare, setting benchmarks in quality, consistency, and compliance—while empowering brands to create products that resonate with customers worldwide.",
+                  text: "To become a trusted global manufacturing partner in cosmetic, skincare, and haircare, setting benchmarks in quality, consistency, and compliance while empowering brands to create products that resonate with customers worldwide.",
                 },
                 {
                   title: "Our Mission:",
@@ -159,8 +159,8 @@ export default function AboutUsPage() {
               <h3 className="bento-title">Certified Manufacturing</h3>
               <p className="bento-desc">
                 Quality-driven manufacturing processes designed to meet
-                industry-aligned safety, hygiene, and compliance
-                standards—ensuring reliability across every batch.
+                industry-aligned safety, hygiene, and compliance standards
+                ensuring reliability across every batch.
               </p>
             </div>
 
@@ -196,7 +196,7 @@ export default function AboutUsPage() {
                   (MFPL)’s end-to-end manufacturing support. From formulation
                   and packaging to compliance and production, we deliver
                   cost-effective manufacturing solutions that help you launch
-                  faster and scale smarter—while we guide you at every step.
+                  faster and scale smarter while we guide you at every step.
                 </p>
 
                 {/* <p className="text-sm leading-relaxed opacity-90">
@@ -253,7 +253,7 @@ export default function AboutUsPage() {
                 style={{ color: "var(--clr-text-muted)" }}
               >
                 A passionate team of experts shaping innovation, quality, and
-                trust — transforming ideas into world-class healthcare and
+                trust   transforming ideas into world-class healthcare and
                 white-label solutions.
               </p>
             </div>

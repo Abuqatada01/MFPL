@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Heart } from "@phosphor-icons/react";
-import { products } from "../products/data";
 
 const categories: string[] = [
   "Creams",
@@ -33,12 +32,14 @@ const categories: string[] = [
   "Hair Botox Treatment",
   "Hair Masque & Spa",
   "Skin Care",
+  "Other",
 ];
 
 const MIN_QTY = 50;
 
 export default function ContactPage() {
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [otherCategory, setOtherCategory] = useState("");
   const [quantity, setQuantity] = useState<number | "">("");
   const [country, setCountry] = useState("");
   const [otherCountry, setOtherCountry] = useState("");
@@ -48,20 +49,19 @@ export default function ContactPage() {
       setQuantity("");
       return;
     }
-
     const num = Number(value);
     setQuantity(num < MIN_QTY ? MIN_QTY : num);
   };
 
   return (
-    <section className="relative py-10 xl:py-25 flex items-start justify-center px-6 overflow-hidden bg-gradient-to-br from-[#effaed] via-white to-[#f6fbf3]">
+    <section className="relative py-10 xl:py-24 flex justify-center px-6 overflow-hidden bg-gradient-to-br from-[#effaed] via-white to-[#f6fbf3]">
       {/* BACKGROUND SHAPES */}
       <div className="absolute -top-40 -left-40 w-[420px] h-[420px] rounded-full bg-[#83A33C]/20 blur-3xl" />
       <div className="absolute bottom-[-160px] right-[-160px] w-[460px] h-[460px] rounded-full bg-[#53945B]/20 blur-3xl" />
 
-      {/* MAIN WRAPPER */}
+      {/* MAIN CARD */}
       <div className="relative z-10 w-full max-w-6xl border-2 border-[var(--clr-secondary)] bg-white/70 backdrop-blur-xl rounded-3xl shadow-xl p-10 md:p-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* LEFT CONTENT */}
           <div>
             <h1 className="text-5xl font-semibold text-[#242424] mb-3">
@@ -69,9 +69,9 @@ export default function ContactPage() {
             </h1>
 
             <p className="ui-para text-[#242424]/70 max-w-sm leading-relaxed mb-4">
-              Our collaborative approach ensures our team works closely with
-              you—bringing manufacturing expertise, clarity, and reliable
-              support at every stage of your brand journey.
+              Our collaborative approach ensures our team works closely with you
+              bringing manufacturing expertise, clarity, and reliable support at
+              every stage of your brand journey.
             </p>
 
             <div className="flex items-center gap-3 text-[#14542B]">
@@ -92,6 +92,7 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <Input label="Email" />
 
+              {/* COUNTRY */}
               <div>
                 <label className="text-xs uppercase tracking-wide text-[#242424]/60">
                   Country
@@ -105,23 +106,30 @@ export default function ContactPage() {
                   }}
                 >
                   <option value="">Select Country</option>
-                  <option>India</option> <option>USA</option>{" "}
-                  <option>United Kingdom</option> <option>Canada</option>{" "}
-                  <option>Australia</option> <option>New Zealand</option>{" "}
-                  <option>Germany</option> <option>France</option>{" "}
-                  <option>Italy</option> <option>Spain</option>{" "}
-                  <option>United Arab Emirates</option>{" "}
-                  <option>Singapore</option> <option>Malaysia</option>{" "}
-                  <option>Japan</option> <option>South Korea</option>{" "}
-                  <option>Brazil</option> <option>Other</option>
+                  <option>India</option>
+                  <option>USA</option>
+                  <option>United Kingdom</option>
+                  <option>Canada</option>
+                  <option>Australia</option>
+                  <option>Germany</option>
+                  <option>France</option>
+                  <option>UAE</option>
+                  <option>Singapore</option>
+                  <option>Other</option>
                 </select>
               </div>
             </div>
 
             {/* OTHER COUNTRY */}
-            {country === "Other" && <Input label="Specify Country" />}
+            {country === "Other" && (
+              <Input
+                label="Specify Country"
+                value={otherCountry}
+                onChange={(e) => setOtherCountry(e.target.value)}
+              />
+            )}
 
-            {/* CATEGORY + QUANTITY (SAME ROW) */}
+            {/* CATEGORY + QUANTITY */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {/* CATEGORY */}
               <div>
@@ -133,6 +141,7 @@ export default function ContactPage() {
                   value={selectedCategory}
                   onChange={(e) => {
                     setSelectedCategory(e.target.value);
+                    setOtherCategory("");
                     setQuantity("");
                   }}
                 >
@@ -144,7 +153,13 @@ export default function ContactPage() {
                   ))}
                 </select>
               </div>
-
+              {selectedCategory === "Other" && (
+                <Input
+                  label="Specify Category"
+                  value={otherCategory}
+                  onChange={(e) => setOtherCategory(e.target.value)}
+                />
+              )}
               {/* QUANTITY */}
               <div>
                 <label className="text-xs uppercase tracking-wide text-[#242424]/60">
@@ -155,18 +170,20 @@ export default function ContactPage() {
                   min={MIN_QTY}
                   placeholder={`Minimum ${MIN_QTY} units`}
                   value={quantity}
-                  disabled={!selectedCategory}
+                  disabled={
+                    !selectedCategory ||
+                    (selectedCategory === "Other" && !otherCategory)
+                  }
                   onChange={(e) => handleQuantityChange(e.target.value)}
                   className="w-full border-b border-[#242424]/20 py-2 bg-transparent focus:outline-none focus:border-[#53945B] transition disabled:opacity-40"
                 />
-                {/* <p className="mt-1 text-xs text-[#242424]/50">
-                  MOQ: {MIN_QTY} units
-                </p> */}
               </div>
             </div>
 
+            {/* OTHER CATEGORY */}
+
             {/* MESSAGE */}
-            <div className="border-[0.1px] p-2 border-[#242424]/40 rounded-[5px] ">
+            <div className="border-[0.5px] p-2 border-[#242424]/40 rounded">
               <label className="text-xs uppercase tracking-wide text-[#242424]/60">
                 Message
               </label>
@@ -176,8 +193,12 @@ export default function ContactPage() {
             {/* SUBMIT */}
             <button
               type="submit"
-              disabled={!selectedCategory || quantity === ""}
-              className="ui-badge-2 text-white px-10 py-3 rounded-full font-semibold text-sm hover:bg-[#14542B] transition disabled:opacity-50"
+              disabled={
+                !selectedCategory ||
+                quantity === "" ||
+                (selectedCategory === "Other" && !otherCategory)
+              }
+              className="ui-badge-2 text-white px-10 py-3 rounded-full font-semibold text-sm transition disabled:opacity-50"
             >
               Submit
             </button>
@@ -198,7 +219,15 @@ export default function ContactPage() {
 }
 
 /* INPUT COMPONENT */
-function Input({ label }: { label: string }) {
+function Input({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}) {
   return (
     <div>
       <label className="text-xs uppercase tracking-wide text-[#242424]/60">
@@ -206,6 +235,8 @@ function Input({ label }: { label: string }) {
       </label>
       <input
         type="text"
+        value={value}
+        onChange={onChange}
         className="w-full border-b border-[#242424]/20 py-2 bg-transparent focus:outline-none focus:border-[#53945B] transition"
       />
     </div>

@@ -6,7 +6,7 @@ export default function OurProcess() {
   const leftCards = [
     {
       title: "Industry-Focused Expertise",
-      desc: "We specialize exclusively in cosmetic, skincare, and haircare manufacturing—ensuring deep product understanding and reliable execution.",
+      desc: "We specialize exclusively in cosmetic, skincare, and haircare manufacturing ensuring deep product understanding and reliable execution.",
       imgs: "/Untitled design (1).png",
     },
     {
@@ -29,7 +29,7 @@ export default function OurProcess() {
     },
     {
       title: "Scalable Production",
-      desc: "Our manufacturing capabilities are built to support growing demand—whether you’re starting small or scaling up rapidly.",
+      desc: "Our manufacturing capabilities are built to support growing demand whether you’re starting small or scaling up rapidly.",
       imgs: "https://cdn-icons-png.freepik.com/512/5575/5575052.png",
     },
     {
@@ -121,7 +121,7 @@ function Card({ title, desc, imgs }: CardProps) {
       style={{ background: "rgba(233,247,251,0.9)" }}
     >
       <div className="flex items-start gap-5">
-        {/* ICON — ALWAYS LEFT */}
+        {/* ICON   ALWAYS LEFT */}
         <img
           src={imgs}
           className="h-14 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"

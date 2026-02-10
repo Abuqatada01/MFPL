@@ -21,7 +21,7 @@ const steps = [
   {
     step: "03",
     title: "Manufacturing & Delivery",
-    desc: "We manufacture, package, and label your products, ensuring quality checks and timely delivery—ready to launch under your brand name.",
+    desc: "We manufacture, package, and label your products, ensuring quality checks and timely delivery ready to launch under your brand name.",
     image: "https://palmisthealthcare.com/public/imgs/home/logistic.jpg",
   },
 ];

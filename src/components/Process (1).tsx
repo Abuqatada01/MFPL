@@ -6,7 +6,7 @@ export default function OurProcess() {
   const leftCards = [
     {
       title: "Industry-Focused Expertise",
-      desc: "We specialize exclusively in cosmetic, skincare, and haircare manufacturing—ensuring deep product understanding and reliable execution.",
+      desc: "We specialize exclusively in cosmetic, skincare, and haircare manufacturing ensuring deep product understanding and reliable execution.",
       imgs: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn4owmMiJrNNM9RRgVSfIlrebc34uKYDPagw&s",
     },
     {
@@ -29,7 +29,7 @@ export default function OurProcess() {
     },
     {
       title: "Scalable Production",
-      desc: "Our manufacturing capabilities are built to support growing demand—whether you’re starting small or scaling up rapidly.",
+      desc: "Our manufacturing capabilities are built to support growing demand whether you’re starting small or scaling up rapidly.",
       imgs: "https://cdn-icons-png.freepik.com/512/5575/5575052.png",
     },
     {

@@ -63,9 +63,9 @@ export default function ContactPage() {
             </h1>
 
             <p className="ui-para text-[#242424]/70 max-w-sm leading-relaxed mb-4">
-              Our collaborative approach ensures our team works closely with
-              you—bringing manufacturing expertise, clarity, and reliable
-              support at every stage of your brand journey.
+              Our collaborative approach ensures our team works closely with you
+              bringing manufacturing expertise, clarity, and reliable support at
+              every stage of your brand journey.
             </p>
 
             <div className="flex items-center gap-3 text-[#14542B]">
