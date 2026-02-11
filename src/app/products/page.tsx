@@ -38,6 +38,7 @@ const categoryImages: Record<string, string> = {
   "Hair Botox Treatment": "/16.jpg",
   // "Hair Masque & Spa": "/20.jpg",
   // "Skin Care": "/24.jpg",
+  // "Skin Care": "/24.jpg",
 };
 
 /* ================= CATEGORIES (FROM IMAGE MAP ONLY) ================= */
