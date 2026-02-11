@@ -11,18 +11,23 @@ const options = [
 export default function ConsultationSection() {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState("Interested In");
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   // Close on outside click
-  useEffect(() => {
-    const handler = (e) => {
-      if (ref.current && !ref.current.contains(e.target)) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, []);
+ useEffect(() => {
+  const handler = (e: MouseEvent) => {
+    if (
+      ref.current &&
+      !ref.current.contains(e.target as Node)
+    ) {
+      setOpen(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handler);
+  return () => document.removeEventListener("mousedown", handler);
+}, []);
+
   return (
     <section
       className=" relative overflow-hidden"
