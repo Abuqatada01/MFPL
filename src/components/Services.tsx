@@ -60,7 +60,7 @@ export default function OurServicesSection() {
         {/* HEADER */}
         <div className="text-center mb-4 lg:mb-16">
           <h2 className="ui-h1 lg:ui-h2">
-            Our <span style={{ color: "var(--clr-primary)" }}>Services</span>
+            What <span style={{ color: "var(--clr-primary)" }}>We Provide</span>
           </h2>
           <p
             className="mt-0.5 lg:mt-2 ui-para max-w-xl mx-auto"

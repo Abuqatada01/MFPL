@@ -15,12 +15,12 @@ export default function Home() {
   return (
     <div className="">
       <HeroSlider />
-      <AboutUs />
+      {/* <AboutUs /> */}
       <OurServicesSection />
       <OurProducts />
+      <OrderSteps />
       <OurProcess />
       <CertificatesMarquee />
-      <OrderSteps />
       {/* <StatsTestimonialSection /> */}
       <ConsultationSection />
       {/* <OurBlogs /> */}

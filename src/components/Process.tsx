@@ -5,9 +5,9 @@ import Image from "next/image";
 export default function OurProcess() {
   const leftCards = [
     {
-      title: "Industry-Focused Expertise",
-      desc: "We specialize exclusively in cosmetic, skincare, and haircare manufacturing ensuring deep product understanding and reliable execution.",
-      imgs: "/Untitled design (1).png",
+      title: "One-Source Private Labelling Partner",
+      desc: "Complete private labelling solutions from formulation to marketing and sales.",
+      imgs: "https://cdn-icons-png.flaticon.com/512/9157/9157489.png",
     },
     {
       title: "White Label Made Simple",
@@ -58,13 +58,22 @@ export default function OurProcess() {
 
       <div className="ui-section ui-container">
         {/* TITLE */}
-        <div className="text-center mt-4 lg:mt-0 mb-4 lg:mb-20">
+        <div className="text-center mt-4 lg:mt-1 mb-4 lg:mb-20">
           <h2 className="ui-h2 ">
             Why Choose Medicosmo Formulations Private Limited (MFPL) <br />
             <span className="-mb-2" style={{ color: "var(--clr-primary)" }}>
               As Your Manufacturing Partner?
             </span>
           </h2>
+          <p
+            className="mt-0.5 lg:mt-4 ui-para  mx-auto"
+            style={{ color: "var(--clr-text-muted)" }}
+          >
+            Start-to-end private labelling solutions for cosmetic, skincare, and
+            haircare brands, covering formulation, manufacturing, production,
+            packaging, branding, marketing, distribution, sales, and timely
+            delivery.
+          </p>
         </div>
 
         {/* GRID */}

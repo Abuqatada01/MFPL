@@ -1,8 +1,28 @@
 "use client";
 
 import Link from "next/link";
+import { useState, useRef, useEffect } from "react";
 
+const options = [
+  "Cosmetics Products",
+  "Hair Care Products",
+  "Skin Care Products",
+];
 export default function ConsultationSection() {
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState("Interested In");
+  const ref = useRef(null);
+
+  // Close on outside click
+  useEffect(() => {
+    const handler = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
   return (
     <section
       className=" relative overflow-hidden"
@@ -125,30 +145,36 @@ export default function ConsultationSection() {
                     style={{ borderColor: "rgba(20,84,43,0.25)" }}
                   />
 
-                  <div className="relative w-full">
-                    <select
+                  <div ref={ref} className="relative w-full overflow-visible">
+                    {/* Button */}
+                    <button
+                      type="button"
+                      onClick={() => setOpen(!open)}
                       className="
-      w-full appearance-none
-      px-4 py-3 pr-12
-      rounded-lg
-      border
-      focus:outline-none focus:ring-2
-    "
+          w-full flex items-center justify-between
+          px-4 py-3 pr-12
+          rounded-lg border
+          text-left
+          focus:outline-none focus:ring-2
+        "
                       style={{
                         borderColor: "rgba(20,84,43,0.25)",
-                        outlineColor: "#53945B",
+                        color: "var(--clr-primary)",
                       }}
                     >
-                      <option>Interested In</option>
-                      <option>Cosmetic Manufacturing</option>
-                      <option>Private Labelling</option>
-                      <option>Product Development</option>
-                    </select>
+                      <span
+                        className={
+                          selected === "Interested In" ? "text-gray-400" : ""
+                        }
+                      >
+                        {selected}
+                      </span>
 
-                    {/* Custom Dropdown Icon */}
-                    <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                      {/* Arrow */}
                       <svg
-                        className="w-4 h-4 text-[#14542B]"
+                        className={`w-4 h-4 transition-transform duration-200 ${
+                          open ? "rotate-180" : ""
+                        }`}
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2"
@@ -160,7 +186,39 @@ export default function ConsultationSection() {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
-                    </span>
+                    </button>
+
+                    {/* Dropdown */}
+                    {open && (
+                      <ul
+                        className="
+            absolute z-50 mt-2 w-full xl:w-[400px] xl:ml-4
+             border bg-white
+            shadow-2xl
+            max-h-[96px] 
+          "
+                        style={{ borderColor: "rgba(20,84,43,0.25)" }}
+                      >
+                        {options.map((option) => (
+                          <li
+                            key={option}
+                            onClick={() => {
+                              setSelected(option);
+                              setOpen(false);
+                            }}
+                            className="
+                px-2 py-1 cursor-pointer
+                text-[var(--clr-dark)]
+                hover:bg-[var(--clr-primary)]
+                hover:text-white
+                transition
+              "
+                          >
+                            {option}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
 
                   <Link

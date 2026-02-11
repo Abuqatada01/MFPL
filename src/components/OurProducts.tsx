@@ -6,15 +6,15 @@ import { useEffect, useRef, useState } from "react";
 
 const products = [
   {
-    title: "Cosmetic\nFormulation",
+    title: "Cosmetic\nProducts",
     image: "/ourproducts1.png",
   },
   {
-    title: "Skincare\nFormulation",
+    title: "Skincare\nProducts",
     image: "/ourproducts2.png",
   },
   {
-    title: "Haircare\nFormulation",
+    title: "Haircare\nProducts",
     image: "/ourproducts3.png",
   },
 ];
@@ -87,7 +87,7 @@ export default function OurProducts() {
   };
 
   return (
-    <section className="ui-section h-auto lg:h-[57vh] ">
+    <section className="ui-section h-auto xl:h-[57vh] ">
       <div className="ui-container">
         {/* HEADER */}
         <div className="text-center -mt-2 mb-4 lg:mb-6">
@@ -144,15 +144,15 @@ export default function OurProducts() {
           relative z-10
           w-[180px] h-[140px]
           lg:w-[220px] lg:h-[220px] scale-125
-          transition-transform duration-300
-          group-hover:scale-115
+          transition-transform duration-300 mb-3
+          group-hover:scale-135
         "
                 >
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-contain"
+                    className="object-contain "
                   />
                 </div>
 

@@ -217,7 +217,7 @@
 
 .ui-btn {
   padding: 0.7rem 1.25rem;
-  border-radius: var(--radius-md);
+  /* border-radius: var(--radius-xl); */
   font-size: var(--btn-size);
   font-weight: 600;
   text-decoration: none;

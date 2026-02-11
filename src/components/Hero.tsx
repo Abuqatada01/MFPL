@@ -44,12 +44,12 @@ export default function HeroSection() {
       {/* <div className="absolute inset-0 bg-black/30 z-10" /> */}
 
       {/* CTA CONTENT */}
-      <div className="absolute bottom-0 inset-0 z-20 flex  items-end">
+      <div className="absolute bottom-0 inset-0 xl:ml-12 lg:mb-20 z-20 flex  items-end">
         <div className="ui-section">
           <div className="flex gap-4">
             <Link
               href="/contact-us"
-              className="ui-btn ui-btn-primary hover:bg-green-700"
+              className="ui-btn ui-btn-primary rounded-3xl hover:bg-green-700"
             >
               Start Your Brand Today
             </Link>
