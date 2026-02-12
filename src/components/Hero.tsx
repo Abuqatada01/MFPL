@@ -29,7 +29,7 @@ export default function HeroSection() {
   const slide = slides[activeSlide];
 
   return (
-    <section className="relative h-[50vh] lg:h-[70vh] overflow-hidden">
+    <section className="relative h-[50vh] lg:h-[75vh] overflow-hidden">
       {/* SLIDE IMAGE */}
       <picture className="absolute inset-0">
         <source media="(max-width: 768px)" srcSet={slide.mobileImage} />

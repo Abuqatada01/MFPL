@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function OurProcess() {
   const leftCards = [
@@ -41,69 +42,71 @@ export default function OurProcess() {
 
   return (
     <section className="relative  overflow-hidden">
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        {/* MOVING REPEATED BACKGROUND */}
-        <div className="absolute inset-0 bg-pan-repeat" />
+      <Link href="/about-us">
+        {/* BACKGROUND */}
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          {/* MOVING REPEATED BACKGROUND */}
+          <div className="absolute inset-0 bg-pan-repeat" />
 
-        {/* OVERLAY */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(238,247,241,0.65) 20%, rgba(255,255,255,0.92) 75%)",
-          }}
-        />
-      </div>
-
-      <div className="ui-section ui-container">
-        {/* TITLE */}
-        <div className="text-center mt-4 lg:mt-1 mb-4 lg:mb-20">
-          <h2 className="ui-h2 ">
-            Why Choose Medicosmo Formulations Private Limited (MFPL) <br />
-            <span className="-mb-2" style={{ color: "var(--clr-primary)" }}>
-              As Your Manufacturing Partner?
-            </span>
-          </h2>
-          <p
-            className="mt-0.5 lg:mt-4 ui-para  mx-auto"
-            style={{ color: "var(--clr-text-muted)" }}
-          >
-            Start-to-end private labelling solutions for cosmetic, skincare, and
-            haircare brands, covering formulation, manufacturing, production,
-            packaging, branding, marketing, distribution, sales, and timely
-            delivery.
-          </p>
+          {/* OVERLAY */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(238,247,241,0.65) 20%, rgba(255,255,255,0.92) 75%)",
+            }}
+          />
         </div>
 
-        {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 lg:gap-16 items-center">
-          {/* LEFT */}
-          <div className="flex flex-col gap-8">
-            {leftCards.map((item, i) => (
-              <Card key={i} {...item} align="left" />
-            ))}
+        <div className="ui-section ui-container">
+          {/* TITLE */}
+          <div className="text-center mt-4 lg:mt-1 mb-4 lg:mb-20">
+            <h2 className="ui-h2 ">
+              Why Choose Medicosmo Formulations Private Limited (MFPL) <br />
+              <span className="-mb-2" style={{ color: "var(--clr-primary)" }}>
+                As Your Manufacturing Partner?
+              </span>
+            </h2>
+            <p
+              className="mt-0.5 lg:mt-4 ui-para  mx-auto"
+              style={{ color: "var(--clr-text-muted)" }}
+            >
+              Start-to-end private labelling solutions for cosmetic, skincare,
+              and haircare brands, covering formulation, manufacturing,
+              production, packaging, branding, marketing, distribution, sales,
+              and timely delivery.
+            </p>
           </div>
 
-          {/* CENTER IMAGE */}
-          <div className="relative flex justify-center">
-            <Image
-              src="/processimg.png"
-              alt="Branded Water Bottle"
-              width={450}
-              height={450}
-              className="relative z-10 animate-[floatSlow_6s_ease-in-out_infinite]"
-            />
-          </div>
+          {/* GRID */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 lg:gap-16 items-center">
+            {/* LEFT */}
+            <div className="flex flex-col gap-8">
+              {leftCards.map((item, i) => (
+                <Card key={i} {...item} align="left" />
+              ))}
+            </div>
 
-          {/* RIGHT */}
-          <div className="flex flex-col gap-8">
-            {rightCards.map((item, i) => (
-              <Card key={i} {...item} align="right" />
-            ))}
+            {/* CENTER IMAGE */}
+            <div className="relative flex justify-center">
+              <Image
+                src="/processimg.png"
+                alt="Branded Water Bottle"
+                width={450}
+                height={450}
+                className="relative z-10 animate-[floatSlow_6s_ease-in-out_infinite]"
+              />
+            </div>
+
+            {/* RIGHT */}
+            <div className="flex flex-col gap-8">
+              {rightCards.map((item, i) => (
+                <Card key={i} {...item} align="right" />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
     </section>
   );
 }

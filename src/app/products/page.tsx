@@ -2,30 +2,31 @@
 
 import "./products.css";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 /* ================= ORIGINAL IMAGES (DO NOT CHANGE ORDER) ================= */
 const categoryImages: Record<string, string> = {
-  "Skin Creams": "/1.jpg",
-  "Body Lotions": "/11.jpg",
-  "Skin Serums": "/12.jpg",
-  "Skin Gels": "/28.png",
-  "Skin Toners": "/13.jpg",
-  "Hair Gels": "/27.jpg",
+  "Skin Cream": "/1.jpg",
+  "Body Lotion": "/11.jpg",
+  "Skin Serum": "/12.jpg",
+  "Skin Gel": "/28.png",
+  "Skin Toner": "/13.jpg",
+  "Hair Gel": "/27.jpg",
   "Hair Shampoo": "/10.jpg",
-  "Hair Masks": "/20.jpg",
+  "Hair Mask": "/20.jpg",
   "Hair Serum": "/12.jpg",
   "Hair Conditioner": "/10.jpg",
-  "Face Gels": "/1.jpg",
+  "Face Gel": "/1.jpg",
   "Hair Spa": "/23.jpg",
-  "Face Cleansers": "/24.jpg",
+  "Face Cleanser": "/24.jpg",
   "Shower Gel & Body Wash": "/4.jpg",
   "Intimate Care": "/22.jpg",
   "Hand Wash": "/6.jpg",
   "Sun Cream": "/26.jpg",
   "Baby Care": "/19.jpg",
-  "Alcohol-Free Hair & Body Mists": "/13.jpg",
-  "Scrubs & Packs": "/21.jpg",
+  "Alcohol-Free Hair & Body Mist": "/13.jpg",
+  "Scrubs & Pack": "/21.jpg",
   "Under Eye": "/27.jpg",
   "Lip Care": "/29.jpg",
   "Men's Grooming": "/18.jpg",
@@ -40,29 +41,29 @@ type ProductType = "Cosmetics" | "Skin Care" | "Hair Care";
 
 const categoryTypeMap: Record<string, ProductType> = {
   // 🌿 SKIN CARE
-  "Skin Creams": "Skin Care",
-  "Body Lotions": "Skin Care",
-  "Skin Serums": "Skin Care",
-  "Skin Gels": "Skin Care",
-  "Skin Toners": "Skin Care",
-  "Face Gels": "Skin Care",
-  "Face Cleansers": "Skin Care",
+  "Skin Cream": "Skin Care",
+  "Body Lotion": "Skin Care",
+  "Skin Serum": "Skin Care",
+  "Skin Gel": "Skin Care",
+  "Skin Toner": "Skin Care",
+  "Face Gel": "Skin Care",
+  "Face Cleanser": "Skin Care",
   "Shower Gel & Body Wash": "Skin Care",
   "Intimate Care": "Skin Care",
   "Hand Wash": "Skin Care",
   "Sun Cream": "Skin Care",
   "Baby Care": "Skin Care",
-  "Scrubs & Packs": "Skin Care",
+  "Scrubs & Pack": "Skin Care",
   "Under Eye": "Skin Care",
 
   // 💆 HAIR CARE
-  "Hair Gels": "Hair Care",
+  "Hair Gel": "Hair Care",
   "Hair Shampoo": "Hair Care",
-  "Hair Masks": "Hair Care",
+  "Hair Mask": "Hair Care",
   "Hair Serum": "Hair Care",
   "Hair Conditioner": "Hair Care",
   "Hair Spa": "Hair Care",
-  "Alcohol-Free Hair & Body Mists": "Hair Care",
+  "Alcohol-Free Hair & Body Mist": "Hair Care",
   "Anti Hair Fall Treatment": "Hair Care",
   "Anti Dandruff Treatment": "Hair Care",
   "Keratin Hair Treatment": "Hair Care",
@@ -81,9 +82,50 @@ const filters: (ProductType | "All")[] = [
   "Hair Care",
 ];
 
+/* ================= URL CATEGORY TO FILTER MAP ================= */
+const categoryToFilterMap: Record<string, ProductType> = {
+  cosmetics: "Cosmetics",
+  "skin-care": "Skin Care",
+  "hair-care": "Hair Care",
+};
+
 /* ================= PAGE ================= */
 export default function ProductsPage() {
+  const searchParams = useSearchParams();
   const [activeFilter, setActiveFilter] = useState<ProductType | "All">("All");
+
+  /* ================= DISABLE SCROLL RESTORATION ================= */
+  useLayoutEffect(() => {
+    // Disable browser's scroll restoration
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+  }, []);
+
+  /* ================= SCROLL TO TOP & SET FILTER FROM URL ================= */
+  useLayoutEffect(() => {
+    // Immediate scroll to top (before paint)
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    // Additional scroll after render
+    window.scrollTo({ top: 0, behavior: "instant" });
+
+    // Get category from URL parameter
+    const categoryParam = searchParams.get("category");
+
+    if (categoryParam && categoryToFilterMap[categoryParam]) {
+      setActiveFilter(categoryToFilterMap[categoryParam]);
+    }
+
+    // Delayed scroll to ensure it happens after any layout shifts
+    const timer = setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [searchParams]);
 
   /* PRESERVE OBJECT ORDER */
   const products = Object.keys(categoryImages).map((name) => ({

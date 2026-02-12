@@ -8,9 +8,11 @@ export default function Footer() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const handleProductsClick = () => {
-    if (pathname === "/products") {
+  const handleProductsClick = (category?: string) => {
+    if (pathname === "/products" && !category) {
       window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (category) {
+      router.push(`/products?category=${category}`);
     } else {
       router.push("/products");
     }
@@ -77,7 +79,7 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={handleProductsClick}
+                  onClick={() => handleProductsClick()}
                   className="text-left hover:underline cursor-pointer"
                 >
                   Products
@@ -98,7 +100,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm opacity-80">
               <li>
                 <button
-                  onClick={handleProductsClick}
+                  onClick={() => handleProductsClick("cosmetics")}
                   className="text-left hover:underline cursor-pointer"
                 >
                   Cosmetics
@@ -106,7 +108,7 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={handleProductsClick}
+                  onClick={() => handleProductsClick("hair-care")}
                   className="text-left hover:underline cursor-pointer"
                 >
                   Hair Care
@@ -114,7 +116,7 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={handleProductsClick}
+                  onClick={() => handleProductsClick("skin-care")}
                   className="text-left hover:underline cursor-pointer"
                 >
                   Skin Care
