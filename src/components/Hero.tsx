@@ -54,7 +54,10 @@ export default function HeroSection() {
               Start Your Brand Today
             </Link>
 
-            <Link href="/products" className="ui-btn ui-btn-outline text-white">
+            <Link
+              href="/products"
+              className="ui-btn ui-btn-outline rounded-3xl text-white"
+            >
               Explore Products
             </Link>
           </div>
