@@ -187,6 +187,7 @@ export default function ContactPage() {
                 <input
                   type="number"
                   name="quantity"
+                  placeholder="MOQ 50"
                   min={MIN_QTY}
                   value={quantity}
                   onChange={(e) => handleQuantityChange(e.target.value)}

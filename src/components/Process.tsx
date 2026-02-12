@@ -90,7 +90,7 @@ export default function OurProcess() {
             {/* CENTER IMAGE */}
             <div className="relative flex justify-center">
               <Image
-                src="/processimg.png"
+                src="/why_choose.png"
                 alt="Branded Water Bottle"
                 width={450}
                 height={450}
