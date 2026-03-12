@@ -29,28 +29,30 @@ export default function ConsultationSection() {
   }, []);
 
   // 🔹 EMAIL SUBMIT HANDLER
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setLoading(true);
 
-    try {
-      await emailjs.sendForm(
-        "service_6pmn1y3",
-        "template_ytwaef2",
-        e.currentTarget,
-        "D4g0tOj1HYdlYdheB",
-      );
+  const form = e.currentTarget; // ✅ store ref before async call
 
-      alert("Thank you! We will contact you soon.");
-      e.currentTarget.reset();
-      setSelected("Interested In");
-    } catch (error) {
-      console.error(error);
-      alert("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  try {
+    await emailjs.sendForm(
+      "service_6pmn1y3",
+      "template_ytwaef2",
+      form,              // ✅ use stored ref
+      "D4g0tOj1HYdlYdheB",
+    );
+
+    alert("Thank you! We will contact you soon.");
+    form.reset();        // ✅ use stored ref
+    setSelected("Interested In");
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <section
@@ -168,6 +170,12 @@ export default function ConsultationSection() {
                     type="submit"
                     disabled={loading}
                     className="w-full py-3 ui-cta-premium"
+                  style={{
+              background:
+                "linear-gradient(135deg, var(--clr-primary), var(--clr-secondary))",
+              color: "#fff",
+              boxShadow: "0 10px 20px rgba(83,148,91,0.35)",
+            }}
                   >
                     {loading ? "Sending..." : "Contact Our Team →"}
                   </button>
