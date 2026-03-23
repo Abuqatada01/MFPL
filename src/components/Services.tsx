@@ -7,12 +7,12 @@ const services = [
   {
     title: "Manufacturing & Production",
     desc: "We specialize in white label and private label manufacturing for cosmetic, skincare, and haircare products. Our streamlined production processes ensure consistent quality, scalability, and market-ready formulations.",
-    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/6960d8a800298981bfb5/view?project=6912e771002b88166cae",
+    img: "/Manufacturing & Production.jpg",
   },
   {
     title: "Packaging & Labeling",
     desc: "From bottle and container selection to precise labeling, we ensure your products are professionally packaged, compliant, and ready for retail or distribution under your brand name.",
-    img: "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/6960d8aa00253d909c17/view?project=6912e771002b88166cae",
+    img: "/Packaging & Labeling.jpg",
   },
   {
     title: "Branding & Marketing",
