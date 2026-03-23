@@ -40,11 +40,8 @@ export default function HeroSection() {
         />
       </picture>
 
-      {/* OPTIONAL DARK OVERLAY */}
-      {/* <div className="absolute inset-0 bg-black/30 z-10" /> */}
-
-      {/* CTA CONTENT */}
-      <div className="absolute bottom-0 inset-0 xl:ml-12 lg:mb-20 z-20 flex  items-end">
+      {/* CTA CONTENT — pinned to bottom with consistent spacing */}
+      <div className="absolute bottom-8 sm:bottom-10 lg:bottom-10 left-0 right-0 z-20 xl:pl-12">
         <div className="ui-section">
           <div className="flex gap-4">
             <Link
@@ -77,7 +74,7 @@ export default function HeroSection() {
           text-[var(--clr-primary)] shadow-lg
           hover:scale-110 transition"
       >
-        <CaretLeftIcon className="w-6 h-6" />
+        <CaretLeftIcon className="w-5 h-5" />
       </button>
 
       {/* RIGHT ARROW */}
@@ -89,7 +86,7 @@ export default function HeroSection() {
           text-[var(--clr-primary)] shadow-lg
           hover:scale-110 transition"
       >
-        <CaretRightIcon className="w-6 h-6" />
+        <CaretRightIcon className="w-5 h-5" />
       </button>
     </section>
   );
