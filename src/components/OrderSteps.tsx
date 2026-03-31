@@ -10,7 +10,7 @@ const steps = [
     title: "Submit Your Requirements",
     desc: "Share your product category, formulation preferences, quantity, and branding needs through our enquiry form or consultation process.",
     image:
-      "https://fra.cloud.appwrite.io/v1/storage/buckets/6912e7900026161605d7/files/6960d3eb00068ca891f0/view?project=6912e771002b88166cae",
+      "/order1.webp",
   },
   {
     step: "02",
