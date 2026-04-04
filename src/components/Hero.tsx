@@ -32,7 +32,7 @@ export default function HeroSection() {
     <section className="relative h-[55vh] lg:h-[75vh] overflow-hidden">
       {/* SLIDE IMAGE */}
       <picture className="absolute inset-0">
-        <source media="(max-width: 768px)" srcSet={slide.mobileImage} />
+        <source media="(max-width: 500px)" srcSet={slide.mobileImage} />
         <img
           src={slide.desktopImage}
           alt="Hero banner"
@@ -41,7 +41,7 @@ export default function HeroSection() {
       </picture>
 
       {/* CTA CONTENT — pinned to bottom with consistent spacing */}
-      <div className="absolute bottom-8 sm:bottom-10 lg:bottom-10 left-0 right-0 z-20 xl:pl-12">
+      <div className="absolute bottom-8 sm:bottom-10 md:bottom-20 lg:bottom-25 xl:bottom-10 left-0 right-0 z-20 md:-left-12 lg:left-10 xl:left-35 2xl:pl-12">
         <div className="ui-section">
           <div className="flex gap-4">
             <Link

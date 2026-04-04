@@ -544,7 +544,11 @@
   .ui-badge {
     font-size: 0.4rem;
   }
-
+.ui-btn {
+ 
+    font-size: 12px;
+  
+  }
 }
 
 /* LAPTOP (1024px – 1280px) */
@@ -561,6 +565,17 @@
     width: 90%;
     margin: 0 auto;
     padding: clamp(1rem, 5vw, 4rem) 0;
+  }
+   .ui-btn {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-size: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
   }
 }
 
