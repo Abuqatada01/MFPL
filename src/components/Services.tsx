@@ -30,7 +30,7 @@ export default function OurServicesSection() {
   const sliderRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // only auto-slide on mobile
+    if (typeof window === "undefined") return;
     if (window.innerWidth >= 640) return;
 
     const slider = sliderRef.current;
@@ -38,7 +38,7 @@ export default function OurServicesSection() {
 
     let index = 0;
     const cardWidth = slider.firstElementChild?.clientWidth || 0;
-
+    
     const interval = setInterval(() => {
       index = (index + 1) % services.length;
       slider.scrollTo({
@@ -47,23 +47,23 @@ export default function OurServicesSection() {
       });
     }, 3000);
 
-    // stop auto slide when user interacts
     const stopAuto = () => clearInterval(interval);
     slider.addEventListener("touchstart", stopAuto, { once: true });
+    slider.addEventListener("mousedown", stopAuto, { once: true });
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section style={{ background: "var(--clr-bg-light)" }}>
-      <div className="ui-section ui-container">
+    <section style={{ background: "var(--clr-bg-light)" }} className="py-10 lg:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* HEADER */}
-        <div className="text-center mb-4 lg:mb-16">
-          <h2 className="ui-h1 lg:ui-h2">
+        <div className="text-center mb-6 lg:mb-10">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
             What <span style={{ color: "var(--clr-primary)" }}>We Provide</span>
           </h2>
           <p
-            className="mt-0.5 lg:mt-2 ui-para max-w-xl mx-auto"
+            className="mt-2 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto px-2 sm:px-0"
             style={{ color: "var(--clr-text-muted)" }}
           >
             Strategic manufacturing solutions designed to help beauty brands
@@ -71,59 +71,66 @@ export default function OurServicesSection() {
           </p>
         </div>
 
-        {/* SERVICES */}
+        {/* SERVICES GRID/CAROUSEL */}
         <div
           ref={sliderRef}
           className="
-            flex gap-6 overflow-x-auto pb-6 scroll-smooth
-            snap-x snap-mandatory
-            sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-8 sm:overflow-visible
+            flex gap-4 sm:gap-5 lg:gap-6 
+            overflow-x-auto pb-4 sm:pb-0 
+            scroll-smooth snap-x snap-mandatory 
+            sm:grid sm:grid-cols-2 lg:grid-cols-4 
+            sm:overflow-visible sm:snap-none
+            -mx-4 px-4 sm:mx-0 sm:px-0
           "
         >
           {services.map((service, index) => (
             <div
               key={index}
               className="
-                group rounded-3xl overflow-hidden transition-all duration-300
-                min-w-[95%] snap-center
-                sm:min-w-0
-                bg-white
-                shadow-[0_20px_50px_rgba(20,84,43,0.12)]
+                group rounded-xl sm:rounded-2xl overflow-hidden 
+                transition-all duration-300 
+                min-w-[85vw] max-w-[85vw] sm:min-w-0 sm:max-w-none
+                snap-center 
+                flex-shrink-0 sm:flex-shrink
+                bg-white 
+                shadow-[0_8px_25px_rgba(20,84,43,0.1)]
+                sm:w-full
+                flex flex-col
               "
             >
-              {/* IMAGE */}
-              <div className="relative h-[280px] overflow-hidden">
+              {/* IMAGE - Mobile: 16/9 (shorter), Tablet+: 3/2 */}
+              <div className="relative aspect-[16/9] sm:aspect-[3/2] overflow-hidden flex-shrink-0">
                 <img
                   src={service.img}
                   alt={service.title}
-                  className="h-full w-full object-fill transition-transform duration-700 group-hover:scale-110"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-
                 <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition"
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{
                     background:
-                      "linear-gradient(180deg, rgba(20,84,43,0.0), rgba(20,84,43,0.55))",
+                      "linear-gradient(180deg, rgba(20,84,43,0.0), rgba(20,84,43,0.4))",
                   }}
                 />
               </div>
 
-              {/* CONTENT */}
-              <div className="px-6 py-6 text-center">
+              {/* CONTENT - Mobile optimized padding */}
+              <div className="px-4 py-4 sm:px-5 sm:py-5 text-center flex flex-col flex-grow">
                 <div
-                  className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full"
+                  className="mx-auto mb-2 sm:mb-3 flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full flex-shrink-0"
                   style={{
                     border: "2px solid var(--clr-primary)",
                     color: "var(--clr-primary)",
                   }}
                 >
                   <svg
-                    width="26"
-                    height="26"
+                    width="20"
+                    height="20"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.5"
+                    className="sm:w-[22px] sm:h-[22px]"
                   >
                     <rect x="3" y="3" width="18" height="14" rx="2" />
                     <path d="M3 10h18" />
@@ -132,14 +139,15 @@ export default function OurServicesSection() {
                 </div>
 
                 <h3
-                  className="mb-2 text-lg font-semibold"
+                  className="mb-1.5 sm:mb-2 text-sm sm:text-base font-semibold leading-tight"
                   style={{ color: "var(--clr-text-dark)" }}
                 >
                   {service.title}
                 </h3>
 
+                {/* TEXT - 3 lines on mobile, 4 on tablet+ */}
                 <p
-                  className="text-sm leading-relaxed"
+                  className="text-xs sm:text-sm leading-relaxed line-clamp-3 sm:line-clamp-4"
                   style={{ color: "var(--clr-text-muted)" }}
                 >
                   {service.desc}

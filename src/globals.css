@@ -539,6 +539,9 @@
 
   .ui-section {
     text-align: center;
+     width: 95%;
+    margin: 0 auto;
+    padding: clamp(1rem, 5vw, 2rem) 0;
   }
 
   .ui-badge {

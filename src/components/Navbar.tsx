@@ -24,29 +24,33 @@ export default function Navbar() {
       {/* ================= TOP NAVBAR ================= */}
       <div className="border-b">
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-3">
-          {/* MOBILE + DESKTOP WRAPPER */}
-          <div className="flex md:grid md:grid-cols-3 items-center">
-            {/* LEFT   LOGO */}
-            <div className="flex items-center flex-1 md:flex-none">
+          {/* 
+            MOBILE: flex justify-between (logo left, button right)
+            TABLET+: grid with centered pill
+          */}
+          <div className="flex justify-between items-center md:grid md:grid-cols-[auto_1fr_auto] md:gap-4">
+            
+            {/* LEFT - LOGO */}
+            <div className="flex items-center">
               <Link href="/" className="flex items-center gap-3">
                 <img
                   src="/Logoblack.png"
-                  className="h-9 md:h-10 w-auto"
+                  className="h-10 w-auto object-contain"
                   alt="Medicomo Logo"
                 />
               </Link>
             </div>
 
-            {/* CENTER   PILL NAV (DESKTOP ONLY) */}
+            {/* CENTER - PILL NAV (Desktop/Tablet only) */}
             <div className="hidden md:flex justify-center">
-              <nav>
-                <div className="flex min-w-[21.5vw] max-w-[35vw]  items-center px-2 xl:px-8 min-h-[50px] max-h-[64px] rounded-full backdrop-blur-md ui-badge-2">
-                  <ul className="flex items-center gap-6 font-medium">
+              <nav className="w-full max-w-[500px] lg:max-w-[600px]">
+                <div className="flex items-center justify-center px-6 lg:px-8 py-3 rounded-full backdrop-blur-md ui-badge-2">
+                  <ul className="flex items-center gap-5 lg:gap-8 font-medium">
                     {menuItems.map((item) => (
                       <li key={item.label}>
                         <Link
                           href={item.href}
-                          className="relative ui-h3 text-white transition-all duration-300
+                          className="relative ui-h3 text-white transition-all duration-300 whitespace-nowrap text-sm lg:text-base
                           after:absolute after:left-0 after:-bottom-1 after:h-[2px]
                           after:w-0 after:bg-white after:transition-all hover:after:w-full"
                         >
@@ -59,15 +63,15 @@ export default function Navbar() {
               </nav>
             </div>
 
-            {/* RIGHT   SOCIALS + HAMBURGER */}
-            <div className="flex items-center justify-end gap-2 flex-1 md:flex-none">
-              {/* Desktop socials */}
+            {/* RIGHT - SOCIALS (desktop) + HAMBURGER (mobile) */}
+            <div className="flex items-center gap-2">
+              {/* Desktop socials - hidden on mobile, flex on md+ */}
               <div className="hidden md:flex items-center gap-3">
                 <Link
                   href="https://www.instagram.com/mfpl__?igsh=dXY5NDV1ZXcwdWM1"
                   target="_blank"
                   aria-label="Instagram"
-                  className="glass-icon"
+                  className="glass-icon hover:opacity-80 transition-opacity"
                 >
                   <InstagramLogoIcon weight="fill" size={22} />
                 </Link>
@@ -76,16 +80,16 @@ export default function Navbar() {
                   href="https://www.facebook.com/profile.php?id=61585006272529"
                   target="_blank"
                   aria-label="Facebook"
-                  className="glass-icon"
+                  className="glass-icon hover:opacity-80 transition-opacity"
                 >
                   <FacebookLogoIcon weight="fill" size={22} />
                 </Link>
               </div>
 
-              {/* Mobile menu button */}
+              {/* Mobile hamburger - visible only on small screens */}
               <button
                 onClick={() => setOpen(!open)}
-                className="md:hidden h-10 w-10 flex items-center justify-center rounded-full bg-[#EDF5EE]"
+                className="md:hidden h-10 w-10 flex items-center justify-center rounded-full bg-[#EDF5EE] hover:bg-[#d4e5d6] transition-colors"
                 aria-label="Toggle menu"
               >
                 {open ? <X size={22} /> : <List size={22} />}
@@ -97,14 +101,14 @@ export default function Navbar() {
 
       {/* ================= MOBILE MENU ================= */}
       {open && (
-        <div className="md:hidden bg-white shadow-lg rounded-b-3xl">
+        <div className="md:hidden bg-white shadow-lg rounded-b-3xl absolute w-full left-0 top-full">
           <div className="flex flex-col p-6 gap-5">
             {menuItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="text-lg font-semibold text-[#14542B]"
+                className="text-lg font-semibold text-[#14542B] hover:text-[#1f7a3f] transition-colors"
               >
                 {item.label}
               </Link>
@@ -113,7 +117,7 @@ export default function Navbar() {
             <Link
               href="/contact-us"
               onClick={() => setOpen(false)}
-              className="mt-4 text-center py-3 rounded-full text-white font-semibold"
+              className="mt-4 text-center py-3 rounded-full text-white font-semibold hover:opacity-90 transition-opacity"
               style={{
                 background: "linear-gradient(135deg, #53945B, #83A33C)",
               }}

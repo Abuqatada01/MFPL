@@ -113,8 +113,8 @@ export default function OurProducts() {
             flex overflow-x-auto scroll-smooth
             snap-x snap-mandatory
             gap-8 pb-6
-            sm:grid sm:grid-cols-2 lg:grid-cols-3
-            sm:gap-10 lg:gap-12
+            sm:grid sm:grid-cols-2 md:grid-cols-3
+            sm:gap-6 md:gap-8
             sm:overflow-visible
             place-items-center
           "
@@ -132,7 +132,8 @@ export default function OurProducts() {
                 data-slide
                 className="
                   relative flex flex-col items-center
-                  w-[200px] lg:w-[260px] lg:h-[360px]
+                  w-[200px] md:w-[220px] lg:w-[260px] 
+                  lg:h-[360px]
                   transition-all duration-300
                   group-hover:-translate-y-2
                 "
@@ -142,6 +143,7 @@ export default function OurProducts() {
                   className="
                     relative z-10
                     w-[180px] h-[140px]
+                    md:w-[200px] md:h-[180px]
                     lg:w-[220px] lg:h-[220px]
                     scale-125 mb-3
                     transition-transform duration-300
@@ -161,11 +163,12 @@ export default function OurProducts() {
                   className="
                     ui-badge-2
                     w-[180px] h-[90px]
+                    md:w-[200px] md:h-[100px]
                     lg:w-[240px] lg:h-[120px]
                     rounded-b-full
                     flex items-center justify-center
                     text-center text-white
-                    text-sm lg:text-lg
+                    text-sm md:text-base lg:text-lg
                     whitespace-pre-line
                     transition-all duration-300
                     group-hover:shadow-[0_0_0_3px_rgba(131,163,60,0.25)]

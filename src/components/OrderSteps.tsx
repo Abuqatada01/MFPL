@@ -9,15 +9,13 @@ const steps = [
     step: "01",
     title: "Submit Your Requirements",
     desc: "Share your product category, formulation preferences, quantity, and branding needs through our enquiry form or consultation process.",
-    image:
-      "/order1.webp",
+    image: "/order1.webp",
   },
   {
     step: "02",
     title: "Approve Formulation, Packaging & Pricing",
     desc: "Review selected formulations, packaging options, labeling details, and pricing. Once approved, we proceed with production planning.",
-    image:
-      "https://palmisthealthcare.com/public/imgs/home/custom_formulation.jpg",
+    image: "https://palmisthealthcare.com/public/imgs/home/custom_formulation.jpg",
   },
   {
     step: "03",
@@ -31,7 +29,7 @@ export default function OrderSteps() {
   const sliderRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // Mobile auto-slide only
+    if (typeof window === "undefined") return;
     if (window.innerWidth >= 768) return;
 
     const slider = sliderRef.current;
@@ -55,22 +53,15 @@ export default function OrderSteps() {
   }, []);
 
   return (
-    <section
-      style={{ background: "var(--clr-bg-light)" }}
-      className="overflow-visible "
-    >
-      <div className="ui-section ui-container text-center">
+    <section style={{ background: "var(--clr-bg-light)" }} className="py-10 md:py-12 lg:py-16">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
         {/* HEADER */}
-        <div className="mb-4 md:mb-15">
-          <h2 className="ui-h1">
+        <div className="text-center mb-6 md:mb-8">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
             How to <span style={{ color: "var(--clr-primary)" }}>Order</span>
           </h2>
-          <p
-            className="lg:mt-1 max-w-xl mx-auto"
-            style={{ color: "var(--clr-text-muted)" }}
-          >
-            A simple, transparent process designed to take your brand from idea
-            to delivery with ease.
+          <p className="mt-2 text-sm md:text-base max-w-lg mx-auto px-2" style={{ color: "var(--clr-text-muted)" }}>
+            A simple, transparent process designed to take your brand from idea to delivery with ease.
           </p>
         </div>
 
@@ -78,93 +69,72 @@ export default function OrderSteps() {
         <div
           ref={sliderRef}
           className="
-            flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scroll-smooth
-            md:grid md:grid-cols-3 md:gap-14 md:overflow-visible
+            flex md:grid 
+            overflow-x-auto md:overflow-visible 
+            snap-x snap-mandatory md:snap-none
+            gap-4 md:gap-6 
+            pb-4 md:pb-0
+            scroll-smooth
+            -mx-4 px-4 md:mx-0 md:px-0
+            md:grid-cols-3
           "
         >
           {steps.map((item, index) => (
             <div
               key={index}
               className="
-                relative flex flex-col items-center
-                min-w-[85%] snap-center
-                md:min-w-0
+                min-w-[85vw] md:min-w-0 
+                snap-center 
+                flex-shrink-0 md:flex-shrink
+                w-full
               "
             >
-              {/* CARD */}
+              {/* CARD - Increased padding slightly for taller appearance */}
               <div
                 className="
-                  group relative p-6 rounded-3xl w-full max-w-sm
-                  flex flex-col items-center h-full bg-white
-                  transition-all duration-500
-                  ease-[cubic-bezier(.22,.61,.36,1)]
-                  will-change-transform
-                  hover:-translate-y-2
+                  relative p-5 md:p-5 rounded-xl md:rounded-2xl
+                  flex flex-col items-center bg-white h-full
+                  transition-all duration-300
+                  hover:-translate-y-1
                 "
                 style={{
-                  boxShadow: "0 25px 60px rgba(20,84,43,0.12)",
+                  boxShadow: "0 8px 30px rgba(20,84,43,0.08)",
                 }}
               >
                 {/* BORDER GLOW */}
                 <div
-                  className="
-                    pointer-events-none absolute inset-0 rounded-3xl
-                    opacity-0 group-hover:opacity-100
-                    transition-opacity duration-500
-                  "
+                  className="pointer-events-none absolute inset-0 rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"
                   style={{
-                    boxShadow:
-                      "0 0 0 1px rgba(131,163,60,0.55), 0 18px 45px rgba(83,148,91,0.28)",
+                    boxShadow: "0 0 0 1px rgba(131,163,60,0.4), 0 8px 25px rgba(83,148,91,0.15)",
                   }}
                 />
 
-                {/* IMAGE */}
-                <div className="relative w-full h-[240px] mb-6 overflow-hidden rounded-xl bg-[#EDF5EE]">
-                  <div className="w-full h-full transition-transform duration-700 group-hover:scale-105">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      width={400}
-                      height={300}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
+                {/* IMAGE - Taller on mobile: aspect-[4/3] instead of 16/10, max-h increased */}
+                <div className="relative w-full aspect-[4/3] md:aspect-[4/3] mb-4 overflow-hidden rounded-lg md:rounded-xl bg-[#EDF5EE]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 85vw, (max-width: 1200px) 33vw, 400px"
+                  />
                 </div>
 
                 {/* STEP NUMBER */}
                 <div
-                  className="
-                    mb-4 flex items-center justify-center rounded-full
-                    transition-all duration-500
-                    group-hover:shadow-[0_0_0_6px_rgba(83,148,91,0.18)]
-                  "
+                  className="mb-3 flex items-center justify-center rounded-full w-9 h-9 md:w-10 md:h-10 text-sm md:text-base font-bold text-white"
                   style={{
-                    height: "42px",
-                    width: "42px",
-                    background:
-                      "linear-gradient(135deg, var(--clr-secondary), var(--clr-primary))",
-                    color: "#fff",
-                    fontWeight: 700,
+                    background: "linear-gradient(135deg, var(--clr-secondary), var(--clr-primary))",
                   }}
                 >
                   {item.step}
                 </div>
 
                 {/* TEXT */}
-                <h3
-                  className="
-                    text-lg font-semibold mb-2
-                    transition-colors duration-300
-                    group-hover:text-[var(--clr-primary)]
-                  "
-                  style={{ color: "var(--clr-text-dark)" }}
-                >
+                <h3 className="text-base md:text-lg font-semibold mb-2 text-center" style={{ color: "var(--clr-text-dark)" }}>
                   {item.title}
                 </h3>
-                <p
-                  className="text-sm leading-relaxed"
-                  style={{ color: "var(--clr-text-muted)" }}
-                >
+                <p className="text-sm md:text-sm leading-relaxed text-center" style={{ color: "var(--clr-text-muted)" }}>
                   {item.desc}
                 </p>
               </div>
@@ -173,19 +143,18 @@ export default function OrderSteps() {
         </div>
 
         {/* CTA */}
-        <div className="mt-6 md:mt-6 mb-4">
+        <div className="mt-6 md:mt-8 text-center">
           <Link
             href="/contact-us"
-            className="inline-flex ui-cta-premium items-center gap-3 px-5 py-2 lg:px-10 lg:py-4 rounded-full text-lg font-semibold transition-all"
+            className="inline-flex items-center gap-2 px-6 py-2.5 md:px-8 md:py-3 rounded-full text-sm md:text-base font-semibold transition-all hover:opacity-90"
             style={{
-              background:
-                "linear-gradient(135deg, var(--clr-primary), var(--clr-secondary))",
+              background: "linear-gradient(135deg, var(--clr-primary), var(--clr-secondary))",
               color: "#fff",
-              boxShadow: "0 10px 20px rgba(83,148,91,0.35)",
+              boxShadow: "0 6px 20px rgba(83,148,91,0.3)",
             }}
           >
             Get a Free Quote
-            <span className="ui-cta-arrow">→</span>
+            <span>→</span>
           </Link>
         </div>
       </div>
