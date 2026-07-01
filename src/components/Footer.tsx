@@ -137,7 +137,7 @@ export default function Footer() {
 
           <p>
             <span className="font-bold text-[15px] text-white">Mobile :</span>{" "}
-            +91 92050 94789
+            +91 93075 31652
             <br />
             <span className="font-bold text-[15px] text-white">
               Email :
