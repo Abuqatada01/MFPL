@@ -117,8 +117,7 @@ export default function Footer() {
         {/* ================= CONTACT (FULL WIDTH ON MOBILE) ================= */}
         <div className="col-span-full md:col-span-1 text-sm space-y-2 opacity-90">
           <p>
-            <span className="font-semibold text-white">Mobile:</span> +91 92050
-            94789
+            <span className="font-semibold text-white">Mobile:</span> +91 93075 31652  
           </p>
           <p>
             <span className="font-semibold text-white">Email:</span>{" "}
