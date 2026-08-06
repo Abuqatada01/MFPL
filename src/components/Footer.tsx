@@ -170,6 +170,9 @@ export default function Footer() {
         rights reserved.{" "}
         <Link href="https://greensmedia.co.in">
           <span style={{ color: "var(--clr-secondary)" }}>Greens Media</span>
+        </Link>&nbsp; 
+        <Link href="https://www.amforstudio.in">
+          <span className="text-[#131413] opacity-20 " >Abu Qatada</span>
         </Link>
       </div>
     </footer>
