@@ -18,18 +18,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Medicosmo",
+    default: "Private Label Cosmetics Manufacturer in India | Medicosmo",
     template: "%s | Medicosmo",
   },
-  description: "Professional Healthcare & Manufacturing Solutions",
+  description:
+  "Medicosmo Formulations is a private label cosmetics manufacturer in India offering cosmetic, skincare and haircare manufacturing, packaging and branding solutions.",
   icons: {
     icon: "/LogoIconWhite.png",
     shortcut: "/LogoIconWhite.png",
     apple: "/LogoIconWhite.png",
   },
   openGraph: {
-    title: "Medicosmo",
-    description: "Trusted Partner for Healthcare & Manufacturing Solutions",
+    title: "Private Label Cosmetics Manufacturer in India | Medicosmo",
+    description:
+      "Medicosmo Formulations is a private label cosmetics manufacturer in India offering cosmetic, skincare and haircare manufacturing, packaging and branding solutions.",
     images: ["/Logoblack.png"],
     type: "website",
   },
