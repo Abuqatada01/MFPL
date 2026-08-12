@@ -4,6 +4,8 @@ import "./products.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { slugify, getProductBySlug } from "./utils";
+
 
 /* ================= IMAGES (ORDER PRESERVED) ================= */
 const categoryImages: Record<string, string> = {
@@ -188,34 +190,41 @@ export default function ProductsClient() {
 
         {/* GRID */}
         <div className="grid mt-6 lg:mt-10 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-10">
-          {filteredProducts.map((product) => (
-            <Link
-              key={product.name}
-              href="/contact-us"
-              className="group relative overflow-hidden rounded-3xl bg-white shadow-[0_30px_60px_rgba(20,84,43,0.15)] hover:shadow-[0_40px_80px_rgba(20,84,43,0.25)] transition-all duration-500 hover:-translate-y-2"
-            >
-              {/* HOVER GRADIENT */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#83A33C]/20 via-[#53945B]/20 to-transparent opacity-0 group-hover:opacity-100 transition" />
+          {filteredProducts.map((product) => {
+            const matchingProduct = getProductBySlug(slugify(product.name));
+            const href = matchingProduct
+              ? `/products/${slugify(matchingProduct.name)}`
+              : "/contact-us";
 
-              {/* IMAGE */}
-              <div className="relative h-40 lg:h-80 bg-[#EDF5EE]">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-fill transition duration-500 group-hover:scale-105"
-                />
-              </div>
+            return (
+              <Link
+                key={product.name}
+                href={href}
+                className="group relative overflow-hidden rounded-3xl bg-white shadow-[0_30px_60px_rgba(20,84,43,0.15)] hover:shadow-[0_40px_80px_rgba(20,84,43,0.25)] transition-all duration-500 hover:-translate-y-2"
+              >
+                {/* HOVER GRADIENT */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#83A33C]/20 via-[#53945B]/20 to-transparent opacity-0 group-hover:opacity-100 transition" />
 
-              {/* CONTENT */}
-              <div className="relative p-6 text-center bg-white">
-                <h3 className="font-bold text-[#14542B]">{product.name}</h3>
-                <p className="text-[#14542B]/70 mt-1">Explore the full range</p>
-                <div className="mt-3 px-4 py-1.5 rounded-full inline-block bg-[var(--clr-secondary)] text-white text-sm font-semibold">
-                  Get Quote →
+                {/* IMAGE */}
+                <div className="relative h-40 lg:h-80 bg-[#EDF5EE]">
+                  <img
+                    src={product.image}
+                    alt={`${product.name} - Medicosmo Formulations`}
+                    className="w-full h-full object-fill transition duration-500 group-hover:scale-105"
+                  />
                 </div>
-              </div>
-            </Link>
-          ))}
+
+                {/* CONTENT */}
+                <div className="relative p-6 text-center bg-white">
+                  <h3 className="font-bold text-[#14542B]">{product.name}</h3>
+                  <p className="text-[#14542B]/70 mt-1">Explore the full range</p>
+                  <div className="mt-3 px-4 py-1.5 rounded-full inline-block bg-[var(--clr-secondary)] text-white text-sm font-semibold">
+                    {matchingProduct ? "View Details →" : "Get Quote →"}
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
     </>
