@@ -19,6 +19,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.medicosmoformulations.com"),
 
+
+  alternates: {
+    canonical: "/",
+  },
+
   verification: {
     google: "tmNoiWJqP5IavKdi28v6O_QoTK-G7JDDI0bKLuhNNYI",
   },
