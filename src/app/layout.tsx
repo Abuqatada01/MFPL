@@ -21,19 +21,37 @@ export const metadata: Metadata = {
     default: "Private Label Cosmetics Manufacturer in India | Medicosmo",
     template: "%s | Medicosmo",
   },
+
   description:
-  "Medicosmo Formulations is a private label cosmetics manufacturer in India offering cosmetic, skincare and haircare manufacturing, packaging and branding solutions.",
+    "Medicosmo Formulations is a private label cosmetics manufacturer in India offering cosmetic, skincare and haircare manufacturing, packaging and branding solutions.",
+
   icons: {
     icon: "/LogoIconWhite.png",
     shortcut: "/LogoIconWhite.png",
     apple: "/LogoIconWhite.png",
   },
+
   openGraph: {
     title: "Private Label Cosmetics Manufacturer in India | Medicosmo",
     description:
       "Medicosmo Formulations is a private label cosmetics manufacturer in India offering cosmetic, skincare and haircare manufacturing, packaging and branding solutions.",
-    images: ["/Logoblack.png"],
+    siteName: "Medicosmo Formulations",
     type: "website",
+    url: "https://www.medicosmoformulations.com/",
+    images: [
+      {
+        url: "/Logoblack.png",
+        alt: "Medicosmo Formulations - Private Label Cosmetics Manufacturer",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Private Label Cosmetics Manufacturer in India | Medicosmo",
+    description:
+      "Medicosmo Formulations is a private label cosmetics manufacturer in India offering cosmetic, skincare and haircare manufacturing, packaging and branding solutions.",
+    images: ["/Logoblack.png"],
   },
 };
 
