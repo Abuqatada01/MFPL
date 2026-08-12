@@ -306,16 +306,6 @@
 
 /* XS MOBILE (360px – 399px) */
 @media (min-width: 360px) and (max-width: 399px) {
-    :root {
-        --h1-size: 1.5rem;
-        --h1-weight: 650;
-        --h2-size: 1rem;
-        --h3-size: 1.2rem;
-        --para-size: 1rem;
-        --desc-size: 0.7rem;
-
-    }
-
     .ui-badge {
         font-size: 12px;
     }
@@ -342,16 +332,6 @@
 
 /* LARGE MOBILE (400px – 500px) */
 @media (min-width: 400px) and (max-width: 500px) {
-    :root {
-        --h1-size: 1.5rem;
-        --h1-weight: 650;
-        --h2-size: 1rem;
-        --h3-size: 1.2rem;
-        --para-size: 1rem;
-        --desc-size: 0.7rem;
-
-    }
-
     .ui-badge {
         font-size: 12px;
     }
@@ -377,66 +357,12 @@
 
 /* TABLET (501px – 768px) */
 @media (min-width: 700px) and (max-width: 900px) {
-    :root {
-        --h1-size: 2.6rem;
-        --h2-size: 2rem;
-        --h3-size: 1.5rem;
-        --para-size: 1.1rem;
-        --desc-size: 1rem;
-    }
-
     .ui-section {
         text-align: center;
     }
 
     .ui-badge {
         font-size: 0.4rem;
-    }
-
-}
-
-/* LAPTOP (1024px – 1280px) */
-@media (min-width: 1020px) and (max-width: 1280px) {
-    :root {
-        --h1-size: 3rem;
-        --h2-size: 2.3rem;
-        --h3-size: 1.6rem;
-        --para-size: 1.12rem;
-        --desc-size: 1.02rem;
-    }
-}
-
-/* SMALL DESKTOP (1281px – 1500px) */
-@media (min-width: 1281px) and (max-width: 1500px) {
-    :root {
-        --h1-size: 3.4rem;
-        --h2-size: 2.6rem;
-        --h3-size: 1.8rem;
-        --para-size: 1.15rem;
-        --desc-size: 1.05rem;
-    }
-}
-
-/* XL DESKTOP (1501px – 1799px) */
-@media (min-width: 1501px) and (max-width: 1799px) {
-    :root {
-        --h1-size: 3.8rem;
-        --h2-size: 3rem;
-        --h3-size: 2rem;
-        --para-size: 1.2rem;
-        --desc-size: 1.1rem;
-    }
-}
-
-/* 2XL DESKTOP (1800px+) */
-@media (min-width: 1800px) {
-    :root {
-        --h1-size: 3rem;
-        --h1-weight: 650;
-        --h2-size: 2rem;
-        --h3-size: 1.15rem;
-        --h3-weight: 650;
-        --para-size: 1.18rem;
     }
 }
 

@@ -50,7 +50,7 @@ export default function Navbar() {
                       <li key={item.label}>
                         <Link
                           href={item.href}
-                          className="relative ui-h3 text-white transition-all duration-300 whitespace-nowrap text-sm lg:text-base
+                          className="relative text-white transition-all duration-300 whitespace-nowrap text-sm lg:text-base
                           after:absolute after:left-0 after:-bottom-1 after:h-[2px]
                           after:w-0 after:bg-white after:transition-all hover:after:w-full"
                         >
