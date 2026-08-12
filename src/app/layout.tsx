@@ -17,6 +17,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.medicosmoformulations.com"),
+
+  verification: {
+    google: "tmNoiWJqP5IavKdi28v6O_QoTK-G7JDDI0bKLuhNNYI",
+  },
+
   title: {
     default: "Private Label Cosmetics Manufacturer in India | Medicosmo",
     template: "%s | Medicosmo",
