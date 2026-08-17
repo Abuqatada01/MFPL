@@ -1,6 +1,10 @@
 "use client";
 
-import { FacebookLogoIcon, InstagramLogoIcon } from "@phosphor-icons/react";
+import {
+  FacebookLogoIcon,
+  InstagramLogoIcon,
+  LinkedinLogoIcon,
+} from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -47,6 +51,11 @@ export default function Footer() {
                 href: "https://www.facebook.com/profile.php?id=61585006272529",
                 icon: <FacebookLogoIcon weight="fill" size={22} />,
                 label: "Facebook",
+              },
+              {
+                href: "https://www.linkedin.com/company/medicosmo-formulations-private-limited",
+                icon: <LinkedinLogoIcon weight="fill" size={22} />,
+                label: "LinkedIn",
               },
             ].map((item, index) => (
               <a

@@ -44,7 +44,7 @@ export default function Footer() {
                 label: "Facebook",
               },
               {
-                href: "https://www.linkedin.com/company/medicosmoformulations",
+                href: "https://www.linkedin.com/company/medicosmo-formulations-private-limited",
                 icon: <LinkedinLogoIcon weight="fill" size={22} />,
                 label: "LinkedIn",
               },

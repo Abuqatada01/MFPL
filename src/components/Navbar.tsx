@@ -5,6 +5,7 @@ import { useState } from "react";
 import {
   FacebookLogoIcon,
   InstagramLogoIcon,
+  LinkedinLogoIcon,
   List,
   X,
 } from "@phosphor-icons/react";
@@ -83,6 +84,15 @@ export default function Navbar() {
                   className="glass-icon hover:opacity-80 transition-opacity"
                 >
                   <FacebookLogoIcon weight="fill" size={22} />
+                </Link>
+
+                <Link
+                  href="https://www.linkedin.com/company/medicosmo-formulations-private-limited"
+                  target="_blank"
+                  aria-label="LinkedIn"
+                  className="glass-icon hover:opacity-80 transition-opacity"
+                >
+                  <LinkedinLogoIcon weight="fill" size={22} />
                 </Link>
               </div>
 
