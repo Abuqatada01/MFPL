@@ -35,10 +35,14 @@ export default function HeroSection() {
         <source media="(max-width: 500px)" srcSet={slide.mobileImage} />
         <img
           src={slide.desktopImage}
-          alt="Hero banner"
+          alt="Medicosmo Formulations private label cosmetics manufacturing"
           className="w-full h-full object-fill lg:object-fill transition-opacity duration-700"
         />
       </picture>
+
+      <h1 className="sr-only">
+        Private Label Cosmetics Manufacturer in India
+      </h1>
 
       {/* CTA CONTENT — pinned to bottom with consistent spacing */}
       <div className="absolute bottom-8 sm:bottom-10 md:bottom-20 lg:bottom-25 xl:bottom-10 left-0 right-0 z-20 md:-left-12 lg:left-10 xl:left-35 2xl:pl-12">
