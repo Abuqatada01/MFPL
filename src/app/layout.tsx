@@ -71,12 +71,41 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness"],
+    "@id": "https://www.medicosmoformulations.com/#organization",
+    name: "Medicosmo Formulations Private Limited",
+    url: "https://www.medicosmoformulations.com",
+    logo: "https://www.medicosmoformulations.com/Logoblack.png",
+    image: "https://www.medicosmoformulations.com/Logoblack.png",
+    email: "info@medicosmoformulations.com",
+    telephone: "+91 93075 31652",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress:
+        "109, 110, 111, Pushparaj Industrial Estate, S. No. 66, Naikpada, Near Laxmi Compound",
+      addressLocality: "Vasai (E)",
+      postalCode: "401208",
+      addressCountry: "India",
+    },
+    sameAs: [
+      "https://www.instagram.com/mfpl__?igsh=dXY5NDV1ZXcwdWM1",
+      "https://www.facebook.com/profile.php?id=61585006272529",
+      "https://www.linkedin.com/company/medicosmo-formulations-private-limited",
+    ],
+  };
+
   return (
     <html lang="en">
       <body
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <SmoothScroll>
           <Navbar />
           {children}
