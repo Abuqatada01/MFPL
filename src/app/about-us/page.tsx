@@ -12,14 +12,14 @@ export default function AboutUsPage() {
         {/* MOBILE IMAGE */}
         <img
           src="/Ak 12.jpg"
-          alt="About banner mobile"
+          alt="Medicosmo Formulations private label cosmetics manufacturing facility"
           className="absolute inset-0 w-full h-full object-fill block lg:hidden"
         />
 
         {/* DESKTOP IMAGE */}
         <img
           src="/Ak 4.jpg"
-          alt="About banner desktop"
+          alt="Medicosmo Formulations cosmetic manufacturing facility"
           className="absolute inset-0 w-full h-full object-fill hidden lg:block"
         />
       </section>
