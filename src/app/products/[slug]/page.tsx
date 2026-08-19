@@ -63,6 +63,31 @@ export default async function ProductDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.medicosmoformulations.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Products",
+        item: "https://www.medicosmoformulations.com/products",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.name,
+        item: `https://www.medicosmoformulations.com/products/${slug}`,
+      },
+    ],
+  };
+
   const allProducts = getAllProducts();
   const relatedProducts = allProducts
     .filter(
@@ -72,6 +97,12 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-[#F8FAF8] py-8 lg:py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd),
+        }}
+      />
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb Navigation */}
         <nav aria-label="Breadcrumb" className="mb-6">
