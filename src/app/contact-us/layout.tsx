@@ -4,6 +4,10 @@ export const metadata: Metadata = {
   title: "Contact Medicosmo Formulations | Private Label Cosmetics Manufacturer",
   description:
     "Contact Medicosmo Formulations for private label cosmetics, skincare and haircare manufacturing solutions. Discuss your product requirements, MOQ and custom manufacturing needs.",
+
+  alternates: {
+    canonical: "/contact-us",
+  },
 };
 
 export default function ContactUsLayout({
