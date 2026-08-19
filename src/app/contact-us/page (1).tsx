@@ -44,7 +44,7 @@ export default function ContactPage() {
     }
 
     const num = Number(value);
-    setQuantity(num < MIN_QTY ? MIN_QTY : num);
+    setQuantity(isNaN(num) ? "" : num);
   };
 
   return (

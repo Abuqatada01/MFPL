@@ -52,11 +52,17 @@ export default function ContactPage() {
   const handleQuantityChange = (value: string) => {
     if (value === "") return setQuantity("");
     const num = Number(value);
-    setQuantity(num < MIN_QTY ? MIN_QTY : num);
+    setQuantity(isNaN(num) ? "" : num);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (typeof quantity === "number" && quantity < MIN_QTY) {
+      alert(`Minimum quantity is ${MIN_QTY} units.`);
+      return;
+    }
+
     setLoading(true);
 
     try {
