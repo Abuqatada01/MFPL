@@ -77,7 +77,7 @@ export default function AboutUsPage() {
                   text: "To manufacture high-quality, brand-ready beauty solutions that reflect each partner’s identity, follow market-aligned standards, and support sustainable, scalable growth in a competitive beauty landscape.",
                 },
               ].map((item, i) => (
-                <div key={i} className="relative group">
+                <div key={i} className="relative group h-full flex flex-col">
                   {/* ICON CIRCLE */}
                   <div className="absolute -top-10 left-1/2 -translate-x-1/2 z-10">
                     <div
@@ -96,7 +96,8 @@ export default function AboutUsPage() {
                   {/* CARD */}
                   <div
                     className="
-                relative pt-16 pb-10 px-10 h-[35vh] lg:h-[380px] text-center rounded-xl
+                relative pt-14 pb-8 px-6 sm:px-8 min-h-[360px] h-full text-center rounded-xl
+                flex flex-col justify-start items-center
                 transition-all duration-500
                 ease-[cubic-bezier(.22,.61,.36,1)]
                 will-change-transform
