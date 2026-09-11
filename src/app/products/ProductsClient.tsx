@@ -131,8 +131,9 @@ export default function ProductsClient() {
                   </h2>
 
                   <p className="text-[#14542B]/80 mb-5 ">
-                    From custom merchandise to promotional solutions, we help
-                    businesses create a lasting impression.
+                    Explore cosmetic, skincare and haircare formulations available
+                    for private label and contract manufacturing, with customized
+                    formulation, packaging and branding solutions.
                   </p>
 
                   <Link
@@ -177,11 +178,10 @@ export default function ProductsClient() {
               key={filter}
               onClick={() => setActiveFilter(filter)}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition
-              ${
-                activeFilter === filter
+              ${activeFilter === filter
                   ? "bg-[var(--clr-primary)] text-white shadow-lg"
                   : "bg-white text-[#14542B] shadow hover:shadow-md"
-              }`}
+                }`}
             >
               {filter}
             </button>
