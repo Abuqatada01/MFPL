@@ -156,7 +156,7 @@ export default function ProductsClient() {
                 <div className="flex justify-center md:justify-end md:col-span-1">
                   <img
                     src="/product-hero.png"
-                    alt="Branded Product"
+                    alt="Private Label Cosmetic Products - Medicosmo Formulations"
                     className="h-[220px] md:h-[300px] object-contain drop-shadow-xl"
                   />
                 </div>
