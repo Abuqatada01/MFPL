@@ -63,6 +63,25 @@ export default async function ProductDetailPage({ params }: PageProps) {
     notFound();
   }
 
+
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: `${product.name} formulation with ${product.description}. Custom private-label and contract manufacturing by Medicosmo Formulations.`,
+    image: [product.img],
+    brand: {
+      "@type": "Brand",
+      name: "Medicosmo Formulations",
+    },
+    manufacturer: {
+      "@type": "Organization",
+      name: "Medicosmo Formulations Private Limited",
+      url: "https://www.medicosmoformulations.com/",
+    },
+  };
+
+
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -97,6 +116,15 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-[#F8FAF8] py-8 lg:py-12">
+
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productJsonLd),
+        }}
+      />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
