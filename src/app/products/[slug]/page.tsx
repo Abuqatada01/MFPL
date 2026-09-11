@@ -26,8 +26,9 @@ export async function generateMetadata({
     };
   }
 
-  const title = `${product.name} | Medicosmo Formulations`;
-  const description = `${product.name} formulation with ${product.description}. Custom private-label and contract manufacturing for ${product.category} by Medicosmo Formulations.`;
+  const title = `${product.name} Manufacturer in India | Medicosmo Formulations`;
+
+  const description = `Private label and contract manufacturing of ${product.name} for brands in India. Custom formulation, packaging and manufacturing solutions by Medicosmo Formulations.`;
 
   return {
     title,
