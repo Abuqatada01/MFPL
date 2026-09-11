@@ -127,7 +127,7 @@ export default function ProductsClient() {
                 {/* CONTENT   2 COLUMNS */}
                 <div className="max-w-6xl mt-4 lg:mt-0 text-left md:col-span-2">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#14542B] leading-tight mb-3">
-                    Branded products that fit your industry, perfectly.
+                    Cosmetic, Skincare & Haircare Formulations
                   </h2>
 
                   <p className="text-[#14542B]/80 mb-5 ">
