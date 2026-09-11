@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
+import { getAllProducts, slugify } from "./products/utils";
 
 const BASE_URL = "https://www.medicosmoformulations.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    return [
+    const staticPages: MetadataRoute.Sitemap = [
         {
             url: BASE_URL,
             lastModified: new Date(),
@@ -35,4 +36,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.3,
         },
     ];
+
+    const productPages: MetadataRoute.Sitemap = getAllProducts().map(
+        (product) => ({
+            url: `${BASE_URL}/products/${slugify(product.name)}`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.7,
+        })
+    );
+
+    return [...staticPages, ...productPages];
 }
