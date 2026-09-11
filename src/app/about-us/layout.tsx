@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Medicosmo Formulations | Private Label Cosmetics Manufacturer",
-  description:
-    "Learn about Medicosmo Formulations, a private label and white label manufacturer offering cosmetic, skincare and haircare solutions for growing beauty brands.",
+  title: "About Us | Private Label Cosmetics Manufacturer in India",
 
+  description:
+    "Learn about Medicosmo Formulations Private Limited, a cosmetic manufacturer in India offering private label, white label and contract manufacturing for skincare, haircare and personal care brands.",
 
   alternates: {
     canonical: "/about-us",
