@@ -1496,4 +1496,11 @@ export const products = [
     category: "Skin Care",
     img: "/24.jpg",
   },
+  {
+    id: 209,
+    name: "Boba Cream",
+    description: "Nourishing & Hydrating Boba Skin Cream",
+    category: "Skin Care",
+    img: "/1.jpg",
+  },
 ];

@@ -10,6 +10,7 @@ const categories: string[] = [
   "Skin Serum",
   "Skin Gel",
   "Skin Toner",
+  "Boba Cream",
   "Hair Gel",
   "Hair Shampoo",
   "Hair Masks",
