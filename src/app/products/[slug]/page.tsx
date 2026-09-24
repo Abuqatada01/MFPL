@@ -223,7 +223,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
         </div>
 
         {/* Related Formulations / Products */}
-        {relatedProducts.length > 0 && (
+        {relatedProducts.length > 0 && slugify(product.name) !== "boba-cream" && (
           <section className="mt-8">
             <h2 className="text-xl sm:text-2xl font-bold text-[#14542B] mb-6">
               More Formulations in {product.category}
