@@ -57,7 +57,7 @@ export const hairCareProducts: HairCareProduct[] = [
     name: "Anti Hair Fall Treatment",
     slug: "anti-hair-fall-treatment",
     category: "Hair Care",
-    description: "Enter detail here",
+    description: "Strengthening & Nourishing Formula to Reduce Hair Fall, Improve Hair Thickness and Promote Hair Growth.",
     img: "/15.jpg",
     aliases: [],
   },
