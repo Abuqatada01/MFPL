@@ -106,8 +106,24 @@ export default function ProductsClient() {
     }
 
     // scroll to top immediately
-    window.scrollTo(0, 0);
+    if (typeof window !== "undefined") {
+      if (window.__lenis) {
+        window.__lenis.scrollTo(0, { immediate: true });
+      }
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
   }, [searchParams]);
+
+  const handleFilterClick = (filter: ProductType | "All") => {
+    setActiveFilter(filter);
+    if (typeof window !== "undefined") {
+      if (window.__lenis) {
+        window.__lenis.scrollTo(0, { immediate: false, duration: 0.6 });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+  };
 
   const products = Object.keys(categoryImages).map((name) => ({
     name,
@@ -179,7 +195,7 @@ export default function ProductsClient() {
           {filters.map((filter) => (
             <button
               key={filter}
-              onClick={() => setActiveFilter(filter)}
+              onClick={() => handleFilterClick(filter)}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition
               ${activeFilter === filter
                   ? "bg-[var(--clr-primary)] text-white shadow-lg"

@@ -75,7 +75,7 @@ export const hairCareProducts: HairCareProduct[] = [
     name: "Hair Shampoo",
     slug: "hair-shampoo",
     category: "Hair Care",
-    description: "Gentle Cleansing & Nourishing Formula for Healthy, Soft and Shiny Hai",
+    description: "Gentle Cleansing & Nourishing Formula for Healthy, Soft and Shiny Hair",
     img: "/10.jpg",
     aliases: ["shampoo"],
   },

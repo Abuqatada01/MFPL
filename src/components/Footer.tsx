@@ -14,7 +14,11 @@ export default function Footer() {
 
   const handleProductsClick = (category?: string) => {
     if (pathname === "/products" && !category) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (typeof window !== "undefined" && window.__lenis) {
+        window.__lenis.scrollTo(0, { immediate: false, duration: 0.8 });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     } else if (category) {
       router.push(`/products?category=${category}`);
     } else {
