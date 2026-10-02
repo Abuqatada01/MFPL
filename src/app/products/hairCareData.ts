@@ -48,7 +48,7 @@ export const hairCareProducts: HairCareProduct[] = [
     name: "Hair Spa",
     slug: "hair-spa",
     category: "Hair Care",
-    description: "Enter detail here",
+    description: "Deeply Moisturizing & Nourishing Formula for Hair Repair, Frizz Control, Softness, Volume and Shine.",
     img: "/23.jpg",
     aliases: ["hair-masque-and-spa", "hair-masque-spa"],
   },
