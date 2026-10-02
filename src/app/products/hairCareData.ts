@@ -120,7 +120,7 @@ export const hairCareProducts: HairCareProduct[] = [
     name: "Keratin Hair Treatment",
     slug: "keratin-hair-treatment",
     category: "Hair Care",
-    description: "Enter detail here",
+    description: "Deep Repair & Smoothing Treatment for Stronger, Softer, Shinier and Frizz-Free Hair.",
     img: "/17.jpg",
     aliases: [],
   },
