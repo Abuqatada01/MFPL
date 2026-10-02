@@ -129,7 +129,7 @@ export const hairCareProducts: HairCareProduct[] = [
     name: "Hair Botox Treatment",
     slug: "hair-botox-treatment",
     category: "Hair Care",
-    description: "Enter detail here",
+    description: "Deep Conditioning & Smoothing Treatment for Hair Repair, Frizz Control, Strength, Hydration and Long-Lasting Shine.",
     img: "/16.jpg",
     aliases: [],
   },
