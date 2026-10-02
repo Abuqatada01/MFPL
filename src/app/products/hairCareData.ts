@@ -111,7 +111,7 @@ export const hairCareProducts: HairCareProduct[] = [
     name: "Alcohol-Free Hair & Body Mist",
     slug: "alcohol-free-hair-and-body-mist",
     category: "Hair Care",
-    description: "Enter detail here",
+    description: "Refreshing, Non-Drying Formula for Hydrated Skin & Hair.",
     img: "/13.jpg",
     aliases: ["hair-and-body-mist", "alcohol-free-hair-and-body-mists"],
   },
