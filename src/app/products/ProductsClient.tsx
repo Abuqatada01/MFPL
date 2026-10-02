@@ -66,6 +66,7 @@ const categoryTypeMap: Record<string, ProductType> = {
   "Hair Conditioner": "Hair Care",
   "Hair Spa": "Hair Care",
   "Hair & Body Mist": "Hair Care",
+  "Alcohol-Free Hair & Body Mist": "Hair Care",
   "Anti Hair Fall Treatment": "Hair Care",
   "Anti Dandruff Treatment": "Hair Care",
   "Keratin Hair Treatment": "Hair Care",
