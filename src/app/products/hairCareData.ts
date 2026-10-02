@@ -66,7 +66,7 @@ export const hairCareProducts: HairCareProduct[] = [
     name: "Anti Dandruff Treatment",
     slug: "anti-dandruff-treatment",
     category: "Hair Care",
-    description: "Enter detail here",
+    description: "Anti-Dandruff & Scalp Nourishing Formula for Flake Control, Itch Relief and a Healthy, Refreshed Scalp.",
     img: "/22.jpg",
     aliases: [],
   },
