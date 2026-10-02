@@ -93,7 +93,7 @@ export const hairCareProducts: HairCareProduct[] = [
     name: "Hair Serum",
     slug: "hair-serum",
     category: "Hair Care",
-    description: "Enter detail here",
+    description: "Lightweight & Nourishing Formula for Frizz Control, Smoothness, Shine and Hair Protection.",
     img: "/12.jpg",
     aliases: [],
   },
