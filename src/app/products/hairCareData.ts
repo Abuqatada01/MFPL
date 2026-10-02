@@ -102,7 +102,7 @@ export const hairCareProducts: HairCareProduct[] = [
     name: "Hair Gel",
     slug: "hair-gel",
     category: "Hair Care",
-    description: "Enter detail here",
+    description: "Strong Hold & Long-Lasting Styling Hair Gel",
     img: "/27.jpg",
     aliases: ["hair-styling-gel"],
   },
