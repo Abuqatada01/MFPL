@@ -39,7 +39,7 @@ export const cosmeticProducts: CosmeticProduct[] = [
     name: "Lip Care",
     slug: "lip-care",
     category: "Cosmetics",
-    description: "Enter detail here",
+    description: "Nourishing & Moisturizing Care for Soft, Smooth and Healthy-Looking Lips",
     img: "/29.jpg",
     aliases: ["lip-care-products", "lip-balm", "lipcare"],
   },
