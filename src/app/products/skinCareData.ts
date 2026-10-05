@@ -111,7 +111,7 @@ export const skinCareProducts: SkinCareProduct[] = [
     name: "Shower Gel & Body Wash",
     slug: "shower-gel-and-body-wash",
     category: "Skin Care",
-    description: "Enter detail here",
+    description: "Refreshing & Cleansing Formula for Soft, Smooth and Fresh-Looking Skin",
     img: "/4.jpg",
     aliases: ["shower-gel-body-wash", "shower-gel", "body-wash"],
   },
