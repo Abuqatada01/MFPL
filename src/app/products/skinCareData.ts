@@ -57,7 +57,7 @@ export const skinCareProducts: SkinCareProduct[] = [
     name: "Skin Serum",
     slug: "skin-serum",
     category: "Skin Care",
-    description: "Enter detail here",
+    description: "Hydrating & Brightening Skin Serum for a Smooth, Radiant Glow.",
     img: "/12.jpg",
     aliases: ["skin-serums", "serums"],
   },
