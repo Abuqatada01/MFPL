@@ -156,7 +156,7 @@ export const skinCareProducts: SkinCareProduct[] = [
     name: "Scrubs & Pack",
     slug: "scrubs-and-pack",
     category: "Skin Care",
-    description: "Enter detail here",
+    description: "Exfoliating & Purifying Care for Smooth, Refreshed and Radiant Skin",
     img: "/21.jpg",
     aliases: ["scrubs-pack", "scrubs-and-packs", "scrubs-packs", "scrubs"],
   },
