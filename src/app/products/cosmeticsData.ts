@@ -48,7 +48,7 @@ export const cosmeticProducts: CosmeticProduct[] = [
     name: "Men's Grooming",
     slug: "mens-grooming",
     category: "Cosmetics",
-    description: "Enter detail here",
+    description: "Refreshing & Nourishing Care for Clean, Smooth and Well-Groomed Skin",
     img: "/18.jpg",
     aliases: ["mens-grooming-products", "men-grooming"],
   },
