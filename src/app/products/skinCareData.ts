@@ -120,7 +120,7 @@ export const skinCareProducts: SkinCareProduct[] = [
     name: "Intimate Care",
     slug: "intimate-care",
     category: "Skin Care",
-    description: "Enter detail here",
+    description: "Gentle & Refreshing Intimate Care for Clean, Fresh and Comfortable Skin",
     img: "/22.jpg",
     aliases: ["intimate-wash"],
   },
