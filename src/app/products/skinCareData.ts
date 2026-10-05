@@ -129,7 +129,7 @@ export const skinCareProducts: SkinCareProduct[] = [
     name: "Hand Wash",
     slug: "hand-wash",
     category: "Skin Care",
-    description: "Enter detail here",
+    description: "Antibacterial & Moisturizing Hand Wash for Clean, Soft and Protected Hands",
     img: "/6.jpg",
     aliases: ["handwash"],
   },
