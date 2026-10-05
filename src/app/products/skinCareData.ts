@@ -84,7 +84,7 @@ export const skinCareProducts: SkinCareProduct[] = [
     name: "Boba Cream",
     slug: "boba-cream",
     category: "Skin Care",
-    description: "Enter detail here",
+    description: "Nourishing & Hydrating Boba Cream for Soft, Smooth and Radiant Skin",
     img: "/1.jpg",
     aliases: [],
   },
