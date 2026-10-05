@@ -102,7 +102,7 @@ export const skinCareProducts: SkinCareProduct[] = [
     name: "Face Cleanser",
     slug: "face-cleanser",
     category: "Skin Care",
-    description: "Enter detail here",
+    description: "Gentle Cleansing & Refreshing Face Cleanser for Clean, Soft and Fresh-Looking Skin",
     img: "/24.jpg",
     aliases: ["face-cleansers", "cleansers", "face-wash"],
   },
