@@ -212,7 +212,7 @@ export default function ProductsClient() {
           {filteredProducts.map((product) => {
             const matchingProduct = getProductBySlug(slugify(product.name));
             const href = matchingProduct
-              ? `/products/${slugify(matchingProduct.name)}`
+              ? `/products/${matchingProduct.slug || slugify(matchingProduct.name)}`
               : "/contact-us";
 
             return (

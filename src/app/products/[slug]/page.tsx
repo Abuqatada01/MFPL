@@ -9,8 +9,17 @@ interface PageProps {
 
 export async function generateStaticParams() {
   const products = getAllProducts();
-  return products.map((product) => ({
-    slug: slugify(product.name),
+  const slugs = new Set<string>();
+
+  products.forEach((product) => {
+    slugs.add(product.slug || slugify(product.name));
+    if (product.aliases) {
+      product.aliases.forEach((alias) => slugs.add(alias));
+    }
+  });
+
+  return Array.from(slugs).map((slug) => ({
+    slug,
   }));
 }
 
@@ -225,6 +234,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
         {/* Related Formulations / Products */}
         {relatedProducts.length > 0 &&
           product.category !== "Hair Care" &&
+          product.category !== "Skin Care" &&
           slugify(product.name) !== "boba-cream" && (
           <section className="mt-8">
             <h2 className="text-xl sm:text-2xl font-bold text-[#14542B] mb-6">

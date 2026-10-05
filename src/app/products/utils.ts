@@ -1,5 +1,6 @@
 import { products } from "./data";
 import { hairCareProducts, HairCareProduct } from "./hairCareData";
+import { skinCareProducts, SkinCareProduct } from "./skinCareData";
 
 export interface Product {
   id: number | string;
@@ -11,8 +12,8 @@ export interface Product {
   aliases?: string[];
 }
 
-export { hairCareProducts };
-export type { HairCareProduct };
+export { hairCareProducts, skinCareProducts };
+export type { HairCareProduct, SkinCareProduct };
 
 /**
  * Converts a string into a clean, URL-safe slug.
@@ -32,7 +33,7 @@ export function slugify(text: string): string {
 
 /**
  * Finds a product by its generated URL slug.
- * Prioritizes centralized Hair Care products first, then other products from data.ts.
+ * Prioritizes centralized Hair Care and Skin Care products first, then other products from data.ts.
  */
 export function getProductBySlug(slug: string): Product | undefined {
   if (!slug) return undefined;
@@ -49,28 +50,44 @@ export function getProductBySlug(slug: string): Product | undefined {
     return hairProduct;
   }
 
-  // 2. Check general products in data.ts
+  // 2. Check centralized Skin Care products (by slug, slugified name, or alias)
+  const skinProduct = skinCareProducts.find(
+    (p) =>
+      p.slug === normalizedSlug ||
+      slugify(p.name) === normalizedSlug ||
+      (p.aliases && p.aliases.includes(normalizedSlug))
+  );
+  if (skinProduct) {
+    return skinProduct;
+  }
+
+  // 3. Check general products in data.ts
   return (products as Product[]).find((p) => slugify(p.name) === normalizedSlug);
 }
 
 /**
  * Returns all products for static path generation.
- * Integrates hairCareProducts and other unique products from data.ts.
+ * Integrates hairCareProducts, skinCareProducts, and other unique products from data.ts.
  */
 export function getAllProducts(): Product[] {
-  const hairCareSlugs = new Set(
-    hairCareProducts.flatMap((p) => [
+  const centralizedSlugs = new Set([
+    ...hairCareProducts.flatMap((p) => [
       p.slug,
       slugify(p.name),
       ...(p.aliases || []),
-    ])
-  );
+    ]),
+    ...skinCareProducts.flatMap((p) => [
+      p.slug,
+      slugify(p.name),
+      ...(p.aliases || []),
+    ]),
+  ]);
 
-  // Keep other products that aren't replaced by hairCareProducts
+  // Keep other products that aren't replaced by centralized products
   const otherProducts = (products as Product[]).filter(
-    (p) => !hairCareSlugs.has(slugify(p.name))
+    (p) => !centralizedSlugs.has(slugify(p.name))
   );
 
-  return [...hairCareProducts, ...otherProducts];
+  return [...hairCareProducts, ...skinCareProducts, ...otherProducts];
 }
 
