@@ -165,7 +165,7 @@ export const skinCareProducts: SkinCareProduct[] = [
     name: "Under Eye",
     slug: "under-eye",
     category: "Skin Care",
-    description: "Enter detail here",
+    description: "Soothing & Revitalizing Care for Brighter, Refreshed and Youthful-Looking Eyes",
     img: "/27.jpg",
     aliases: ["under-eye-cream", "under-eye-and-lip-care"],
   },
