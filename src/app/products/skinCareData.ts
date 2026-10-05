@@ -138,7 +138,7 @@ export const skinCareProducts: SkinCareProduct[] = [
     name: "Sun Cream",
     slug: "sun-cream",
     category: "Skin Care",
-    description: "Enter detail here",
+    description: "UV Protection & Moisturizing Sun Cream for Protected, Hydrated and Radiant Skin",
     img: "/26.jpg",
     aliases: ["sun-care", "sunscreen", "sun-screen"],
   },
