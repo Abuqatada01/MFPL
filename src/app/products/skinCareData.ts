@@ -66,7 +66,7 @@ export const skinCareProducts: SkinCareProduct[] = [
     name: "Skin Gel",
     slug: "skin-gel",
     category: "Skin Care",
-    description: "Enter detail here",
+    description: "Refreshing & Hydrating Skin Gel for a Cool, Smooth and Fresh Feel",
     img: "/28.png",
     aliases: ["gels", "skin-gels"],
   },
