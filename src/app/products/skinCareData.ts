@@ -75,7 +75,7 @@ export const skinCareProducts: SkinCareProduct[] = [
     name: "Skin Toner",
     slug: "skin-toner",
     category: "Skin Care",
-    description: "Enter detail here",
+    description: "Refreshing & Balancing Skin Toner for a Clean, Fresh and Refined Feel",
     img: "/13.jpg",
     aliases: ["skin-toners", "toner", "toners"],
   },
