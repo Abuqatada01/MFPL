@@ -48,7 +48,7 @@ export const skinCareProducts: SkinCareProduct[] = [
     name: "Body Lotion",
     slug: "body-lotion",
     category: "Skin Care",
-    description: "Enter detail here",
+    description: "Rich Moisturizing Formula for Lasting Hydration, Skin Softness and Smoothness.",
     img: "/11.jpg",
     aliases: ["lotions", "body-lotions"],
   },
