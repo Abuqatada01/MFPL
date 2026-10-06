@@ -163,7 +163,7 @@ export default function Footer() {
               Working Hours :
             </span>
             <br />
-            Mon – Sat : 9:00 AM – 6:00 PM
+            Mon – Sat : 9:30 AM – 6:30 PM
             <br />
             Sunday : Closed
           </p>
@@ -183,7 +183,7 @@ export default function Footer() {
         rights reserved.{" "}
         <Link href="https://greensmedia.co.in">
           <span style={{ color: "var(--clr-secondary)" }}>Greens Media</span>
-        </Link>&nbsp; 
+        </Link>&nbsp;
         <Link href="https://www.amforstudio.in">
           <span className="text-[#131413] opacity-20 " >Abu Qatada</span>
         </Link>
