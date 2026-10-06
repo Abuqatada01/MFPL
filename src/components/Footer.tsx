@@ -93,7 +93,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => handleProductsClick()}
-                  className="text-left hover:underline cursor-pointer"
+                  className="text-left cursor-pointer"
                 >
                   Products
                 </button>
@@ -114,7 +114,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => handleProductsClick("cosmetics")}
-                  className="text-left hover:underline cursor-pointer"
+                  className="text-left cursor-pointer"
                 >
                   Cosmetics
                 </button>
@@ -122,7 +122,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => handleProductsClick("hair-care")}
-                  className="text-left hover:underline cursor-pointer"
+                  className="text-left cursor-pointer"
                 >
                   Hair Care
                 </button>
@@ -130,7 +130,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => handleProductsClick("skin-care")}
-                  className="text-left hover:underline cursor-pointer"
+                  className="text-left cursor-pointer"
                 >
                   Skin Care
                 </button>
