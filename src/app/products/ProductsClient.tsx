@@ -219,11 +219,8 @@ export default function ProductsClient() {
               <Link
                 key={product.name}
                 href={href}
-                className="group relative overflow-hidden rounded-3xl bg-white shadow-[0_30px_60px_rgba(20,84,43,0.15)] hover:shadow-[0_40px_80px_rgba(20,84,43,0.25)] transition-all duration-500 hover:-translate-y-2"
+                className="group relative overflow-hidden rounded-3xl bg-white shadow-[0_30px_60px_rgba(20,84,43,0.15)] hover:shadow-[0_40px_80px_rgba(20,84,43,0.25)] transition-all duration-500 hover:-translate-y-2 flex flex-col"
               >
-                {/* HOVER GRADIENT */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#83A33C]/20 via-[#53945B]/20 to-transparent opacity-0 group-hover:opacity-100 transition" />
-
                 {/* IMAGE */}
                 <div className="relative h-40 lg:h-80 bg-[#EDF5EE]">
                   <img
@@ -234,7 +231,7 @@ export default function ProductsClient() {
                 </div>
 
                 {/* CONTENT */}
-                <div className="relative p-6 text-center bg-white">
+                <div className="relative p-6 text-center bg-white flex-1">
                   <h3 className="font-bold text-[#14542B]">{product.name}</h3>
                   <p className="text-[#14542B]/70 mt-1">Explore the full range</p>
                   <div className="mt-3 px-4 py-1.5 rounded-full inline-block bg-[var(--clr-secondary)] text-white text-sm font-semibold">
