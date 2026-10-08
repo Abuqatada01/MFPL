@@ -6,25 +6,8 @@ import {
   LinkedinLogoIcon,
 } from "@phosphor-icons/react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
 
 export default function Footer() {
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const handleProductsClick = (category?: string) => {
-    if (pathname === "/products" && !category) {
-      if (typeof window !== "undefined" && window.__lenis) {
-        window.__lenis.scrollTo(0, { immediate: false, duration: 0.8 });
-      } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    } else if (category) {
-      router.push(`/products?category=${category}`);
-    } else {
-      router.push("/products");
-    }
-  };
 
   return (
     <footer
@@ -91,12 +74,12 @@ export default function Footer() {
                 <Link href="/about-us">About Us</Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleProductsClick()}
-                  className="text-left cursor-pointer"
+                <Link
+                  href="/products"
+                  className="text-left"
                 >
                   Products
-                </button>
+                </Link>
               </li>
               <li>
                 <Link href="/privacy-policy">Privacy Policy</Link>
@@ -112,28 +95,19 @@ export default function Footer() {
             <h3 className="font-semibold mb-5">Products</h3>
             <ul className="space-y-3 text-sm opacity-80">
               <li>
-                <button
-                  onClick={() => handleProductsClick("cosmetics")}
-                  className="text-left cursor-pointer"
-                >
+                <Link href="/products/cosmetic" className="text-left">
                   Cosmetics
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleProductsClick("hair-care")}
-                  className="text-left cursor-pointer"
-                >
+                <Link href="/products/hair-care" className="text-left">
                   Hair Care
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleProductsClick("skin-care")}
-                  className="text-left cursor-pointer"
-                >
+                <Link href="/products/skin-care" className="text-left">
                   Skin Care
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

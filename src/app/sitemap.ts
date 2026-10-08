@@ -23,6 +23,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
+            url: `${BASE_URL}/products/cosmetic`,
+            lastModified: new Date(),
+            changeFrequency: "weekly",
+            priority: 0.85,
+        },
+        {
+            url: `${BASE_URL}/products/skin-care`,
+            lastModified: new Date(),
+            changeFrequency: "weekly",
+            priority: 0.85,
+        },
+        {
+            url: `${BASE_URL}/products/hair-care`,
+            lastModified: new Date(),
+            changeFrequency: "weekly",
+            priority: 0.85,
+        },
+        {
             url: `${BASE_URL}/contact-us`,
             lastModified: new Date(),
             changeFrequency: "monthly",

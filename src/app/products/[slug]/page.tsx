@@ -1,32 +1,76 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllProducts, getProductBySlug, slugify } from "../utils";
+import ProductsClient from "../ProductsClient";
 
+/* ===================== CATEGORY CONSTANTS ===================== */
+const CATEGORY_SLUGS = ["cosmetic", "skin-care", "hair-care"] as const;
+type CategorySlug = (typeof CATEGORY_SLUGS)[number];
+
+function isCategory(slug: string): slug is CategorySlug {
+  return (CATEGORY_SLUGS as readonly string[]).includes(slug);
+}
+
+const categoryMeta: Record<
+  CategorySlug,
+  { title: string; description: string }
+> = {
+  cosmetic: {
+    title: "Cosmetic Products | Medicosmo Formulations",
+    description:
+      "Explore our range of cosmetic products available for private label and contract manufacturing, including lip care and men's grooming formulations by Medicosmo Formulations.",
+  },
+  "skin-care": {
+    title: "Skin Care Products | Medicosmo Formulations",
+    description:
+      "Discover our complete line of skincare formulations — creams, serums, lotions, gels, and more — for private label and contract manufacturing by Medicosmo Formulations.",
+  },
+  "hair-care": {
+    title: "Hair Care Products | Medicosmo Formulations",
+    description:
+      "Browse our full range of hair care formulations — shampoos, conditioners, serums, masks, and treatments — for private label and contract manufacturing by Medicosmo Formulations.",
+  },
+};
+
+/* ===================== PAGE PROPS ===================== */
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+/* ===================== STATIC PARAMS ===================== */
 export async function generateStaticParams() {
-  const products = getAllProducts();
-  const slugs = new Set<string>();
+  // Include category slugs
+  const staticSlugs = new Set<string>(CATEGORY_SLUGS);
 
+  // Include all product slugs
+  const products = getAllProducts();
   products.forEach((product) => {
-    slugs.add(product.slug || slugify(product.name));
+    staticSlugs.add(product.slug || slugify(product.name));
     if (product.aliases) {
-      product.aliases.forEach((alias) => slugs.add(alias));
+      product.aliases.forEach((alias) => staticSlugs.add(alias));
     }
   });
 
-  return Array.from(slugs).map((slug) => ({
-    slug,
-  }));
+  return Array.from(staticSlugs).map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
+/* ===================== METADATA ===================== */
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
+
+  // Category page metadata
+  if (isCategory(slug)) {
+    const meta = categoryMeta[slug];
+    return {
+      title: meta.title,
+      description: meta.description,
+      alternates: { canonical: `/products/${slug}` },
+    };
+  }
+
+  // Product detail metadata
   const product = getProductBySlug(slug);
 
   if (!product) {
@@ -36,7 +80,6 @@ export async function generateMetadata({
   }
 
   const title = `${product.name} Manufacturer in India | Medicosmo Formulations`;
-
   const description = `Private label and contract manufacturing of ${product.name} for brands in India. Custom formulation, packaging and manufacturing solutions by Medicosmo Formulations.`;
 
   return {
@@ -65,14 +108,25 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProductDetailPage({ params }: PageProps) {
+/* ===================== PAGE COMPONENT ===================== */
+export default async function ProductSlugPage({ params }: PageProps) {
   const { slug } = await params;
+
+  /* ---------- CATEGORY ROUTE ---------- */
+  if (isCategory(slug)) {
+    return (
+      <Suspense fallback={null}>
+        <ProductsClient categorySlug={slug} />
+      </Suspense>
+    );
+  }
+
+  /* ---------- PRODUCT DETAIL ROUTE ---------- */
   const product = getProductBySlug(slug);
 
   if (!product) {
     notFound();
   }
-
 
   const productJsonLd = {
     "@context": "https://schema.org",
@@ -90,7 +144,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
       url: "https://www.medicosmoformulations.com/",
     },
   };
-
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -126,8 +179,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-[#F8FAF8] py-8 lg:py-12">
-
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -194,7 +245,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
               {/* Key Ingredients / Formulation */}
               <div className="mb-6">
                 <h2 className="text-xs uppercase tracking-wider text-[#14542B]/70 font-bold mb-1">
-                  Key Formulation & Active Ingredients
+                  Key Formulation &amp; Active Ingredients
                 </h2>
                 <div className="bg-[#EDF5EE]/70 p-4 rounded-2xl border border-[#14542B]/10 text-base sm:text-lg font-semibold text-[#14542B]">
                   {product.description}
@@ -204,7 +255,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
               {/* Manufacturing / Private Label Context */}
               <div className="mb-8">
                 <h2 className="text-xs uppercase tracking-wider text-[#14542B]/70 font-bold mb-1">
-                  Private Label & Custom Manufacturing
+                  Private Label &amp; Custom Manufacturing
                 </h2>
                 <p className="text-[#14542B]/80 text-sm sm:text-base leading-relaxed">
                   Medicosmo Formulations offers end-to-end private label and contract manufacturing solutions for{" "}
@@ -237,46 +288,46 @@ export default async function ProductDetailPage({ params }: PageProps) {
           product.category !== "Skin Care" &&
           product.category !== "Cosmetics" &&
           slugify(product.name) !== "boba-cream" && (
-          <section className="mt-8">
-            <h2 className="text-xl sm:text-2xl font-bold text-[#14542B] mb-6">
-              More Formulations in {product.category}
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {relatedProducts.map((rel) => {
-                const relSlug = slugify(rel.name);
-                return (
-                  <Link
-                    key={rel.id}
-                    href={`/products/${relSlug}`}
-                    className="group bg-white rounded-3xl p-5 shadow-[0_20px_40px_rgba(20,84,43,0.08)] hover:shadow-[0_30px_60px_rgba(20,84,43,0.18)] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between border border-[#14542B]/10"
-                  >
-                    <div>
-                      <div className="relative h-44 bg-[#EDF5EE] rounded-2xl mb-4 p-4 flex items-center justify-center overflow-hidden">
-                        <img
-                          src={rel.img}
-                          alt={`${rel.name} - Medicosmo Formulations`}
-                          className="w-full h-full object-contain transition duration-500 group-hover:scale-105"
-                        />
+            <section className="mt-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-[#14542B] mb-6">
+                More Formulations in {product.category}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {relatedProducts.map((rel) => {
+                  const relSlug = slugify(rel.name);
+                  return (
+                    <Link
+                      key={rel.id}
+                      href={`/products/${relSlug}`}
+                      className="group bg-white rounded-3xl p-5 shadow-[0_20px_40px_rgba(20,84,43,0.08)] hover:shadow-[0_30px_60px_rgba(20,84,43,0.18)] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between border border-[#14542B]/10"
+                    >
+                      <div>
+                        <div className="relative h-44 bg-[#EDF5EE] rounded-2xl mb-4 p-4 flex items-center justify-center overflow-hidden">
+                          <img
+                            src={rel.img}
+                            alt={`${rel.name} - Medicosmo Formulations`}
+                            className="w-full h-full object-contain transition duration-500 group-hover:scale-105"
+                          />
+                        </div>
+                        <span className="text-[11px] uppercase tracking-wider font-semibold text-[#83A33C]">
+                          {rel.category}
+                        </span>
+                        <h3 className="font-bold text-[#14542B] text-base line-clamp-1 mt-0.5">
+                          {rel.name}
+                        </h3>
+                        <p className="text-xs text-[#14542B]/70 mt-1 line-clamp-2">
+                          {rel.description}
+                        </p>
                       </div>
-                      <span className="text-[11px] uppercase tracking-wider font-semibold text-[#83A33C]">
-                        {rel.category}
-                      </span>
-                      <h3 className="font-bold text-[#14542B] text-base line-clamp-1 mt-0.5">
-                        {rel.name}
-                      </h3>
-                      <p className="text-xs text-[#14542B]/70 mt-1 line-clamp-2">
-                        {rel.description}
-                      </p>
-                    </div>
-                    <div className="mt-4 pt-3 border-t border-[#14542B]/10 text-xs font-semibold text-[#83A33C] flex items-center gap-1 group-hover:gap-2 transition-all">
-                      View Details →
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          </section>
-        )}
+                      <div className="mt-4 pt-3 border-t border-[#14542B]/10 text-xs font-semibold text-[#83A33C] flex items-center gap-1 group-hover:gap-2 transition-all">
+                        View Details →
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+          )}
       </div>
     </div>
   );

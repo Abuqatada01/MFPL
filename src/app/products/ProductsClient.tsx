@@ -2,8 +2,7 @@
 
 import "./products.css";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 import { slugify, getProductBySlug } from "./utils";
 
 
@@ -78,52 +77,48 @@ const categoryTypeMap: Record<string, ProductType> = {
 
 /* ================= URL → FILTER MAP ================= */
 const urlToFilter: Record<string, ProductType> = {
-  cosmetics: "Cosmetics",
+  cosmetic: "Cosmetics",
   "skin-care": "Skin Care",
   "hair-care": "Hair Care",
 };
 
-const filters: (ProductType | "All")[] = [
-  "All",
-  "Cosmetics",
-  "Skin Care",
-  "Hair Care",
+type FilterItem = {
+  label: ProductType | "All";
+  href: string;
+};
+
+const filters: FilterItem[] = [
+  { label: "All", href: "/products" },
+  { label: "Cosmetics", href: "/products/cosmetic" },
+  { label: "Skin Care", href: "/products/skin-care" },
+  { label: "Hair Care", href: "/products/hair-care" },
 ];
 
-export default function ProductsClient() {
-  const searchParams = useSearchParams();
-  const [activeFilter, setActiveFilter] = useState<ProductType | "All">("All");
+interface ProductsClientProps {
+  /** The URL segment for the active category, e.g. "cosmetic", "skin-care", "hair-care".
+   *  Omit (or pass undefined) for the All Products page. */
+  categorySlug?: string;
+}
 
-  /* ✅ SINGLE EFFECT – CLEAN & SAFE */
+export default function ProductsClient({ categorySlug }: ProductsClientProps = {}) {
+
+  // Derive active filter from the prop — no searchParams needed
+  const activeFilter: ProductType | "All" =
+    categorySlug && urlToFilter[categorySlug]
+      ? urlToFilter[categorySlug]
+      : "All";
+
+
+  // Scroll to top whenever the active category changes (client navigation)
   useEffect(() => {
-    const category = searchParams.get("category");
-
-    // set filter
-    if (category && urlToFilter[category]) {
-      setActiveFilter(urlToFilter[category]);
-    } else {
-      setActiveFilter("All");
-    }
-
-    // scroll to top immediately
     if (typeof window !== "undefined") {
       if (window.__lenis) {
         window.__lenis.scrollTo(0, { immediate: true });
       }
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
-  }, [searchParams]);
+  }, [categorySlug]);
 
-  const handleFilterClick = (filter: ProductType | "All") => {
-    setActiveFilter(filter);
-    if (typeof window !== "undefined") {
-      if (window.__lenis) {
-        window.__lenis.scrollTo(0, { immediate: false, duration: 0.6 });
-      } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    }
-  };
 
   const products = Object.keys(categoryImages).map((name) => ({
     name,
@@ -192,18 +187,18 @@ export default function ProductsClient() {
 
         {/* FILTERS */}
         <div className="flex justify-center gap-3 mt-6 flex-wrap">
-          {filters.map((filter) => (
-            <button
-              key={filter}
-              onClick={() => handleFilterClick(filter)}
+          {filters.map(({ label, href }) => (
+            <Link
+              key={label}
+              href={href}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition
-              ${activeFilter === filter
+              ${activeFilter === label
                   ? "bg-[var(--clr-primary)] text-white shadow-lg"
                   : "bg-white text-[#14542B] shadow hover:shadow-md"
                 }`}
             >
-              {filter}
-            </button>
+              {label}
+            </Link>
           ))}
         </div>
 

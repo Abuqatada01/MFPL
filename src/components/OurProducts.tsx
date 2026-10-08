@@ -9,7 +9,7 @@ const products = [
   {
     title: "Cosmetic\nProducts",
     image: "/ourproducts1.png",
-    category: "cosmetics",
+    category: "cosmetic",
   },
   {
     title: "Skincare\nProducts",
@@ -125,7 +125,7 @@ export default function OurProducts() {
           {products.map((item, i) => (
             <Link
               key={i}
-              href={`/products?category=${item.category}`}
+              href={`/products/${item.category}`}
               className="group flex justify-center min-w-[85%] snap-center sm:min-w-0 cursor-pointer"
             >
               <div

@@ -167,7 +167,7 @@ export default function SmoothScroll({ children }: Props) {
     handleScrollReset();
   }, [pathname, handleScrollReset]);
 
-  // Trigger on searchParams changes (e.g. ?category=hair-care)
+  // Trigger on searchParams changes
   const handleSearchParamsChange = useCallback(() => {
     if (isFirstMountRef.current) {
       return;
