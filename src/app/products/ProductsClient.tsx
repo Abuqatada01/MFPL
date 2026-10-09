@@ -131,6 +131,37 @@ export default function ProductsClient({ categorySlug }: ProductsClientProps = {
       ? products
       : products.filter((p) => p.type === activeFilter);
 
+
+
+  const categoryContent: Record<
+    ProductType | "All",
+    { heading: string; description: string }
+  > = {
+    All: {
+      heading: "Cosmetic, Skincare & Haircare Formulations",
+      description:
+        "Explore cosmetic, skincare and haircare formulations available for private label and contract manufacturing, with customized formulation, packaging and branding solutions.",
+    },
+    Cosmetics: {
+      heading: "Private Label Cosmetics Manufacturer in India",
+      description:
+        "Explore cosmetic products for private label and contract manufacturing in India, with customized formulations, packaging and branding solutions for your beauty brand.",
+    },
+    "Skin Care": {
+      heading: "Private Label Skincare Manufacturer in India",
+      description:
+        "Discover skincare products including creams, serums, lotions and gels for private label manufacturing in India, with customized formulations and packaging for your brand.",
+    },
+    "Hair Care": {
+      heading: "Private Label Hair Care Manufacturer in India",
+      description:
+        "Explore shampoos, conditioners, hair serums and masks for private label hair care manufacturing in India, with customized formulations and packaging solutions.",
+    },
+  };
+
+  const currentContent = categoryContent[activeFilter];
+
+
   return (
     <>
       <section className="lg:relative lg:h-[23vh] xl:h-[30vh] lg:py-6">
@@ -140,14 +171,12 @@ export default function ProductsClient({ categorySlug }: ProductsClientProps = {
               <div className="relative grid h-full grid-cols-1 md:grid-cols-3 items-center px-6 sm:px-10 md:px-20">
                 {/* CONTENT   2 COLUMNS */}
                 <div className="max-w-6xl mt-4 lg:mt-0 text-left md:col-span-2">
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#14542B] leading-tight mb-3">
-                    Cosmetic, Skincare & Haircare Formulations
-                  </h2>
+                  <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#14542B] leading-tight mb-3">
+                    {currentContent.heading}
+                  </h1>
 
-                  <p className="text-[#14542B]/80 mb-5 ">
-                    Explore cosmetic, skincare and haircare formulations available
-                    for private label and contract manufacturing, with customized
-                    formulation, packaging and branding solutions.
+                  <p className="text-[#14542B]/80 mb-5">
+                    {currentContent.description}
                   </p>
 
                   <Link
