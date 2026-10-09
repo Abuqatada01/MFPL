@@ -64,18 +64,20 @@ export default function ContactPage() {
       return;
     }
 
+    const form = e.currentTarget; // capture before first await — e.currentTarget is nullified by React after the sync call stack returns
+
     setLoading(true);
 
     try {
       await emailjs.sendForm(
         "service_6pmn1y3",
         "template_1sefwnp",
-        e.currentTarget,
+        form,
         "D4g0tOj1HYdlYdheB",
       );
 
       alert("Thank you! Our team will contact you shortly.");
-      e.currentTarget.reset();
+      form.reset();
       setSelectedCategory("");
       setOtherCategory("");
       setQuantity("");
