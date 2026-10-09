@@ -210,9 +210,11 @@ export default function ProductsClient({ categorySlug }: ProductsClientProps = {
       </section>
 
       <section className="ui-section">
-        <h1 className="ui-h1 text-center text-[var(--clr-primary)]">
-          Product Categories
-        </h1>
+        <h2 className="ui-h1 text-center text-[var(--clr-primary)]">
+          {activeFilter === "All"
+            ? "Product Categories"
+            : `${activeFilter} Products`}
+        </h2>
 
         {/* FILTERS */}
         <div className="flex justify-center gap-3 mt-6 flex-wrap">
@@ -257,7 +259,9 @@ export default function ProductsClient({ categorySlug }: ProductsClientProps = {
                 {/* CONTENT */}
                 <div className="relative p-6 text-center bg-white flex-1">
                   <h3 className="font-bold text-[#14542B]">{product.name}</h3>
-                  <p className="text-[#14542B]/70 mt-1">Explore the full range</p>
+                  <p className="text-[#14542B]/70 mt-1">
+                    {matchingProduct?.description || "Explore the full range"}
+                  </p>
                   <div className="mt-3 px-4 py-1.5 rounded-full inline-block bg-[var(--clr-secondary)] text-white text-sm font-semibold">
                     {matchingProduct ? "View Details →" : "Get Quote →"}
                   </div>
