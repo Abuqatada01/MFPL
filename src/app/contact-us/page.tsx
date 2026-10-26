@@ -92,32 +92,32 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="relative py-10 xl:py-24 flex justify-center px-6 bg-gradient-to-br from-[#effaed] via-white to-[#f6fbf3]">
-      <div className="relative z-10 w-full max-w-6xl border-2 border-[var(--clr-secondary)] bg-white/70 backdrop-blur-xl rounded-3xl shadow-xl p-10 md:p-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <section className="relative py-6 sm:py-10 xl:py-24 flex justify-center px-4 sm:px-6 bg-gradient-to-br from-[#effaed] via-white to-[#f6fbf3]">
+      <div className="relative z-10 w-full max-w-6xl border-2 border-[var(--clr-secondary)] bg-white/70 backdrop-blur-xl rounded-3xl shadow-xl p-5 sm:p-10 md:p-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-16">
           {/* LEFT */}
           <div>
-            <h1 className="text-5xl font-semibold mb-3">Contact</h1>
-            <p className="ui-para text-[#242424]/70 max-w-sm mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-2 sm:mb-3">Contact</h1>
+            <p className="ui-para text-[#242424]/70 max-w-sm mb-3 sm:mb-4 text-sm sm:text-base">
               Our collaborative approach ensures expert guidance at every stage
               of your brand journey.
             </p>
-            <div className="flex items-center gap-3 text-[#14542B]">
-              <Heart size={22} weight="fill" />
-              <span className="text-sm">We’re happy to help</span>
+            <div className="flex items-center gap-2 sm:gap-3 text-[#14542B]">
+              <Heart size={20} className="sm:w-[22px] sm:h-[22px]" weight="fill" />
+              <span className="text-xs sm:text-sm">We’re happy to help</span>
             </div>
           </div>
 
           {/* FORM */}
-          <form className="space-y-10" onSubmit={handleSubmit}>
+          <form className="space-y-4 sm:space-y-7 md:space-y-10" onSubmit={handleSubmit}>
             {/* NAME + COMPANY */}
-            <div className="grid sm:grid-cols-2 gap-8">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
               <Input label="Name" name="from_name" required />
               <Input label="Company" name="company" />
             </div>
 
             {/* EMAIL + COUNTRY */}
-            <div className="grid sm:grid-cols-2 gap-8">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
               <Input label="Email" name="from_email" type="email" required />
 
               <div>
@@ -158,7 +158,7 @@ export default function ContactPage() {
             )}
 
             {/* CATEGORY + QTY */}
-            <div className="grid sm:grid-cols-2 gap-8">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
               <div>
                 <label className="text-xs uppercase tracking-wide text-[#242424]/60">
                   Category
@@ -204,7 +204,7 @@ export default function ContactPage() {
                     !selectedCategory ||
                     (selectedCategory === "Other" && !otherCategory)
                   }
-                  className="w-full border-b py-2 bg-transparent focus:outline-none"
+                  className="w-full border-b py-1.5 sm:py-2 bg-transparent focus:outline-none"
                 />
               </div>
             </div>
@@ -214,14 +214,14 @@ export default function ContactPage() {
               <label className="text-xs uppercase tracking-wide text-[#242424]/60">
                 Message
               </label>
-              <textarea name="message" rows={4} className="form-textarea" />
+              <textarea name="message" rows={3} className="form-textarea sm:min-h-[96px]" />
             </div>
 
             {/* SUBMIT */}
             <button
               type="submit"
               disabled={loading}
-              className="ui-badge-2 px-10 py-3 rounded-full text-white font-semibold"
+              className="ui-badge-2 w-full sm:w-auto px-8 sm:px-10 py-2.5 sm:py-3 rounded-full text-white font-semibold text-center"
             >
               {loading ? "Submitting..." : "Submit"}
             </button>
@@ -259,7 +259,7 @@ function Input({
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full border-b py-2 bg-transparent focus:outline-none focus:border-[#53945B]"
+        className="w-full border-b py-1.5 sm:py-2 bg-transparent focus:outline-none focus:border-[#53945B]"
       />
     </div>
   );
