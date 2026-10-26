@@ -67,3 +67,103 @@
 .team-card:hover {
     transform: translateY(-6px);
 }
+
+/* =====================================================
+   START YOUR WHITE LABEL JOURNEY CTA BUTTON
+===================================================== */
+.btn-white-label {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.75rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #A0BD3E 0%, #83A83B 100%);
+    box-shadow:
+        0 4px 14px rgba(131, 168, 59, 0.35),
+        0 2px 6px rgba(20, 84, 43, 0.2);
+    transition:
+        transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+        filter 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    overflow: hidden;
+    max-width: 100%;
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
+}
+
+@media (min-width: 640px) {
+    .btn-white-label {
+        font-size: 0.925rem;
+        padding: 0.9rem 2rem;
+    }
+}
+
+/* Smooth rich-gradient hover layer */
+.btn-white-label::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #8DA834 0%, #6E8F2E 100%);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-white-label:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 24px rgba(131, 168, 59, 0.55),
+        0 0 18px rgba(160, 189, 62, 0.4),
+        0 2px 6px rgba(20, 84, 43, 0.25);
+}
+
+.btn-white-label:hover::before {
+    opacity: 1;
+}
+
+.btn-white-label:active {
+    transform: translateY(0);
+    box-shadow:
+        0 4px 12px rgba(131, 168, 59, 0.4),
+        0 2px 4px rgba(20, 84, 43, 0.2);
+}
+
+.btn-white-label:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.8),
+        0 0 0 5px rgba(160, 189, 62, 0.8),
+        0 8px 24px rgba(131, 168, 59, 0.5);
+}
+
+/* Arrow animation */
+.btn-white-label .btn-white-label-arrow {
+    display: inline-block;
+    line-height: 1;
+    transition: transform 0.28s ease;
+}
+
+.btn-white-label:hover .btn-white-label-arrow {
+    transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-white-label,
+    .btn-white-label::before,
+    .btn-white-label .btn-white-label-arrow {
+        transition: none !important;
+        transform: none !important;
+    }
+}

@@ -213,13 +213,10 @@ export default function AboutUsPage() {
 
               <Link
                 href="/contact-us"
-                className="mt-10 w-fit px-7 py-3 rounded-full font-semibold text-sm transition"
-                style={{
-                  background: "var(--clr-secondary)",
-                  color: "var(--clr-text-light)",
-                }}
+                className="mt-8 lg:mt-10 w-fit btn-white-label"
               >
-                Start Your White Label Journey →
+                <span>Start Your White Label Journey</span>
+                <span className="btn-white-label-arrow" aria-hidden="true">→</span>
               </Link>
             </div>
 
