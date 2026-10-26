@@ -154,6 +154,7 @@ export default function OurProducts() {
                     src={item.image}
                     alt={item.title.replace("\n", " ")}
                     fill
+                    sizes="(max-width: 768px) 180px, (max-width: 1024px) 200px, 220px"
                     className="object-contain"
                   />
                 </div>

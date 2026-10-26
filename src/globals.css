@@ -467,6 +467,100 @@
   transform: translateX(6px);
 }
 
+/* =====================================================
+   OPTION 1: OUTLINE BUTTON WITH GLOW (CONSULTATION CTA)
+===================================================== */
+.ui-btn-consultation {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 9999px;
+  background-color: transparent;
+  border: 2.5px solid #B8D2A5;
+  color: var(--clr-text-dark, #242424);
+  box-shadow:
+    0 4px 14px rgba(83, 148, 91, 0.15),
+    0 0 12px rgba(184, 210, 165, 0.28);
+  transition:
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .ui-btn-consultation {
+    padding: 0.875rem 2.25rem;
+    font-size: 1.05rem;
+  }
+}
+
+/* Gradient background pseudo-element for smooth 300ms transition */
+.ui-btn-consultation::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #579B60 0%, #80A83E 100%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ui-btn-consultation:hover {
+  color: #ffffff;
+  border-color: #579B60;
+  box-shadow:
+    0 8px 24px rgba(87, 155, 96, 0.38),
+    0 0 20px rgba(128, 168, 62, 0.32);
+  transform: translateY(-2px);
+}
+
+.ui-btn-consultation:hover::before {
+  opacity: 1;
+}
+
+.ui-btn-consultation:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(87, 155, 96, 0.3);
+}
+
+.ui-btn-consultation:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(184, 210, 165, 0.7),
+    0 8px 24px rgba(87, 155, 96, 0.35);
+}
+
+.ui-btn-consultation .ui-btn-consultation-arrow {
+  display: inline-block;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.ui-btn-consultation:hover .ui-btn-consultation-arrow {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-btn-consultation,
+  .ui-btn-consultation::before,
+  .ui-btn-consultation .ui-btn-consultation-arrow {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
 
 /* =====================================================
    RESPONSIVE BREAKPOINTS (VARIABLE-ONLY CHANGES)
@@ -718,10 +812,6 @@
 }
 
 /* RIGHT IMAGE */
-.about-right {
-  /* display: flex;
-  justify-content: center; */
-}
 
 .about-image-box {
   position: relative;

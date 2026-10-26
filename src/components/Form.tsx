@@ -89,9 +89,10 @@ export default function ConsultationSection() {
               <div className="mt-5">
                 <Link
                   href="/contact-us"
-                  className="inline-flex ui-cta-premium items-center gap-3 px-5 py-2 lg:px-10 lg:py-4 rounded-full"
+                  className="ui-btn-consultation"
                 >
-                  Request a Free Consultation →
+                  Request a Free Consultation
+                  <span className="ui-btn-consultation-arrow" aria-hidden="true">→</span>
                 </Link>
               </div>
             </div>

@@ -125,7 +125,6 @@ export default function AboutUs() {
                 "https://t4.ftcdn.net/jpg/01/09/78/03/360_F_109780332_wx8cpenyKwrVWQrJrcdYSoeqseVXCJ9z.jpg",
                 "https://static.vecteezy.com/system/resources/previews/000/370/748/non_2x/dermatologically-tested-icon-vector.jpg",
                 "https://media.istockphoto.com/id/1393841861/vector/lightweight-feather-on-hand-line-icon-soft-delicate-sensitive-plumelet-linear-pictogram.jpg?s=612x612&w=0&k=20&c=Bz8IEJxCJJs3itagQFnu3psszfZv_DyU5lJSjJ0o2JU=",
-                "https://media.istockphoto.com/id/1359659563/vector/planet-earth-with-leaves-in-a-circle-green-globe-environmental-social-governance.jpg?s=612x612&w=0&k=20&c=AyyUx4eRlEBaig3Va-aFLFuOGHBxXBNJ7SHQqTWBkYg=",
                 "https://5.imimg.com/data5/SELLER/Default/2020/8/YB/DY/UN/58362300/quality-assurance-services-for-diagnostic-x-ray-machines.jpeg",
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfIwPB_S521UytvBMhFynPzwGRMSTpbX4KYg&s",
               ]
@@ -136,7 +135,6 @@ export default function AboutUs() {
                   "https://t4.ftcdn.net/jpg/01/09/78/03/360_F_109780332_wx8cpenyKwrVWQrJrcdYSoeqseVXCJ9z.jpg",
                   "https://static.vecteezy.com/system/resources/previews/000/370/748/non_2x/dermatologically-tested-icon-vector.jpg",
                   "https://media.istockphoto.com/id/1393841861/vector/lightweight-feather-on-hand-line-icon-soft-delicate-sensitive-plumelet-linear-pictogram.jpg?s=612x612&w=0&k=20&c=Bz8IEJxCJJs3itagQFnu3psszfZv_DyU5lJSjJ0o2JU=",
-                  "https://media.istockphoto.com/id/1359659563/vector/planet-earth-with-leaves-in-a-circle-green-globe-environmental-social-governance.jpg?s=612x612&w=0&k=20&c=AyyUx4eRlEBaig3Va-aFLFuOGHBxXBNJ7SHQqTWBkYg=",
                   "https://5.imimg.com/data5/SELLER/Default/2020/8/YB/DY/UN/58362300/quality-assurance-services-for-diagnostic-x-ray-machines.jpeg",
                   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfIwPB_S521UytvBMhFynPzwGRMSTpbX4KYg&s",
                 ])
