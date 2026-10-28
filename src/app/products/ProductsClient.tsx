@@ -217,12 +217,12 @@ export default function ProductsClient({ categorySlug }: ProductsClientProps = {
         </h2>
 
         {/* FILTERS */}
-        <div className="flex justify-center gap-3 mt-6 flex-wrap">
+        <div className="flex justify-center gap-2 sm:gap-3 mt-4 sm:mt-6 flex-wrap">
           {filters.map(({ label, href }) => (
             <Link
               key={label}
               href={href}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition
+              className={`product-filter-btn-compact px-3.5 py-1.5 sm:px-5 sm:py-2 rounded-full text-[13px] sm:text-sm font-semibold transition
               ${activeFilter === label
                   ? "bg-[var(--clr-primary)] text-white shadow-lg"
                   : "bg-white text-[#14542B] shadow hover:shadow-md"
@@ -234,7 +234,7 @@ export default function ProductsClient({ categorySlug }: ProductsClientProps = {
         </div>
 
         {/* GRID */}
-        <div className="grid mt-6 lg:mt-10 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-10">
+        <div className="product-grid-compact grid mt-5 sm:mt-6 lg:mt-10 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-3.5 sm:gap-6 lg:gap-10">
           {filteredProducts.map((product) => {
             const matchingProduct = getProductBySlug(slugify(product.name));
             const href = matchingProduct
@@ -245,10 +245,10 @@ export default function ProductsClient({ categorySlug }: ProductsClientProps = {
               <Link
                 key={product.name}
                 href={href}
-                className="group relative overflow-hidden rounded-3xl bg-white shadow-[0_30px_60px_rgba(20,84,43,0.15)] hover:shadow-[0_40px_80px_rgba(20,84,43,0.25)] transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
+                className="product-card-compact group relative overflow-hidden rounded-2xl lg:rounded-3xl bg-white shadow-[0_15px_35px_rgba(20,84,43,0.1)] lg:shadow-[0_30px_60px_rgba(20,84,43,0.15)] hover:shadow-[0_40px_80px_rgba(20,84,43,0.25)] transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
               >
                 {/* IMAGE */}
-                <div className="relative h-40 lg:h-80 bg-[#EDF5EE]">
+                <div className="product-card-img-compact relative h-[160px] sm:h-52 lg:h-80 bg-[#EDF5EE] overflow-hidden">
                   <img
                     src={product.image}
                     alt={`${product.name} - Medicosmo Formulations`}
@@ -257,22 +257,25 @@ export default function ProductsClient({ categorySlug }: ProductsClientProps = {
                 </div>
 
                 {/* CONTENT */}
-                <div className="relative p-5 sm:p-6 bg-white flex-1 flex flex-col justify-between">
+                <div className="product-card-content-compact relative p-3.5 sm:p-6 bg-white flex-1 flex flex-col justify-between">
                   <div className="flex-1 flex flex-col">
-                    <h3 className="text-left font-serif font-bold text-[#17452B] text-[20px] lg:text-[22px] leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
+                    <h3
+                      className="product-card-title-compact text-left font-serif font-bold text-[#17452B] text-[19px] sm:text-[20px] lg:text-[22px] leading-tight sm:leading-snug mb-1"
+                      style={{ fontFamily: 'Georgia, serif' }}
+                    >
                       {product.name}
                     </h3>
-                    <p className="text-left text-[#777777] text-[15px] lg:text-[16px] leading-[1.5] font-normal mt-2">
+                    <p className="product-card-desc-compact text-left text-[#777777] text-[14px] lg:text-[16px] leading-[1.45] font-normal mt-1 sm:mt-2">
                       {matchingProduct?.description || "Explore the full range"}
                     </p>
                   </div>
 
                   {/* DIVIDER */}
-                  <div className="w-full border-t border-[#E5E9E5] my-4" />
+                  <div className="product-card-divider-compact w-full border-t border-[#E5E9E5] my-2.5 sm:my-3 lg:my-4" />
 
                   {/* VIEW DETAILS BUTTON */}
                   <div className="flex justify-center">
-                    <span className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-[#4F8B55] group-hover:bg-[#3d6e42] text-white text-[15px] font-semibold transition-colors duration-300 shadow-sm text-center">
+                    <span className="product-card-btn-compact inline-flex items-center justify-center h-[38px] sm:h-[42px] px-3.5 sm:px-5 rounded-xl sm:rounded-full bg-[#4F8B55] group-hover:bg-[#3d6e42] text-white text-[13.5px] sm:text-[15px] font-semibold whitespace-nowrap transition-colors duration-300 shadow-sm text-center w-auto max-w-full">
                       View Details →
                     </span>
                   </div>
