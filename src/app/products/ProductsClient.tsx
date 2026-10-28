@@ -245,7 +245,7 @@ export default function ProductsClient({ categorySlug }: ProductsClientProps = {
               <Link
                 key={product.name}
                 href={href}
-                className="group relative overflow-hidden rounded-3xl bg-white shadow-[0_30px_60px_rgba(20,84,43,0.15)] hover:shadow-[0_40px_80px_rgba(20,84,43,0.25)] transition-all duration-500 hover:-translate-y-2 flex flex-col"
+                className="group relative overflow-hidden rounded-3xl bg-white shadow-[0_30px_60px_rgba(20,84,43,0.15)] hover:shadow-[0_40px_80px_rgba(20,84,43,0.25)] transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
               >
                 {/* IMAGE */}
                 <div className="relative h-40 lg:h-80 bg-[#EDF5EE]">
@@ -257,13 +257,24 @@ export default function ProductsClient({ categorySlug }: ProductsClientProps = {
                 </div>
 
                 {/* CONTENT */}
-                <div className="relative p-6 text-center bg-white flex-1">
-                  <h3 className="font-bold text-[#14542B]">{product.name}</h3>
-                  <p className="text-[#14542B]/70 mt-1">
-                    {matchingProduct?.description || "Explore the full range"}
-                  </p>
-                  <div className="mt-3 px-4 py-1.5 rounded-full inline-block bg-[var(--clr-secondary)] text-white text-sm font-semibold">
-                    {matchingProduct ? "View Details →" : "Get Quote →"}
+                <div className="relative p-5 sm:p-6 bg-white flex-1 flex flex-col justify-between">
+                  <div className="flex-1 flex flex-col">
+                    <h3 className="text-left font-serif font-bold text-[#17452B] text-[20px] lg:text-[22px] leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
+                      {product.name}
+                    </h3>
+                    <p className="text-left text-[#777777] text-[15px] lg:text-[16px] leading-[1.5] font-normal mt-2">
+                      {matchingProduct?.description || "Explore the full range"}
+                    </p>
+                  </div>
+
+                  {/* DIVIDER */}
+                  <div className="w-full border-t border-[#E5E9E5] my-4" />
+
+                  {/* VIEW DETAILS BUTTON */}
+                  <div className="flex justify-center">
+                    <span className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-[#4F8B55] group-hover:bg-[#3d6e42] text-white text-[15px] font-semibold transition-colors duration-300 shadow-sm text-center">
+                      View Details →
+                    </span>
                   </div>
                 </div>
               </Link>
