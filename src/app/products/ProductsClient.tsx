@@ -30,6 +30,7 @@ const categoryImages: Record<string, string> = {
   "Alcohol-Free Hair & Body Mist": "/13.jpg",
   "Scrubs & Pack": "/21.jpg",
   "Under Eye": "/27.jpg",
+  "Capsule Cream": "/1.jpg",
   "Lip Care": "/29.jpg",
   "Men's Grooming": "/18.jpg",
   "Anti Hair Fall Treatment": "/15.jpg",
@@ -57,6 +58,7 @@ const categoryTypeMap: Record<string, ProductType> = {
   "Baby Care": "Skin Care",
   "Scrubs & Pack": "Skin Care",
   "Under Eye": "Skin Care",
+  "Capsule Cream": "Skin Care",
 
   "Hair Gel": "Hair Care",
   "Hair Shampoo": "Hair Care",

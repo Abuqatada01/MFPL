@@ -169,4 +169,13 @@ export const skinCareProducts: SkinCareProduct[] = [
     img: "/27.jpg",
     aliases: ["under-eye-cream", "under-eye-and-lip-care"],
   },
+  {
+    id: 2016,
+    name: "Capsule Cream",
+    slug: "capsule-cream",
+    category: "Skin Care",
+    description: "",
+    img: "/1.jpg",
+    aliases: [],
+  },
 ];
