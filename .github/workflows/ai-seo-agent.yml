@@ -1,0 +1,267 @@
+
+name: Medicosmo AI SEO Agent
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  seo-analysis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Gemini SEO Analysis
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python3 <<'PY'
+          import os
+          import json
+          import urllib.request
+          import urllib.error
+          from html.parser import HTMLParser
+
+          API_BASE = "https://generativelanguage.googleapis.com/v1beta"
+          WEBSITE = "https://www.medicosmoformulations.com"
+          KEY = os.environ.get("GEMINI_API_KEY")
+
+          if not KEY:
+              raise SystemExit("ERROR: GEMINI_API_KEY secret missing")
+
+          def api_request(url, payload=None):
+              headers = {"x-goog-api-key": KEY}
+              method = "GET"
+              data = None
+
+              if payload is not None:
+                  headers["Content-Type"] = "application/json"
+                  data = json.dumps(payload).encode("utf-8")
+                  method = "POST"
+
+              request = urllib.request.Request(
+                  url,
+                  data=data,
+                  headers=headers,
+                  method=method
+              )
+
+              try:
+                  with urllib.request.urlopen(
+                      request, timeout=60
+                  ) as response:
+                      return json.load(response)
+              except urllib.error.HTTPError as error:
+                  details = error.read().decode(
+                      "utf-8", errors="replace"
+                  )
+                  print("Gemini API error:", error.code)
+                  print(details[:2000])
+                  raise SystemExit(1)
+
+          print("Fetching available Gemini models...", flush=True)
+
+          models_data = api_request(
+              API_BASE + "/models?pageSize=100"
+          )
+
+          models = [
+              model for model in models_data.get("models", [])
+              if "generateContent" in model.get(
+                  "supportedGenerationMethods", []
+              )
+          ]
+
+          print("Available models:", flush=True)
+          for model in models:
+              print(model["name"], flush=True)
+
+          preferred_models = [
+              "gemini-3.5-flash-lite",
+              "gemini-3.1-flash-lite",
+              "gemini-flash-lite-latest"
+          ]
+
+          selected = None
+
+          for preferred in preferred_models:
+              for model in models:
+                  if model["name"] == "models/" + preferred:
+                      selected = model["name"]
+                      break
+              if selected:
+                  break
+
+          if not selected:
+              raise SystemExit(
+                  "No preferred Gemini model available. "
+                  "Check the model list above."
+              )
+
+          print("Selected model:", selected, flush=True)
+
+          class SEOParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.title = ""
+                  self.description = ""
+                  self.in_title = False
+                  self.headings = []
+                  self.in_heading = None
+
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+
+                  if tag == "title":
+                      self.in_title = True
+
+                  if tag in ("h1", "h2"):
+                      self.in_heading = tag
+
+                  if tag == "meta":
+                      if attrs.get("name", "").lower() == "description":
+                          self.description = attrs.get("content", "")
+
+              def handle_endtag(self, tag):
+                  if tag == "title":
+                      self.in_title = False
+
+                  if tag == self.in_heading:
+                      self.in_heading = None
+
+              def handle_data(self, data):
+                  text = data.strip()
+                  if not text:
+                      return
+
+                  if self.in_title:
+                      self.title += text + " "
+
+                  if self.in_heading and len(self.headings) < 15:
+                      self.headings.append(
+                          self.in_heading.upper() + ": " + text
+                      )
+
+          print("Fetching website SEO data...", flush=True)
+
+          website_request = urllib.request.Request(
+              WEBSITE,
+              headers={"User-Agent": "MedicosmoSEOAgent/1.0"}
+          )
+
+          try:
+              with urllib.request.urlopen(
+                  website_request, timeout=30
+              ) as response:
+                  html = response.read(500000).decode(
+                      "utf-8", errors="replace"
+                  )
+          except Exception as error:
+              raise SystemExit(
+                  "Website fetch failed: " + str(error)
+              )
+
+          parser = SEOParser()
+          parser.feed(html)
+
+          website_data = {
+              "url": WEBSITE,
+              "title": parser.title.strip(),
+              "meta_description": parser.description,
+              "headings": parser.headings
+          }
+
+          print(
+              "Website data:",
+              json.dumps(website_data, indent=2),
+              flush=True
+          )
+
+          prompt = f"""
+          You are an SEO specialist for Medicosmo Formulations.
+
+          Analyze the following actual website metadata:
+
+          {json.dumps(website_data, indent=2)}
+
+          Provide:
+          1. Five relevant potential SEO keywords.
+          2. Three improved SEO title suggestions.
+          3. Three improved meta descriptions.
+          4. Content optimization opportunities.
+          5. Technical SEO recommendations.
+
+          Rules:
+          - Do not invent Google rankings or search volumes.
+          - Do not claim to have researched competitors.
+          - Do not invent company certifications or services.
+          - Base recommendations on the supplied website data.
+          - Keep the response concise and actionable.
+          """
+
+          payload = {
+              "contents": [
+                  {
+                      "parts": [
+                          {"text": prompt}
+                      ]
+                  }
+              ],
+              "generationConfig": {
+                  "maxOutputTokens": 2000
+              }
+          }
+
+          print("Running Gemini SEO analysis...", flush=True)
+
+          result = api_request(
+              API_BASE + "/" + selected + ":generateContent",
+              payload
+          )
+
+          candidates = result.get("candidates", [])
+
+          if not candidates:
+              print(json.dumps(result, indent=2))
+              raise SystemExit("No Gemini response candidates")
+
+          parts = candidates[0].get(
+              "content", {}
+          ).get("parts", [])
+
+          analysis = "\n".join(
+              part.get("text", "")
+              for part in parts
+              if part.get("text")
+          )
+
+          if not analysis.strip():
+              print(json.dumps(result, indent=2))
+              raise SystemExit("Gemini returned no text")
+
+          print("\n===== MEDICOSMO SEO REPORT =====\n")
+          print(analysis)
+
+          with open(
+              "seo-report.md", "w", encoding="utf-8"
+          ) as file:
+              file.write("# Medicosmo AI SEO Report\n\n")
+              file.write(analysis)
+              file.write("\n")
+
+          print("\nSEO report generated successfully!")
+          PY
+
+      - name: Upload SEO Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: medicosmo-seo-report
+          path: seo-report.md
+          retention-days: 30
