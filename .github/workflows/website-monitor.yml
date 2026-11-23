@@ -1,0 +1,41 @@
+
+name: Medicosmo Website Monitor
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-website:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check website availability
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          URL="https://www.medicosmoformulations.com"
+
+          STATUS=$(curl -L -sS \
+            --connect-timeout 10 \
+            --max-time 30 \
+            --retry 2 \
+            --retry-delay 5 \
+            -o /dev/null \
+            -w "%{http_code}" \
+            "$URL")
+
+          echo "Website HTTP status: $STATUS"
+
+          if [[ "$STATUS" -lt 200 || "$STATUS" -ge 400 ]]; then
+            echo "::error::Website check failed: HTTP $STATUS"
+            exit 1
+          fi
+
+          echo "Website is responding successfully."
