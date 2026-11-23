@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  issues: write
 
 jobs:
   seo-check:
@@ -164,3 +165,34 @@ jobs:
             process.exitCode = 1;
           });
           NODE
+
+
+      - name: Create or update SEO issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          TITLE="Automated SEO monitoring failure"
+
+          EXISTING=$(gh issue list \
+            --state open \
+            --search "$TITLE in:title" \
+            --json number,title \
+            --jq ".[] | select(.title == \"$TITLE\") | .number" \
+            | head -n 1)
+
+          BODY="SEO monitoring failed.
+
+          Workflow: $GITHUB_WORKFLOW
+          Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+
+          if [ -z "$EXISTING" ]; then
+            gh issue create \
+              --title "$TITLE" \
+              --body "$BODY"
+          else
+            gh issue comment "$EXISTING" \
+              --body "$BODY"
+          fi
+
