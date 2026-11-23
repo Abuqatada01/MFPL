@@ -1,1 +1,75 @@
+name: Medicosmo AI SEO Agent
 
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  seo-analysis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Gemini SEO Analysis
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python3 <<'PY'
+          import os
+          import json
+          import urllib.request
+
+          key = os.environ["GEMINI_API_KEY"]
+          website = "https://www.medicosmoformulations.com"
+
+          prompt = f"""
+          You are an SEO expert for a pharmaceutical website.
+
+          Website: {website}
+
+          Suggest:
+          1. Five relevant SEO keywords
+          2. Three SEO title improvements
+          3. Three meta description improvements
+          4. Content optimization opportunities
+
+          Do not invent search volumes or rankings.
+          Keep the response concise.
+          """
+
+          url = (
+              "https://generativelanguage.googleapis.com/"
+              "v1beta/models/gemini-2.5-flash:generateContent"
+          )
+
+          payload = {
+              "contents": [
+                  {"parts": [{"text": prompt}]}
+              ],
+              "generationConfig": {
+                  "maxOutputTokens": 1500
+              }
+          }
+
+          request = urllib.request.Request(
+              url,
+              data=json.dumps(payload).encode(),
+              headers={
+                  "Content-Type": "application/json",
+                  "x-goog-api-key": key
+              },
+              method="POST"
+          )
+
+          with urllib.request.urlopen(request, timeout=60) as response:
+              result = json.load(response)
+
+          print(json.dumps(result, indent=2))
+          PY
