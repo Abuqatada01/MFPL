@@ -18,17 +18,17 @@ const categoryMeta: Record<
   { title: string; description: string }
 > = {
   cosmetic: {
-    title: "Private Label Cosmetics Manufacturer in India | Medicosmo",
+    title: "Private Label Cosmetics Manufacturer in India",
     description:
       "Looking for a private label cosmetics manufacturer in India? Medicosmo offers cosmetic product development and contract manufacturing for beauty brands.",
   },
   "skin-care": {
-    title: "Private Label Skincare Manufacturer in India | Medicosmo",
+    title: "Private Label Skincare Manufacturer in India",
     description:
       "Partner with Medicosmo for private label skincare manufacturing in India. Explore creams, serums, lotions and gels for your skincare brand.",
   },
   "hair-care": {
-    title: "Private Label Hair Care Manufacturer in India | Medicosmo",
+    title: "Private Label Hair Care Manufacturer in India",
     description:
       "Find private label hair care manufacturing in India with Medicosmo. Explore shampoos, conditioners, hair serums and masks for your brand.",
   },
@@ -75,11 +75,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!product) {
     return {
-      title: "Product Not Found | Medicosmo Formulations",
+      title: "Product Not Found",
     };
   }
 
-  const title = `${product.name} Manufacturer in India | Medicosmo Formulations`;
+  const title = `${product.name} Manufacturer in India`;
   const description = `Private label and contract manufacturing of ${product.name} for brands in India. Custom formulation, packaging and manufacturing solutions by Medicosmo Formulations.`;
 
   return {

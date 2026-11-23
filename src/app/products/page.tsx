@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import ProductsClient from "./ProductsClient";
 
 export const metadata: Metadata = {
-  title: "Cosmetics, Skincare & Haircare Products | Medicosmo Formulations",
+  title: "Cosmetics, Skincare & Haircare Products",
   description:
     "Explore cosmetic, skincare and haircare product categories from Medicosmo Formulations for private label and contract manufacturing. Develop products for your beauty and personal care brand.",
   alternates: {
