@@ -68,6 +68,22 @@ jobs:
               method="POST"
           )
 
+                    models_request = urllib.request.Request(
+              "https://generativelanguage.googleapis.com/v1beta/models",
+              headers={"x-goog-api-key": key}
+          )
+
+          with urllib.request.urlopen(models_request, timeout=30) as response:
+              models_data = json.load(response)
+
+          print("AVAILABLE GEMINI MODELS:")
+          for model in models_data.get("models", []):
+              if "generateContent" in model.get("supportedGenerationMethods", []):
+                  print(model["name"])
+
+          with urllib.request.urlopen(request, timeout=60) as response:
+              result = json.load(response)
+
           with urllib.request.urlopen(request, timeout=60) as response:
               result = json.load(response)
 
