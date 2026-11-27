@@ -18,7 +18,7 @@ const categoryMeta: Record<
   { title: string; description: string }
 > = {
   cosmetic: {
-    title: "Private Label Cosmetics Manufacturer in India",
+    title: "Cosmetic Contract Manufacturing in India",
     description:
       "Looking for a private label cosmetics manufacturer in India? Medicosmo offers cosmetic product development and contract manufacturing for beauty brands.",
   },
